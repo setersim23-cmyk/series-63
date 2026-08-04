@@ -4,7 +4,7 @@ import { QBANK } from './content/questions'
 import { findChapter } from './lib/content'
 import { IDLE, Tts, type TtsState } from './lib/tts'
 import { buildSession, recordAnswer, shuffle, type QuizMode, type Session } from './lib/quiz'
-import { useProgress } from './lib/store'
+import { storageWorks, useProgress } from './lib/store'
 import { nextCellId } from './lib/scoring'
 import { ORDER, type CellId, type ChapterCode, type Fact, type Mark } from './types'
 
@@ -23,6 +23,7 @@ import PalaceWalk from './views/PalaceWalk'
 import Simulator from './views/Simulator'
 
 import BottomNav from './components/BottomNav'
+import StorageWarning from './components/StorageWarning'
 import LawSheet from './components/LawSheet'
 import SyncSheet from './components/SyncSheet'
 import VoiceSheet from './components/VoiceSheet'
@@ -395,6 +396,7 @@ export default function App() {
   return (
     <AppContext.Provider value={api}>
       <div style={{ maxWidth: 480, margin: '0 auto', minHeight: '100vh', background: '#08080b', position: 'relative' }}>
+        {!storageWorks && <StorageWarning />}
         {view === 'home' && <Home />}
         {view === 'learn' && <Learn />}
         {view === 'chapter' && ch && <ChapterView code={ch} />}

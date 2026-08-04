@@ -6,8 +6,30 @@ function empty(): Store {
   return { cells: {}, missed: {}, mocks: [], settings: { rate: 1, voice: null } }
 }
 
+/**
+ * Whether this copy can actually keep progress between sessions.
+ *
+ * A page embedded in an iframe sandboxed without `allow-same-origin` runs on the
+ * opaque origin `null`, where localStorage, sessionStorage and cookies all throw
+ * SecurityError. Swallowing that quietly is worse than useless — the chart fills
+ * in, the score climbs, and every bit of it is gone at the next launch. So the
+ * probe runs once at load and the app says so when it fails.
+ */
+export const storageWorks: boolean = (() => {
+  try {
+    const probe = `${STORAGE_KEY}__probe`
+    localStorage.setItem(probe, '1')
+    const readBack = localStorage.getItem(probe)
+    localStorage.removeItem(probe)
+    return readBack === '1'
+  } catch {
+    return false
+  }
+})()
+
 export function load(): Store {
   const base = empty()
+  if (!storageWorks) return base
   try {
     const raw = localStorage.getItem(STORAGE_KEY)
     if (raw) {
@@ -19,16 +41,17 @@ export function load(): Store {
       }
     }
   } catch {
-    /* corrupt or unavailable storage — start clean rather than dying on load */
+    /* corrupt payload — start clean rather than dying on load */
   }
   return base
 }
 
 function persist(store: Store) {
+  if (!storageWorks) return
   try {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(store))
   } catch {
-    /* private mode / quota — progress still works for this session */
+    /* quota — this session's progress is still in memory */
   }
 }
 
