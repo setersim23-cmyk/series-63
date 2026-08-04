@@ -1,0 +1,1566 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<script src="content/questions.js"></script>
+<script src="content/authorities.js"></script>
+<script src="content/textbook_data.js"></script>
+<style>
+html,body{margin:0;padding:0;background:#08080b;color:#e9e9ef;font-family:'Instrument Sans',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#8ab4ff;text-decoration:none} a:hover{color:#b3ceff}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.45}}
+::selection{background:#2b3a5e}
+</style>
+</helmet>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#08080b"></rect><rect x="30" y="30" width="11" height="11" rx="2" fill="oklch(75% 0.14 150)"></rect><rect x="44" y="30" width="11" height="11" rx="2" fill="oklch(75% 0.14 265)"></rect><rect x="58" y="30" width="11" height="11" rx="2" fill="oklch(75% 0.14 195)"></rect><rect x="30" y="44" width="11" height="11" rx="2" fill="oklch(75% 0.14 330)"></rect><rect x="44" y="44" width="11" height="11" rx="2" fill="#1a1a24"></rect><rect x="58" y="44" width="11" height="11" rx="2" fill="oklch(75% 0.14 35)"></rect><rect x="30" y="58" width="11" height="11" rx="2" fill="oklch(75% 0.14 220)"></rect><rect x="44" y="58" width="11" height="11" rx="2" fill="oklch(75% 0.14 0)"></rect><rect x="58" y="58" width="11" height="11" rx="2" fill="oklch(75% 0.14 85)"></rect><text x="50" y="53" text-anchor="middle" font-family="sans-serif" font-size="7" font-weight="700" fill="#e9e9ef">63</text></svg></template>
+<div style="max-width:480px;margin:0 auto;min-height:100vh;background:#08080b;position:relative">
+
+<sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
+  <div style="padding:20px 18px 120px">
+    <div style="display:flex;justify-content:space-between;align-items:baseline">
+      <div style="font-family:'Space Grotesk';font-size:20px;font-weight:700;letter-spacing:-0.02em">Series 63</div>
+      <div style="font-size:12px;color:#9a9aa6">{{ countdown }}</div>
+    </div>
+    <div style="margin-top:18px;background:#101016;border:1px solid #22222c;border-radius:20px;padding:20px">
+      <div style="display:flex;align-items:center;gap:18px">
+        <div style="position:relative;width:104px;height:104px;flex:none">
+          <svg width="104" height="104" viewBox="0 0 104 104">
+            <circle cx="52" cy="52" r="45" fill="none" stroke="#1d1d26" stroke-width="9"></circle>
+            <circle cx="52" cy="52" r="45" fill="none" stroke="{{ ringColor }}" stroke-width="9" stroke-linecap="round" stroke-dasharray="{{ ringDash }}" transform="rotate(-90 52 52)" style="transition:stroke-dasharray .6s"></circle>
+            <circle cx="52" cy="52" r="45" fill="none" stroke="#fff" stroke-width="2" stroke-dasharray="2 280.7" stroke-dashoffset="{{ passTickOff }}" transform="rotate(-90 52 52)" opacity="0.9"></circle>
+          </svg>
+          <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center">
+            <div style="font-family:'Space Grotesk';font-size:30px;font-weight:700;line-height:1">{{ readyScore }}</div>
+            <div style="font-size:10px;color:#9a9aa6;margin-top:2px">READY</div>
+          </div>
+        </div>
+        <div style="flex:1;min-width:0">
+          <div style="font-size:14px;font-weight:600">{{ readyLabel }}</div>
+          <div style="font-size:12px;color:#9a9aa6;margin-top:4px;line-height:1.5">{{ readyHint }}</div>
+          <div style="display:flex;gap:14px;margin-top:10px">
+            <div><div style="font-family:'Space Grotesk';font-size:16px;font-weight:700">{{ statCells }}</div><div style="font-size:10px;color:#77778a">CELLS SOLID</div></div>
+            <div><div style="font-family:'Space Grotesk';font-size:16px;font-weight:700">{{ statAcc }}</div><div style="font-size:10px;color:#77778a">DRILL ACC</div></div>
+            <div><div style="font-family:'Space Grotesk';font-size:16px;font-weight:700">{{ statDue }}</div><div style="font-size:10px;color:#77778a">DUE NOW</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:14px;background:#101016;border:1px solid #22222c;border-radius:16px;padding:14px 16px;display:flex;align-items:center;gap:12px" onClick="{{ goPlanTarget }}">
+      <div style="width:36px;height:36px;border-radius:10px;background:#1a1a24;display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk';font-weight:700;font-size:13px;color:{{ planColor }}">{{ planDay }}</div>
+      <div style="flex:1;min-width:0">
+        <div style="font-size:11px;color:#77778a;letter-spacing:.08em">TODAY'S PLAN</div>
+        <div style="font-size:13px;font-weight:600;margin-top:2px;line-height:1.4">{{ planText }}</div>
+      </div>
+      <div style="color:#55556a;font-size:18px">›</div>
+    </div>
+    <div onClick="{{ openSync }}" style="margin-top:10px;text-align:center;font-size:11px;color:#66667a;cursor:pointer;padding:4px">⇅ Backup / transfer my progress</div>
+    <div style="margin-top:14px;display:flex;justify-content:space-between;align-items:baseline">
+      <div style="font-size:12px;color:#9a9aa6;letter-spacing:.1em;font-weight:600">HARADA · 64 CELLS</div>
+      <div style="font-size:11px;color:#55556a">tap any cell to open it</div>
+    </div>
+    <div style="margin-top:10px;display:grid;grid-template-columns:repeat(3,1fr);gap:8px">
+      <sc-for list="{{ blocks }}" as="b" hint-placeholder-count="9">
+        <div style="border-radius:12px;padding:5px;background:{{ b.bg }};border:1px solid {{ b.border }}">
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:3px">
+            <sc-for list="{{ b.cells }}" as="cl" hint-placeholder-count="9">
+              <div onClick="{{ cl.onTap }}" style="aspect-ratio:1;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:{{ cl.fs }};font-weight:{{ cl.fw }};font-family:'Space Grotesk';background:{{ cl.bg }};color:{{ cl.color }};border:1px solid {{ cl.bd }};cursor:pointer">{{ cl.label }}</div>
+            </sc-for>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+    <div style="margin-top:8px;display:flex;gap:12px;flex-wrap:wrap;font-size:10px;color:#77778a">
+      <span>fill = readiness</span><span>· dim = untouched</span><span>· center block = chapter scores</span>
+    </div>
+    <div style="margin-top:22px;font-size:12px;color:#9a9aa6;letter-spacing:.1em;font-weight:600">CHAPTERS · BY EXAM WEIGHT</div>
+    <div style="margin-top:10px;display:flex;flex-direction:column;gap:8px">
+      <sc-for list="{{ chapterBars }}" as="ch" hint-placeholder-count="8">
+        <div onClick="{{ ch.onTap }}" style="background:#101016;border:1px solid #22222c;border-radius:12px;padding:12px 14px;cursor:pointer">
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <div style="display:flex;align-items:center;gap:8px;min-width:0">
+              <span style="width:8px;height:8px;border-radius:3px;background:{{ ch.color }};flex:none"></span>
+              <span style="font-size:13px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ ch.name }}</span>
+            </div>
+            <div style="font-size:11px;color:#77778a;flex:none">{{ ch.meta }}</div>
+          </div>
+          <div style="margin-top:8px;height:5px;border-radius:3px;background:#1c1c26;overflow:hidden">
+            <div style="height:100%;border-radius:3px;background:{{ ch.color }};width:{{ ch.pct }};transition:width .5s"></div>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</sc-if>
+
+<sc-if value="{{ isLearn }}" hint-placeholder-val="{{ false }}">
+  <div style="padding:20px 18px 120px">
+    <div style="font-family:'Space Grotesk';font-size:20px;font-weight:700">Learn</div>
+    <div style="font-size:12px;color:#9a9aa6;margin-top:4px;line-height:1.5">Eight chapters in teaching order. Each opens into eight cells you can read or listen to.</div>
+    <div style="margin-top:16px;display:flex;flex-direction:column;gap:10px">
+      <sc-for list="{{ learnList }}" as="ch" hint-placeholder-count="8">
+        <div onClick="{{ ch.onTap }}" style="background:#101016;border:1px solid #22222c;border-left:3px solid {{ ch.color }};border-radius:14px;padding:14px 16px;cursor:pointer">
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <div style="font-size:15px;font-weight:600">{{ ch.name }}</div>
+            <div style="font-family:'Space Grotesk';font-size:13px;font-weight:700;color:{{ ch.color }}">{{ ch.score }}</div>
+          </div>
+          <div style="font-size:11px;color:#77778a;margin-top:3px">{{ ch.meta }} · about <span style="color:{{ ch.color }}">{{ ch.actor }}</span></div>
+        </div>
+      </sc-for>
+    </div>
+    <div onClick="{{ goTraps }}" style="margin-top:14px;background:#17111a;border:1px solid #3a2233;border-radius:14px;padding:14px 16px;cursor:pointer;display:flex;justify-content:space-between;align-items:center">
+      <div>
+        <div style="font-size:14px;font-weight:600;color:#ff9ab0">▲ All {{ trapCount }} exam traps</div>
+        <div style="font-size:11px;color:#9a7a88;margin-top:2px">The highest-yield hour before you walk in</div>
+      </div>
+      <div style="color:#664455;font-size:18px">›</div>
+    </div>
+  </div>
+</sc-if>
+
+<sc-if value="{{ isChapter }}" hint-placeholder-val="{{ false }}">
+  <div style="padding:16px 18px 120px">
+    <div onClick="{{ goLearn }}" style="font-size:13px;color:#8a8a9a;cursor:pointer;padding:4px 0">‹ Chapters</div>
+    <div style="margin-top:10px;padding:16px;border-radius:16px;background:{{ chView.tint }};border:1px solid {{ chView.borderC }}">
+      <div style="display:flex;justify-content:space-between;align-items:baseline">
+        <div style="font-family:'Space Grotesk';font-size:22px;font-weight:700;color:{{ chView.color }}">{{ chView.code }}</div>
+        <div style="font-size:11px;color:#9a9aa6">{{ chView.weight }}</div>
+      </div>
+      <div style="font-size:16px;font-weight:600;margin-top:2px">{{ chView.name }}</div>
+      <div style="margin-top:8px;display:inline-block;font-size:11px;font-weight:700;letter-spacing:.06em;color:#08080b;background:{{ chView.color }};border-radius:6px;padding:3px 8px">EVERYTHING HERE IS ABOUT {{ chView.actor }}</div>
+      <div style="font-family:'Source Serif 4',serif;font-size:14px;line-height:1.65;color:#c9c9d4;margin-top:12px">{{ chView.spine }}</div>
+    </div>
+    <div style="margin-top:10px;display:flex;gap:8px">
+      <div onClick="{{ chView.onListen }}" style="flex:1;text-align:center;background:#171720;border:1px solid #2a2a36;border-radius:12px;padding:10px;font-size:13px;font-weight:600;cursor:pointer">▶ Listen to chapter</div>
+      <div onClick="{{ chView.onDrill }}" style="flex:1;text-align:center;background:#171720;border:1px solid #2a2a36;border-radius:12px;padding:10px;font-size:13px;font-weight:600;cursor:pointer">Drill {{ chView.code }}</div>
+    </div>
+    <div onClick="{{ chView.onWalk }}" style="margin-top:8px;border-radius:12px;padding:12px 16px;background:#12101a;border:1px solid #2b2440;cursor:pointer;display:flex;justify-content:space-between;align-items:center">
+      <div>
+        <div style="font-size:13px;font-weight:700;color:#b8a3f0">🏛 Walk this room — {{ chView.room }}</div>
+        <div style="font-size:11px;color:#77708f;margin-top:2px">8 loci · recall each spot out loud, grade yourself, chart updates</div>
+      </div>
+      <div style="color:#55506a;font-size:18px">›</div>
+    </div>
+    <div style="margin-top:14px;display:flex;flex-direction:column;gap:8px">
+      <sc-for list="{{ chView.cells }}" as="cl" hint-placeholder-count="8">
+        <div onClick="{{ cl.onTap }}" style="background:#101016;border:1px solid #22222c;border-radius:12px;padding:12px 14px;cursor:pointer;display:flex;align-items:center;gap:12px">
+          <div style="font-family:'Space Grotesk';font-size:12px;font-weight:700;color:{{ cl.color }};flex:none;width:44px">{{ cl.id }}</div>
+          <div style="flex:1;min-width:0">
+            <div style="font-size:13px;font-weight:500;line-height:1.4">{{ cl.title }}</div>
+            <div style="font-size:10px;color:#77778a;margin-top:2px">{{ cl.markLabel }}</div>
+          </div>
+          <div style="width:30px;height:30px;border-radius:8px;flex:none;background:{{ cl.dotBg }};border:1px solid {{ cl.dotBd }};display:flex;align-items:center;justify-content:center;font-size:10px;font-family:'Space Grotesk';font-weight:700;color:{{ cl.dotColor }}">{{ cl.score }}</div>
+        </div>
+      </sc-for>
+    </div>
+    <div onClick="{{ chView.onMemo }}" style="margin-top:12px;background:#141019;border:1px solid #2e2438;border-radius:12px;padding:13px 16px;cursor:pointer;font-size:13px;font-weight:600;color:#e8c37a">● Memorize sheet — {{ chView.memoCount }} raw facts</div>
+  </div>
+</sc-if>
+
+<sc-if value="{{ isCell }}" hint-placeholder-val="{{ false }}">
+  <div style="padding:0 0 190px">
+    <div style="position:sticky;top:0;z-index:5;background:rgba(8,8,11,.92);backdrop-filter:blur(12px);border-bottom:1px solid #1c1c26;padding:12px 18px">
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <div onClick="{{ cellView.onBack }}" style="font-size:13px;color:#8a8a9a;cursor:pointer">‹ {{ cellView.chName }}</div>
+        <div style="font-size:11px;font-weight:700;letter-spacing:.05em;color:#08080b;background:{{ cellView.color }};border-radius:5px;padding:2px 7px">ABOUT {{ cellView.actor }}</div>
+      </div>
+      <div style="display:flex;align-items:baseline;gap:8px;margin-top:8px">
+        <div style="font-family:'Space Grotesk';font-size:15px;font-weight:700;color:{{ cellView.color }}">{{ cellView.id }}</div>
+        <div style="font-size:15px;font-weight:600;line-height:1.3">{{ cellView.title }}</div>
+      </div>
+    </div>
+    <div style="padding:14px 18px">
+      <div style="margin-bottom:12px;border-radius:12px;padding:12px 14px;background:#12101a;border:1px solid #2b2440">
+        <div style="font-size:10px;font-weight:700;letter-spacing:.1em;color:#b8a3f0">🏛 YOUR LOCUS — {{ cellView.locusRoom }} · {{ cellView.locusSpot }}</div>
+        <div style="font-family:'Source Serif 4',serif;font-style:italic;font-size:14px;line-height:1.65;color:#d5cbee;margin-top:5px">{{ cellView.locusImg }}</div>
+        <div style="font-size:10px;color:#77708f;margin-top:5px">Fix this image at this spot while you read. The palace walk will bring you back here.</div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <sc-for list="{{ cellView.items }}" as="it" hint-placeholder-count="5">
+          <div id="{{ it.domId }}" style="border-radius:12px;padding:12px 14px;background:{{ it.cardBg }};border:1px solid {{ it.cardBd }};transition:background .3s,border-color .3s">
+            <div style="font-size:10px;font-weight:700;letter-spacing:.1em;color:{{ it.tagColor }};margin-bottom:6px">{{ it.tagLabel }}</div>
+            <sc-if value="{{ it.speaking }}" hint-placeholder-val="{{ false }}">
+              <div style="font-family:'Source Serif 4',serif;font-size:15px;line-height:1.75;color:#e2e2ea">
+                <sc-for list="{{ it.words }}" as="w" hint-placeholder-count="10"><span style="border-radius:3px;padding:0 1px;background:{{ w.bg }};color:{{ w.fg }}">{{ w.t }} </span></sc-for>
+              </div>
+            </sc-if>
+            <sc-if value="{{ it.notSpeaking }}" hint-placeholder-val="{{ true }}">
+              <div style="font-family:'Source Serif 4',serif;font-size:15px;line-height:1.75;color:#e2e2ea">
+                <sc-for list="{{ it.segs }}" as="sg" hint-placeholder-count="3"><span onClick="{{ sg.onTap }}" style="color:{{ sg.color }};border-bottom:{{ sg.underline }};cursor:{{ sg.cursor }}">{{ sg.t }}</span></sc-for>
+              </div>
+            </sc-if>
+            <sc-if value="{{ it.isFrame }}" hint-placeholder-val="{{ false }}">
+              <div style="font-family:'Source Serif 4',serif;font-size:14px;line-height:1.7;color:#c9d8ce">{{ it.frIntro }}</div>
+              <div style="display:flex;flex-direction:column;gap:9px;margin-top:10px">
+                <sc-for list="{{ it.frBullets }}" as="fb" hint-placeholder-count="3">
+                  <div style="display:flex;gap:9px">
+                    <span style="color:#7ee0a8;flex:none;line-height:1.7">▸</span>
+                    <div style="font-family:'Source Serif 4',serif;font-size:14px;line-height:1.7;color:#dce8e0"><strong style="color:#f0faf4">{{ fb.b }}</strong> {{ fb.r }}</div>
+                  </div>
+                </sc-for>
+              </div>
+              <div style="font-family:'Source Serif 4',serif;font-size:14px;line-height:1.7;color:#c9d8ce;margin-top:10px;border-top:1px solid #1e3a2c;padding-top:10px">{{ it.frTail }}</div>
+            </sc-if>
+          </div>
+        </sc-for>
+      </div>
+      <sc-if value="{{ cellView.hasRefs }}" hint-placeholder-val="{{ false }}">
+        <div style="margin-top:14px;background:#0d0d13;border:1px solid #1c1c26;border-radius:12px;padding:12px 14px">
+          <div style="font-size:10px;font-weight:700;letter-spacing:.1em;color:#77778a">SECOND ANGLES — SAME MATERIAL IN YOUR OTHER BOOKS</div>
+          <sc-for list="{{ cellView.refs }}" as="r" hint-placeholder-count="3">
+            <div style="font-size:12px;color:#9a9aa6;margin-top:6px;line-height:1.5">{{ r.t }}</div>
+          </sc-for>
+        </div>
+      </sc-if>
+      <sc-if value="{{ cellView.hasSorter }}" hint-placeholder-val="{{ false }}">
+        <div style="margin-top:16px;background:#0d1117;border:1px solid #1f2a3a;border-radius:14px;padding:14px 16px">
+          <div style="display:flex;justify-content:space-between;align-items:baseline">
+            <div style="font-size:13px;font-weight:700">🎯 {{ cellView.sorter.title }}</div>
+            <div onClick="{{ cellView.sorter.onReset }}" style="font-size:11px;color:#77778a;cursor:pointer">reset</div>
+          </div>
+          <div style="font-size:11px;color:#8ab4ff;margin-top:4px">{{ cellView.sorter.hint }}</div>
+          <div style="display:flex;gap:8px;margin-top:10px">
+            <sc-for list="{{ cellView.sorter.buckets }}" as="bk" hint-placeholder-count="2">
+              <div onClick="{{ bk.onTap }}" style="flex:1;text-align:center;padding:10px 4px;border-radius:10px;border:1px dashed {{ bk.bd }};background:{{ bk.bg }};font-size:11px;font-weight:700;letter-spacing:.05em;cursor:pointer">{{ bk.t }}</div>
+            </sc-for>
+          </div>
+          <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:10px">
+            <sc-for list="{{ cellView.sorter.chips }}" as="cp" hint-placeholder-count="8">
+              <div onClick="{{ cp.onTap }}" style="padding:7px 11px;border-radius:9px;font-size:12px;font-weight:500;cursor:pointer;background:{{ cp.bg }};color:{{ cp.fg }};border:1px solid {{ cp.bd }}">{{ cp.t }}{{ cp.mark }}</div>
+            </sc-for>
+          </div>
+          <div style="font-size:11px;color:#77778a;margin-top:8px">{{ cellView.sorter.score }}</div>
+        </div>
+      </sc-if>
+      <sc-if value="{{ cellView.hasTimeline }}" hint-placeholder-val="{{ false }}">
+        <div style="margin-top:16px;background:#0d1117;border:1px solid #1f2a3a;border-radius:14px;padding:14px 16px">
+          <div style="display:flex;justify-content:space-between;align-items:baseline">
+            <div style="font-size:13px;font-weight:700">🕐 {{ cellView.timeline.title }}</div>
+            <div onClick="{{ cellView.timeline.onReset }}" style="font-size:11px;color:#77778a;cursor:pointer">reset</div>
+          </div>
+          <div style="font-size:11px;color:#8ab4ff;margin-top:4px">{{ cellView.timeline.hint }}</div>
+          <div style="display:flex;flex-direction:column;gap:6px;margin-top:10px">
+            <sc-for list="{{ cellView.timeline.events }}" as="ev" hint-placeholder-count="7">
+              <div onClick="{{ ev.onTap }}" style="display:flex;gap:10px;align-items:center;padding:9px 12px;border-radius:10px;cursor:pointer;background:{{ ev.bg }};border:1px solid {{ ev.bd }}">
+                <div style="width:22px;height:22px;border-radius:50%;background:#1a1a24;flex:none;display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk';font-size:11px;font-weight:700;color:{{ ev.numColor }}">{{ ev.num }}</div>
+                <div style="font-size:12px;line-height:1.5;color:#d9d9e2">{{ ev.t }}</div>
+              </div>
+            </sc-for>
+          </div>
+          <div style="font-size:11px;color:#77778a;margin-top:8px">{{ cellView.timeline.score }}</div>
+        </div>
+      </sc-if>
+      <sc-if value="{{ cellView.hasWalk }}" hint-placeholder-val="{{ false }}">
+        <div style="margin-top:16px;background:#0d1117;border:1px solid #1f2a3a;border-radius:14px;padding:14px 16px">
+          <div style="font-size:13px;font-weight:700">🧭 {{ cellView.walk.title }}</div>
+          <div style="font-size:11px;color:#77778a;margin-top:4px">{{ cellView.walk.progress }}</div>
+          <div style="font-family:'Source Serif 4',serif;font-size:14px;line-height:1.65;color:#e2e2ea;margin-top:10px;background:#101016;border:1px solid #22222c;border-radius:10px;padding:12px">{{ cellView.walk.s }}</div>
+          <div style="display:flex;gap:8px;margin-top:10px">
+            <sc-for list="{{ cellView.walk.btns }}" as="wb" hint-placeholder-count="2">
+              <div onClick="{{ wb.onTap }}" style="flex:1;text-align:center;padding:11px 6px;border-radius:10px;font-size:12px;font-weight:700;cursor:pointer;background:{{ wb.bg }};color:{{ wb.fg }};border:1px solid {{ wb.bd }}">{{ wb.t }}</div>
+            </sc-for>
+          </div>
+          <sc-if value="{{ cellView.walk.showWhy }}" hint-placeholder-val="{{ false }}">
+            <div style="margin-top:10px;border-radius:10px;padding:11px 13px;background:#101016;border:1px solid #22222c">
+              <div style="font-size:11px;font-weight:700;color:{{ cellView.walk.whyColor }}">{{ cellView.walk.whyTag }}</div>
+              <div style="font-family:'Source Serif 4',serif;font-size:13px;line-height:1.6;color:#d9d9e2;margin-top:4px">{{ cellView.walk.why }}</div>
+            </div>
+            <div onClick="{{ cellView.walk.onNext }}" style="margin-top:8px;text-align:center;background:#e9e9ef;color:#08080b;border-radius:10px;padding:10px;font-size:13px;font-weight:700;cursor:pointer">{{ cellView.walk.nextLabel }}</div>
+          </sc-if>
+        </div>
+      </sc-if>
+      <sc-if value="{{ cellView.hasCalc }}" hint-placeholder-val="{{ false }}">
+        <div style="margin-top:16px;background:#0d1117;border:1px solid #1f2a3a;border-radius:14px;padding:14px 16px">
+          <div style="font-size:13px;font-weight:700">🧮 {{ cellView.calc.title }}</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px">
+            <sc-for list="{{ cellView.calc.fields }}" as="fd" hint-placeholder-count="4">
+              <div>
+                <div style="font-size:10px;color:#77778a;margin-bottom:3px">{{ fd.label }}</div>
+                <input type="number" value="{{ fd.val }}" onChange="{{ fd.onChange }}" style="width:100%;background:#101016;border:1px solid #2a2a36;border-radius:8px;color:#e9e9ef;font-size:14px;padding:8px 10px;font-family:'Space Grotesk'">
+              </div>
+            </sc-for>
+          </div>
+          <div onClick="{{ cellView.calc.onSold }}" style="margin-top:8px;padding:9px 12px;border-radius:9px;background:#14141c;border:1px solid #2a2a36;font-size:12px;font-weight:600;cursor:pointer;color:#c9c9d4">⇄ {{ cellView.calc.soldLabel }}</div>
+          <sc-if value="{{ cellView.calc.hasProceeds }}" hint-placeholder-val="{{ false }}">
+            <div style="margin-top:8px">
+              <div style="font-size:10px;color:#77778a;margin-bottom:3px">{{ cellView.calc.proceedsField.label }}</div>
+              <input type="number" value="{{ cellView.calc.proceedsField.val }}" onChange="{{ cellView.calc.proceedsField.onChange }}" style="width:100%;background:#101016;border:1px solid #2a2a36;border-radius:8px;color:#e9e9ef;font-size:14px;padding:8px 10px;font-family:'Space Grotesk'">
+            </div>
+          </sc-if>
+          <div style="margin-top:12px;background:#101016;border:1px solid #22222c;border-radius:10px;padding:12px">
+            <sc-for list="{{ cellView.calc.lines }}" as="ln" hint-placeholder-count="3">
+              <div style="display:flex;justify-content:space-between;font-size:13px;color:#c9c9d4;padding:2px 0"><span>{{ ln.t }}</span><span style="font-family:'Space Grotesk'">{{ ln.v }}</span></div>
+            </sc-for>
+            <div style="display:flex;justify-content:space-between;font-size:15px;font-weight:700;border-top:1px solid #2a2a36;margin-top:6px;padding-top:8px"><span>Buyer recovers</span><span style="font-family:'Space Grotesk';color:#7ee0a8">{{ cellView.calc.total }}</span></div>
+            <div style="font-size:11px;color:#77778a;margin-top:6px;line-height:1.5">{{ cellView.calc.tender }}</div>
+          </div>
+          <div style="font-size:11px;color:#8a9a8f;margin-top:8px;line-height:1.5">{{ cellView.calc.example }}</div>
+        </div>
+      </sc-if>
+      <div onClick="{{ cellView.onCheck }}" style="margin-top:16px;border-radius:14px;padding:15px 16px;background:{{ cellView.color }};color:#08080b;cursor:pointer;display:flex;justify-content:space-between;align-items:center">
+        <div>
+          <div style="font-size:14px;font-weight:700">Prove it — checkpoint</div>
+          <div style="font-size:11px;margin-top:2px;opacity:.75">Concept questions + fact recall grade this cell for you</div>
+        </div>
+        <div style="font-size:20px;font-weight:700">→</div>
+      </div>
+      <div style="margin-top:10px;background:#101016;border:1px solid #22222c;border-radius:14px;padding:14px 16px">
+        <div style="font-size:11px;font-weight:700;letter-spacing:.08em;color:#9a9aa6">OR MARK IT MANUALLY</div>
+        <div style="display:flex;align-items:center;gap:8px;margin-top:10px">
+          <div style="font-size:12px;color:#7eb8f0;width:80px;flex:none">◆ Concepts</div>
+          <sc-for list="{{ cellView.cMarks }}" as="m" hint-placeholder-count="3">
+            <div onClick="{{ m.onTap }}" style="flex:1;text-align:center;padding:7px 0;border-radius:8px;font-size:12px;font-weight:600;cursor:pointer;background:{{ m.bg }};color:{{ m.fg }};border:1px solid {{ m.bd }}">{{ m.t }}</div>
+          </sc-for>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;margin-top:8px">
+          <div style="font-size:12px;color:#e8c37a;width:80px;flex:none">● Facts</div>
+          <sc-for list="{{ cellView.fMarks }}" as="m" hint-placeholder-count="3">
+            <div onClick="{{ m.onTap }}" style="flex:1;text-align:center;padding:7px 0;border-radius:8px;font-size:12px;font-weight:600;cursor:pointer;background:{{ m.bg }};color:{{ m.fg }};border:1px solid {{ m.bd }}">{{ m.t }}</div>
+          </sc-for>
+        </div>
+        <div style="font-size:11px;color:#66667a;margin-top:10px;line-height:1.5">Shaky on ◆ concepts → re-derive out loud. Shaky on ● facts → drill the memorize sheet. Different diseases, different treatments.</div>
+      </div>
+      <div style="display:flex;gap:8px;margin-top:12px">
+        <div onClick="{{ cellView.onDrill }}" style="flex:1;text-align:center;background:#171720;border:1px solid #2a2a36;border-radius:12px;padding:11px;font-size:13px;font-weight:600;cursor:pointer">Drill this cell</div>
+        <div onClick="{{ cellView.onNext }}" style="flex:1;text-align:center;background:{{ cellView.color }};color:#08080b;border-radius:12px;padding:11px;font-size:13px;font-weight:700;cursor:pointer">{{ cellView.nextLabel }}</div>
+      </div>
+    </div>
+    <div style="position:fixed;bottom:66px;left:50%;transform:translateX(-50%);width:100%;max-width:480px;z-index:6;padding:0 10px">
+      <div style="background:#14141c;border:1px solid #2a2a36;border-radius:16px;padding:10px 14px;box-shadow:0 8px 30px rgba(0,0,0,.5)">
+        <div style="display:flex;align-items:center;gap:12px">
+          <div onClick="{{ tts.onToggle }}" style="width:42px;height:42px;border-radius:50%;background:{{ cellView.color }};color:#08080b;display:flex;align-items:center;justify-content:center;font-size:16px;cursor:pointer;flex:none">{{ tts.playIcon }}</div>
+          <div style="flex:1;min-width:0">
+            <div style="font-size:12px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ tts.status }}</div>
+            <div style="display:flex;gap:6px;margin-top:5px">
+              <sc-for list="{{ tts.rates }}" as="r" hint-placeholder-count="5">
+                <div onClick="{{ r.onTap }}" style="font-size:11px;font-weight:600;padding:2px 8px;border-radius:6px;cursor:pointer;background:{{ r.bg }};color:{{ r.fg }}">{{ r.t }}</div>
+              </sc-for>
+            </div>
+          </div>
+          <div onClick="{{ tts.onVoice }}" style="font-size:11px;color:#9a9aa6;text-align:right;cursor:pointer;flex:none;max-width:80px">
+            <div style="font-weight:600;color:#c9c9d4;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ tts.voiceName }}</div>
+            <div>voice ›</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</sc-if>
+
+<sc-if value="{{ isMemo }}" hint-placeholder-val="{{ false }}">
+  <div style="padding:16px 18px 130px">
+    <div onClick="{{ memoView.onBack }}" style="font-size:13px;color:#8a8a9a;cursor:pointer;padding:4px 0">‹ {{ memoView.chName }}</div>
+    <div style="font-family:'Space Grotesk';font-size:20px;font-weight:700;margin-top:8px;color:#e8c37a">● {{ memoView.code }} memorize sheet</div>
+    <div style="font-size:12px;color:#9a9aa6;margin-top:4px">Cover the fact, read the cell code, say the fact out loud.</div>
+    <div style="margin-top:14px;display:flex;flex-direction:column;gap:8px">
+      <sc-for list="{{ memoView.facts }}" as="f" hint-placeholder-count="10">
+        <div onClick="{{ f.onTap }}" style="background:#101016;border:1px solid #22222c;border-radius:12px;padding:12px 14px;cursor:pointer">
+          <div style="display:flex;justify-content:space-between">
+            <div style="font-family:'Space Grotesk';font-size:11px;font-weight:700;color:{{ memoView.color }}">{{ f.cell }}</div>
+            <div style="font-size:10px;color:#55556a">{{ f.hint }}</div>
+          </div>
+          <sc-if value="{{ f.open }}" hint-placeholder-val="{{ true }}">
+            <div style="font-family:'Source Serif 4',serif;font-size:14px;line-height:1.7;color:#e2e2ea;margin-top:6px">{{ f.t }}</div>
+          </sc-if>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</sc-if>
+
+<sc-if value="{{ isTraps }}" hint-placeholder-val="{{ false }}">
+  <div style="padding:16px 18px 130px">
+    <div onClick="{{ goLearn }}" style="font-size:13px;color:#8a8a9a;cursor:pointer;padding:4px 0">‹ Learn</div>
+    <div style="font-family:'Space Grotesk';font-size:20px;font-weight:700;margin-top:8px;color:#ff9ab0">▲ Every trap in the book</div>
+    <div style="font-size:12px;color:#9a9aa6;margin-top:4px;line-height:1.5">The wrong answers that feel right. Read these last, the night before.</div>
+    <div style="margin-top:14px;display:flex;flex-direction:column;gap:8px">
+      <sc-for list="{{ trapList }}" as="tp" hint-placeholder-count="12">
+        <div onClick="{{ tp.onTap }}" style="background:#120e13;border:1px solid #2e1f2a;border-radius:12px;padding:12px 14px;cursor:pointer">
+          <div style="font-family:'Space Grotesk';font-size:11px;font-weight:700;color:{{ tp.color }}">{{ tp.cell }}</div>
+          <div style="font-family:'Source Serif 4',serif;font-size:14px;line-height:1.65;color:#e2e2ea;margin-top:5px">{{ tp.t }}</div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</sc-if>
+
+<sc-if value="{{ isDrill }}" hint-placeholder-val="{{ false }}">
+  <div style="padding:20px 18px 120px">
+    <div style="font-family:'Space Grotesk';font-size:20px;font-weight:700">Drill</div>
+    <div style="font-size:12px;color:#9a9aa6;margin-top:4px">Every answer updates your readiness score and Harada chart instantly.</div>
+    <div style="margin-top:16px;display:grid;grid-template-columns:1fr 1fr;gap:10px">
+      <div onClick="{{ drill.onQuick }}" style="background:#101016;border:1px solid #22222c;border-radius:16px;padding:16px;cursor:pointer">
+        <div style="font-size:22px">⚡</div>
+        <div style="font-size:14px;font-weight:600;margin-top:6px">Quick 10</div>
+        <div style="font-size:11px;color:#77778a;margin-top:2px">Adaptive — targets your weakest cells</div>
+      </div>
+      <div onClick="{{ drill.onMissed }}" style="background:#101016;border:1px solid {{ drill.missedBd }};border-radius:16px;padding:16px;cursor:pointer">
+        <div style="font-size:22px">↻</div>
+        <div style="font-size:14px;font-weight:600;margin-top:6px">Missed queue</div>
+        <div style="font-size:11px;color:{{ drill.missedColor }};margin-top:2px">{{ drill.missedLabel }}</div>
+      </div>
+      <div onClick="{{ drill.onHard }}" style="background:#101016;border:1px solid #22222c;border-radius:16px;padding:16px;cursor:pointer">
+        <div style="font-size:22px">◆</div>
+        <div style="font-size:14px;font-weight:600;margin-top:6px">The Hard 5</div>
+        <div style="font-size:11px;color:#77778a;margin-top:2px">Multi-concept killers — exam-day difficulty</div>
+      </div>
+      <div onClick="{{ drill.onSim }}" style="background:#101016;border:1px solid #22222c;border-radius:16px;padding:16px;cursor:pointer">
+        <div style="font-size:22px">⚖</div>
+        <div style="font-size:14px;font-weight:600;margin-top:6px">Administrator sim</div>
+        <div style="font-size:11px;color:#77778a;margin-top:2px">4 enforcement cases — you make the calls</div>
+      </div>
+      <div onClick="{{ drill.onPalace }}" style="grid-column:1/-1;background:#12101a;border:1px solid #2b2440;border-radius:16px;padding:16px;cursor:pointer;display:flex;justify-content:space-between;align-items:center">
+        <div>
+          <div style="font-size:14px;font-weight:600;color:#b8a3f0">🏛 Walk the whole palace</div>
+          <div style="font-size:11px;color:#77708f;margin-top:2px">All 8 rooms, 64 loci — the final overview. Recall every spot from memory.</div>
+        </div>
+        <div style="color:#55506a;font-size:18px">›</div>
+      </div>
+      <div onClick="{{ drill.onMock }}" style="grid-column:1/-1;background:#101016;border:1px solid #22222c;border-radius:16px;padding:16px;cursor:pointer;display:flex;justify-content:space-between;align-items:center">
+        <div>
+          <div style="font-size:14px;font-weight:600">Timed mock exam</div>
+          <div style="font-size:11px;color:#77778a;margin-top:2px">60 scored questions · 75 minutes · pass at 43</div>
+        </div>
+        <div style="font-family:'Space Grotesk';font-size:13px;font-weight:700;color:{{ drill.mockColor }}">{{ drill.mockBest }}</div>
+      </div>
+    </div>
+    <div style="margin-top:18px;font-size:12px;color:#9a9aa6;letter-spacing:.1em;font-weight:600">DRILL ONE CHAPTER</div>
+    <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px">
+      <sc-for list="{{ drill.chapters }}" as="dc" hint-placeholder-count="8">
+        <div onClick="{{ dc.onTap }}" style="padding:8px 14px;border-radius:10px;background:#14141c;border:1px solid #26262e;font-size:13px;font-weight:600;color:{{ dc.color }};cursor:pointer">{{ dc.code }}</div>
+      </sc-for>
+    </div>
+    <sc-if value="{{ drill.hasMocks }}" hint-placeholder-val="{{ false }}">
+      <div style="margin-top:18px;font-size:12px;color:#9a9aa6;letter-spacing:.1em;font-weight:600">MOCK HISTORY</div>
+      <div style="margin-top:8px;display:flex;flex-direction:column;gap:6px">
+        <sc-for list="{{ drill.mocks }}" as="mk" hint-placeholder-count="2">
+          <div style="display:flex;justify-content:space-between;background:#101016;border:1px solid #22222c;border-radius:10px;padding:10px 14px;font-size:13px">
+            <span style="color:#9a9aa6">{{ mk.when }}</span><span style="font-weight:700;color:{{ mk.color }}">{{ mk.score }}</span>
+          </div>
+        </sc-for>
+      </div>
+    </sc-if>
+  </div>
+</sc-if>
+
+<sc-if value="{{ isMap }}" hint-placeholder-val="{{ false }}">
+  <div style="padding:20px 18px 130px">
+    <div style="font-family:'Space Grotesk';font-size:20px;font-weight:700">⚖ The Map of Authorities</div>
+    <div style="font-size:12px;color:#9a9aa6;margin-top:6px;line-height:1.6">{{ map.intro }}</div>
+    <div style="margin-top:12px;border-radius:12px;padding:12px 14px;background:#101016;border:1px solid #22222c">
+      <div style="font-size:10px;font-weight:700;letter-spacing:.1em;color:#7ee0a8">THE LAYER QUESTION THAT ANSWERS QUESTIONS</div>
+      <div style="font-family:'Source Serif 4',serif;font-size:13px;line-height:1.65;color:#c9c9d4;margin-top:5px">{{ map.layerRule }}</div>
+    </div>
+    <div style="margin-top:16px;display:flex;flex-direction:column;gap:6px">
+      <sc-for list="{{ map.layers }}" as="L" hint-placeholder-count="6">
+        <sc-if value="{{ L.isLine }}" hint-placeholder-val="{{ false }}">
+          <div style="margin:6px 0;padding:10px 14px;border-radius:10px;background:#1c0d12;border:1px dashed #6e2a3d;position:relative">
+            <div style="position:absolute;left:0;right:0;top:50%;height:1px;background:linear-gradient(90deg,transparent,#c14a68,transparent);opacity:.35"></div>
+            <div style="font-size:11px;font-weight:700;letter-spacing:.14em;color:#ff8aa8;text-align:center">— {{ L.name }} —</div>
+            <div style="font-size:11px;color:#b0798c;line-height:1.6;margin-top:6px">{{ L.desc }}</div>
+          </div>
+        </sc-if>
+        <sc-if value="{{ L.notLine }}" hint-placeholder-val="{{ true }}">
+          <div style="border-radius:14px;background:{{ L.tint }};border:1px solid {{ L.bd }};overflow:hidden">
+            <div onClick="{{ L.onToggle }}" style="padding:13px 15px;cursor:pointer;display:flex;justify-content:space-between;align-items:center">
+              <div>
+                <div style="font-size:14px;font-weight:700;color:{{ L.color }}">{{ L.chevron }} {{ L.name }}</div>
+                <div style="font-size:11px;color:#9a9aa6;margin-top:2px">{{ L.sub }} · {{ L.count }}</div>
+              </div>
+            </div>
+            <sc-if value="{{ L.open }}" hint-placeholder-val="{{ false }}">
+              <div style="padding:0 15px 13px">
+                <div style="font-size:12px;color:#a9a9b6;line-height:1.6;margin-bottom:10px">{{ L.desc }}</div>
+                <sc-for list="{{ L.groups }}" as="g" hint-placeholder-count="1">
+                  <sc-if value="{{ g.p }}" hint-placeholder-val="{{ false }}">
+                    <div style="font-size:10px;font-weight:700;letter-spacing:.1em;color:#77778a;margin:12px 0 6px">{{ g.p }}</div>
+                  </sc-if>
+                  <div style="display:flex;flex-direction:column;gap:5px;margin-bottom:4px">
+                    <sc-for list="{{ g.items }}" as="ai" hint-placeholder-count="6">
+                      <div onClick="{{ ai.onTap }}" style="background:#0d0d13;border:1px solid #1e1e28;border-radius:10px;padding:10px 12px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:8px">
+                        <div style="min-width:0">
+                          <div style="font-size:13px;font-weight:600;color:#e2e2ea">{{ ai.n }}</div>
+                          <div style="font-size:11px;color:#77778a;margin-top:1px">{{ ai.s }}</div>
+                        </div>
+                        <div style="color:#44445a;font-size:15px;flex:none">›</div>
+                      </div>
+                    </sc-for>
+                  </div>
+                </sc-for>
+              </div>
+            </sc-if>
+          </div>
+        </sc-if>
+      </sc-for>
+    </div>
+    <div style="font-size:11px;color:#55556a;margin-top:14px;line-height:1.6">NASAA writes almost no questions that turn on a section number. Learn the map so the architecture makes sense — not to recite citations.</div>
+  </div>
+</sc-if>
+
+<sc-if value="{{ mapItemOpen }}" hint-placeholder-val="{{ false }}">
+  <div onClick="{{ mapItem.onClose }}" style="position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:20"></div>
+  <div style="position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:480px;z-index:21;background:#14141c;border:1px solid #2a2a36;border-radius:20px 20px 0 0;padding:20px 20px 34px;max-height:70vh;overflow:auto">
+    <div style="width:36px;height:4px;border-radius:2px;background:#33333f;margin:0 auto 14px"></div>
+    <div style="font-family:'Space Grotesk';font-size:17px;font-weight:700;color:#8ab4ff">{{ mapItem.n }}</div>
+    <div style="font-size:12px;color:#9a9aa6;margin-top:3px">{{ mapItem.s }}</div>
+    <div style="font-family:'Source Serif 4',serif;font-size:14px;line-height:1.7;color:#e2e2ea;margin-top:12px">{{ mapItem.w }}</div>
+    <div style="font-size:10px;font-weight:700;letter-spacing:.1em;color:#77778a;margin-top:14px">WHERE THIS LIVES IN YOUR CHART</div>
+    <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:8px">
+      <sc-for list="{{ mapItem.cells }}" as="mc" hint-placeholder-count="3">
+        <div onClick="{{ mc.onTap }}" style="padding:6px 12px;border-radius:8px;background:#1a1a24;border:1px solid #2a2a36;font-family:'Space Grotesk';font-size:12px;font-weight:700;color:{{ mc.color }};cursor:pointer">{{ mc.id }} →</div>
+      </sc-for>
+    </div>
+  </div>
+</sc-if>
+
+<sc-if value="{{ isCheck }}" hint-placeholder-val="{{ false }}">
+  <div style="padding:16px 18px 130px">
+    <div style="display:flex;justify-content:space-between;align-items:center">
+      <div onClick="{{ check.onQuit }}" style="font-size:13px;color:#8a8a9a;cursor:pointer">‹ Back to {{ check.cellTag }}</div>
+      <div style="font-size:11px;font-weight:700;font-family:'Space Grotesk';color:{{ check.color }}">CHECKPOINT</div>
+    </div>
+    <sc-if value="{{ check.phaseQ }}" hint-placeholder-val="{{ true }}">
+      <div style="font-size:11px;font-weight:700;letter-spacing:.08em;color:#7eb8f0;margin-top:14px">{{ check.phaseLabel }}</div>
+      <div style="font-family:'Source Serif 4',serif;font-size:16px;line-height:1.6;margin-top:10px;color:#eeeef4">{{ check.q }}</div>
+      <div style="margin-top:14px;display:flex;flex-direction:column;gap:8px">
+        <sc-for list="{{ check.options }}" as="op" hint-placeholder-count="4">
+          <div onClick="{{ op.onTap }}" style="border-radius:12px;padding:12px 14px;font-size:14px;line-height:1.5;cursor:pointer;background:{{ op.bg }};border:1px solid {{ op.bd }};color:{{ op.fg }}">{{ op.t }}</div>
+        </sc-for>
+      </div>
+      <sc-if value="{{ check.showWhy }}" hint-placeholder-val="{{ false }}">
+        <div style="margin-top:12px;border-radius:12px;padding:12px 14px;background:#101016;border:1px solid #2a2a36">
+          <div style="font-size:11px;font-weight:700;color:{{ check.whyColor }}">{{ check.whyTag }}</div>
+          <div style="font-family:'Source Serif 4',serif;font-size:13px;line-height:1.6;color:#d9d9e2;margin-top:4px">{{ check.why }}</div>
+        </div>
+        <div onClick="{{ check.onNext }}" style="margin-top:10px;text-align:center;background:#e9e9ef;color:#08080b;border-radius:12px;padding:12px;font-size:13px;font-weight:700;cursor:pointer">{{ check.nextLabel }}</div>
+      </sc-if>
+    </sc-if>
+    <sc-if value="{{ check.phaseF }}" hint-placeholder-val="{{ false }}">
+      <div style="font-size:11px;font-weight:700;letter-spacing:.08em;color:#e8c37a;margin-top:14px">{{ check.phaseLabel }}</div>
+      <div style="margin-top:10px;border-radius:12px;padding:14px 16px;background:#131007;border:1px solid #2e2612">
+        <div style="font-family:'Source Serif 4',serif;font-size:16px;line-height:1.6;color:#eeeef4">{{ check.prompt }}</div>
+        <div style="font-size:12px;color:#9a8a5f;margin-top:8px">{{ check.instruction }}</div>
+      </div>
+      <sc-if value="{{ check.revealed }}" hint-placeholder-val="{{ false }}">
+        <div style="margin-top:12px;border-radius:12px;padding:14px 16px;background:#101016;border:1px solid #2a2a36">
+          <div style="font-family:'Source Serif 4',serif;font-size:14px;line-height:1.7;color:#e2e2ea">{{ check.fact }}</div>
+        </div>
+        <div style="display:flex;gap:8px;margin-top:10px">
+          <sc-for list="{{ check.onGrade }}" as="g" hint-placeholder-count="2">
+            <div onClick="{{ g.onTap }}" style="flex:1;text-align:center;padding:12px;border-radius:12px;font-size:13px;font-weight:700;cursor:pointer;background:{{ g.bg }};border:1px solid {{ g.bd }};color:{{ g.fg }}">{{ g.t }}</div>
+          </sc-for>
+        </div>
+      </sc-if>
+      <sc-if value="{{ check.notRevealed }}" hint-placeholder-val="{{ true }}">
+        <div onClick="{{ check.onReveal }}" style="margin-top:12px;text-align:center;background:#e9e9ef;color:#08080b;border-radius:12px;padding:13px;font-size:14px;font-weight:700;cursor:pointer">Reveal the fact</div>
+      </sc-if>
+    </sc-if>
+    <sc-if value="{{ check.phaseDone }}" hint-placeholder-val="{{ false }}">
+      <div style="text-align:center;margin-top:26px">
+        <div style="font-size:12px;color:#9a9aa6;letter-spacing:.1em">{{ check.cellTag }} — GRADED FOR YOU</div>
+        <div style="display:flex;gap:10px;margin-top:16px">
+          <div style="flex:1;background:#101016;border:1px solid #22222c;border-radius:14px;padding:16px">
+            <div style="font-size:11px;color:#7eb8f0;font-weight:700">◆ CONCEPTS</div>
+            <div style="font-family:'Space Grotesk';font-size:24px;font-weight:700;margin-top:6px;color:{{ check.cColor }}">{{ check.cMark }}</div>
+          </div>
+          <div style="flex:1;background:#101016;border:1px solid #22222c;border-radius:14px;padding:16px">
+            <div style="font-size:11px;color:#e8c37a;font-weight:700">● FACTS</div>
+            <div style="font-family:'Space Grotesk';font-size:24px;font-weight:700;margin-top:6px;color:{{ check.fColor }}">{{ check.fMark }}</div>
+          </div>
+        </div>
+        <div style="font-family:'Source Serif 4',serif;font-size:14px;line-height:1.65;color:#c9c9d4;margin-top:16px;text-align:left;background:#101016;border:1px solid #22222c;border-radius:12px;padding:14px 16px">{{ check.rx }}</div>
+        <div style="display:flex;gap:8px;margin-top:14px">
+          <div onClick="{{ check.onBack }}" style="flex:1;text-align:center;background:#171720;border:1px solid #2a2a36;border-radius:12px;padding:12px;font-size:13px;font-weight:600;cursor:pointer">Re-read the cell</div>
+          <div onClick="{{ check.onNextCell }}" style="flex:1;text-align:center;background:#e9e9ef;color:#08080b;border-radius:12px;padding:12px;font-size:13px;font-weight:700;cursor:pointer">Next cell →</div>
+        </div>
+      </div>
+    </sc-if>
+  </div>
+</sc-if>
+
+<sc-if value="{{ isWalk }}" hint-placeholder-val="{{ false }}">
+  <div style="padding:16px 18px 130px">
+    <sc-if value="{{ walk.notDone }}" hint-placeholder-val="{{ true }}">
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <div onClick="{{ walk.onExit }}" style="font-size:13px;color:#8a8a9a;cursor:pointer">✕ Leave the palace</div>
+        <div style="font-size:12px;color:#9a9aa6">{{ walk.progress }}</div>
+      </div>
+      <div style="margin-top:16px;border-radius:16px;padding:18px;background:#12101a;border:1px solid #2b2440">
+        <div style="font-size:10px;font-weight:700;letter-spacing:.12em;color:#77708f">{{ walk.room }}</div>
+        <div style="font-family:'Space Grotesk';font-size:19px;font-weight:700;color:#b8a3f0;margin-top:3px;text-transform:capitalize">{{ walk.spot }}</div>
+        <div style="font-family:'Source Serif 4',serif;font-style:italic;font-size:15px;line-height:1.7;color:#d5cbee;margin-top:12px">{{ walk.img }}</div>
+      </div>
+      <div style="font-size:13px;color:#9a9aa6;margin-top:12px;line-height:1.6">{{ walk.ask }}</div>
+      <sc-if value="{{ walk.revealed }}" hint-placeholder-val="{{ false }}">
+        <div style="margin-top:14px;border-radius:12px;padding:14px 16px;background:#101016;border:1px solid #2a2a36">
+          <div style="display:flex;align-items:baseline;gap:8px">
+            <span style="font-family:'Space Grotesk';font-size:12px;font-weight:700;color:{{ walk.color }}">{{ walk.cellTag }}</span>
+            <span style="font-size:13px;font-weight:600">{{ walk.cellTitle }}</span>
+          </div>
+          <div style="font-family:'Source Serif 4',serif;font-size:14px;line-height:1.7;color:#e2e2ea;margin-top:8px">{{ walk.core }}</div>
+          <div onClick="{{ walk.onOpen }}" style="font-size:12px;color:#8ab4ff;margin-top:8px;cursor:pointer">Open the full cell →</div>
+        </div>
+        <div style="font-size:11px;color:#77778a;margin-top:12px">How was your recall?</div>
+        <div style="display:flex;gap:8px;margin-top:8px">
+          <sc-for list="{{ walk.grades }}" as="g" hint-placeholder-count="3">
+            <div onClick="{{ g.onTap }}" style="flex:1;text-align:center;padding:12px;border-radius:12px;font-size:13px;font-weight:700;cursor:pointer;background:{{ g.bg }};border:1px solid {{ g.bd }};color:{{ g.fg }}">{{ g.t }}</div>
+          </sc-for>
+        </div>
+      </sc-if>
+      <sc-if value="{{ walk.notRevealed }}" hint-placeholder-val="{{ true }}">
+        <div onClick="{{ walk.onReveal }}" style="margin-top:14px;text-align:center;background:#e9e9ef;color:#08080b;border-radius:12px;padding:13px;font-size:14px;font-weight:700;cursor:pointer">Reveal what lives here</div>
+      </sc-if>
+    </sc-if>
+    <sc-if value="{{ walk.done }}" hint-placeholder-val="{{ false }}">
+      <div style="text-align:center;margin-top:40px">
+        <div style="font-size:40px">🏛</div>
+        <div style="font-family:'Space Grotesk';font-size:20px;font-weight:700;margin-top:10px">{{ walk.title }}</div>
+        <div style="font-size:13px;color:#b8a3f0;margin-top:8px">{{ walk.verdict }}</div>
+        <div style="font-size:13px;color:#9a9aa6;margin-top:6px;line-height:1.6">{{ walk.summary }}</div>
+        <div onClick="{{ walk.onExit }}" style="margin-top:18px;text-align:center;background:#e9e9ef;color:#08080b;border-radius:12px;padding:13px;font-size:14px;font-weight:700;cursor:pointer">Back</div>
+      </div>
+    </sc-if>
+  </div>
+</sc-if>
+
+<sc-if value="{{ isSim }}" hint-placeholder-val="{{ false }}">
+  <div style="padding:16px 18px 130px">
+    <div onClick="{{ sim.onBack }}" style="font-size:13px;color:#8a8a9a;cursor:pointer;padding:4px 0">‹ Back</div>
+    <sc-if value="{{ sim.picking }}" hint-placeholder-val="{{ true }}">
+      <div style="font-family:'Space Grotesk';font-size:20px;font-weight:700;margin-top:8px">⚖ {{ sim.title }}</div>
+      <div style="font-size:12px;color:#9a9aa6;margin-top:4px;line-height:1.5">You are the state securities Administrator. Choose the action, the statute, and the remedy — and see what getting it wrong costs.</div>
+      <div style="margin-top:14px;display:flex;flex-direction:column;gap:10px">
+        <sc-for list="{{ sim.cases }}" as="cs" hint-placeholder-count="4">
+          <div onClick="{{ cs.onTap }}" style="background:#101016;border:1px solid #22222c;border-radius:14px;padding:15px 16px;cursor:pointer;display:flex;justify-content:space-between;align-items:center">
+            <div style="font-size:14px;font-weight:600">{{ cs.name }}</div>
+            <div style="color:#55556a;font-size:18px">›</div>
+          </div>
+        </sc-for>
+      </div>
+    </sc-if>
+    <sc-if value="{{ sim.notPicking }}" hint-placeholder-val="{{ false }}">
+      <div style="font-family:'Space Grotesk';font-size:17px;font-weight:700;margin-top:8px">{{ sim.title }}</div>
+      <div style="font-size:11px;color:#77778a;margin-top:2px">{{ sim.progress }}</div>
+      <div style="font-family:'Source Serif 4',serif;font-size:14px;line-height:1.7;color:#d9d9e2;margin-top:10px;background:#101016;border:1px solid #22222c;border-radius:12px;padding:14px">{{ sim.facts }}</div>
+      <sc-if value="{{ sim.inStep }}" hint-placeholder-val="{{ true }}">
+        <div style="font-size:14px;font-weight:600;margin-top:14px">{{ sim.prompt }}</div>
+        <div style="margin-top:10px;display:flex;flex-direction:column;gap:8px">
+          <sc-for list="{{ sim.options }}" as="op" hint-placeholder-count="3">
+            <div onClick="{{ op.onTap }}" style="border-radius:12px;padding:12px 14px;font-size:13px;line-height:1.5;cursor:pointer;background:{{ op.bg }};border:1px solid {{ op.bd }};color:{{ op.fg }}">{{ op.t }}</div>
+          </sc-for>
+        </div>
+        <sc-if value="{{ sim.showFb }}" hint-placeholder-val="{{ false }}">
+          <div style="margin-top:12px;border-radius:12px;padding:12px 14px;background:#101016;border:1px solid #2a2a36">
+            <div style="font-size:11px;font-weight:700;color:{{ sim.fbColor }}">{{ sim.fbTag }}</div>
+            <div style="font-family:'Source Serif 4',serif;font-size:13px;line-height:1.6;color:#d9d9e2;margin-top:4px">{{ sim.fb }}</div>
+          </div>
+          <div onClick="{{ sim.onNext }}" style="margin-top:10px;text-align:center;background:#e9e9ef;color:#08080b;border-radius:12px;padding:12px;font-size:13px;font-weight:700;cursor:pointer">{{ sim.nextLabel }}</div>
+        </sc-if>
+      </sc-if>
+      <sc-if value="{{ sim.finished }}" hint-placeholder-val="{{ false }}">
+        <div style="margin-top:14px;border-radius:12px;padding:14px 16px;background:#0a1510;border:1px solid #1e3a2c">
+          <div style="font-size:13px;font-weight:700;color:#7ee0a8">{{ sim.verdict }}</div>
+          <div style="font-family:'Source Serif 4',serif;font-size:13px;line-height:1.65;color:#c9d8ce;margin-top:6px">{{ sim.close }}</div>
+        </div>
+        <div onClick="{{ sim.onBack }}" style="margin-top:12px;text-align:center;background:#e9e9ef;color:#08080b;border-radius:12px;padding:12px;font-size:13px;font-weight:700;cursor:pointer">Back to the case files</div>
+      </sc-if>
+    </sc-if>
+  </div>
+</sc-if>
+
+<sc-if value="{{ isQuiz }}" hint-placeholder-val="{{ false }}">
+  <div style="padding:16px 18px 130px">
+    <div style="display:flex;justify-content:space-between;align-items:center">
+      <div onClick="{{ quiz.onQuit }}" style="font-size:13px;color:#8a8a9a;cursor:pointer">✕ End</div>
+      <div style="font-size:12px;color:#9a9aa6">{{ quiz.progress }}</div>
+      <div style="font-size:13px;font-weight:700;font-family:'Space Grotesk';color:{{ quiz.timerColor }}">{{ quiz.timer }}</div>
+    </div>
+    <div style="margin-top:6px;height:4px;border-radius:2px;background:#1c1c26"><div style="height:100%;border-radius:2px;background:{{ quiz.barColor }};width:{{ quiz.barPct }};transition:width .3s"></div></div>
+    <div style="margin-top:16px;display:inline-block;font-size:11px;font-weight:700;font-family:'Space Grotesk';color:{{ quiz.cellColor }};background:#14141c;border:1px solid #26262e;border-radius:6px;padding:3px 8px">{{ quiz.cellTag }}</div>
+    <div style="font-family:'Source Serif 4',serif;font-size:17px;line-height:1.6;margin-top:12px;color:#eeeef4">{{ quiz.q }}</div>
+    <div style="margin-top:16px;display:flex;flex-direction:column;gap:8px">
+      <sc-for list="{{ quiz.options }}" as="op" hint-placeholder-count="4">
+        <div onClick="{{ op.onTap }}" style="border-radius:12px;padding:13px 14px;font-size:14px;line-height:1.5;cursor:pointer;background:{{ op.bg }};border:1px solid {{ op.bd }};color:{{ op.fg }}">{{ op.t }}</div>
+      </sc-for>
+    </div>
+    <sc-if value="{{ quiz.showWhy }}" hint-placeholder-val="{{ false }}">
+      <div style="margin-top:14px;border-radius:12px;padding:13px 15px;background:{{ quiz.whyBg }};border:1px solid {{ quiz.whyBd }}">
+        <div style="font-size:11px;font-weight:700;letter-spacing:.08em;color:{{ quiz.whyTagColor }}">{{ quiz.whyTag }}</div>
+        <div style="font-family:'Source Serif 4',serif;font-size:14px;line-height:1.65;margin-top:5px;color:#e2e2ea">{{ quiz.why }}</div>
+        <div onClick="{{ quiz.onOpenCell }}" style="font-size:12px;color:#8ab4ff;margin-top:8px;cursor:pointer">Read {{ quiz.cellTag }} →</div>
+      </div>
+      <div onClick="{{ quiz.onNext }}" style="margin-top:12px;text-align:center;background:#e9e9ef;color:#08080b;border-radius:12px;padding:13px;font-size:14px;font-weight:700;cursor:pointer">{{ quiz.nextLabel }}</div>
+    </sc-if>
+  </div>
+</sc-if>
+
+<sc-if value="{{ isResults }}" hint-placeholder-val="{{ false }}">
+  <div style="padding:24px 18px 130px;text-align:center">
+    <div style="font-size:12px;color:#9a9aa6;letter-spacing:.1em">{{ results.kind }}</div>
+    <div style="font-family:'Space Grotesk';font-size:52px;font-weight:700;margin-top:10px;color:{{ results.color }}">{{ results.score }}</div>
+    <div style="font-size:14px;font-weight:600;margin-top:4px">{{ results.verdict }}</div>
+    <div style="font-size:12px;color:#9a9aa6;margin-top:6px;line-height:1.5">{{ results.detail }}</div>
+    <div style="margin-top:20px;text-align:left;display:flex;flex-direction:column;gap:6px">
+      <sc-for list="{{ results.breakdown }}" as="br" hint-placeholder-count="8">
+        <div style="display:flex;align-items:center;gap:10px;background:#101016;border:1px solid #22222c;border-radius:10px;padding:9px 13px">
+          <span style="font-family:'Space Grotesk';font-size:11px;font-weight:700;color:{{ br.color }};width:36px">{{ br.code }}</span>
+          <div style="flex:1;height:4px;border-radius:2px;background:#1c1c26"><div style="height:100%;border-radius:2px;background:{{ br.color }};width:{{ br.pct }}"></div></div>
+          <span style="font-size:12px;color:#9a9aa6">{{ br.label }}</span>
+        </div>
+      </sc-for>
+    </div>
+    <div onClick="{{ results.onDone }}" style="margin-top:18px;text-align:center;background:#e9e9ef;color:#08080b;border-radius:12px;padding:13px;font-size:14px;font-weight:700;cursor:pointer">Back to Drill</div>
+  </div>
+</sc-if>
+
+<sc-if value="{{ sheetOpen }}" hint-placeholder-val="{{ false }}">
+  <div onClick="{{ sheet.onClose }}" style="position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:20"></div>
+  <div style="position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:480px;z-index:21;background:#14141c;border:1px solid #2a2a36;border-radius:20px 20px 0 0;padding:20px 20px 34px">
+    <div style="width:36px;height:4px;border-radius:2px;background:#33333f;margin:0 auto 14px"></div>
+    <div style="font-family:'Space Grotesk';font-size:16px;font-weight:700;color:#8ab4ff">{{ sheet.term }}</div>
+    <div style="font-size:11px;color:#77778a;margin-top:2px">{{ sheet.kind }}</div>
+    <div style="font-family:'Source Serif 4',serif;font-size:14px;line-height:1.7;color:#e2e2ea;margin-top:10px">{{ sheet.body }}</div>
+  </div>
+</sc-if>
+
+<sc-if value="{{ syncOpen }}" hint-placeholder-val="{{ false }}">
+  <div onClick="{{ sync.onClose }}" style="position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:20"></div>
+  <div style="position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:480px;z-index:21;background:#14141c;border:1px solid #2a2a36;border-radius:20px 20px 0 0;padding:20px 20px 34px;max-height:75vh;overflow:auto">
+    <div style="width:36px;height:4px;border-radius:2px;background:#33333f;margin:0 auto 14px"></div>
+    <div style="font-family:'Space Grotesk';font-size:16px;font-weight:700">⇅ Progress transfer</div>
+    <div style="font-size:12px;color:#9a9aa6;margin-top:4px;line-height:1.55">Your progress lives on this device only. To move it between the home-screen app and the offline file: copy the code here, open the other copy, paste it there.</div>
+    <div onClick="{{ sync.onCopy }}" style="margin-top:12px;text-align:center;background:#e9e9ef;color:#08080b;border-radius:12px;padding:12px;font-size:13px;font-weight:700;cursor:pointer">Copy my progress code</div>
+    <textarea readonly style="width:100%;margin-top:8px;height:64px;background:#0d0d13;border:1px solid #22222c;border-radius:10px;color:#77778a;font-size:10px;padding:8px;font-family:monospace;box-sizing:border-box">{{ sync.code }}</textarea>
+    <div style="font-size:11px;font-weight:700;letter-spacing:.08em;color:#77778a;margin-top:14px">RESTORE FROM A CODE</div>
+    <textarea value="{{ sync.inVal }}" onChange="{{ sync.onIn }}" placeholder="Paste a progress code here" style="width:100%;margin-top:6px;height:64px;background:#0d0d13;border:1px solid #22222c;border-radius:10px;color:#c9c9d4;font-size:10px;padding:8px;font-family:monospace;box-sizing:border-box"></textarea>
+    <div onClick="{{ sync.onApply }}" style="margin-top:8px;text-align:center;background:#171720;border:1px solid #2a2a36;border-radius:12px;padding:11px;font-size:13px;font-weight:600;cursor:pointer">Apply — replace this copy’s progress</div>
+    <div style="font-size:12px;color:#7ee0a8;margin-top:8px;min-height:16px">{{ sync.msg }}</div>
+  </div>
+</sc-if>
+
+<sc-if value="{{ voicesOpen }}" hint-placeholder-val="{{ false }}">
+  <div onClick="{{ closeVoices }}" style="position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:20"></div>
+  <div style="position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:480px;z-index:21;background:#14141c;border:1px solid #2a2a36;border-radius:20px 20px 0 0;padding:20px 20px 34px;max-height:60vh;overflow:auto">
+    <div style="width:36px;height:4px;border-radius:2px;background:#33333f;margin:0 auto 14px"></div>
+    <div style="font-family:'Space Grotesk';font-size:16px;font-weight:700">Narration voice</div>
+    <div style="margin-top:12px;display:flex;flex-direction:column;gap:6px">
+      <sc-for list="{{ voiceList }}" as="v" hint-placeholder-count="6">
+        <div onClick="{{ v.onTap }}" style="display:flex;justify-content:space-between;align-items:center;border-radius:10px;padding:11px 13px;cursor:pointer;background:{{ v.bg }};border:1px solid {{ v.bd }}">
+          <span style="font-size:13px;font-weight:500">{{ v.name }}</span>
+          <span style="font-size:11px;color:#77778a">{{ v.tag }}</span>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</sc-if>
+
+<div style="position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:480px;z-index:10;background:rgba(10,10,14,.94);backdrop-filter:blur(14px);border-top:1px solid #1c1c26;display:flex;padding:6px 0 calc(8px + env(safe-area-inset-bottom))">
+  <sc-for list="{{ navItems }}" as="n" hint-placeholder-count="3">
+    <div onClick="{{ n.onTap }}" style="flex:1;text-align:center;cursor:pointer;padding:6px 0">
+      <div style="font-size:17px;line-height:1;color:{{ n.color }}">{{ n.icon }}</div>
+      <div style="font-size:10px;font-weight:600;margin-top:3px;color:{{ n.color }}">{{ n.t }}</div>
+    </div>
+  </sc-for>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;430px&quot;,&quot;height&quot;:&quot;900px&quot;},&quot;examDate&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;2026-08-10T09:00:00-04:00&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Exam&quot;},&quot;passTarget&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:90,&quot;min&quot;:50,&quot;max&quot;:90,&quot;step&quot;:1,&quot;unit&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Exam&quot;}}">
+class Component extends DCLogic {
+  state = { view:'home', ch:null, cellId:null, memoCh:null, book:null, sheet:null, voicesOpen:false, voices:[], session:null, tick:0,
+    tts:{playing:false, item:-1, word:-1, contPlay:false}, memoOpen:{}, store:null };
+
+  componentDidMount(){
+    let store={cells:{},missed:{},mocks:[],settings:{rate:1,voice:null}};
+    try{ const raw=localStorage.getItem('s63_coach'); if(raw) store=Object.assign(store,JSON.parse(raw)); }catch(e){}
+    this.setState({store});
+    if(window.TEXTBOOK) this.setState({book:window.TEXTBOOK});
+    else fetch('content/textbook.json').then(r=>r.json()).then(book=>this.setState({book}));
+    const loadV=()=>{ const vs=(speechSynthesis.getVoices()||[]).filter(v=>v.lang&&v.lang.startsWith('en')); this.setState({voices:vs}); };
+    loadV(); if(typeof speechSynthesis!=='undefined') speechSynthesis.onvoiceschanged=loadV;
+    this._iv=setInterval(()=>this.setState(s=>({tick:s.tick+1})),1000);
+    window.addEventListener('beforeunload',()=>{ try{speechSynthesis.cancel();}catch(e){} });
+  }
+  componentWillUnmount(){ clearInterval(this._iv); try{speechSynthesis.cancel();}catch(e){} }
+
+  save(){ try{ localStorage.setItem('s63_coach', JSON.stringify(this.state.store)); }catch(e){} this.forceUpdate(); }
+
+  META(){ return {
+    SEC:{name:'Securities & Issuers',actor:'THE INSTRUMENT',hue:150,w:9,q:5},
+    BDR:{name:'Broker-Dealers',actor:'THE FIRM',hue:265,w:12,q:7},
+    AGT:{name:'Agents of Broker-Dealers',actor:'THE INDIVIDUAL REP',hue:195,w:13,q:8},
+    IAD:{name:'Investment Advisers',actor:'THE ADVISORY FIRM',hue:330,w:5,q:3},
+    IAR:{name:'Adviser Representatives',actor:'THE ADVISORY INDIVIDUAL',hue:35,w:5,q:3},
+    COM:{name:'Customer Communications',actor:'THE PAPERWORK & THE PITCH',hue:220,w:20,q:12},
+    ETH:{name:'Ethical Practices & Fraud',actor:'THE CONDUCT ITSELF',hue:0,w:25,q:15},
+    REM:{name:'Remedies & Administration',actor:'THE ADMINISTRATOR',hue:85,w:11,q:7} }; }
+  hue(code,l,c,a){ const h=this.META()[code].hue; return a!=null?`oklch(${l}% ${c} ${h} / ${a})`:`oklch(${l}% ${c} ${h})`; }
+
+  LAWS(){ return {
+    '§101':['USA §101 — Antifraud (sales & purchases)','Makes it unlawful for ANY person, in connection with the offer, sale, or purchase of ANY security, to employ a device to defraud, make untrue statements or misleading omissions of material fact, or engage in acts that operate as a fraud. Applies to exempt securities, exempt transactions, and federal covered securities — nothing escapes it.'],
+    '§102':['USA §102 — Advisory activities','The adviser-conduct spine, five subsections: (a) dishonest or unethical conduct, (b) solicitation of clients, (c) advisory contracts, (d) compensation, (e) custody. Reaches people EXCLUDED from the adviser definition too.'],
+    '§201':['USA §201 — Registration requirement','The gate: unlawful to transact business as a broker-dealer, agent, investment adviser, or IAR unless registered or exempt. Where every "must they register?" question starts.'],
+    '§202':['USA §202 — Registration procedure','How a person registers: (a) application and NOON-ON-THE-30TH-DAY effectiveness, (b) federal covered adviser notice filing, (c) fees, (d) successor firms, (e) minimum capital, (f) surety bonds.'],
+    '§203':['USA §203 — Post-registration provisions','What registrants must keep doing: books and records (never more than the SEC requires), financial reports, net capital, bonds. Registrations expire DECEMBER 31; withdrawal is effective in 30 days and jurisdiction survives one year after.'],
+    '§204':['USA §204 — Denial, suspension, revocation','The discipline section for PERSONS: requires public interest PLUS an enumerated cause (willful violation, 10-year felony/securities misdemeanor lookback, insolvency, unethical practices). Lack of experience alone is never enough.'],
+    '§301':['USA §301 — Securities registration requirement','Unlawful to offer or sell a security in the state unless it is registered, exempt, or federal covered. The securities mirror of §201.'],
+    '§302':['USA §302 — Registration by notification (filing)','The streamlined registration path for seasoned issuers with an earnings history — rarely used, but a live distractor. Note: the federal covered ADVISER notice filing is §202(b); the federal covered SECURITY notice filing is a separate Part III mechanism.'],
+    '§303':['USA §303 — Registration by coordination','For offerings simultaneously registered with the SEC. State effectiveness happens automatically at the same moment as federal effectiveness.'],
+    '§304':['USA §304 — Registration by qualification','The state-only route (e.g., intrastate offerings). Most demanding disclosure, and effective only when the Administrator says so.'],
+    '§305':['USA §305 — Registration provisions','Housekeeping for securities registrations: who may file, one-year effectiveness, escrow and impoundment powers, quarterly reports.'],
+    '§306':['USA §306 — Stop orders','Lets the Administrator deny, suspend, or revoke a securities registration — only with notice, opportunity for hearing, and written findings.'],
+    '§401':['USA §401 — Definitions','The dictionary: broker-dealer, agent, investment adviser, security, sale, offer, guaranteed, person. Half the exam is this section wearing a costume.'],
+    '§402':['USA §402 — Exemptions','The two escape lists: exempt SECURITIES (what it is) and exempt TRANSACTIONS (how it is sold). Neither ever exempts anyone from the antifraud rules.'],
+    '§403':['USA §403 — Sales literature filing','Lets the Administrator require filing of prospectuses, pamphlets, and advertising — except for exempt and federal covered securities.'],
+    '§404':['USA §404 — Misleading filings','Unlawful to make an untrue statement of material fact in any document filed with the Administrator.'],
+    '§405':['USA §405 — Unlawful representations','Registration NEVER means approval. Claiming the Administrator approved, verified, or vouched for a registration is itself a violation.'],
+    '§406':['USA §406 — Administration','Creates the Administrator\u2019s office, bars using confidential info for personal gain.'],
+    '§407':['USA §407 — Investigations & subpoenas','Investigate anyone, in or out of state, public or private; subpoena witnesses and records; compelled testimony gets use immunity.'],
+    '§408':['USA §408 — Enforcement','Cease and desist orders (no prior hearing needed) and applications to a COURT for injunctions and receivers — the Administrator can never jail anyone itself.'],
+    '§409':['USA §409 — Criminal penalties','Up to a $5,000 fine and/or 3 years imprisonment; 5-year statute of limitations; no prison for violating a rule or order the person proves they did not know of.'],
+    '§410':['USA §410 — Civil liabilities','The rescission section: buyer recovers price + interest + costs and attorney fees − income received. Sue within the EARLIER of 3 years from the violation or 2 years from discovery. 30 days to accept a rescission offer.'],
+    '§411':['USA §411 — Judicial review','Appeal a final order to court within 60 days. Filing does not stay the order.'],
+    '§412':['USA §412 — Rules, forms, orders and hearings','The Administrator\u2019s rulemaking power and its limits — including the GOOD-FAITH RELIANCE defense protecting a person who acted on a rule or order later amended or held invalid.'],
+    '§413':['USA §413 — Administrative files and opinions','The public register of filings and orders, and interpretive opinions. Not the Administrator\u2019s office — that is §406.'],
+    '§415':['USA §415 — Statutory policy','Directs that the Act be construed to coordinate with federal law and make state regulation uniform — the reasoning behind every preemption answer.'],
+    '§204':['USA §204 — Denial, suspension, revocation','The discipline section for persons: public interest PLUS an enumerated cause, due process, and the non-punitive endings (cancellation, withdrawal). Lack of experience alone is never enough.'],
+    '§414':['USA §414 — Scope & consent to service','When the Act applies (offers made or accepted in the state) and the consent to service of process — filed once, irrevocable.'],
+    'Howey':['SEC v. W.J. Howey Co. (1946)','The Supreme Court test for an investment contract: (1) an investment of money (2) in a common enterprise (3) with an expectation of profits (4) derived primarily from the efforts of others. All four prongs required.'],
+    'NSMIA':['NSMIA (1996)','The federal law that split the world: created FEDERAL COVERED advisers and securities, and capped state requirements (capital, records, bonds) at the federal level. Why states only get notice filings from big players.'],
+    'Rule 506':['Regulation D, Rule 506','The federal private placement exemption (up to 35 non-accredited investors, unlimited accredited). Rule 506 securities are FEDERAL COVERED — states may only require a notice filing.'],
+    'Regulation D':['Regulation D','The SEC\u2019s private-offering safe harbors under the 1933 Act. Rule 506 is the one that matters here: its offerings are federal covered.'],
+    'Regulation T':['Regulation T','The Federal Reserve rule setting INITIAL margin: 50% on equity purchases. (25% is the SRO maintenance minimum — a different rule.)'],
+    'Reg T':['Regulation T','The Federal Reserve rule setting INITIAL margin: 50% on equity purchases. (25% is the SRO maintenance minimum.)'],
+    'SIPC':['SIPC','Securities Investor Protection Corp: covers customers of a FAILED broker-dealer up to $500,000 (max $250,000 cash) per separate customer. Never covers market losses, futures, or fixed annuities.'],
+    'FINRA 2210':['FINRA Rule 2210 — Communications','Sorts communications into correspondence (≤25 retail/30 days), retail communication (>25, needs principal approval), and institutional. NASAA names it as testable.'],
+    'Form ADV':['Form ADV','The investment adviser registration form. Part 1 = registration data; Part 2 = the plain-English brochure delivered to clients (48-hour rule).'],
+    'Form BD':['Form BD','The broker-dealer registration application filed with the SEC, states, and SROs.'],
+    'Form U4':['Form U4','The individual registration form filed by the employing firm for agents and IARs; discloses history and discipline.'],
+    'Form BDW':['Form BDW','The broker-dealer withdrawal form — effective in 30 days; the Administrator keeps jurisdiction for one year.'],
+    '12b-1':['12b-1 fee','An ongoing distribution fee charged inside a mutual fund. Above 0.25%, the fund may NOT call itself "no load."'],
+    '1933 Act':['Securities Act of 1933','Federal law governing NEW ISSUES: registration and prospectus delivery. Coordination pairs a state filing with a 1933 Act registration.'],
+    'Securities Act of 1933':['Securities Act of 1933','Federal law governing NEW ISSUES: registration and prospectus delivery. Coordination pairs a state filing with a 1933 Act registration.']
+  }; }
+
+  FRAMES(){ return {
+    'SEC-1':{head:'"Is this a security?" — the answer framework',intro:'Every question in this territory yields to the same three filters, run in order:',bullets:[
+      ['Does the instrument match a USA §401(m) enumerated category?','Stock, bond, note, debenture, warrant, transferable share, voting-trust certificate, etc. → yes, it\u2019s a security. Done.'],
+      ['If it\u2019s not enumerated, does it satisfy the Howey test?','Investment of money + common enterprise + expectation of profits + derived from the efforts of others. All four prongs → investment contract → security.'],
+      ['Is it specifically excluded?','Fixed annuities, fixed insurance, commodity futures, physical commodities and collectibles held directly, bank deposit products, and direct real estate ownership are NOT securities.']],
+      tail:'The two patterns that pay: fixed vs. variable annuity (variable = security; fixed = insurance) and the orange grove / racehorse / oil well novelty question — run Howey, and four for four means security.'},
+    'BDR-2':{head:'"Must the FIRM register here?" — the answer framework',intro:'Run three filters, in order, for the state in the question:',bullets:[
+      ['Is it even a broker-dealer?','Agents, issuers, and banks/savings institutions/trust companies are excluded from the definition entirely. Excluded means no registration analysis ever begins.'],
+      ['Does it have a place of business in the state?','Any office, or any location held out to the public. If yes → register. Full stop. Clients don\u2019t matter.'],
+      ['No office — who are the in-state clients?','Exclusively institutions and other BDs → not a BD in that state. Existing clients temporarily present → snowbird rule. ONE resident retail customer → register.']],
+      tail:'The trap that pays: there is NO de minimis number for broker-dealers. The IA "fewer than 6" rule never applies to a firm effecting trades.'},
+    'AGT-1':{head:'"Is this individual an agent?" — the five-filter walkthrough',intro:'Run the filters in order; the first one that answers, answers:',bullets:[
+      ['Is it an individual?','Firms are never agents. A "person" who is an entity is a BD, IA, or issuer — not an agent.'],
+      ['Whom do they represent?','A BD or an issuer. Representing no one in a securities transaction = not an agent.'],
+      ['Are they effecting or attempting to effect trades?','Taking orders, soliciting, discussing merits — yes. Purely clerical or ministerial work — no.'],
+      ['Representing an ISSUER: does an escape hatch apply?','Exempt securities · exempt transactions · sales to the issuer\u2019s own employees/partners/directors with NO commission → not an agent.'],
+      ['Representing a BD: no escape hatches exist.','Selling even US Treasuries for a BD makes the individual an agent. The exempt-security escape belongs to issuer reps only.']],
+      tail:'The swap the exam loves: same person, same municipal bond — agent if the employer is a BD, not an agent if the employer is the issuer.'},
+    'IAD-1':{head:'"Is this an investment adviser?" — the answer framework',intro:'Three prongs, then two escape lists, then the dollar lines:',bullets:[
+      ['The ABC test — all three prongs required.','Advice about securities + as a Business + for Compensation. Any economic benefit counts, direct or indirect.'],
+      ['Excluded?','LATE professionals (Lawyer, Accountant, Teacher, Engineer) with solely incidental advice and no special compensation · banks · BDs without special compensation · bona fide publishers · US-government-securities-only advisers.'],
+      ['Special compensation kills every exclusion.','A separate fee for the advice — a wrap fee, a planning fee — and the excluded person becomes an adviser.'],
+      ['Then, where does the FIRM register?','Under $100M AUM → state. $100–110M → choice. $110M+ → SEC (federal covered; states get a notice filing only). Below $90M → back to the states.']],
+      tail:'Advisers to registered investment companies are federal covered at ANY size — the exam plants small fund advisers to catch the AUM-only reflex.'},
+    'IAR-2':{head:'"Where does the HUMAN register?" — the answer framework',intro:'The IAR rule is the mirror image of the firm rule. Two questions:',bullets:[
+      ['Is the firm federal covered or state-registered?','Federal covered firm → the FIRM only notice files, but its IAR registers with any state where the IAR has a place of business.'],
+      ['Does the IAR have a place of business in the state?','Office there → register there, always. No office → de minimis relief (fewer than 6 retail clients) usually applies.']],
+      tail:'Big firm, small filing; small human, real registration. If the stem says the IAR "works from an office in State X," the answer almost always includes registering in X.'},
+    'COM-6':{head:'"Is the recommendation suitable?" — the answer framework',intro:'Two duties stack, in order:',bullets:[
+      ['Reasonable-basis suitability — know the SECURITY.','The rep must understand the product\u2019s risks and costs well enough to believe it could be suitable for someone.'],
+      ['Customer-specific suitability — know the CUSTOMER.','Objectives, time horizon, finances, tax status, risk tolerance from the profile. A suitable product for the wrong customer is still a violation.'],
+      ['No profile?','If the customer refuses financial information, the firm may accept unsolicited orders but recommendations become nearly impossible to justify.']],
+      tail:'Profit does not cure unsuitability and loss does not prove it — the violation is the mismatch at the time of the recommendation.'},
+    'ETH-1':{head:'"Fraud, prohibited practice, or permitted?" — the answer framework',intro:'Sort every conduct question into one of three buckets:',bullets:[
+      ['FRAUD (§101) — deception in connection with an offer, sale, or purchase.','Untrue statements, misleading omissions of material fact, schemes to defraud. Applies to ANY person, ANY security, ANY transaction — no exemption ever reaches it.'],
+      ['PROHIBITED PRACTICE — dishonest or unethical conduct without deception.','Churning, unsuitable recommendations, borrowing from clients, selling away, guarantees against loss, commingling. Grounds for discipline even when no one was deceived.'],
+      ['PERMITTED — the narrow carve-outs.','Profit-sharing proportionate to contribution with dual written consent (BD agents only) · borrowing from a client that is a bank · discussing risk honestly.']],
+      tail:'When two answers both look "wrong," pick the one involving deception — the exam grades fraud as the more serious and more specific answer.'},
+    'REM-3':{head:'"Can the Administrator do this?" — the answer framework',intro:'Three checks decide every powers question:',bullets:[
+      ['Discipline needs BOTH prongs.','Public interest AND an enumerated cause (willful violation, 10-year felony/securities-misdemeanor lookback, insolvency, unethical practice). Either alone fails. Lack of experience alone NEVER qualifies.'],
+      ['Only a COURT can…','issue an injunction, appoint a receiver, or imprison anyone. The Administrator applies to the court for those.'],
+      ['Everything else needs due process.','Notice, opportunity for a hearing (within 15 days of written request), written findings — except a cease & desist, which may issue first and be heard later.']],
+      tail:'If an answer choice has the Administrator jailing, enjoining, or acting on "public interest" alone, it is wrong before you finish reading it.'} }; }
+  LOCI(){ return {
+    SEC:{room:'The Vault',spots:[
+      ['the vault door','An orange tree grows straight through the door, dollar bills ripening on its branches — and someone ELSE picks them.'],
+      ['the granite statue','A granite statue of a fixed annuity holds an umbrella over the insurer. Anything where the ISSUER holds the risk stays outside the vault.'],
+      ['the gift counter','A box marked FREE snaps shut like a mousetrap — value moved with it, so the "gift" was a sale.'],
+      ['the deposit boxes','A shelf of passports pre-stamped EXEMPT — born exempt, they travel exempt through every trade, forever.'],
+      ['the velvet rope','A bouncer counts exactly TEN retail faces in twelve months. Institutions stroll past the rope uncounted.'],
+      ['the security camera','A federal eagle perches on the camera — Washington covers the security, but the state can still arrest anyone who lies about it.'],
+      ['the three inner doors','An express door wired to open the instant Washington\u2019s does; a mail slot for notices; a heavy wheel only the keeper himself turns.'],
+      ['the wall calendar','The calendar burns itself after exactly ONE year — and the red STOP stamp beside it works only with notice, hearing, and written findings.']]},
+    BDR:{room:'The Front Office',spots:[
+      ['the name plaque','The entire BUILDING wears the name badge — in this room the firm is the person, never the human inside it.'],
+      ['the guest list','A guest list of banks and insurers only. ONE walk-in retail name and the whole list is shredded — there is no small number.'],
+      ['the doormat','A beach chair sits on the doormat — the vacationing existing client may still phone in. But hang an address in an ad, and you live here.'],
+      ['the application tray','Form BD in the tray, stapled to a notary\u2019s consent that never expires and is never filed twice.'],
+      ['the wall clock','The clock strikes NOON on day 30; confetti drops every December 31; and a one-year shadow follows anyone out the door.'],
+      ['the brass scale','Gold bars outweigh a paper bond certificate — enough net capital and the bond vanishes. A federal line is etched where the scale must stop.'],
+      ['the supply closet','An auditor steps out of the closet unannounced — from any state, at any reasonable hour.'],
+      ['the corner desk','A maple-leaf desk in the corner, serving only the clients it brought from home and their retirement accounts.']]},
+    AGT:{room:'The Sales Floor',spots:[
+      ['the headset rack','ONE live human wearing a headset stands among mannequins — only individuals can be agents.'],
+      ['the mannequin row','The mannequins file papers and read stock quotes aloud — clerks who never take an order stay mannequins.'],
+      ['the issuer\u2019s booth','THREE trapdoors under the issuer\u2019s booth: exempt security, exempt transaction, employees-with-no-commission. The BD\u2019s booth has no floor to fall through.'],
+      ['the state map','A pin drops on the map wherever the rep dials a RESIDENT — and every pin demands its own registration.'],
+      ['the badge printer','The U4 badge printer only runs while plugged into a registered firm\u2019s socket.'],
+      ['the leash','A leash runs from the rep\u2019s badge to the firm\u2019s front door — suspend the firm and every leash goes slack at once.'],
+      ['the exit turnstile','THREE bells ring when a rep pushes through — the old firm, the new firm, and the rep must all tell the Administrator.'],
+      ['the coat check','A second paycheck hides inside a checked coat — outside business and outside accounts need the firm\u2019s written nod first.']]},
+    IAD:{room:'The Corner Suite',spots:[
+      ['the brass plate','Three letters etched on the door: A·B·C — Advice, Business, Compensation. Lose any one letter and the plate comes down.'],
+      ['the LATE lounge','A Lawyer, an Accountant, a Teacher, and an Engineer doze on the couch — one SPECIAL FEE and they wake up as advisers.'],
+      ['the side door','A side door where a visitor with no office and five or fewer retail clients slips in unregistered.'],
+      ['the dollar ruler','A ruler on the desk marked 90 — 100 — 110 million. Cross 110 and Washington takes the file; the state keeps only a notice slot.'],
+      ['the ADV binder','A brochure thrust into a client\u2019s hands 48 hours early — or at signing, with a 5-day escape hatch sewn in.'],
+      ['the contract table','Contracts signed in ink: fees, term, no assignment without consent — and the performance-fee drawer opens only for qualified clients.'],
+      ['the safe','Holding the CLIENT\u2019s key to the safe is custody — higher net worth required, and a next-business-day confession if it dips.'],
+      ['the file wall','Files held five years; privacy notices drop into every client\u2019s mailbox annually.']]},
+    IAR:{room:'The Fiduciary\u2019s Study',spots:[
+      ['the five portraits','Five portraits over the fireplace: ADVISE, MANAGE, DECIDE, SOLICIT, SUPERVISE. Hang in any one frame and you are an IAR.'],
+      ['the typist\u2019s desk','The typist retypes other people\u2019s advice all day and never hangs on the wall — clerical hands stay clerical.'],
+      ['the office globe','A globe with a desk pinned to it: federal-covered firm? You register where YOUR desk sits. State firm? Wherever the firm is and you act.'],
+      ['the visitor counter','A counter by the door: no desk in the state and five or fewer retail visitors — the counter waves you through.'],
+      ['the badge drawer','A U4 badge issued through the firm, alive only while the firm is — noon on day 30, dead every December 31 unless renewed.'],
+      ['the double mirror','One face in the mirror wears TWO badges — agent and IAR at once, if the firms and the Administrator permit it.'],
+      ['the balcony','A supervisor watches every desk from the balcony — the firm answers for every human it registers.'],
+      ['the exit ledger','Names crossed out of the ledger still owe the room a full year of jurisdiction.']]},
+    COM:{room:'The Mailroom',spots:[
+      ['the mail slot','No envelope leaves without its disclosure sheet stapled on — costs, capacity, and conflicts ride with every confirmation.'],
+      ['the rubber stamp','A stamp that only ever says RECEIVED — never APPROVED. Claiming approval is itself the crime.'],
+      ['the guarantee bin','A shredder bolted over the bin eats every "you can\u2019t lose" letter on arrival.'],
+      ['the new-account desk','A new-account form the CUSTOMER never signs — but a principal must, before the mail moves.'],
+      ['the margin ledger','A ruler snapped at 50% lies across the ledger, chained to a signed credit agreement and the hypothecation pledge.'],
+      ['the options board','A 15-day clock ticks over the options board — agreement signed or the account freezes; intrinsic and time value chalked beneath.'],
+      ['the ad wall','Every poster on the wall bears a principal\u2019s initials — and the 26th retail reader tips a letter into "retail communication."'],
+      ['the records shelf','Boxes of correspondence dated years back; January\u2019s mailbag stuffed with privacy notices.']]},
+    ETH:{room:'The Interrogation Room',spots:[
+      ['the three chairs','Three chairs under the lamp — suitability, best interest, fiduciary — and the antifraud light shines on ALL of them, registered or not.'],
+      ['the ticker tape','Ticker tape loops through a washing machine while a vent whispers merger news — manipulation and inside tips both end in this room.'],
+      ['the teller window','A bank teller\u2019s window painted on the wall — say WHICH side of the glass you\u2019re on, and never blur the line.'],
+      ['the butter churn','A butter churn bolted to a client\u2019s ledger, cranked for the commissions, not the client.'],
+      ['the fund shelf','Fund shares stacked exactly one dollar under the breakpoint — the shelf\u2019s edge is where clients get cut.'],
+      ['the firm\u2019s bench','Violations wearing the firm\u2019s whole uniform sit on this bench — failure to supervise never fits a single badge.'],
+      ['the badge board','Individual sins pinned to individual badges — borrowing, guaranteeing, sharing, selling away.'],
+      ['the wool blanket','A blanket wrapped around a vulnerable adult, and a HOLD button wired beside the outgoing wire desk.']]},
+    REM:{room:'The Judge\u2019s Chambers',spots:[
+      ['the gavel','The Administrator holds every tool in the room EXCEPT the gavel — jail, injunctions, and receivers belong to the court alone.'],
+      ['the chamber door','The door swings BOTH ways — jurisdiction lives where the offer left from AND where it landed.'],
+      ['the subpoena drawer','Subpoenas fly out of the drawer across state lines; pleading the Fifth here buys immunity, never silence.'],
+      ['the order stack','Three orders on the desk — cease-and-desist fires first and hears later; stop and summary orders owe prompt notice and a 15-day hearing.'],
+      ['the hourglass','An hourglass beside a two-item checklist: PUBLIC INTEREST plus an ENUMERATED CAUSE — flip one without the other and nothing moves.'],
+      ['the calculator','Price + interest + costs − income, against tender of the security; a 30-day acceptance window; the clock runs at the EARLIER of 3 years or 2-from-discovery.'],
+      ['the cell door','$5,000 / 3 years / 5-year clock stenciled on the bars — and appeals leave through the side door within 60 days, with no automatic stay.'],
+      ['the umbrella stand','An umbrella that covers exactly $500,000 per customer — but only half of it keeps cash dry.']]} }; }
+  locusOf(cellId){ const [code,n]=cellId.split('-'); const L=this.LOCI()[code]; if(!L)return null;
+    const sp=L.spots[parseInt(n)-1]; return {room:L.room, spot:sp[0], img:sp[1]}; }
+  gradeToMark(g){ return g; }
+  // checkpoint: MCQs then fact recall, auto-marks the cell
+  startCheck(cellId){ const bank=window.QBANK||[]; const qs=bank.map((q,i)=>({q,i})).filter(x=>x.q.c===cellId).map(x=>x.i); this.shuffle(qs);
+    const ch=this.findChapter(cellId.split('-')[0]); let facts=(ch?ch.memorize:[]).filter(m=>m.cell===cellId); this.shuffle(facts); facts=facts.slice(0,3);
+    this.nav('check',{check:{cellId, qs:qs.slice(0,3), qi:0, chosen:null, qRight:0, facts, fi:0, fRight:0, revealed:false, phase:qs.length?'q':(facts.length?'f':'done')}}); }
+  finishCheck(){ const c=this.state.check;
+    this.touch(c.cellId,cc=>{ cc.read=true;
+      if(c.qs.length) cc.c = c.qRight===c.qs.length?2:(c.qRight>0?1:0);
+      if(c.facts.length) cc.f = c.fRight===c.facts.length?2:(c.fRight>0?1:0); });
+    c.phase='done'; this.forceUpdate(); }
+  // palace walk
+  startWalk(scope){ const seq=[]; const codes=scope==='all'?this.order():[scope];
+    for(const code of codes) for(let i=1;i<=8;i++) seq.push(code+'-'+i);
+    this.nav('walk',{walk:{seq, i:0, revealed:false, grades:[], scope}}); }
+  gradeWalk(g){ const w=this.state.walk; const id=w.seq[w.i];
+    this.touch(id,cc=>{ cc.c=g; });
+    w.grades.push(g); w.i++; w.revealed=false; window.scrollTo({top:0}); this.forceUpdate(); }
+  TOOLMAP(){ return {'SEC-2':'sorter-sec','ETH-1':'sorter-eth','AGT-1':'walk','REM-4':'timeline','REM-6':'calc'}; }
+  SORTERS(){ return {
+    'sorter-sec':{title:'Sort it: security or not?',hint:'Tap an item, then tap the bucket it belongs in.',buckets:['SECURITY','NOT A SECURITY'],items:[
+      {t:'Variable annuity',b:0,why:'Holder bears the market risk — separate-account security.'},
+      {t:'Fixed annuity',b:1,why:'Insurer guarantees the rate and holds the risk — insurance.'},
+      {t:'Whiskey warehouse receipt',b:0,why:'Investment contract under Howey — profits from the promoter\u2019s efforts.'},
+      {t:'Commodity futures contract',b:1,why:'Futures are excluded; an OPTION on a commodity future is a security.'},
+      {t:'Bank CD at an insured bank',b:1,why:'Deposit products are excluded.'},
+      {t:'Limited partnership interest',b:0,why:'Passive investors relying on the GP — enumerated and Howey-positive.'},
+      {t:'Condo bought with a rental-management contract',b:0,why:'The original Howey pattern: real estate + passive income arrangement.'},
+      {t:'Gold coins held in a home safe',b:1,why:'Physical commodities held directly are excluded.'},
+      {t:'Preorganization certificate',b:0,why:'Enumerated in §401 — a security even before the company exists.'},
+      {t:'IRA account itself',b:1,why:'The plan is not a security; the investments inside it may be.'}]},
+    'sorter-eth':{title:'Sort it: fraud, prohibited, or permitted?',hint:'Tap an item, then tap a bucket. Deception = fraud; dishonest-but-not-deceptive = prohibited.',buckets:['FRAUD','PROHIBITED','PERMITTED'],items:[
+      {t:'"This fund is government-guaranteed" (it isn\u2019t)',b:0,why:'An untrue statement of material fact in a sale — §101 fraud.'},
+      {t:'Omitting a pending lawsuit the issuer faces',b:0,why:'A misleading omission of material fact is fraud, intent or not.'},
+      {t:'Trading a client\u2019s account daily to hit commission targets',b:1,why:'Churning — dishonest practice, no deception required.'},
+      {t:'Borrowing $5,000 from a retail client',b:1,why:'Prohibited unless the client is in the lending business.'},
+      {t:'Sharing profits proportionately with dual written consent (BD agent)',b:2,why:'The one blessed sharing arrangement — never for IARs.'},
+      {t:'Marking a solicited order "unsolicited"',b:0,why:'Falsifying the books to disguise conduct — fraud on the records.'},
+      {t:'Guaranteeing a client against loss',b:1,why:'Always prohibited, even in writing, even if honored.'},
+      {t:'Telling a client an aggressive fund could lose value',b:2,why:'Honest risk disclosure is the job, not a violation.'}]} }; }
+  TIMELINE(){ return {title:'Put the administrative action in order',hint:'Tap the events in the order the Act requires them.',events:[
+      'Administrator suspects a violation and opens an investigation (public or private)',
+      'Subpoenas records and testimony — in or out of state',
+      'Summarily suspends the registration pending determination, with prompt notice',
+      'Registrant files a written request for a hearing',
+      'Hearing is held within 15 days of the written request',
+      'Final order entered with written findings of fact and conclusions of law',
+      'Registrant petitions the court for review — within 60 days, no automatic stay']}; }
+  WALK(){ return {title:'The five-filter walkthrough — call it: agent or not?',scenarios:[
+      {s:'A receptionist at a BD quotes the current price of a stock to a caller, then transfers the call.',agent:false,why:'Filter 3: quoting a price without taking an order or urging a trade is ministerial. She crossed no line — yet.'},
+      {s:'The same receptionist, rep out sick, accepts the caller\u2019s order to sell 200 shares.',agent:true,why:'Filter 3: accepting an order IS effecting a transaction. Clerical status evaporated the moment she took it.'},
+      {s:'An individual sells City of Tucson bonds to the public on behalf of a broker-dealer.',agent:true,why:'Filter 5: representing a BD has no exempt-security escape. Munis or not, she must register.'},
+      {s:'An individual sells the same Tucson bonds for the CITY itself.',agent:false,why:'Filter 4: representing the ISSUER of an exempt security — excluded from the agent definition.'},
+      {s:'A startup\u2019s HR director explains the employee stock-purchase plan to staff; she is paid salary only.',agent:false,why:'Filter 4: issuer rep, selling to the issuer\u2019s own employees, no commission — the third escape hatch.'},
+      {s:'The same HR director gets a $50 bonus per employee she signs up.',agent:true,why:'Filter 4 fails: commission-like compensation kills the employee-sales escape. She registers.'}]}; }
+  SIM(){ return {title:'The Administrator\u2019s desk — 4 enforcement cases',cases:[
+    {name:'Case 1 · The unregistered "consultant"',facts:'A tip alleges that an individual in your state is cold-calling retirees, selling interests in a private oil-drilling program for a Texas promoter, earning 8% per sale. He is not registered in any capacity; the interests are not registered or federal covered; nothing suggests the offers stop at 10 people.',steps:[
+      {p:'Your first move?',o:[
+        {t:'Issue a cease & desist order immediately',ok:true,fb:'Right. A C&D may issue with or without a prior hearing — it is the tool built for stopping ongoing sales today.'},
+        {t:'Apply to the court for an injunction',ok:false,fb:'Available, but slower and unnecessary as step one — you have your own order power. Courts are for when your orders are ignored.'},
+        {t:'Revoke his registration',ok:false,fb:'He has no registration to revoke. You cannot revoke what was never granted — that is exactly why the C&D exists.'}]},
+      {p:'Which provisions has he violated?',o:[
+        {t:'§201 (unregistered agent) and §301 (unregistered security)',ok:true,fb:'Both. He is effecting trades for compensation while unregistered, in a security that is neither registered, exempt, nor federal covered.'},
+        {t:'§101 antifraud only',ok:false,fb:'Nothing in the facts shows deception yet. Registration violations stand on their own — you don\u2019t need fraud to act.'},
+        {t:'§302 notice filing failure',ok:false,fb:'Notice filing is for federal covered securities. An oil-program private deal gone public is not that.'}]},
+      {p:'The retirees who already bought — what remedy does the Act give them?',o:[
+        {t:'Rescission: price + interest + costs/fees − income received',ok:true,fb:'§410. Sales by an unregistered agent are voidable by the buyer — scienter not required.'},
+        {t:'Nothing unless fraud is proven',ok:false,fb:'Wrong — civil liability attaches to REGISTRATION violations too. Innocent violation, same rescission.'},
+        {t:'SIPC coverage',ok:false,fb:'SIPC is for failed broker-dealers\u2019 custody, never for bad sales.'}]}],
+     close:'Textbook sequence: C&D to stop the bleeding, dual registration violations charged, §410 rescission for the victims. If he keeps selling, THEN you go to court for an injunction — and possibly refer for criminal prosecution ($5,000 / 3 years / 5-year clock).'},
+    {name:'Case 2 · The firm that wants out',facts:'A mid-size BD under investigation for supervisory failures files a Form BDW withdrawal, hoping to moot your case. The filing is complete; the investigation became a formal proceeding last week.',steps:[
+      {p:'Does the withdrawal become effective in 30 days?',o:[
+        {t:'No — withdrawal is held while a proceeding is pending',ok:true,fb:'Correct. §204: no withdrawal becomes effective while a revocation or suspension proceeding is pending against the registrant.'},
+        {t:'Yes — withdrawal is a right',ok:false,fb:'It would be, absent the proceeding. Filing BDW during a pending action does not stop the action.'},
+        {t:'Yes, but only partially',ok:false,fb:'There is no partial withdrawal concept in the Act.'}]},
+      {p:'Suppose no proceeding existed and withdrawal took effect June 1. Until when can you still institute one?',o:[
+        {t:'One year after the withdrawal became effective',ok:true,fb:'The one-year tail. Registration ends; jurisdiction lingers.'},
+        {t:'Never — jurisdiction ends with registration',ok:false,fb:'The one-year tail exists precisely to stop this escape.'},
+        {t:'Five years',ok:false,fb:'Five years is the CRIMINAL statute of limitations — different clock entirely.'}]},
+      {p:'To suspend the firm today, before the full hearing, you must:',o:[
+        {t:'Summarily suspend, promptly notify, and offer a hearing within 15 days of written request',ok:true,fb:'The summary-power recipe: act first, but notice and a prompt hearing path are mandatory.'},
+        {t:'Wait for the hearing — no summary power exists',ok:false,fb:'Summary postponement/suspension pending determination is expressly allowed.'},
+        {t:'Get a court order first',ok:false,fb:'Courts are for injunctions and receivers — suspension of a registration is your own power.'}]}],
+     close:'Withdrawal is not an exit from discipline: pending proceedings freeze it, and even a clean exit leaves a one-year tail. Summary suspension is yours to use — with notice and the 15-day hearing right attached.'},
+    {name:'Case 3 · The too-good newsletter',facts:'A subscription newsletter in your state sells "personal portfolio blueprints" — each issue tailored to the subscriber\u2019s holdings, $2,400/year. The publisher, never registered, claims the publisher\u2019s exclusion. Separately, ads claim "SEC-approved methodology."',steps:[
+      {p:'Does the publisher\u2019s exclusion hold?',o:[
+        {t:'No — tailored, paid advice is not a bona fide general-circulation publication',ok:true,fb:'The exclusion requires impersonal, regular, general circulation. Person-specific blueprints are advisory services.'},
+        {t:'Yes — anything printed is a publication',ok:false,fb:'Form does not control. Individualized advice for compensation is the adviser definition on all three prongs.'},
+        {t:'Yes, if under $100M AUM',ok:false,fb:'AUM decides WHERE an adviser registers, not WHETHER someone is an adviser.'}]},
+      {p:'The "SEC-approved methodology" claim is:',o:[
+        {t:'A §404/§405-type violation — approval claims are always unlawful',ok:true,fb:'No regulator ever approves. Claiming approval is an independent violation regardless of registration status.'},
+        {t:'Puffery',ok:false,fb:'Approval claims are enumerated misconduct, not opinion.'},
+        {t:'Acceptable if the SEC reviewed any filing',ok:false,fb:'Review is never approval, and saying so is the violation.'}]},
+      {p:'He argues you lack authority because he never registered. You:',o:[
+        {t:'Proceed — antifraud and enforcement powers reach ANY person, registered or not',ok:true,fb:'The actor shortcut: exclusions and non-registration never shield fraud or false statements from the Administrator.'},
+        {t:'Refer to the SEC — only federal authority applies',ok:false,fb:'State antifraud jurisdiction is never preempted, even for federal covered actors.'},
+        {t:'Concede — no registration, no jurisdiction',ok:false,fb:'Jurisdiction follows the CONDUCT in your state, not the registration.'}]}],
+     close:'Two independent hooks: he IS an adviser (tailored + business + compensation) who failed to register, and the approval claim is unlawful on its face. Unregistered status is a violation, never a defense.'},
+    {name:'Case 4 · Unwinding the damage',facts:'A registered agent sold a client $40,000 of an unregistered, non-exempt security 14 months ago. The client received $1,600 in distributions. The firm discovers the violation in a branch audit and wants to fix it before you order anything. Your state\u2019s legal rate of interest is 6%.',steps:[
+      {p:'The firm\u2019s correct move is:',o:[
+        {t:'A written rescission offer: repurchase at cost + 6% interest − income received, plus costs',ok:true,fb:'The §410 rescission offer — the self-help mechanism that can extinguish civil liability before suit.'},
+        {t:'Quietly swap the client into a registered fund',ok:false,fb:'That compounds the violation and touches nothing about the voidable sale.'},
+        {t:'Wait — the client seems happy',ok:false,fb:'The liability clock runs 3 years from the sale. Hoping is not a remediation program.'}]},
+      {p:'Run the numbers. The offer should total about:',o:[
+        {t:'$40,000 + $2,800 interest (14 mo @ 6%) − $1,600 = ~$41,200, against tender of the security',ok:true,fb:'Price + interest from purchase − income received; the client hands the security back. (Use the calculator in REM-6.)'},
+        {t:'$40,000 flat',ok:false,fb:'Interest from the purchase date and the income offset are both part of the statutory formula.'},
+        {t:'$41,600 with no tender required',ok:false,fb:'Tender is required when the client still holds the security — and income received is subtracted, not ignored.'}]},
+      {p:'The client ignores the written offer. After 30 days, the client:',o:[
+        {t:'Has waived the right of action for that violation',ok:true,fb:'Thirty days to accept a proper rescission offer, or the claim on that violation is extinguished.'},
+        {t:'May still sue within 3 years',ok:false,fb:'A proper unaccepted rescission offer cuts off the claim — that is its entire purpose.'},
+        {t:'Gets an automatic extension',ok:false,fb:'No extensions. Thirty days, then waiver.'}]}],
+     close:'The rescission offer is the exam\u2019s favorite civil-liability machine: exact formula, tender rule, and the 30-day acceptance window that quietly kills the claim.'}]}; }
+
+  // ---------- readiness ----------
+  cellScore(id){ const st=(this.state.store||{}).cells||{}; const c=st[id]; if(!c) return 0;
+    let s=(c.read?20:0)+((c.c||0)*7.5)+((c.f||0)*7.5);
+    const qa=(c.qa||[]).slice(-6); if(qa.length) s+=50*(qa.filter(x=>x).length/qa.length);
+    if(c.last){ const d=(Date.now()-c.last)/86400000; s*=Math.max(0.55,1-0.06*d); }
+    return Math.round(Math.min(100,s)); }
+  chScore(code){ let t=0; for(let i=1;i<=8;i++) t+=this.cellScore(code+'-'+i); return Math.round(t/8); }
+  overall(){ const M=this.META(); let t=0; for(const k in M) t+=this.chScore(k)*M[k].w; return Math.round(t/100); }
+  touch(id,fn){ const store=this.state.store; if(!store.cells[id]) store.cells[id]={qa:[]}; fn(store.cells[id]); store.cells[id].last=Date.now(); this.save(); }
+
+  // ---------- TTS ----------
+  cellItems(cell){ if(!cell) return []; const fr=this.FRAMES()[cell.id];
+    if(!fr) return cell.items;
+    const x=fr.head+'. '+fr.intro+' '+fr.bullets.map(b=>b[0]+' '+b[1]).join(' ')+' '+fr.tail;
+    return [...cell.items, {t:'frame',x,fr}]; }
+  speakables(cell){ const pre={concept:'Concept.',memorize:'Memorize this.',trap:'Exam trap.',link:'Connection.',warn:'Source note.',frame:'The answer framework.'};
+    return this.cellItems(cell).map(it=>({label:pre[it.t]||'',text:it.x.replace(/·/g,'; ').replace(/§/g,'section ')})); }
+  startTTS(fromItem){ const cell=this.findCell(this.state.cellId); if(!cell) return;
+    try{speechSynthesis.cancel();}catch(e){}
+    clearInterval(this._est); clearTimeout(this._restart); clearInterval(this._keep);
+    // Chrome needs a beat after cancel() before a new utterance, or it falls back to the default voice / goes silent
+    this._restart=setTimeout(()=>{
+      this.setState({tts:Object.assign({},this.state.tts,{playing:true,item:fromItem,word:-1})},()=>this.speakItem(fromItem));
+    },150);
+  }
+  speakItem(i){ const cell=this.findCell(this.state.cellId); if(!cell) return this.stopTTS();
+    if(i>=this.cellItems(cell).length){
+      this.touch(cell.id,c=>{c.read=true});
+      if(this.state.tts.contPlay){ const nxt=this.nextCellId(cell.id); if(nxt){ this.setState({cellId:nxt,tts:Object.assign({},this.state.tts,{item:0,word:-1})},()=>{window.scrollTo({top:0}); this.speakItem(0);}); return; } }
+      return this.stopTTS();
+    }
+    const sp=this.speakables(cell)[i];
+    const words=this.cellItems(cell)[i].x.split(/\s+/);
+    const el=document.getElementById('rit-'+i);
+    if(el){ const r=el.getBoundingClientRect(); window.scrollTo({top:window.scrollY+r.top-140,behavior:'smooth'}); }
+    this.setState({tts:Object.assign({},this.state.tts,{playing:true,item:i,word:-1})});
+    const u=new SpeechSynthesisUtterance(sp.label+' '+sp.text);
+    const st=this.state.store.settings; u.rate=st.rate||1;
+    const v=this.state.voices.find(v=>v.name===st.voice); if(v) u.voice=v;
+    const labelLen=sp.label.length+1;
+    // char offsets of each word in the plain text
+    const offs=[]; let p=0; for(const w of words){ offs.push(p); p+=w.length+1; }
+    let sawBoundary=false;
+    u.onboundary=(e)=>{ if(e.name && e.name!=='word') return; sawBoundary=true; clearInterval(this._est);
+      const ci=Math.max(0,e.charIndex-labelLen); let wi=0; for(let k=0;k<offs.length;k++){ if(offs[k]<=ci) wi=k; else break; }
+      if(this.state.tts.item===i) this.setState({tts:Object.assign({},this.state.tts,{word:wi})}); };
+    // estimator fallback (iOS fires no word boundaries)
+    const wpm=175*(u.rate); const msPerWord=60000/wpm; let wi=0;
+    this._est=setInterval(()=>{ if(sawBoundary){clearInterval(this._est);return;} wi++; if(wi<words.length && this.state.tts.item===i && this.state.tts.playing) this.setState({tts:Object.assign({},this.state.tts,{word:wi})}); },msPerWord);
+    u.onend=()=>{ clearInterval(this._est); clearInterval(this._keep); if(this.state.tts.playing && this.state.tts.item===i) this.speakItem(i+1); };
+    u.onerror=()=>{ clearInterval(this._est); clearInterval(this._keep); };
+    this._utter=u; speechSynthesis.speak(u);
+    // Chrome silently stalls long utterances at rates ≠ 1 — periodic resume keeps it alive
+    clearInterval(this._keep);
+    this._keep=setInterval(()=>{ if(!speechSynthesis.speaking){clearInterval(this._keep);return;} speechSynthesis.pause(); speechSynthesis.resume(); },8000);
+  }
+  stopTTS(){ try{speechSynthesis.cancel();}catch(e){} clearInterval(this._est); clearTimeout(this._restart); clearInterval(this._keep);
+    this.setState({tts:{playing:false,item:-1,word:-1,contPlay:false}}); }
+
+  // ---------- helpers ----------
+  order(){ return ['SEC','BDR','AGT','IAD','IAR','COM','ETH','REM']; }
+  findChapter(code){ return (this.state.book?this.state.book.chapters:[]).find(c=>c.code===code); }
+  findCell(id){ if(!id||!this.state.book) return null; const code=id.split('-')[0]; const ch=this.findChapter(code); return ch?ch.cells.find(c=>c.id===id):null; }
+  nextCellId(id){ const [code,n]=id.split('-'); const ni=parseInt(n); if(ni<8) return code+'-'+(ni+1);
+    const o=this.order(); const ci=o.indexOf(code); return ci<o.length-1 ? o[ci+1]+'-1' : null; }
+  nav(view,extra){ this.stopTTS(); window.scrollTo({top:0}); this.setState(Object.assign({view,sheet:null,voicesOpen:false,tool:{sel:null,placed:{},seq:[],walkIdx:0,walkPick:null,calc:{price:40000,rate:6,months:14,income:1600,sold:false,proceeds:35000}},sim:null},extra||{})); }
+  toolSet(patch){ this.setState({tool:Object.assign({},this.state.tool,patch)}); }
+
+  segs(text){ const L=this.LAWS(); const re=/(§\s?\d{3}|USA\s?\d{3}|Rule 506|Regulation D|Regulation T|Reg T|NSMIA|SIPC|FINRA 2210|Howey|Form ADV|Form BDW|Form BD|Form U4|12b-1|Securities Act of 1933|1933 Act)/g;
+    const out=[]; let last=0; let m;
+    while((m=re.exec(text))){ if(m.index>last) out.push({t:text.slice(last,m.index)});
+      let key=m[0].replace(/USA\s?/,'§').replace(/§\s/,'§'); if(!L[key]) key=m[0];
+      out.push({t:m[0],term:L[key]?key:null}); last=m.index+m[0].length; }
+    if(last<text.length) out.push({t:text.slice(last)});
+    return out; }
+
+  // ---------- quiz ----------
+  startQuiz(mode,filter){ const bank=window.QBANK||[]; let idxs=[];
+    const now=Date.now(); const store=this.state.store;
+    if(mode==='missed'){ idxs=Object.keys(store.missed).filter(k=>store.missed[k].due<=now).map(Number); if(!idxs.length) return; idxs=idxs.slice(0,15); }
+    else if(mode==='mock'){ const M=this.META(); for(const code of this.order()){ const pool=bank.map((q,i)=>({q,i})).filter(x=>x.q.c.startsWith(code+'-')); this.shuffle(pool); idxs.push(...pool.slice(0,M[code].q).map(x=>x.i)); } this.shuffle(idxs); }
+    else if(filter){ idxs=bank.map((q,i)=>({q,i})).filter(x=>filter.length<=3 ? x.q.c.startsWith(filter+'-') : x.q.c===filter).map(x=>x.i); this.shuffle(idxs); idxs=idxs.slice(0,16); }
+    else if(mode==='hard'){ idxs=bank.map((q,i)=>({q,i})).filter(x=>x.q.h).map(x=>x.i); this.shuffle(idxs); }
+    else { // adaptive quick 10: weight by weakness
+      const scored=bank.map((q,i)=>({i,s:this.cellScore(q.c)+Math.random()*25})); scored.sort((a,b)=>a.s-b.s);
+      idxs=scored.slice(0,10).map(x=>x.i); this.shuffle(idxs); }
+    if(!idxs.length) return;
+    this.nav('quiz'); this.setState({session:{mode,qs:idxs,i:0,chosen:null,answers:[],start:Date.now(),end:mode==='mock'?Date.now()+75*60000:null}}); }
+  shuffle(a){ for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } }
+  answer(oi){ const s=this.state.session; if(s.chosen!=null&&s.mode!=='mock') return;
+    const q=window.QBANK[s.qs[s.i]]; const ok=oi===q.a;
+    if(s.mode!=='mock'){ this.recordAnswer(s.qs[s.i],ok); }
+    s.chosen=oi; s.answers[s.i]=ok;
+    if(s.mode==='mock'){ setTimeout(()=>this.nextQ(),160); }
+    this.forceUpdate(); }
+  recordAnswer(qi,ok){ const q=window.QBANK[qi]; const store=this.state.store;
+    this.touch(q.c,c=>{ c.qa=(c.qa||[]); c.qa.push(ok); if(c.qa.length>30)c.qa=c.qa.slice(-30); });
+    const m=store.missed;
+    if(!ok){ m[qi]={due:Date.now()+3*3600000,streak:0}; }
+    else if(m[qi]){ const st=m[qi].streak+1; if(st>=3) delete m[qi]; else m[qi]={due:Date.now()+[12,24,48][st-1]*3600000,streak:st}; }
+    this.save(); }
+  nextQ(){ const s=this.state.session;
+    if(s.i>=s.qs.length-1){ this.finishQuiz(); return; }
+    s.i++; s.chosen=null; window.scrollTo({top:0}); this.forceUpdate(); }
+  finishQuiz(){ const s=this.state.session; const right=s.answers.filter(x=>x).length;
+    if(s.mode==='mock'){ s.qs.forEach((qi,k)=>{ if(s.answers[k]!=null) this.recordAnswer(qi,!!s.answers[k]); });
+      this.state.store.mocks.push({ts:Date.now(),score:right,total:s.qs.length}); this.save(); }
+    this.setState({view:'results',lastSession:{mode:s.mode,right,total:s.qs.length,qs:s.qs,answers:s.answers},session:null}); }
+
+  renderVals(){
+    const st=this.state; const M=this.META(); const store=st.store||{cells:{},missed:{},mocks:[],settings:{rate:1}};
+    const laws=this.LAWS(); const bank=window.QBANK||[];
+    const v=st.view;
+    const passTarget=this.props.passTarget??72;
+    const out={ isHome:v==='home', isLearn:v==='learn', isChapter:v==='chapter', isCell:v==='cell', isMemo:v==='memo',
+      isTraps:v==='traps', isDrill:v==='drill', isQuiz:v==='quiz', isResults:v==='results',
+      sheetOpen:!!st.sheet, voicesOpen:st.voicesOpen,
+      goLearn:()=>this.nav('learn'), goTraps:()=>this.nav('traps'), closeVoices:()=>this.setState({voicesOpen:false}) };
+
+    // nav
+    const navDef=[['home','⌂','Home'],['learn','▤','Learn'],['map','⚖','Map'],['drill','◎','Drill']];
+    const activeTab = v==='chapter'||v==='cell'||v==='memo'||v==='traps'||v==='check'||v==='walk' ? 'learn' : (v==='quiz'||v==='results'||v==='sim'?'drill':v);
+    out.navItems=navDef.map(([k,icon,t])=>({icon,t,color:activeTab===k?'#e9e9ef':'#55556a',onTap:()=>this.nav(k)}));
+
+    // ---- HOME ----
+    if(v==='home'){
+      const score=this.overall(); out.readyScore=score;
+      const C=2*Math.PI*45; out.ringDash=`${C*score/100} ${C}`; out.passTickOff=-(C*passTarget/100);
+      out.ringColor= score>=passTarget?'oklch(75% 0.17 150)': score>=45?'oklch(80% 0.14 85)':'oklch(70% 0.19 25)';
+      out.readyLabel= score>=passTarget?'In the passing zone':score>=45?'Building — keep drilling':'Early days';
+      const weak=this.order().map(c=>({c,s:this.chScore(c)})).sort((a,b)=>a.s-b.s)[0];
+      out.readyHint= score>=passTarget?`Hold it here. Weakest area: ${M[weak.c].name}.`:`White tick = pass line (${passTarget}). Biggest lift right now: ${M[weak.c].name} (${M[weak.c].w}% of the exam).`;
+      // countdown
+      const exam=new Date(this.props.examDate??'2026-08-10T09:00:00-04:00'); const ms=exam-Date.now();
+      if(ms<=0) out.countdown='Exam day — go get it';
+      else { const d=Math.floor(ms/86400000), h=Math.floor(ms%86400000/3600000), mi=Math.floor(ms%3600000/60000);
+        out.countdown=d>0?`Exam in ${d}d ${h}h`:`Exam in ${h}h ${mi}m`; }
+      let solid=0; for(const code of this.order()) for(let i=1;i<=8;i++) if(this.cellScore(code+'-'+i)>=passTarget) solid++;
+      out.statCells=solid+'/64';
+      let seen=0,right=0; for(const id in store.cells){ (store.cells[id].qa||[]).forEach(ok=>{seen++; if(ok)right++;}); }
+      out.statAcc=seen?Math.round(100*right/seen)+'%':'—';
+      const due=Object.values(store.missed).filter(m=>m.due<=Date.now()).length; out.statDue=''+due;
+      // plan
+      const plans={ '8-2':['SEC + BDR','Read the vocabulary chapters. Mark every cell.','chapter','SEC'], '8-3':['AGT + IAD','Read Agents and Advisers. Teach back the exclusions out loud.','chapter','AGT'], '8-4':['IAR + COM','Read both. Don\u2019t rush the account-paperwork matching.','chapter','IAR'], '8-5':['ETH','15 questions come from here — give it the whole session.','chapter','ETH'], '8-6':['REM + Mock #1','Read Remedies, then first full timed mock. Log every miss.','mock',null], '8-7':['Trap day','Re-read every ▲ trap and clear the missed queue.','traps',null], '8-8':['Mock #2 + weak cells','Second timed mock, then only what the chart shows shaky.','mock',null], '8-9':['Memorize sheets','Facts only. All studying ends at 9 PM. Standing rule.','learn',null] };
+      const today=new Date(); const key=(today.getMonth()+1)+'-'+today.getDate();
+      const p=plans[key]||['Review','Work your weakest cells and the missed queue.','drill',null];
+      out.planDay=today.getDate(); out.planColor='#e9e9ef'; out.planText=p[0]+' — '+p[1];
+      out.goPlanTarget=()=>{ if(p[2]==='chapter') this.nav('chapter',{ch:p[3]}); else if(p[2]==='mock') this.nav('drill'); else this.nav(p[2]); };
+      // harada blocks: 3x3, center = summary
+      const around=['SEC','BDR','AGT','IAD',null,'IAR','COM','ETH','REM'];
+      out.blocks=around.map(code=>{
+        if(code===null){ // center block: 8 chapter mini scores around '63'
+          const cells=around.map(c2=>{ if(c2===null) return {label:'63',fs:'13px',fw:'700',bg:'#1a1a24',color:'#e9e9ef',bd:'#2a2a36',onTap:()=>{}};
+            const s=this.chScore(c2); return {label:''+s,fs:'10px',fw:'700',bg:this.hue(c2,35,0.06,0.25+0.5*s/100),color:this.hue(c2,88,0.1),bd:'transparent',onTap:()=>this.nav('chapter',{ch:c2})}; });
+          return {bg:'#12121a',border:'#2a2a36',cells}; }
+        const cells=[1,2,3,4,0,5,6,7,8].map(n=>{ if(n===0) return {label:code,fs:'9px',fw:'700',bg:'transparent',color:this.hue(code,80,0.12),bd:'transparent',onTap:()=>this.nav('chapter',{ch:code})};
+          const id=code+'-'+n; const s=this.cellScore(id); const touched=!!store.cells[id];
+          return {label:''+n,fs:'10px',fw:'600', bg:touched?this.hue(code,40,0.09,0.15+0.7*s/100):'#0e0e14', color:touched?'#f0f0f5':'#4a4a5c', bd:touched?'transparent':'#1c1c26', onTap:()=>this.nav('cell',{cellId:id,ch:code})}; });
+        return {bg:'#0c0c11',border:'#1c1c26',cells}; });
+      out.openSync=()=>this.setState({syncOpen:true,syncMsg:'',syncIn:''});
+      const wOrder=[...this.order()].sort((a,b)=>M[b].w-M[a].w);
+      out.chapterBars=wOrder.map(code=>{ const s=this.chScore(code); return {name:M[code].name,meta:`${M[code].w}% · ${M[code].q} questions · ${s}/100`,color:this.hue(code,75,0.14),pct:s+'%',onTap:()=>this.nav('chapter',{ch:code})}; });
+    }
+
+    // ---- LEARN ----
+    if(v==='learn'){
+      out.learnList=this.order().map(code=>({name:M[code].name,actor:M[code].actor.toLowerCase(),meta:`${M[code].w}% of the exam`,color:this.hue(code,75,0.14),score:this.chScore(code),onTap:()=>this.nav('chapter',{ch:code})}));
+      out.trapCount=st.book?st.book.chapters.reduce((s,c)=>s+c.cells.reduce((s2,cl)=>s2+cl.items.filter(i=>i.t==='trap').length,0),0):'—';
+    }
+
+    // ---- CHAPTER ----
+    if(v==='chapter'&&st.ch){ const ch=this.findChapter(st.ch); const code=st.ch;
+      const color=this.hue(code,75,0.14);
+      out.chView={ code, name:M[code].name, actor:M[code].actor, color, tint:this.hue(code,30,0.05,0.22), borderC:this.hue(code,45,0.08,0.4),
+        weight:ch?ch.weight:'', spine:ch?ch.spine:'Loading…',
+        onWalk:()=>this.startWalk(code),
+        room:(this.LOCI()[code]||{}).room||'',
+        onListen:()=>{ this.setState({view:'cell',cellId:code+'-1',tts:{playing:false,item:-1,word:-1,contPlay:true}},()=>{window.scrollTo({top:0}); this.startTTS(0); this.setState({tts:Object.assign({},this.state.tts,{contPlay:true})}); }); },
+        onDrill:()=>this.startQuiz('chapter',code),
+        onMemo:()=>this.nav('memo',{memoCh:code}),
+        memoCount:ch?ch.memorize.length:'…',
+        cells:(ch?ch.cells:[]).map(cl=>{ const s=this.cellScore(cl.id); const c=store.cells[cl.id]||{};
+          const mk=(x)=>x===2?'solid':x===1?'shaky':'—';
+          return { id:cl.id, title:cl.title, color, score:s>0?''+s:'·',
+            markLabel:`◆ ${mk(c.c)} · ● ${mk(c.f)}${c.read?' · read':''}`,
+            dotBg:s>0?this.hue(code,40,0.09,0.15+0.7*s/100):'#14141c', dotBd:s>0?'transparent':'#26262e', dotColor:s>=passTarget?'#fff':'#c9c9d4',
+            onTap:()=>this.nav('cell',{cellId:cl.id}) }; }) };
+    }
+
+    // ---- CELL ----
+    if(v==='cell'&&st.cellId){ const cell=this.findCell(st.cellId); const code=st.cellId.split('-')[0];
+      const color=this.hue(code,75,0.14); const c=store.cells[st.cellId]||{};
+      const tagStyles={concept:{l:'◆ CONCEPT — RE-DERIVE IF MISSED',c:'#7eb8f0',bg:'#0d1119',bd:'#1c2536'},
+        memorize:{l:'● MEMORIZE — DRILL IF MISSED',c:'#e8c37a',bg:'#131007',bd:'#2e2612'},
+        trap:{l:'▲ EXAM TRAP',c:'#ff9ab0',bg:'#170d12',bd:'#33202a'},
+        link:{l:'→ CONNECTS TO',c:'#9a9aa6',bg:'#0d0d13',bd:'#22222c'},
+        warn:{l:'⚠ SOURCE NOTE',c:'#e89a5a',bg:'#140f0a',bd:'#2e2214'}};
+      const markBtns=(field)=>[['blank',0],['shaky',1],['solid',2]].map(([t,val])=>{ const on=(c[field]||0)===val&&(store.cells[st.cellId]!=null||val!==0);
+        return {t,bg:on?color:'#171720',fg:on?'#08080b':'#9a9aa6',bd:on?'transparent':'#2a2a36',onTap:()=>this.touch(st.cellId,cc=>{cc[field]=val;})}; });
+      tagStyles.frame={l:'● THE ANSWER FRAMEWORK',c:'#7ee0a8',bg:'#0a1510',bd:'#1e3a2c'};
+      const items=this.cellItems(cell).map((it,i)=>{ const ts=tagStyles[it.t]||tagStyles.link;
+        const speaking=st.tts.playing&&st.tts.item===i;
+        const isFrame=it.t==='frame'&&!speaking;
+        const base={ domId:'rit-'+i, tagLabel:isFrame?it.fr.head.toUpperCase():ts.l, tagColor:ts.c, speaking, isFrame, notSpeaking:!speaking&&!isFrame,
+          cardBg:speaking?this.hue(code,28,0.05,0.3):ts.bg, cardBd:speaking?color:ts.bd };
+        if(speaking){ base.words=it.x.split(/\s+/).map((w,wi)=>({t:w, bg:wi===st.tts.word?color:'', fg:wi===st.tts.word?'#08080b':(wi<st.tts.word?'#fafafd':'#8f8f9e')})); }
+        else if(isFrame){ base.frIntro=it.fr.intro; base.frTail=it.fr.tail;
+          base.frBullets=it.fr.bullets.map(b=>({b:b[0],r:b[1]})); }
+        else { base.segs=this.segs(it.x).map(sg=>({t:sg.t, color:sg.term?'#8ab4ff':'inherit', underline:sg.term?'1px dotted #4a6a9e':'none', cursor:sg.term?'pointer':'auto', onTap:sg.term?(()=>this.setState({sheet:{term:laws[sg.term][0],body:laws[sg.term][1],kind:'tap outside to close'}})):(()=>{}) })); }
+        return base; });
+      const nxt=this.nextCellId(st.cellId);
+      const lo=this.locusOf(st.cellId);
+      out.cellView={ id:st.cellId, title:cell?cell.title:'Loading…', chName:M[code].name, actor:M[code].actor, color,
+        locusRoom:lo?lo.room:'', locusSpot:lo?lo.spot:'', locusImg:lo?lo.img:'',
+        onBack:()=>this.nav('chapter',{ch:code}), items,
+        hasRefs:!!(cell&&cell.refs.length), refs:(cell?cell.refs:[]).map(r=>({t:r})),
+        cMarks:markBtns('c'), fMarks:markBtns('f'),
+        onDrill:()=>this.startQuiz('cell',st.cellId),
+        onCheck:()=>this.startCheck(st.cellId),
+        nextLabel:nxt?(nxt.endsWith('-1')?'Next chapter →':'Next cell →'):'Done',
+        onNext:()=>{ this.touch(st.cellId,cc=>{cc.read=true;}); if(nxt){ const nc=nxt.split('-')[0]; nc!==code?this.nav('chapter',{ch:nc}):this.nav('cell',{cellId:nxt}); } else this.nav('home'); } };
+      // embedded tools
+      const tk=this.TOOLMAP()[st.cellId]; const tool=st.tool||{sel:null,placed:{},seq:[],walkIdx:0,walkPick:null,calc:{price:40000,rate:6,months:14,income:1600,sold:false,proceeds:35000}};
+      out.cellView.hasSorter=false; out.cellView.hasTimeline=false; out.cellView.hasWalk=false; out.cellView.hasCalc=false;
+      if(tk==='sorter-sec'||tk==='sorter-eth'){ const so=this.SORTERS()[tk]; out.cellView.hasSorter=true;
+        const placedCt=Object.keys(tool.placed).length; const rightCt=Object.keys(tool.placed).filter(k=>tool.placed[k]===so.items[k].b).length;
+        out.cellView.sorter={ title:so.title, hint:tool.sel!=null?'Now tap the bucket it belongs in ↓':so.hint,
+          score:placedCt?`${rightCt}/${placedCt} placed correctly`:'',
+          buckets:so.buckets.map((b,bi)=>({t:b, bg:tool.sel!=null?'#1e2436':'#14141c', bd:tool.sel!=null?'#3a4a76':'#26262e',
+            onTap:()=>{ if(tool.sel==null)return; const placed=Object.assign({},tool.placed); placed[tool.sel]=bi;
+              const it=so.items[tool.sel]; const ok=it.b===bi;
+              this.setState({sheet:{term:ok?'✓ Correct':'✗ Not quite — it\u2019s '+so.buckets[it.b],body:it.why,kind:it.t}});
+              this.toolSet({placed,sel:null}); } })),
+          chips:so.items.map((it,ii)=>{ const p=tool.placed[ii];
+            return { t:it.t, done:p!=null,
+              bg:p==null?(tool.sel===ii?'#e9e9ef':'#171720'):(p===it.b?'#0e1f16':'#210f14'),
+              fg:p==null?(tool.sel===ii?'#08080b':'#e2e2ea'):(p===it.b?'#7ee0a8':'#ff9ab0'),
+              bd:p==null?(tool.sel===ii?'#e9e9ef':'#2a2a36'):(p===it.b?'#2a5c40':'#5c2a38'),
+              mark:p==null?'':(p===it.b?' ✓':' ✗ → '+so.buckets[it.b]),
+              onTap:()=>{ if(p!=null){ this.setState({sheet:{term:so.buckets[it.b],body:it.why,kind:it.t}}); } else this.toolSet({sel:tool.sel===ii?null:ii}); } }; }),
+          onReset:()=>this.toolSet({placed:{},sel:null}) }; }
+      if(tk==='timeline'){ const tl=this.TIMELINE(); out.cellView.hasTimeline=true;
+        const done=tool.seq.length===tl.events.length;
+        out.cellView.timeline={ title:tl.title, hint:done?'':tl.hint,
+          score:done?`${tool.seq.filter((e,k)=>e===k).length}/${tl.events.length} in the right slot`:'' ,
+          events:tl.events.map((t,ei)=>{ const pos=tool.seq.indexOf(ei); const placed=pos>=0;
+            return { t, num:placed?(pos+1)+'':'·',
+              bg:!placed?'#101016':(done?(pos===ei?'#0e1f16':'#210f14'):'#1a1a24'),
+              bd:!placed?'#22222c':(done?(pos===ei?'#2a5c40':'#5c2a38'):'#3a3a52'),
+              numColor:!placed?'#55556a':(done?(pos===ei?'#7ee0a8':'#ff9ab0'):'#e9e9ef'),
+              onTap:()=>{ if(placed||done)return; this.toolSet({seq:[...tool.seq,ei]}); } }; }),
+          onReset:()=>this.toolSet({seq:[]}) }; }
+      if(tk==='walk'){ const wk=this.WALK(); out.cellView.hasWalk=true;
+        const i2=Math.min(tool.walkIdx,wk.scenarios.length-1); const sc=wk.scenarios[i2]; const answered=tool.walkPick!=null;
+        out.cellView.walk={ title:wk.title, progress:`Scenario ${i2+1} of ${wk.scenarios.length}`, s:sc.s,
+          showWhy:answered, whyTag:answered?(tool.walkPick===sc.agent?'CORRECT':'NOT QUITE'):'',
+          whyColor:answered&&tool.walkPick===sc.agent?'#7ee0a8':'#ff9ab0', why:sc.why,
+          btns:[['AGENT — must register',true],['NOT AN AGENT',false]].map(([t,val])=>({t,
+            bg:answered?(val===sc.agent?'#0e1f16':'#171720'):'#171720', fg:answered?(val===sc.agent?'#7ee0a8':'#55556a'):'#e2e2ea',
+            bd:answered?(val===sc.agent?'#2a5c40':'#2a2a36'):'#2a2a36',
+            onTap:()=>{ if(!answered) this.toolSet({walkPick:val}); } })),
+          nextLabel:i2>=wk.scenarios.length-1?'Start over':'Next scenario',
+          onNext:()=>this.toolSet({walkIdx:i2>=wk.scenarios.length-1?0:i2+1,walkPick:null}) }; }
+      if(tk==='calc'){ const c2=tool.calc; out.cellView.hasCalc=true;
+        const interest=c2.price*(c2.rate/100)*(c2.months/12);
+        const total=c2.price+interest-c2.income-(c2.sold?c2.proceeds:0);
+        const f=(n)=>'$'+Math.round(n).toLocaleString();
+        const field=(key,label)=>({label, val:c2[key], onChange:(e)=>{ const calc=Object.assign({},c2); calc[key]=parseFloat(e.target.value)||0; this.toolSet({calc}); }});
+        out.cellView.calc={ title:'Rescission calculator — the §410 formula, live',
+          fields:[field('price','Price paid $'),field('rate','Interest rate %'),field('months','Months held'),field('income','Income received $')],
+          soldLabel:c2.sold?'Client already SOLD (damages — no tender)':'Client still HOLDS (rescission — must tender)',
+          onSold:()=>{ const calc=Object.assign({},c2); calc.sold=!calc.sold; this.toolSet({calc}); },
+          hasProceeds:c2.sold, proceedsField:field('proceeds','Sale proceeds $'),
+          lines:[ {t:'Price paid',v:f(c2.price)}, {t:`+ Interest (${c2.rate}% × ${c2.months} mo)`,v:f(interest)}, {t:'− Income received',v:'−'+f(c2.income).slice(1)} ]
+            .concat(c2.sold?[{t:'− Sale proceeds',v:'−'+f(c2.proceeds).slice(1)}]:[]),
+          total:f(total), tender:c2.sold?'No tender — the security is gone; this is the damages formula.':'…against tender of the security back to the seller. Plus court costs and reasonable attorney fees.',
+          example:'Worked example (Case 4): $40,000 bought 14 months ago at 6% state rate, $1,600 in distributions received → $40,000 + $2,800 − $1,600 = $41,200, against tender.' }; }
+      const rates=[0.75,1,1.25,1.5,2];
+      out.tts={ playIcon:st.tts.playing?'❚❚':'▶',
+        status:st.tts.playing?`Reading ${st.cellId} — ${st.tts.item+1} of ${cell?cell.items.length:'…'}${st.tts.contPlay?' · auto-advancing':''}`:'Listen to this cell',
+        onToggle:()=>{ st.tts.playing?this.stopTTS():this.startTTS(0); },
+        rates:rates.map(r=>({t:r+'×', bg:(store.settings.rate||1)===r?'#e9e9ef':'#1c1c26', fg:(store.settings.rate||1)===r?'#08080b':'#9a9aa6',
+          onTap:()=>{ store.settings.rate=r; this.save(); if(st.tts.playing) this.startTTS(st.tts.item); } })),
+        voiceName:(store.settings.voice||'Default').split(' ').slice(0,2).join(' '),
+        onVoice:()=>this.setState({voicesOpen:true}) };
+    } else { out.tts={rates:[]}; out.cellView={items:[],refs:[],cMarks:[],fMarks:[]}; }
+
+    // ---- MEMO ----
+    if(v==='memo'&&st.memoCh){ const ch=this.findChapter(st.memoCh); const code=st.memoCh;
+      out.memoView={ code, chName:M[code].name, color:this.hue(code,75,0.14), onBack:()=>this.nav('chapter',{ch:code}),
+        facts:(ch?ch.memorize:[]).map((f,i)=>{ const open=st.memoOpen[i]!==false;
+          return { cell:f.cell, t:f.t||f.x, open, hint:open?'tap to hide':'tap to reveal',
+            onTap:()=>{ const mo=Object.assign({},st.memoOpen); mo[i]=!open; this.setState({memoOpen:mo}); } }; }) };
+    }
+
+    // ---- TRAPS ----
+    if(v==='traps'&&st.book){ const list=[];
+      for(const code of this.order()){ const ch=this.findChapter(code); if(!ch)continue;
+        for(const cl of ch.cells) for(const it of cl.items) if(it.t==='trap') list.push({cell:cl.id,t:it.x,color:this.hue(code,75,0.14),onTap:()=>this.nav('cell',{cellId:cl.id})}); }
+      out.trapList=list; } else out.trapList=[];
+
+    // ---- DRILL ----
+    if(v==='drill'){
+      const due=Object.values(store.missed).filter(m=>m.due<=Date.now()).length;
+      const best=store.mocks.length?Math.max(...store.mocks.map(m=>m.score)):null;
+      out.drill={ onQuick:()=>this.startQuiz('quick'),
+        onMissed:()=>this.startQuiz('missed'),
+        missedBd:due?'#7a3b2e':'#22222c', missedColor:due?'#ff9a7a':'#77778a',
+        missedLabel:due?`${due} due for review now`:'Nothing due — miss some questions first',
+        onHard:()=>this.startQuiz('hard'),
+        onPalace:()=>this.startWalk('all'),
+        onSim:()=>{ this.nav('sim'); this.setState({sim:{ci:null,step:0,pick:null,wrong:0}}); },
+        onMock:()=>this.startQuiz('mock'), mockBest:best!=null?`best ${best}/60`:'not taken',
+        mockColor:best!=null?(best>=43?'oklch(75% 0.17 150)':'#e8c37a'):'#55556a',
+        chapters:this.order().map(code=>({code,color:this.hue(code,75,0.14),onTap:()=>this.startQuiz('chapter',code)})),
+        hasMocks:store.mocks.length>0,
+        mocks:store.mocks.slice(-5).reverse().map(m=>({when:new Date(m.ts).toLocaleString([],{month:'short',day:'numeric',hour:'numeric',minute:'2-digit'}), score:`${m.score}/60${m.score>=43?' · pass':' · below 43'}`, color:m.score>=43?'oklch(75% 0.17 150)':'#ff9ab0'})) };
+    } else out.drill={chapters:[],mocks:[]};
+
+    // ---- QUIZ ----
+    if(v==='quiz'&&st.session){ const s=st.session; const q=bank[s.qs[s.i]]; const code=q.c.split('-')[0];
+      const mock=s.mode==='mock';
+      if(mock&&s.end&&Date.now()>s.end){ setTimeout(()=>this.finishQuiz(),0); }
+      let timer=''; let timerColor='#9a9aa6';
+      if(mock&&s.end){ const left=Math.max(0,s.end-Date.now()); const mm=Math.floor(left/60000), ss=Math.floor(left%60000/1000);
+        timer=`${mm}:${(''+ss).padStart(2,'0')}`; if(left<10*60000) timerColor='#ff9ab0'; }
+      out.quiz={ q:q.q, progress:`${s.i+1} / ${s.qs.length}`, timer, timerColor,
+        barPct:Math.round(100*(s.i+(s.chosen!=null?1:0))/s.qs.length)+'%', barColor:this.hue(code,75,0.14),
+        cellTag:q.c, cellColor:this.hue(code,75,0.14),
+        onQuit:()=>{ s.answers.length? this.finishQuiz() : this.nav('drill'); },
+        options:q.o.map((t,oi)=>{ let bg='#101016',bd='#22222c',fg='#e2e2ea';
+          if(s.chosen!=null&&!mock){ if(oi===q.a){bg='#0e1f16';bd='#2a5c40';fg='#b9edcd';} else if(oi===s.chosen){bg='#210f14';bd='#5c2a38';fg='#ffc4d0';} else fg='#77778a'; }
+          else if(mock&&s.chosen===oi){ bg='#1a1a28'; bd='#3a3a52'; }
+          return {t,bg,bd,fg,onTap:()=>this.answer(oi)}; }),
+        showWhy:s.chosen!=null&&!mock,
+        whyTag:s.chosen===q.a?'CORRECT':'NOT QUITE', whyTagColor:s.chosen===q.a?'#7ee0a8':'#ff9ab0',
+        whyBg:s.chosen===q.a?'#0c1510':'#160d11', whyBd:s.chosen===q.a?'#1e3a2c':'#33202a',
+        why:q.w, onOpenCell:()=>this.nav('cell',{cellId:q.c}),
+        nextLabel:s.i>=s.qs.length-1?'See results':'Next question',
+        onNext:()=>this.nextQ() };
+    } else out.quiz={options:[]};
+
+    // ---- RESULTS ----
+    if(v==='results'&&st.lastSession){ const ls=st.lastSession; const pct=Math.round(100*ls.right/ls.total);
+      const mock=ls.mode==='mock'; const pass=mock?ls.right>=43:pct>=passTarget;
+      const byCh={}; ls.qs.forEach((qi,k)=>{ const code=bank[qi].c.split('-')[0]; byCh[code]=byCh[code]||{r:0,t:0}; byCh[code].t++; if(ls.answers[k])byCh[code].r++; });
+      out.results={ kind:mock?'TIMED MOCK — 43 TO PASS':'DRILL COMPLETE',
+        score:mock?`${ls.right}/60`:pct+'%', color:pass?'oklch(75% 0.17 150)':'#ff9ab0',
+        verdict:pass?(mock?'That\u2019s a pass. Do it again tomorrow.':'Strong.'):(mock?'Below the line — the chart shows where.':'The chart just got more honest.'),
+        detail:`${ls.right} of ${ls.total} correct. Every answer has been written to your Harada chart and readiness score.`,
+        breakdown:Object.keys(byCh).map(code=>({code,color:this.hue(code,75,0.14),pct:Math.round(100*byCh[code].r/byCh[code].t)+'%',label:`${byCh[code].r}/${byCh[code].t}`})),
+        onDone:()=>this.nav('drill') };
+    } else out.results={breakdown:[]};
+
+    // ---- MAP ----
+    out.isMap=v==='map';
+    if(v==='map'){ const A=window.AUTH||{layers:[]};
+      const openId=st.mapOpen||null;
+      out.map={ intro:A.intro, layerRule:A.layerRule,
+        layers:A.layers.map(L=>{ if(L.line) return {isLine:true,notLine:false,name:L.name,desc:L.desc,groups:[]};
+          const color=`oklch(75% 0.13 ${L.hue})`; const open=openId===L.id;
+          const mkItem=(it)=>({ n:it.n, s:it.s,
+            onTap:()=>this.setState({mapItem:it}) });
+          const groups = L.parts ? L.parts.map(p=>({p:p.p, items:p.items.map(mkItem)})) : [{p:'',items:(L.items||[]).map(mkItem)}];
+          return { isLine:false, notLine:true, name:L.name, sub:L.sub, desc:L.desc, color,
+            tint:`oklch(30% 0.04 ${L.hue} / 0.25)`, bd:`oklch(45% 0.07 ${L.hue} / 0.5)`,
+            open, closed:!open, count:(L.parts?L.parts.reduce((s2,p)=>s2+p.items.length,0):(L.items||[]).length)+' authorities',
+            chevron:open?'▾':'▸', groups:open?groups:[],
+            onToggle:()=>this.setState({mapOpen:open?null:L.id}) }; }) };
+      const mi=st.mapItem;
+      out.mapItemOpen=!!mi;
+      out.mapItem=mi?{ n:mi.n, s:mi.s, w:mi.w,
+        cells:(mi.cells||[]).map(id=>({ id, color:this.hue(id.split('-')[0],75,0.14),
+          onTap:()=>{ this.setState({mapItem:null}); this.nav('cell',{cellId:id}); } })),
+        onClose:()=>this.setState({mapItem:null}) }:{cells:[],onClose:()=>{}};
+    } else { out.map={layers:[]}; out.mapItem={cells:[],onClose:()=>{}}; out.mapItemOpen=false; }
+
+    // ---- CHECKPOINT ----
+    out.isCheck=v==='check';
+    if(v==='check'&&st.check){ const c=st.check; const code=c.cellId.split('-')[0]; const color=this.hue(code,75,0.14);
+      const base={ cellTag:c.cellId, color, onQuit:()=>this.nav('cell',{cellId:c.cellId}) };
+      if(c.phase==='q'){ const q=bank[c.qs[c.qi]];
+        out.check=Object.assign(base,{ phaseQ:true, phaseF:false, phaseDone:false,
+          phaseLabel:`◆ Concept check · ${c.qi+1} of ${c.qs.length}`, q:q.q,
+          options:q.o.map((t,oi)=>{ let bg='#101016',bd='#22222c',fg='#e2e2ea';
+            if(c.chosen!=null){ if(oi===q.a){bg='#0e1f16';bd='#2a5c40';fg='#b9edcd';} else if(oi===c.chosen){bg='#210f14';bd='#5c2a38';fg='#ffc4d0';} else fg='#77778a'; }
+            return {t,bg,bd,fg,onTap:()=>{ if(c.chosen!=null)return; c.chosen=oi; if(oi===q.a)c.qRight++; this.recordAnswer(c.qs[c.qi],oi===q.a); this.forceUpdate(); }}; }),
+          showWhy:c.chosen!=null, why:c.chosen!=null?q.w:'',
+          whyTag:c.chosen===q.a?'CORRECT':'NOT QUITE', whyColor:c.chosen===q.a?'#7ee0a8':'#ff9ab0',
+          nextLabel:c.qi<c.qs.length-1?'Next':(c.facts.length?'Now the facts →':'See your marks'),
+          onNext:()=>{ if(c.qi<c.qs.length-1){c.qi++;c.chosen=null;} else if(c.facts.length){c.phase='f';} else this.finishCheck(); this.forceUpdate(); } }); }
+      else if(c.phase==='f'){ const f=c.facts[c.fi];
+        out.check=Object.assign(base,{ phaseQ:false, phaseF:true, phaseDone:false,
+          phaseLabel:`● Fact recall · ${c.fi+1} of ${c.facts.length}`,
+          prompt:f.x.split(' ').slice(0,5).join(' ')+' …',
+          instruction:'Say the rest OUT LOUD — the whole fact — then reveal.',
+          revealed:c.revealed, notRevealed:!c.revealed, fact:f.x,
+          onReveal:()=>{ c.revealed=true; this.forceUpdate(); },
+          onGrade:[['Had it',true],['Missed it',false]].map(([t,ok])=>({t, bg:ok?'#0e1f16':'#210f14', bd:ok?'#2a5c40':'#5c2a38', fg:ok?'#b9edcd':'#ffc4d0',
+            onTap:()=>{ if(ok)c.fRight++; if(c.fi<c.facts.length-1){c.fi++;c.revealed=false;} else this.finishCheck(); this.forceUpdate(); } })) }); }
+      else { const mk=(x)=>x===2?'solid':x===1?'shaky':'blank'; const cc=(store.cells[c.cellId]||{});
+        out.check=Object.assign(base,{ phaseQ:false, phaseF:false, phaseDone:true,
+          cMark:mk(cc.c||0), fMark:mk(cc.f||0),
+          cColor:(cc.c||0)===2?'#7ee0a8':(cc.c||0)===1?'#e8c37a':'#ff9ab0',
+          fColor:(cc.f||0)===2?'#7ee0a8':(cc.f||0)===1?'#e8c37a':'#ff9ab0',
+          rx:(cc.c||0)<2&&(cc.f||0)<2?'Both columns shaky: start the cell over — read it, close the book, explain it out loud, then drill it.':(cc.c||0)<2?'Concept weakness: re-reading won\u2019t fix it. Re-derive the logic out loud without the book.':(cc.f||0)<2?'Fact weakness: nothing is conceptually wrong — hit this chapter\u2019s memorize sheet twice.':'Solid on both. The chart is lit — keep it lit with the missed queue.',
+          onBack:()=>this.nav('cell',{cellId:c.cellId}),
+          onNextCell:()=>{ const nx=this.nextCellId(c.cellId); if(nx) this.nav('cell',{cellId:nx}); else this.nav('home'); } }); }
+    } else out.check={options:[],onGrade:[]};
+
+    // ---- PALACE WALK ----
+    out.isWalk=v==='walk';
+    if(v==='walk'&&st.walk){ const w=st.walk;
+      if(w.i>=w.seq.length){ const had=w.grades.filter(g=>g===2).length, shk=w.grades.filter(g=>g===1).length;
+        out.walk={ done:true, notDone:false, title:w.scope==='all'?'The full palace walk':'Room walk complete',
+          summary:`${had} solid · ${shk} shaky · ${w.grades.length-had-shk} gone. Every grade is on your chart.`,
+          verdict:had===w.grades.length?'You own this floor.':had>=w.grades.length*0.7?'Nearly furnished — revisit the dark spots.':'Walk it again tomorrow. The rooms remember.',
+          onExit:()=>this.nav(w.scope==='all'?'home':'chapter',w.scope==='all'?{}:{ch:w.scope}) }; }
+      else { const id=w.seq[w.i]; const code=id.split('-')[0]; const lo=this.locusOf(id); const cell=this.findCell(id);
+        const concept=cell?(cell.items.find(x=>x.t==='concept')||cell.items[0]):null;
+        out.walk={ done:false, notDone:true, color:this.hue(code,75,0.14),
+          progress:`${w.i+1} / ${w.seq.length}`, room:lo.room, spot:lo.spot, img:lo.img,
+          ask:'Stand here. What rule lives at this spot? Say it out loud before you reveal.',
+          revealed:w.revealed, notRevealed:!w.revealed, cellTag:id, cellTitle:cell?cell.title:'',
+          core:concept?concept.x:'',
+          onReveal:()=>{ w.revealed=true; this.forceUpdate(); },
+          onOpen:()=>this.nav('cell',{cellId:id}),
+          grades:[['Had it',2,'#0e1f16','#2a5c40','#b9edcd'],['Shaky',1,'#191507','#4a3d16','#e8c37a'],['Gone',0,'#210f14','#5c2a38','#ffc4d0']].map(([t,g,bg,bd,fg])=>({t,bg,bd,fg,onTap:()=>this.gradeWalk(g)})),
+          onExit:()=>this.nav(w.scope==='all'?'drill':'chapter',w.scope==='all'?{}:{ch:w.scope}) }; }
+    } else out.walk={grades:[]};
+
+    // ---- SIM ----
+    out.isSim=v==='sim';
+    if(v==='sim'){ const S=this.SIM(); const sim=st.sim||{ci:null,step:0,pick:null,wrong:0};
+      if(sim.ci==null){ out.sim={ picking:true, notPicking:false, title:S.title,
+        cases:S.cases.map((cs,ci)=>({name:cs.name, onTap:()=>this.setState({sim:{ci,step:0,pick:null,wrong:0}})})),
+        onBack:()=>this.nav('drill') }; }
+      else { const cs=S.cases[sim.ci]; const stp=cs.steps[Math.min(sim.step,cs.steps.length-1)];
+        const finished=sim.step>=cs.steps.length;
+        out.sim={ picking:false, notPicking:true, title:cs.name, facts:cs.facts, finished, inStep:!finished,
+          progress:finished?'Case closed':`Decision ${sim.step+1} of ${cs.steps.length}`,
+          prompt:finished?'':stp.p,
+          options:finished?[]:stp.o.map((op,oi)=>{ const picked=sim.pick===oi; const answered=sim.pick!=null;
+            return { t:op.t,
+              bg:answered?(op.ok?'#0e1f16':(picked?'#210f14':'#101016')):'#101016',
+              bd:answered?(op.ok?'#2a5c40':(picked?'#5c2a38':'#22222c')):'#22222c',
+              fg:answered?(op.ok?'#b9edcd':(picked?'#ffc4d0':'#55556a')):'#e2e2ea',
+              onTap:()=>{ if(sim.pick!=null)return; this.setState({sim:Object.assign({},sim,{pick:oi,wrong:sim.wrong+(op.ok?0:1)})}); } }; }),
+          showFb:sim.pick!=null&&!finished,
+          fbTag:sim.pick!=null&&!finished?(stp.o[sim.pick].ok?'GOOD CALL':'CONSEQUENCE'):'',
+          fbColor:sim.pick!=null&&!finished&&stp.o[sim.pick].ok?'#7ee0a8':'#ff9ab0',
+          fb:sim.pick!=null&&!finished?stp.o[sim.pick].fb:'',
+          nextLabel:sim.step>=cs.steps.length-1?'Close the case':'Next decision',
+          onNext:()=>this.setState({sim:Object.assign({},sim,{step:sim.step+1,pick:null})}),
+          close:cs.close, verdict:finished?(sim.wrong===0?'Flawless — the Administrator\u2019s Administrator.':sim.wrong===1?'One misstep — the appeal survives.':'Reversed on appeal. Re-run this case.'):'',
+          onBack:()=>this.setState({sim:{ci:null,step:0,pick:null,wrong:0}}) }; }
+    } else out.sim={cases:[],options:[]};
+    // ---- SYNC ----
+    out.syncOpen=!!st.syncOpen;
+    out.sync={ code:st.syncOpen?btoa(unescape(encodeURIComponent(JSON.stringify(store)))):'',
+      msg:st.syncMsg||'',
+      onClose:()=>this.setState({syncOpen:false}),
+      onCopy:()=>{ const code=btoa(unescape(encodeURIComponent(JSON.stringify(store))));
+        const done=()=>this.setState({syncMsg:'Copied — paste it into your other copy.'});
+        if(navigator.clipboard&&navigator.clipboard.writeText) navigator.clipboard.writeText(code).then(done,()=>this.setState({syncMsg:'Copy failed — long-press the code below and copy manually.'}));
+        else this.setState({syncMsg:'Long-press the code below and copy it manually.'}); },
+      inVal:st.syncIn||'',
+      onIn:(e)=>this.setState({syncIn:e.target.value}),
+      onApply:()=>{ try{ const s=JSON.parse(decodeURIComponent(escape(atob((st.syncIn||'').trim()))));
+          if(!s.cells) throw 0; this.state.store=Object.assign({cells:{},missed:{},mocks:[],settings:{rate:1}},s); this.save();
+          this.setState({syncMsg:'Progress restored ✓',syncIn:''});
+        }catch(e){ this.setState({syncMsg:'That code didn\u2019t parse — paste the whole thing.'}); } } };
+    // sheets
+    out.sheet=st.sheet?{term:st.sheet.term,body:st.sheet.body,kind:st.sheet.kind||'',onClose:()=>this.setState({sheet:null})}:{onClose:()=>{}};
+    out.voiceList=(st.voices.length?st.voices:[]).map(vv=>{ const cur=(store.settings.voice||null)===vv.name;
+      return { name:vv.name.replace(/Microsoft |Google |Apple /,''), tag:vv.lang+(vv.localService?'':' · online'),
+        bg:cur?'#1e2436':'#101016', bd:cur?'#3a4a76':'#22222c',
+        onTap:()=>{ store.settings.voice=vv.name; this.save(); this.setState({voicesOpen:false}); if(st.tts.playing) this.startTTS(st.tts.item); } }; });
+    if(!st.voices.length) out.voiceList=[{name:'System default',tag:'voices load after first tap on iPhone',bg:'#101016',bd:'#22222c',onTap:()=>this.setState({voicesOpen:false})}];
+    return out;
+  }
+}
+</script>
+</body>
+</html>

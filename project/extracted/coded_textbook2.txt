@@ -1,0 +1,2808 @@
+
+The Series 63 Textbook
+Eight subjects · sixty-four cells · every concept coded for what it is
+Built for Peter Sim · August 2, 2026 · Exam August 10, 2026
+How this book is coded
+This is not a book you read straight through and hope. It is a diagnostic instrument. Every statement in it carries a tag telling you what kind of knowledge it is — and therefore what to do when you get it wrong.
+◆
+CONCEPT
+Understand the logic. If you miss one of these, re-derive it — explain it out loud without the book. Re-reading will not help.
+●
+MEMORIZE
+A raw fact, number, or list. Understanding will not help; repetition will. Every one of these is repeated on the memorize sheet at the end of its chapter.
+▲
+TRAP
+Where the exam attacks this material. Usually the wrong answer that feels right. Read these last before you walk in.
+→
+LINK
+This cell depends on, or feeds, another cell. Weakness here may actually be weakness there.
+
+The distinction matters more than it sounds. When you miss a question, the useful first move is not “review that chapter.” It is: was the thing I missed a concept or a fact? If you miss a ◆ concept item, re-reading will not fix it — you have to re-derive the logic until you can explain it out loud without the book. If you miss a ● memorize item, understanding will not fix it — you need repetition. Treating the two the same way is the single most common reason people plateau at 68% on this exam.
+Roughly 60% of what follows is tagged ◆. That is the good news. The Series 63 is not a memorization exam wearing a law costume; it is a vocabulary and logic exam with about ninety hard facts bolted on. The ● items are collected again at the back of the book in a single sheet so you can drill them without re-reading anything.
+The cell codes and your Harada chart
+The eight subject areas map onto the eight surrounding blocks of a Mandal chart, and each subject breaks into exactly eight cells. That gives you sixty-four cells with stable addresses — BDR-4, ETH-7, REM-2 — that you can write straight onto the grid.
+Work it this way. Read a chapter. At the end of each cell, mark the cell on your chart with one of three states: solid, shaky, or blank. Then — and this is the part that makes the chart earn its keep — for every cell you mark shaky or blank, note whether the weakness is on the ◆ items or the ● items. Shaky-on-concepts and shaky-on-facts are different diseases with different treatments, and the chart is where you keep that diagnosis visible.
+
+The 64-cell map. Each colored block is one NASAA subject area; the center block repeats them at a glance with their exam weights.
+What the exam actually is
+65 multiple-choice questions. 60 are scored; 5 are unscored pretest items scattered anywhere in the exam and not identified.
+75 minutes. That is about 69 seconds per question — fast, but the questions are short. Time is rarely the binding constraint on this exam; precision is.
+43 of 60 correct to pass, which is 72%.
+Closed book. Scratch paper is provided on request and you will barely use it — there is almost no math.
+Retake waiting periods: 30 days after a first failure, 30 after a second, 180 after a third and each one after that.
+
+Where the questions come from
+Code
+Subject
+Weight
+Questions
+ETH
+Ethical Practices and Obligations
+25%
+15
+COM
+Communication with Customers and Prospects
+20%
+12
+AGT
+Regulation of Broker-Dealer Agents
+13%
+8
+BDR
+Regulation of Broker-Dealers
+12%
+7
+REM
+Remedies and Administrative Provisions
+11%
+7
+SEC
+Regulation of Securities and Issuers
+9%
+5
+IAD
+Regulation of Investment Advisers
+5%
+3
+IAR
+Regulation of Investment Adviser Representatives
+5%
+3
+
+The chapters below run in teaching order rather than weight order, because the definitions in SEC and BDR are load-bearing for everything after them. If you are rationing hours, the highest return per hour is: ETH, then COM, then AGT and BDR together, then REM. IAD and IAR are six questions combined — learn them properly but do not let them eat a whole evening.
+Cross-references, and how to use them
+The concordance at the back of this book aligns all sixty-four cells against your three other sources: the Achievable Series 63 course, your $2 Textbook OneNote export (cited by module, lesson, and the page number printed at the foot of each OneNote page), and the STC study manual, 43rd edition (cited by section name and page). It is printed landscape on its own pages so you can pull it out and keep it beside you rather than flipping back to it.
+The point is not redundancy. It is second angles. When a cell does not click on the first read, the fix is almost never to read the same explanation again — it is to read a different one. Achievable tends to be conversational and example-led; STC is structural and walks the statute in order; your $2 notes are framework-first. Different failure modes respond to different sources.
+Sixteen cells are marked ⚠ in the concordance. Those are places where the three sources do not agree, or where one of them is simply missing the material. A second table immediately after the concordance lists each one and says which source to trust. Read that table once before you start — it is short, and it will stop you learning a wrong number from a source you otherwise have no reason to doubt.
+Printing this
+The body is set in Cambria at 10.5 point. If you are re-setting it, keep it — the reasoning is specific rather than aesthetic. Cambria was designed to stay legible at small sizes in print, it is narrow enough to fit a full clause on one line at this measure, and, critically for a book with this many dollar amounts and day counts in it, it uses lining figures. Constantia is the other Office serif designed for print, but its default old-style figures sit at varying heights, which makes numerals harder to spot when you are scanning a page for “$35,000” or “fifteen business days.” That single difference decides it.
+Body: Cambria 10.5 pt, line spacing 1.15. Headings: Cambria bold. Cell codes, tag labels, and table headers: a sans face (Aptos or Calibri) at 8.5–9 pt — sans for the structural furniture, serif for anything you actually read in sentences.
+Print double-sided, long-edge binding. Every chapter opens on a fresh page and every memorize sheet starts on a fresh page, so the structure survives duplexing.
+Print the Mandal chart page in color on cardstock and keep it out of the binder — it is a working surface, not a page to flip past. Same for the self-scoring grid at the back.
+Everything else prints fine in greyscale. Every tag carries a symbol as well as a color for exactly this reason: ◆ concept, ● memorize, ▲ trap, → link.
+Three-hole punch rather than perfect binding. You will want to pull the memorize sheets out and carry them separately in the last two days.
+
+One orienting idea before you start
+The shape of the whole subject
+Every state securities act does four things in sequence. It defines what counts as a security. It requires that securities, and the people who sell or advise on them, be registered — subject to a list of escape hatches. It forbids a catalogue of specific dishonest conduct. And it gives one official, the Administrator, the tools to enforce all of that, backed by private lawsuits and criminal prosecution. Definitions, registration, conduct, enforcement. Every question on this exam is somewhere in that sequence, and knowing which of the four you are in narrows the answer set before you read the choices.
+
+A note on your own background, because it will help more than you expect. You already work with the products this exam legislates around: index-linked structured products, variable annuity hedging, separate accounts, institutional counterparties. That gives you real intuition about which side of the fixed/variable line a product sits on, what an institutional buyer looks like, and why disclosure obligations attach where they do. Where that intuition maps onto an exam concept below, it is called out. Where it does not — and there are a few places where the state-law answer is deliberately cruder than market reality — that is called out too, because your professional instinct will occasionally point at the wrong answer.
+
+SEC
+Regulation of Securities and Issuers
+9% · 5 questions
+
+THE SPINE
+Nothing in the Act switches on until the thing being sold is a security. Answer that question, then ask whether registration is required, then ask by which method. Three filters, always in that order. Only five questions come from this chapter, but the definitions you build here are quoted back at you in all seven of the others.
+
+
+SEC connector map — the three-filter funnel.
+SEC-1
+Definition of a security, and the Howey test
+
+◆
+The Act defines “security” with a long list of named instruments — stock, treasury stock, bonds, debentures, notes, evidences of indebtedness, collateral trust certificates, transferable shares, voting trust certificates, preorganization subscriptions, certificates of interest in oil, gas or mining titles, warrants and rights to subscribe — and then closes with a catch-all for anything commonly known as a security. The list is deliberately open-ended. That design choice is the whole point: substance governs, not the label on the paperwork.
+
+◆
+Because the list cannot anticipate every arrangement, the catch-all carries the term “investment contract,” and the Supreme Court supplied the four-part test for what an investment contract is. All four prongs must be present: an investment of money, in a common enterprise, with an expectation of profits, derived primarily from the efforts of others.
+
+●
+The four Howey prongs, in order: money in · common enterprise · expectation of profit · profits from the efforts of others.
+
+◆
+The fourth prong is where most novel arrangements are decided. If the investor does the work — a person who buys a franchise and runs it themselves — there is no security. If a promoter does the work and the investor waits for a check, there usually is one. Orange groves paired with a cultivation contract, working interests in an oil well managed by the operator, fractional interests in racehorses managed by a trainer, and tokens sold with a promise that the issuing team will build the network all come out the same way.
+
+▲
+“It is real estate, so it cannot be a security.” Wrong. Real estate sold with a management contract that produces passive income for the buyer is the original Howey fact pattern.
+
+→
+Feeds SEC-2 (what is excluded), SEC-4 and SEC-5 (exemptions apply only once something IS a security), and REM-2 (the Administrator’s jurisdiction attaches to offers and sales of securities).
+
+
+SEC-2
+What is not a security
+
+◆
+A short list of product families sits outside the definition, and the organizing idea is who bears the investment risk. If the issuer or insurer guarantees the outcome and absorbs the market risk, it is not a security. If the buyer absorbs the market risk, it is.
+
+●
+Not securities: fixed annuities and fixed insurance products · whole life and endowment policies · commodity futures contracts · physical commodities and precious metals held directly · collectibles, art, rare coins · bank certificates of deposit, savings accounts, demand deposits · real estate owned directly for personal use or investment without a management arrangement · retirement plan interests such as IRAs and 401(k) accounts themselves (the investments inside them are another matter).
+
+◆
+Variable products are securities. In a variable annuity or variable life contract the contract holder’s account value moves with a separate account portfolio, so the holder bears the investment risk. You know this cold from the hedging side of your work: a fixed annuity leaves the insurer holding the market exposure, which is why the carrier hedges it on its own balance sheet; a variable contract passes that exposure through to the policyholder, which is why the separate account is registered.
+
+●
+Selling a variable product requires a securities registration (Series 6 or 7 plus the state exam) AND a state insurance license. Selling a fixed annuity requires only the insurance license.
+
+◆
+Equity-indexed and index-linked annuities are the genuinely contested middle. Where the contract guarantees principal and credits a formula-driven return, most states treat it as insurance; where the buyer takes real downside, it looks like a security. The exam avoids the hard cases — if a question says “fixed” it means not a security, and if it says “variable” it means security.
+
+▲
+“A fixed annuity is a security because the return depends on an investment portfolio.” Wrong — the insurer guarantees the rate and holds the risk. This is described as the single most recycled distinction in this chapter, and it is worth being able to answer without pausing.
+
+▲
+“A bank CD is never a security.” Mostly true and it is the exam answer — but know the edge: a long-dated brokered CD with unusual features that trades in a secondary market can be recharacterized. If the stem says “certificate of deposit at an insured bank,” answer not a security.
+
+
+SEC-3
+Offer, sale, and the events that are neither
+
+◆
+The Act does not regulate securities in the abstract; it regulates offers and sales of them. A sale is any contract of sale, contract to sell, or disposition of a security for value. An offer is any attempt to dispose of a security, or any solicitation of an offer to buy, for value. The operative phrase in both is “for value.” No value moving, no sale.
+
+◆
+Note how far “offer” reaches: an attempt counts. The pitch that fails is still an offer, and it is still within the Administrator’s jurisdiction and still subject to the antifraud rules.
+
+●
+These ARE sales even though they look like gifts or non-events: a gift of ASSESSABLE stock (the recipient takes on a future obligation, which is value) · any security given as a bonus with the purchase of anything else, security or not · a warrant or right delivered together with a bond.
+
+●
+The sale of a warrant, right, or convertible security is also an OFFER of the underlying security it can be converted into or used to buy.
+
+●
+These are NOT sales: a bona fide gift of non-assessable stock · a bona fide pledge or loan of securities as collateral · a stock dividend or stock split where the holder gives nothing · a merger, consolidation, reclassification, or sale of assets approved by a vote of the security holders · an exchange of securities in a judicially approved reorganization.
+
+◆
+Keep “not a sale” and “exempt transaction” in separate drawers. An exempt transaction IS a sale that happens to skip registration. An excluded event is not a sale at all, so no registration analysis ever begins.
+
+▲
+“The stock was free, so no sale occurred.” Wrong when the free security rides along with a purchase — part of the price is attributed to it, and both instruments were sold.
+
+
+SEC-4
+Exempt securities — exempt because of what they are
+
+◆
+An exempt security is exempt from REGISTRATION because of the nature of the instrument or its issuer. The status attaches to the security and travels with it into every subsequent transaction, forever. Once exempt, always exempt.
+
+●
+The list: U.S. government and agency securities · Canadian federal and provincial government securities · securities of foreign governments with which the U.S. maintains diplomatic relations · municipal securities of any state or political subdivision · securities issued by banks, savings institutions, and trust companies · securities issued by insurance companies · securities of federally regulated public utilities and common carriers · securities of nonprofit religious, educational, charitable, fraternal, and social organizations · commercial paper · securities issued in connection with employee benefit plans · securities of federal covered status.
+
+●
+Commercial paper qualifies only if all three conditions hold: maturity of nine months or less, denominations of at least $50,000, and a rating in one of the three highest categories from a nationally recognized rating organization.
+
+▲
+Bank securities means the BANK. A bank HOLDING COMPANY’s stock is not exempt. Any time a stem inserts the words “holding company,” the exemption is gone.
+
+▲
+Insurance company securities are exempt — meaning the insurer’s own stock and bonds. The variable annuity and variable life contracts the insurer sells are separate-account securities and are NOT covered by that exemption. Two different things issued by the same company, two different answers.
+
+◆
+Notice what unites the list: issuers already supervised by another regulator, or governments. The theory is that a second layer of state merit review adds nothing. That is also why the exemption never touches fraud — see SEC-6.
+
+
+SEC-5
+Exempt transactions — exempt because of how the sale happens
+
+◆
+A transaction exemption looks at the circumstances of a particular trade rather than at the instrument. It is single-use. It covers the transaction described and nothing after it; the next trade in the same security has to find its own exemption or register.
+
+●
+The heavily tested ones: an isolated non-issuer transaction · any transaction with an institutional investor · a private placement directed to no more than ten non-institutional persons in the state in twelve consecutive months · a preorganization certificate offered to no more than ten subscribers · an unsolicited order received from a customer · a transaction by a fiduciary — executor, administrator, receiver, trustee in bankruptcy, sheriff, marshal, conservator, guardian · a non-issuer transaction in a security listed in a recognized securities manual · an offer or sale to existing security holders where no commission is paid.
+
+●
+The private placement exemption carries two conditions beyond the count: the seller must reasonably believe every non-institutional buyer is purchasing for investment rather than resale, and no commission or other remuneration may be paid for soliciting a non-institutional buyer.
+
+●
+The preorganization exemption carries its own two: no payment may be received from any subscriber, and no commission may be paid for soliciting them.
+
+◆
+Institutional investors are counted separately and without limit. The ten-person cap governs only non-institutional persons. Ten retail persons plus fifty institutions is fine. Your world lives almost entirely inside this exemption — an offering placed with insurance carriers and pension funds does not touch the ten-person cap at all.
+
+▲
+“The eleventh institution defeats the private placement exemption.” Wrong — institutions do not count.
+
+▲
+“Because the first sale was exempt, later sales of the same security are exempt.” Wrong — that is the exempt-SECURITY rule, not the exempt-TRANSACTION rule. This swap is the most common way this chapter is tested.
+
+◆
+Compare with federal law once and move on: the state private placement exemption counts ten or fewer non-institutional persons; the federal Regulation D Rule 506 exemption counts thirty-five or fewer non-accredited investors. Because Rule 506 securities became federal covered, the state exemption is now largely vestigial in practice — but it is still fully testable.
+
+
+SEC-6
+Federal covered securities, notice filing, and the antifraud floor
+
+◆
+In 1996 Congress redrew the federal-state line. For certain categories, states are preempted from requiring registration at all. Those are federal covered securities. What states retain is narrow and specific: a notice filing with a fee, and full antifraud authority.
+
+●
+Four categories of federal covered security: securities listed on a national exchange (and any security of equal or senior rank to a listed one) · securities issued by registered investment companies · securities sold to qualified purchasers · securities sold under Regulation D Rule 506.
+
+●
+Only two of the four are actually required to notice file: investment company securities, and Rule 506 offerings. Issuers of exchange-listed securities and of securities sold to qualified purchasers do not notice file.
+
+●
+A notice filing consists of: a statement identifying the issuer and the security, copies of what was filed with the SEC (or where to get them), a consent to service of process, and the state fee. For mutual funds it is typically renewed annually.
+
+◆
+What the state can still do with a federal covered security: refuse a deficient or unpaid filing, investigate and prosecute fraud, and suspend transactions where fraud is found. What it cannot do: review the merits, require registration by coordination or qualification, or impose disclosure obligations beyond the federal ones.
+
+▲
+Rule 506 is federal covered. Rule 504 is not. (Rule 505 was repealed in 2016 and should not appear — if it does, it is a distractor.)
+
+◆
+The one rule with no exceptions anywhere in this subject: nothing is ever exempt from the antifraud provisions. Not an exempt security, not an exempt transaction, not a federal covered security, not any person. Exemption relieves the duty to register. It never relieves the duty to deal honestly. When a stem asks which of four items is exempt from the antifraud provisions, the answer is none of them.
+
+
+SEC-7
+The three registration methods
+
+◆
+A security that is neither federal covered nor exempt must register in every state where it is offered. There are three doors, and which one an issuer uses is determined by its federal status, not by preference.
+
+●
+Registration by FILING (also called notification) — the streamlined path for seasoned issuers with an established earnings history. Rarely used today.
+
+●
+Registration by COORDINATION — for a security registering with the SEC at the same time under the Securities Act of 1933. This is the common path for a public offering.
+
+●
+Registration by QUALIFICATION — the fallback for everything else, including intrastate offerings that never go to the SEC. The most demanding: full disclosure of the issuer, its capital structure, its officers and directors, the use of proceeds, audited financials, and an opinion of counsel that the security is legally issued, fully paid and non-assessable.
+
+●
+Coordination becomes effective automatically and simultaneously with the federal registration, provided no stop order is in effect, the registration statement has been on file with the ADMINISTRATOR for the required period, and a statement of the maximum and minimum proposed offering prices and maximum underwriting discounts has been on file with the Administrator for two full business days.
+
+●
+Qualification becomes effective only when the Administrator affirmatively declares it effective. There is no automatic mechanism.
+
+●
+Every method requires, in addition to the substantive filing: a consent to service of process, the filing fee, and whatever information about the issuer, the offering, and the underwriters the Administrator requires. The Administrator may also require an escrow or an impound of proceeds, and may require sales to be made through a specified escrow agent.
+
+▲
+The ten-day clock in coordination runs with the state Administrator, not the SEC. A stem that says “on file with the SEC for ten days” is describing the wrong filing.
+
+▲
+“Qualification becomes effective automatically after thirty days.” Wrong — that is the PERSON registration clock (see BDR-5). Securities registered by qualification wait for the Administrator to act.
+
+
+SEC-8
+Life of a securities registration, and stop orders
+
+●
+A securities registration is effective for one year from its effective date. This is the only registration under the Act that does not expire on December 31 — persons all expire at calendar year end. Expect that contrast to be tested.
+
+●
+The registration statement may be filed by the issuer, by any other person on whose behalf the offering is being made, or by a registered broker-dealer.
+
+◆
+The Administrator’s kill switch is the stop order, which denies, suspends, or revokes the effectiveness of a registration statement. It requires grounds, and the grounds are enumerated.
+
+●
+Grounds for a stop order include: the registration statement is incomplete or contains a material misstatement or omission · the offering violates the Act or an order · the issuer’s enterprise or method of business is illegal · the offering would work a fraud on purchasers · underwriter compensation or promoters’ profits are unreasonable · the applicable filing fee was not paid · the security is the subject of an injunction by a court.
+
+●
+Due process: a stop order may not be entered without prior written notice to the applicant and every person on record, an opportunity for a hearing, and written findings of fact and conclusions of law. The Administrator MAY summarily postpone or suspend effectiveness pending final determination, but must then promptly notify the parties and hold a hearing on request — within fifteen days of a written request.
+
+◆
+The Administrator may not enter a stop order based on facts known when the registration became effective unless the proceeding is instituted within thirty days after effectiveness. The Act does not let a regulator sit on knowledge and then pull the rug.
+
+●
+A stop order may be modified or vacated by the Administrator at any time if conditions change.
+
+
+
+●  SEC memorize sheet
+Every ● item from this chapter, in one place. These are the facts that understanding will not rescue. Cover the right column, read the cell code, and say the fact.
+CELL
+FACT
+SEC-1
+The four Howey prongs, in order: money in · common enterprise · expectation of profit · profits from the efforts of others.
+SEC-2
+Not securities: fixed annuities and fixed insurance products · whole life and endowment policies · commodity futures contracts · physical commodities and precious metals held directly · collectibles, art, rare coins · bank certificates of deposit, savings accounts, demand deposits · real estate owned directly for personal use or investment without a management arrangement · retirement plan interests such as IRAs and 401(k) accounts themselves (the investments inside them are another matter).
+SEC-2
+Selling a variable product requires a securities registration (Series 6 or 7 plus the state exam) AND a state insurance license. Selling a fixed annuity requires only the insurance license.
+SEC-3
+These ARE sales even though they look like gifts or non-events: a gift of ASSESSABLE stock (the recipient takes on a future obligation, which is value) · any security given as a bonus with the purchase of anything else, security or not · a warrant or right delivered together with a bond.
+SEC-3
+The sale of a warrant, right, or convertible security is also an OFFER of the underlying security it can be converted into or used to buy.
+SEC-3
+These are NOT sales: a bona fide gift of non-assessable stock · a bona fide pledge or loan of securities as collateral · a stock dividend or stock split where the holder gives nothing · a merger, consolidation, reclassification, or sale of assets approved by a vote of the security holders · an exchange of securities in a judicially approved reorganization.
+SEC-4
+The list: U.S. government and agency securities · Canadian federal and provincial government securities · securities of foreign governments with which the U.S. maintains diplomatic relations · municipal securities of any state or political subdivision · securities issued by banks, savings institutions, and trust companies · securities issued by insurance companies · securities of federally regulated public utilities and common carriers · securities of nonprofit religious, educational, charitable, fraternal, and social organizations · commercial paper · securities issued in connection with employee benefit plans · securities of federal covered status.
+SEC-4
+Commercial paper qualifies only if all three conditions hold: maturity of nine months or less, denominations of at least $50,000, and a rating in one of the three highest categories from a nationally recognized rating organization.
+SEC-5
+The heavily tested ones: an isolated non-issuer transaction · any transaction with an institutional investor · a private placement directed to no more than ten non-institutional persons in the state in twelve consecutive months · a preorganization certificate offered to no more than ten subscribers · an unsolicited order received from a customer · a transaction by a fiduciary — executor, administrator, receiver, trustee in bankruptcy, sheriff, marshal, conservator, guardian · a non-issuer transaction in a security listed in a recognized securities manual · an offer or sale to existing security holders where no commission is paid.
+SEC-5
+The private placement exemption carries two conditions beyond the count: the seller must reasonably believe every non-institutional buyer is purchasing for investment rather than resale, and no commission or other remuneration may be paid for soliciting a non-institutional buyer.
+SEC-5
+The preorganization exemption carries its own two: no payment may be received from any subscriber, and no commission may be paid for soliciting them.
+SEC-6
+Four categories of federal covered security: securities listed on a national exchange (and any security of equal or senior rank to a listed one) · securities issued by registered investment companies · securities sold to qualified purchasers · securities sold under Regulation D Rule 506.
+SEC-6
+Only two of the four are actually required to notice file: investment company securities, and Rule 506 offerings. Issuers of exchange-listed securities and of securities sold to qualified purchasers do not notice file.
+SEC-6
+A notice filing consists of: a statement identifying the issuer and the security, copies of what was filed with the SEC (or where to get them), a consent to service of process, and the state fee. For mutual funds it is typically renewed annually.
+SEC-7
+Registration by FILING (also called notification) — the streamlined path for seasoned issuers with an established earnings history. Rarely used today.
+SEC-7
+Registration by COORDINATION — for a security registering with the SEC at the same time under the Securities Act of 1933. This is the common path for a public offering.
+SEC-7
+Registration by QUALIFICATION — the fallback for everything else, including intrastate offerings that never go to the SEC. The most demanding: full disclosure of the issuer, its capital structure, its officers and directors, the use of proceeds, audited financials, and an opinion of counsel that the security is legally issued, fully paid and non-assessable.
+SEC-7
+Coordination becomes effective automatically and simultaneously with the federal registration, provided no stop order is in effect, the registration statement has been on file with the ADMINISTRATOR for the required period, and a statement of the maximum and minimum proposed offering prices and maximum underwriting discounts has been on file with the Administrator for two full business days.
+SEC-7
+Qualification becomes effective only when the Administrator affirmatively declares it effective. There is no automatic mechanism.
+SEC-7
+Every method requires, in addition to the substantive filing: a consent to service of process, the filing fee, and whatever information about the issuer, the offering, and the underwriters the Administrator requires. The Administrator may also require an escrow or an impound of proceeds, and may require sales to be made through a specified escrow agent.
+SEC-8
+A securities registration is effective for one year from its effective date. This is the only registration under the Act that does not expire on December 31 — persons all expire at calendar year end. Expect that contrast to be tested.
+SEC-8
+The registration statement may be filed by the issuer, by any other person on whose behalf the offering is being made, or by a registered broker-dealer.
+SEC-8
+Grounds for a stop order include: the registration statement is incomplete or contains a material misstatement or omission · the offering violates the Act or an order · the issuer’s enterprise or method of business is illegal · the offering would work a fraud on purchasers · underwriter compensation or promoters’ profits are unreasonable · the applicable filing fee was not paid · the security is the subject of an injunction by a court.
+SEC-8
+Due process: a stop order may not be entered without prior written notice to the applicant and every person on record, an opportunity for a hearing, and written findings of fact and conclusions of law. The Administrator MAY summarily postpone or suspend effectiveness pending final determination, but must then promptly notify the parties and hold a hearing on request — within fifteen days of a written request.
+SEC-8
+A stop order may be modified or vacated by the Administrator at any time if conditions change.
+
+
+BDR
+Regulation of Broker-Dealers
+12% · 7 questions
+
+THE SPINE
+Two questions decide every broker-dealer fact pattern: does the firm have a place of business in this state, and who are its in-state customers? Everything else in this chapter — forms, fees, bonds, clocks — is what happens after you answer yes. Note what is NOT here: the federal net capital dollar ladder. This is a state law exam and the state’s authority over a firm’s finances is capped at whatever the SEC already requires.
+
+
+BDR connector map — the registration decision tree.
+BDR-1
+Definition of a broker-dealer
+
+◆
+A broker-dealer is any PERSON engaged in the BUSINESS of effecting transactions in securities for the account of others or for its own account. Federal law splits broker and dealer into two definitions; state law fuses them into one. On this exam there is a single concept and a single registration.
+
+◆
+Each element does work. “Person” includes entities and individuals. “Engaged in the business” requires a pattern, not a single trade — someone who sells a block of stock once is not a broker-dealer. “Effecting transactions” covers the whole arc from solicitation through settlement, not just execution.
+
+●
+Person under the Act means an individual, corporation, partnership, association, joint-stock company, trust where the beneficial interests are evidenced by a security, unincorporated organization, government, or political subdivision. It does NOT include a minor, a deceased individual, or a person judged mentally incompetent.
+
+◆
+Most broker-dealers are firms, but a natural person operating a securities business as a sole proprietor is a broker-dealer, not an agent. The test is the role, not whether the actor breathes.
+
+▲
+“Only an entity can be a broker-dealer.” Wrong — a sole proprietor qualifies.
+
+→
+→ AGT-1. An individual who REPRESENTS a broker-dealer is an agent. An individual who IS the broker-dealer is a broker-dealer.
+
+
+BDR-2
+Exclusions from the definition
+
+●
+Three categorical exclusions: agents · issuers · banks, savings institutions, and trust companies.
+
+◆
+Then the conditional exclusion, which is where the exam lives. A firm with NO place of business in the state is excluded if its business in that state is limited to a permitted set of counterparties. This is sometimes called the institution rule.
+
+●
+The permitted counterparties: issuers of the securities involved in the transactions · other broker-dealers · banks, savings institutions, and trust companies · insurance companies · investment companies · pension or profit-sharing trusts · other financial institutions or institutional buyers, whether acting for themselves or as trustees.
+
+●
+Separately, the snowbird or vacation rule: a firm with no place of business in the state may continue to transact with an EXISTING customer who is temporarily present in that state and is not a resident of it.
+
+◆
+Read the snowbird rule for what it actually protects — a relationship already in motion. It does not permit soliciting new customers in the temporary state, and it does not permit advertising into it. The relationship must predate the travel.
+
+●
+There is NO de minimis exemption for broker-dealers. A single in-state retail customer who resides in the state requires registration, no matter how institutional the rest of the book is.
+
+▲
+The exclusion is conjunctive. No place of business AND only permitted counterparties. Satisfy one and fail the other and you register.
+
+◆
+Your desk sits comfortably inside this exclusion in most states — an index solutions group dealing exclusively with insurance carriers and other institutions has no in-state retail customers. That intuition is correct and it is exactly what the rule is for. What breaks it is an office, not a client.
+
+
+BDR-3
+Place of business and jurisdictional triggers
+
+◆
+Registration is jurisdictional and the trigger is a disjunction: a place of business in the state, OR transacting business with residents of the state outside a permitted category. Either one is sufficient on its own.
+
+●
+A place of business is any office, branch, or location at which the firm regularly conducts business, and any address the firm publicly holds out as a business address — on a website, a business card, letterhead, or an advertisement.
+
+◆
+Holding out matters as much as physical presence. A firm that lists a suite number in a state on its website has a place of business there even if nobody sits in it. Conversely, a hotel room used once, or an itinerant location where no clients are met and nothing is held out, is not one.
+
+▲
+“The firm has no employees in the state, so it has no place of business.” Not necessarily — an address held out publicly is enough.
+
+
+BDR-4
+The registration application
+
+●
+Four things go with every application: the application form itself (Form BD, filed electronically through the Central Registration Depository), a consent to service of process, the filing fee, and any surety bond the Administrator requires.
+
+◆
+The consent to service of process is the item candidates skip and the exam does not. It irrevocably appoints the Administrator as the registrant’s attorney to receive service of legal papers, so an investor suing an out-of-state firm can serve the state regulator instead of chasing the firm. Three attributes get tested: it is irrevocable, it is filed once with the initial application, and — unlike the rest of the registration — it is never renewed.
+
+●
+Everyone files one: broker-dealers, agents, investment advisers, IARs, and issuers registering securities, including issuers of federal covered securities making a notice filing.
+
+●
+Filing fees are paid at initial registration and again annually at renewal. If an application is denied or withdrawn, the Administrator may retain all or part of the fee. It is not refunded.
+
+●
+When two registered firms merge or one acquires the other, the surviving successor firm must file an updated application — but pays no additional filing fee.
+
+◆
+The Administrator may also require an applicant to pass a written or oral examination as a condition of registration, and may require the firm to publish an announcement of the application in a newspaper.
+
+
+BDR-5
+Effectiveness, expiration, renewal, and withdrawal
+
+●
+A registration becomes effective at NOON on the THIRTIETH day after the application, or the last amendment to it, is filed.
+
+◆
+Notice the direction of the default. The registration is granted unless the Administrator acts. The Administrator may accelerate it — which is routine in practice — but if the regulator does nothing, the applicant is registered. The burden of acting sits on the state.
+
+●
+The Administrator will not grant registration if a denial order is in effect, or if a proceeding for denial, revocation, suspension, cancellation, or withdrawal is pending.
+
+●
+Registrations of broker-dealers, agents, investment advisers, and IARs expire on December 31 each year regardless of when they became effective. Renewal is an updated application and a new fee.
+
+●
+Withdrawal becomes effective thirty days after the Administrator receives the application to withdraw, or sooner if the Administrator allows — unless a revocation or suspension proceeding is pending, in which case the Administrator controls the timing.
+
+●
+After withdrawal, the Administrator retains jurisdiction over the former registrant for ONE YEAR and may institute a revocation or suspension proceeding within that year for conduct that occurred while the person was registered.
+
+▲
+“A firm can escape a pending investigation by withdrawing.” Wrong on two counts: withdrawal is suspended while a proceeding is pending, and jurisdiction survives for a year regardless.
+
+
+BDR-6
+Net capital and surety bonds
+
+◆
+The state’s power over a broker-dealer’s balance sheet exists, but it is capped. The Administrator may require a minimum net capital in the public interest, and may require a surety bond — but may not impose a requirement exceeding what the SEC already requires. The same ceiling applies to bonding and to books-and-records rules. Federal law occupies the field above that line.
+
+●
+If a broker-dealer’s net capital falls below the required minimum, it must notify the Administrator of the state where its principal office is located within ONE business day.
+
+◆
+The bond exists to make an investor’s judgment collectible. Its trigger is custody or discretionary authority over client assets — the two conditions under which a firm can actually lose someone’s money through misconduct rather than through markets.
+
+●
+Because broker-dealers almost always hold customer assets, they almost always need a bond. An investment adviser that takes neither custody nor discretion may need none.
+
+●
+No bond is required if the firm’s net capital, or an adviser’s minimum net worth, already meets the required minimum. Meeting the financial requirement substitutes for the bond.
+
+●
+The Administrator may accept a deposit of cash or securities in lieu of a bond — never personal property. Where securities are deposited, the Administrator determines which are acceptable.
+
+●
+A required bond must be maintained for as long as the registrant is in business and for three years afterward. Any bond must permit suit by a person with a cause of action under the civil liability section, and no suit may be brought on the bond more than two years after the sale or other act it is based on.
+
+◆
+The bond must survive the bonded person. A cause of action under the Act survives the death of either party, so a bond that terminated on death or deregistration would defeat the statute. The Act does not permit one.
+
+
+BDR-7
+Post-registration conduct: records, advertising, supervision
+
+●
+A registered broker-dealer must make and keep the records the Administrator requires, and all records are subject to reasonable periodic, special, or other examinations by the Administrator — inside or outside the state — as the Administrator deems necessary in the public interest.
+
+●
+Advertising, sales literature, prospectuses, pamphlets, circulars, and form letters relating to registered securities and distributed to current or prospective clients must be FILED with the Administrator. Advertising means any notice, circular, letter, or other written communication addressed to more than one person. A firm’s public website counts, because any investor can see it.
+
+◆
+Even material that need not be filed still has to be fair, balanced, and not misleading. Filing is a procedural obligation layered on top of the substantive one, not a substitute for it.
+
+●
+Customer SECURITIES must be segregated from the firm’s own securities. Customer CASH may be commingled. The asymmetry is the tested part.
+
+◆
+On the federal side, a firm must establish and maintain a supervisory system reasonably designed to achieve compliance: written supervisory procedures, registered principals designated for each line of business, review of correspondence and transactions, an annual compliance meeting with each registered person, and periodic inspection of offices. The state exam wants the existence and shape of that system, not the inspection calendar.
+
+▲
+“The state may require a broker-dealer to keep records the SEC does not require.” Wrong — preempted.
+
+
+BDR-8
+Canadian broker-dealers and other special cases
+
+◆
+Canadian regulators helped draft the model act, which is why it contains a bespoke, lighter registration path for Canadian firms. The point of it is narrow: to let a Canadian firm keep serving a client who has moved to or is visiting the United States, and to service Canadian retirement accounts held by U.S. residents.
+
+●
+A Canadian broker-dealer with no office in the state may obtain a limited registration by filing: an application, a consent to service of process, evidence of its registration with the securities regulator in its home province, and evidence that it is a member in good standing of a self-regulatory organization or stock exchange in Canada.
+
+●
+Agents of such firms may obtain a parallel limited registration on the same basis. Both the firm and the agent must remain in good standing at home; losing that status ends the U.S. limited registration.
+
+◆
+The permitted business is correspondingly narrow: transactions with or for an existing client of the firm who is temporarily present in the United States, and self-directed tax-advantaged Canadian retirement accounts of persons now residing in the state.
+
+
+
+●  BDR memorize sheet
+Every ● item from this chapter, in one place. These are the facts that understanding will not rescue. Cover the right column, read the cell code, and say the fact.
+CELL
+FACT
+BDR-1
+Person under the Act means an individual, corporation, partnership, association, joint-stock company, trust where the beneficial interests are evidenced by a security, unincorporated organization, government, or political subdivision. It does NOT include a minor, a deceased individual, or a person judged mentally incompetent.
+BDR-2
+Three categorical exclusions: agents · issuers · banks, savings institutions, and trust companies.
+BDR-2
+The permitted counterparties: issuers of the securities involved in the transactions · other broker-dealers · banks, savings institutions, and trust companies · insurance companies · investment companies · pension or profit-sharing trusts · other financial institutions or institutional buyers, whether acting for themselves or as trustees.
+BDR-2
+Separately, the snowbird or vacation rule: a firm with no place of business in the state may continue to transact with an EXISTING customer who is temporarily present in that state and is not a resident of it.
+BDR-2
+There is NO de minimis exemption for broker-dealers. A single in-state retail customer who resides in the state requires registration, no matter how institutional the rest of the book is.
+BDR-3
+A place of business is any office, branch, or location at which the firm regularly conducts business, and any address the firm publicly holds out as a business address — on a website, a business card, letterhead, or an advertisement.
+BDR-4
+Four things go with every application: the application form itself (Form BD, filed electronically through the Central Registration Depository), a consent to service of process, the filing fee, and any surety bond the Administrator requires.
+BDR-4
+Everyone files one: broker-dealers, agents, investment advisers, IARs, and issuers registering securities, including issuers of federal covered securities making a notice filing.
+BDR-4
+Filing fees are paid at initial registration and again annually at renewal. If an application is denied or withdrawn, the Administrator may retain all or part of the fee. It is not refunded.
+BDR-4
+When two registered firms merge or one acquires the other, the surviving successor firm must file an updated application — but pays no additional filing fee.
+BDR-5
+A registration becomes effective at NOON on the THIRTIETH day after the application, or the last amendment to it, is filed.
+BDR-5
+The Administrator will not grant registration if a denial order is in effect, or if a proceeding for denial, revocation, suspension, cancellation, or withdrawal is pending.
+BDR-5
+Registrations of broker-dealers, agents, investment advisers, and IARs expire on December 31 each year regardless of when they became effective. Renewal is an updated application and a new fee.
+BDR-5
+Withdrawal becomes effective thirty days after the Administrator receives the application to withdraw, or sooner if the Administrator allows — unless a revocation or suspension proceeding is pending, in which case the Administrator controls the timing.
+BDR-5
+After withdrawal, the Administrator retains jurisdiction over the former registrant for ONE YEAR and may institute a revocation or suspension proceeding within that year for conduct that occurred while the person was registered.
+BDR-6
+If a broker-dealer’s net capital falls below the required minimum, it must notify the Administrator of the state where its principal office is located within ONE business day.
+BDR-6
+Because broker-dealers almost always hold customer assets, they almost always need a bond. An investment adviser that takes neither custody nor discretion may need none.
+BDR-6
+No bond is required if the firm’s net capital, or an adviser’s minimum net worth, already meets the required minimum. Meeting the financial requirement substitutes for the bond.
+BDR-6
+The Administrator may accept a deposit of cash or securities in lieu of a bond — never personal property. Where securities are deposited, the Administrator determines which are acceptable.
+BDR-6
+A required bond must be maintained for as long as the registrant is in business and for three years afterward. Any bond must permit suit by a person with a cause of action under the civil liability section, and no suit may be brought on the bond more than two years after the sale or other act it is based on.
+BDR-7
+A registered broker-dealer must make and keep the records the Administrator requires, and all records are subject to reasonable periodic, special, or other examinations by the Administrator — inside or outside the state — as the Administrator deems necessary in the public interest.
+BDR-7
+Advertising, sales literature, prospectuses, pamphlets, circulars, and form letters relating to registered securities and distributed to current or prospective clients must be FILED with the Administrator. Advertising means any notice, circular, letter, or other written communication addressed to more than one person. A firm’s public website counts, because any investor can see it.
+BDR-7
+Customer SECURITIES must be segregated from the firm’s own securities. Customer CASH may be commingled. The asymmetry is the tested part.
+BDR-8
+A Canadian broker-dealer with no office in the state may obtain a limited registration by filing: an application, a consent to service of process, evidence of its registration with the securities regulator in its home province, and evidence that it is a member in good standing of a self-regulatory organization or stock exchange in Canada.
+BDR-8
+Agents of such firms may obtain a parallel limited registration on the same basis. Both the firm and the agent must remain in good standing at home; losing that status ends the U.S. limited registration.
+
+
+AGT
+Regulation of Broker-Dealer Agents
+13% · 8 questions
+
+THE SPINE
+One sentence carries this chapter: activity defines registration, never title. The exam will describe what a person does, withhold whether it matters, and ask whether they must register. Read the verbs. Then ask two follow-ups — whom do they represent, and where do they have an office or clients?
+
+
+AGT connector map — the five-filter registration test.
+AGT-1
+Definition of an agent
+
+●
+An agent is any INDIVIDUAL, other than a broker-dealer itself, who represents a broker-dealer or an issuer in effecting or attempting to effect purchases or sales of securities.
+
+◆
+Three elements, each with a trap attached. Individual — only a natural person can be an agent; a firm never is. Representing a broker-dealer or issuer — the person is acting as the face of an entity. Effecting OR ATTEMPTING to effect — the definition reaches the whole sales process, so soliciting is agent activity even when nothing is ever bought.
+
+●
+Activities that require agent registration: soliciting purchases or sales by any means · taking or receiving customer orders, even if someone else enters them · executing trades · quoting prices to customers on the firm’s behalf · supervising any of the above.
+
+▲
+“She never closed a sale, so she was not acting as an agent.” Wrong — attempting counts.
+
+
+AGT-2
+Who is not an agent
+
+◆
+The exclusion is functional. Employees whose duties are purely clerical or ministerial — receptionists, file clerks, cashiers, back-office and IT staff — are not agents, because they neither solicit nor effect transactions.
+
+●
+The exclusion ends at the first customer order. The moment a clerical employee takes an order, solicits a prospect, or makes a recommendation, registration is required regardless of job title, script, or supervision.
+
+◆
+Officers, partners, and directors of a broker-dealer or an issuer who do not actually engage in securities transactions are not agents by virtue of their position — though see AGT-5, where some of them get registered automatically anyway.
+
+▲
+“The firm calls her a compliance analyst, so she is not an agent.” The title is irrelevant in both directions. A person with an impressive title who never touches a transaction may not need registration; a person with no title who routinely takes orders does.
+
+
+AGT-3
+Agents of issuers — the exclusions
+
+◆
+This is the chapter’s hardest boundary and its most tested. An individual representing an ISSUER may be excluded from agent registration in specific situations. An individual representing a BROKER-DEALER never is — there are no parallel exclusions on that side.
+
+●
+An individual representing an issuer need not register when the transaction involves: an exempt security — government, municipal, bank, insurance company, public utility, railroad, nonprofit, commercial paper, employee benefit plan interests; or an exempt transaction; or a security covered by certain federal covered transactions.
+
+●
+A separate exclusion covers sales by an issuer’s representative to the issuer’s own existing employees, partners, or directors — but ONLY where no commission or other remuneration is paid for soliciting the sale.
+
+▲
+The no-commission condition attaches to that one clause. It is not a general rule that any uncompensated issuer representative is excluded. A person selling the issuer’s stock to the general public without a commission still needs to register.
+
+◆
+The structure here is a deliberate echo of the securities exemptions in SEC-4 and SEC-5. The Act reuses its own architecture: if the security or the transaction was safe enough to skip registration, the person selling it on the issuer’s behalf is treated the same way.
+
+→
+→ SEC-4, SEC-5. If you cannot recall the exempt-security list, you cannot answer this cell.
+
+
+AGT-4
+Where an agent must register
+
+◆
+Same jurisdictional logic as the firm: an agent registers in any state where the agent has a place of business, OR where the agent has clients who are residents — unless a narrow exclusion applies.
+
+●
+Snowbird: an agent with no place of business in a state may continue to deal with an EXISTING customer who is temporarily present there and remains a resident of another state.
+
+◆
+Two things snowbird never covers: soliciting a new customer in the temporary state, and directing advertising into it. The relationship must predate the travel.
+
+●
+An agent’s registration is not effective during any period when the agent is not associated with a registered broker-dealer or a registered issuer. The license does not travel with the person between jobs — it goes dormant.
+
+●
+When an agent begins or terminates a connection with a broker-dealer or issuer, BOTH the agent and the firm must notify the Administrator.
+
+▲
+“The agent is registered in New York, so she may service a New York client who has retired to Florida.” True only if the client remains a non-resident temporarily present in Florida. A client who has MOVED to Florida is a Florida resident, and snowbird does not apply.
+
+
+AGT-5
+Registration mechanics
+
+●
+The application is Form U4, filed by the FIRM — not by the individual — electronically through the Central Registration Depository. It collects identity, residential and employment history, examination and registration history, outside business activities, and disclosure of criminal, regulatory, civil judicial, customer complaint, termination, and financial events. Fingerprints are submitted for a federal criminal background check.
+
+●
+A separate Form U4 is required for each firm the individual is registered with. The registration belongs to the relationship, not to the person alone.
+
+●
+As with firms, an agent’s registration becomes effective at noon on the thirtieth day after filing, expires December 31, and requires a consent to service of process and a fee.
+
+◆
+Automatic registration. When a broker-dealer’s registration in a state first becomes effective, its partners, officers, and directors who effect securities transactions are automatically registered as agents in that state. They still file a Form U4 but need not take a qualification examination.
+
+▲
+Two edges on that rule, both tested. It reaches only those actually involved in effecting securities transactions — a founding chief financial officer who handles only the firm’s books is not automatically registered. And it applies only at the firm’s INITIAL registration — someone promoted into an officer role two years later must complete the whole process: Form U4, examination, fee.
+
+●
+The Administrator may require an applicant to pass a written or oral examination, and may require a minimum period of experience.
+
+
+AGT-6
+Maintaining registration
+
+●
+Form U4 must be amended within 30 days of any event requiring disclosure. Address and name changes, criminal charges and convictions, regulatory actions, investment-related civil judgments, bankruptcies, liens and compromises with creditors, new outside business activities, and customer complaints alleging sales practice violations all trigger it.
+
+●
+Form U5 is filed by the FIRM within 30 days of the agent’s termination, stating the reason and disclosing any open allegations or investigations. For two years after filing, the former firm must amend the U5 with new information that comes to light about the person’s conduct during their tenure.
+
+◆
+The two-year U5 window is a DISCLOSURE obligation, not a supervisory one. The old firm does not keep supervising the person; it keeps telling the truth about what happened while it did.
+
+●
+An agent may be registered with more than one broker-dealer at the same time, with written approval from each firm and a separate Form U4 for each. Supervisory responsibility stays firm-by-firm and does not transfer.
+
+▲
+“The agent files the U5.” Wrong — the firm files both the U4 and the U5.
+
+
+AGT-7
+How a registration ends
+
+◆
+Four endings, and the exam cares about which are punitive and which are not. Denial, suspension, and revocation are sanctions and require a finding of cause. Withdrawal and cancellation are not sanctions and involve no allegation of wrongdoing.
+
+●
+Grounds for denial, suspension, or revocation include: a false or misleading statement in the application · willful violation of the Act or a rule or order · conviction within the past ten years of a securities-related misdemeanor or any felony · a permanent or temporary injunction from any court against securities-related conduct · an order by another state’s securities administrator or by the SEC · engaging in dishonest or unethical practices · insolvency · lack of qualification by training, experience, or knowledge · failure to pay the filing fee. In each case the action must also be in the PUBLIC INTEREST — cause alone is not enough.
+
+●
+CANCELLATION is the Administrator’s housekeeping tool. It applies when a registrant no longer exists, has ceased doing business, cannot be located after reasonable search, or has been declared mentally incompetent. The classic fact pattern is mail returned with no forwarding address — the answer is cancel, not revoke.
+
+●
+WITHDRAWAL is voluntary and effective in thirty days, with the Administrator retaining jurisdiction for one year afterward.
+
+●
+Due process for the punitive actions: prior written notice, an opportunity for a hearing, and written findings of fact and conclusions of law. The Administrator may act summarily — postponing or suspending pending final determination — but must then notify the parties promptly and, on written request, hold a hearing within fifteen days.
+
+▲
+A stem describing death, disappearance, dissolution, or incapacity is asking about cancellation. A stem describing misconduct is asking about denial, suspension, or revocation. Mixing them up is the most reliable way to lose this question.
+
+◆
+Lack of qualification is a limited ground. The Administrator may not use it to deny an agent registration on the basis of lack of experience alone, and may not deny a registration because of the applicant’s association with a firm whose registration is suspended — the person is judged on their own record.
+
+
+AGT-8
+Outside activity, outside accounts, and payments
+
+●
+Outside brokerage accounts: before opening a securities or commodity account at another firm, an associated person must notify the employing firm in writing and obtain its written consent, and must notify the executing firm of their associated-person status. The executing firm transmits duplicate confirmations and statements to the employer on request. The rule reaches accounts in which the person has a beneficial interest or control, not only accounts in their own name.
+
+●
+Payments to unregistered persons: a member firm may not pay commissions, fees, concessions, or other transaction-based compensation to a person who is not registered for soliciting securities business. Narrow exceptions exist for foreign finders and for continuing commissions to a retired representative under a written contract who does not solicit new business.
+
+◆
+Selling away is the mirror image. Participating in a securities transaction outside the regular course of employment requires prior WRITTEN NOTICE to the firm in every case, regardless of compensation. Where compensation is involved, the firm must approve the transaction and supervise it as its own. Between them, these two rules close both ends of the same loophole: the agent cannot take securities business outside the firm, and the firm cannot pay outsiders for securities business.
+
+◆
+Outside business activity that does not involve a securities transaction — a rental property, a board seat, a second job — requires prior written notice to the firm but is governed by a different rule. One diagnostic sorts them: does the outside activity involve a securities transaction? Yes, it is selling away. No, it is an outside business activity.
+
+▲
+“No compensation was received, so no notice was required.” Wrong for selling away — prior written notice is unconditional. Compensation only determines whether approval and supervision are additionally required.
+
+
+
+●  AGT memorize sheet
+Every ● item from this chapter, in one place. These are the facts that understanding will not rescue. Cover the right column, read the cell code, and say the fact.
+CELL
+FACT
+AGT-1
+An agent is any INDIVIDUAL, other than a broker-dealer itself, who represents a broker-dealer or an issuer in effecting or attempting to effect purchases or sales of securities.
+AGT-1
+Activities that require agent registration: soliciting purchases or sales by any means · taking or receiving customer orders, even if someone else enters them · executing trades · quoting prices to customers on the firm’s behalf · supervising any of the above.
+AGT-2
+The exclusion ends at the first customer order. The moment a clerical employee takes an order, solicits a prospect, or makes a recommendation, registration is required regardless of job title, script, or supervision.
+AGT-3
+An individual representing an issuer need not register when the transaction involves: an exempt security — government, municipal, bank, insurance company, public utility, railroad, nonprofit, commercial paper, employee benefit plan interests; or an exempt transaction; or a security covered by certain federal covered transactions.
+AGT-3
+A separate exclusion covers sales by an issuer’s representative to the issuer’s own existing employees, partners, or directors — but ONLY where no commission or other remuneration is paid for soliciting the sale.
+AGT-4
+Snowbird: an agent with no place of business in a state may continue to deal with an EXISTING customer who is temporarily present there and remains a resident of another state.
+AGT-4
+An agent’s registration is not effective during any period when the agent is not associated with a registered broker-dealer or a registered issuer. The license does not travel with the person between jobs — it goes dormant.
+AGT-4
+When an agent begins or terminates a connection with a broker-dealer or issuer, BOTH the agent and the firm must notify the Administrator.
+AGT-5
+The application is Form U4, filed by the FIRM — not by the individual — electronically through the Central Registration Depository. It collects identity, residential and employment history, examination and registration history, outside business activities, and disclosure of criminal, regulatory, civil judicial, customer complaint, termination, and financial events. Fingerprints are submitted for a federal criminal background check.
+AGT-5
+A separate Form U4 is required for each firm the individual is registered with. The registration belongs to the relationship, not to the person alone.
+AGT-5
+As with firms, an agent’s registration becomes effective at noon on the thirtieth day after filing, expires December 31, and requires a consent to service of process and a fee.
+AGT-5
+The Administrator may require an applicant to pass a written or oral examination, and may require a minimum period of experience.
+AGT-6
+Form U4 must be amended within 30 days of any event requiring disclosure. Address and name changes, criminal charges and convictions, regulatory actions, investment-related civil judgments, bankruptcies, liens and compromises with creditors, new outside business activities, and customer complaints alleging sales practice violations all trigger it.
+AGT-6
+Form U5 is filed by the FIRM within 30 days of the agent’s termination, stating the reason and disclosing any open allegations or investigations. For two years after filing, the former firm must amend the U5 with new information that comes to light about the person’s conduct during their tenure.
+AGT-6
+An agent may be registered with more than one broker-dealer at the same time, with written approval from each firm and a separate Form U4 for each. Supervisory responsibility stays firm-by-firm and does not transfer.
+AGT-7
+Grounds for denial, suspension, or revocation include: a false or misleading statement in the application · willful violation of the Act or a rule or order · conviction within the past ten years of a securities-related misdemeanor or any felony · a permanent or temporary injunction from any court against securities-related conduct · an order by another state’s securities administrator or by the SEC · engaging in dishonest or unethical practices · insolvency · lack of qualification by training, experience, or knowledge · failure to pay the filing fee. In each case the action must also be in the PUBLIC INTEREST — cause alone is not enough.
+AGT-7
+CANCELLATION is the Administrator’s housekeeping tool. It applies when a registrant no longer exists, has ceased doing business, cannot be located after reasonable search, or has been declared mentally incompetent. The classic fact pattern is mail returned with no forwarding address — the answer is cancel, not revoke.
+AGT-7
+WITHDRAWAL is voluntary and effective in thirty days, with the Administrator retaining jurisdiction for one year afterward.
+AGT-7
+Due process for the punitive actions: prior written notice, an opportunity for a hearing, and written findings of fact and conclusions of law. The Administrator may act summarily — postponing or suspending pending final determination — but must then notify the parties promptly and, on written request, hold a hearing within fifteen days.
+AGT-8
+Outside brokerage accounts: before opening a securities or commodity account at another firm, an associated person must notify the employing firm in writing and obtain its written consent, and must notify the executing firm of their associated-person status. The executing firm transmits duplicate confirmations and statements to the employer on request. The rule reaches accounts in which the person has a beneficial interest or control, not only accounts in their own name.
+AGT-8
+Payments to unregistered persons: a member firm may not pay commissions, fees, concessions, or other transaction-based compensation to a person who is not registered for soliciting securities business. Narrow exceptions exist for foreign finders and for continuing commissions to a retired representative under a written contract who does not solicit new business.
+
+
+IAD
+Regulation of Investment Advisers
+5% · 3 questions
+
+THE SPINE
+Three letters and three questions. Is the person an adviser at all — the ABC test. If yes, does an exclusion pull them back out. If they are still an adviser, do they answer to the SEC or to the state? Only three questions come from here, so learn it precisely and move on rather than sinking an evening into assets-under-management arithmetic the exam rarely asks for.
+
+
+IAD connector map — the ABC test through to the de minimis exemption.
+IAD-1
+The ABC test
+
+◆
+An investment adviser is a person who, for compensation, engages in the business of advising others as to the value of securities or the advisability of investing in, purchasing, or selling securities — or who, as part of a regular business, issues analyses or reports concerning securities. Collapse that into three prongs.
+
+●
+A — Advice about SECURITIES. B — in the BUSINESS of giving it. C — for COMPENSATION. All three must be present. Any one missing and the person is not an adviser.
+
+◆
+Each prong has a live edge. Advice must be about securities, so generic budgeting, insurance-only advice, commodities, and direct real estate all fail prong A. Being in the business means holding out as an adviser or advising regularly — an occasional favor fails prong B. Compensation need not be cash, need not be labeled an advisory fee, and need not come from the client; anything of economic value satisfies prong C. A firm that advises another firm in exchange for legal services has been compensated.
+
+▲
+“The adviser was not paid separately for the advice, so there is no compensation.” Careful — indirect and bundled compensation counts. This is exactly how a wrap fee converts a broker-dealer into an adviser (see ETH-8).
+
+◆
+The exam’s favorite target is prong A. Someone advising exclusively on fixed annuities, whole life, or physical gold is not giving advice about securities, so no amount of business regularity or compensation makes them an adviser.
+
+
+IAD-2
+Exclusions from the definition
+
+◆
+Passing the ABC test is not the end. Certain persons are excluded outright, on the theory that they are already regulated elsewhere or their advice is a byproduct of some other work.
+
+●
+Banks, savings institutions, and trust companies. The exclusion covers the institution itself — not a separately organized advisory subsidiary or affiliate.
+
+●
+Lawyers, accountants, teachers, and engineers whose performance of advisory services is SOLELY INCIDENTAL to the practice of their profession.
+
+●
+Broker-dealers and their agents whose advisory services are solely incidental to the conduct of their brokerage business AND who receive NO SPECIAL COMPENSATION for the advice.
+
+◆
+Note the asymmetry, because a question can isolate it. The special-compensation condition is written into the broker-dealer exclusion. The professionals’ exclusion turns on “solely incidental” alone. In practice a separately billed advisory fee usually destroys “solely incidental” as well, so the working heuristic — any separate charge for advice kills the exclusion — is safe. Know the statutory split as the tiebreaker.
+
+●
+Publishers of bona fide newspapers, news magazines, and business or financial publications of general and regular circulation.
+
+◆
+The publisher exclusion is destroyed by personalization. A general-circulation newsletter with the same content for every subscriber is excluded; one that tailors recommendations to individual subscribers’ circumstances is not, and the publisher must register.
+
+●
+Also excluded: persons whose only clients are insurance companies · federal covered advisers, which are excluded from STATE registration · and any other person the Administrator designates by rule or order.
+
+▲
+“A broker-dealer can never be an investment adviser.” Wrong — the moment it charges a separate fee for advice, the exclusion is gone and it must register.
+
+
+IAD-3
+Exemptions from state registration — de minimis
+
+◆
+An exclusion means the person is not an adviser at all. An exemption means they are an adviser but need not register in a particular state. Keep the words apart; the exam sometimes tests the distinction directly.
+
+●
+The de minimis exemption has TWO prongs and both must be satisfied: no place of business in the state, AND no more than five non-institutional clients who are residents of the state during the preceding twelve months.
+
+◆
+Institutional clients do not count toward the five. Other investment advisers, broker-dealers, banks, insurance companies, investment companies, and large pension plans are outside the tally. An adviser with fifty institutional clients and four retail clients in a state, and no office there, is exempt.
+
+●
+Any place of business in the state destroys the exemption regardless of client count. One in-state office and zero clients still means registration.
+
+▲
+Contrast with the broker-dealer rule, which the exam pairs deliberately: there is NO de minimis for broker-dealers. One in-state retail customer forces registration. Advisers get five; broker-dealers get none.
+
+
+IAD-4
+The federal-state dividing line
+
+◆
+A federal covered adviser registers with and is regulated by the SEC, and the state is preempted from requiring its registration. What the state keeps is a notice filing with a fee, the registration of the adviser’s in-state IARs, and full antifraud authority. What it loses is the power to impose registration, books-and-records, financial, or supervisory requirements on the firm.
+
+●
+Federal covered status: must register with the SEC at $110 million or more in assets under management · may register between $100 and $110 million · must withdraw from SEC registration if assets fall below $90 million · an adviser to a registered investment company is federal covered at any size · an adviser required to register in fifteen or more states may register federally · pension consultants qualify at $200 million or more.
+
+◆
+The buffer between $90 and $110 million exists so advisers are not forced to switch regulators every time markets move. The exam rarely asks the numbers themselves; it asks what being federal covered costs the state.
+
+●
+A notice filing by a federal covered adviser consists of a copy of the Form ADV filed with the SEC, a consent to service of process, and the state fee.
+
+▲
+“A federal covered adviser has nothing to do with the state.” Wrong on three counts — notice filing, IAR registration, and antifraud jurisdiction all survive.
+
+
+IAD-5
+Form ADV and the brochure rule
+
+◆
+One form carries the whole adviser registration system, and the axis every question turns on is filed-with-the-regulator versus delivered-to-the-client.
+
+●
+Part 1 — structured data about the adviser: ownership, control persons, clients, assets under management, advisory activities, affiliations, custody arrangements, disciplinary history. Filed with the regulator. Never delivered to clients.
+
+●
+Part 2A — the BROCHURE. A plain-English narrative describing services, fees, conflicts, methods of analysis, disciplinary information, brokerage practices, and custody. Delivered to clients.
+
+●
+Part 2B — the brochure SUPPLEMENT, covering the specific individual who will advise the client: education, business background, disciplinary events, other business activities. Delivered to clients.
+
+●
+Delivery by a STATE-REGISTERED adviser: either not less than 48 HOURS before entering the advisory contract, OR at the time of entering the contract provided the client may terminate without penalty within FIVE BUSINESS DAYS. It is an either/or, not a both.
+
+◆
+During that five-business-day free-look window the adviser may charge for services actually rendered but may not impose a cancellation penalty. After the window, ordinary termination terms apply.
+
+●
+Delivery by a FEDERAL COVERED adviser: at or before entering the contract. There is no free-look alternative at the federal level.
+
+●
+No brochure need be delivered to a registered investment company client, or where the contract is for impersonal advisory services costing the client less than $500 a year.
+
+●
+Annually, the adviser must deliver either an updated brochure or a summary of material changes, within 120 days of its fiscal year end. Form ADV is amended annually within 90 days of fiscal year end, and promptly whenever information becomes materially inaccurate.
+
+▲
+“Part 2A is filed but not delivered.” Wrong — Part 2A IS the brochure. Part 1 is the one that never goes to clients.
+
+
+IAD-6
+Advisory contracts
+
+●
+Every advisory contract must be IN WRITING and must set out: the services to be provided · the term of the contract · the advisory fee and the formula for computing it · the amount of any prepaid fee to be returned on early termination · whether the contract grants discretionary authority · that the contract may not be assigned without the client’s consent · and, for an adviser organized as a partnership, that the adviser will notify clients of any change in partnership membership within a reasonable time.
+
+◆
+Assignment reaches further than a formal transfer of paper. A change in CONTROL of the advisory firm — the sale of the practice, a change in majority ownership — is an assignment. Clients are not inventory and do not convey with the business; each must consent.
+
+◆
+Performance-based fees are generally prohibited, because they give the adviser an incentive to take risk the client did not ask for. The main exception permits them where the client is a qualified client, tested by assets under management with the adviser or by net worth. The current thresholds were raised by inflation adjustment effective June 29, 2026 to $1.4 million in assets under management or more than $2.7 million in net worth, from $1.1 million and $2.2 million; contracts entered before that date are grandfathered.
+
+▲
+“The fee was reasonable, so the contract is fine.” Reasonableness is not the test for the required contents. A contract missing the fee formula, the prepaid-fee refund term, or the assignment clause is defective no matter how fair the pricing.
+
+
+IAD-7
+Custody and financial requirements
+
+◆
+Custody means holding client funds or securities directly or indirectly, or having any authority to obtain possession of them. The clean diagnostic: can the adviser get money OUT of the account? If yes, custody. Deducting an advisory fee directly from a client account counts.
+
+●
+Additional state triggers: inadvertently receiving client funds or securities and holding them more than THREE BUSINESS DAYS · accepting a third-party check and holding it more than three business days · serving as general partner of a limited partnership whose assets the adviser can reach.
+
+◆
+The three-business-day rule is why the answer to “a client hands you a check payable to a fund” is always forward it promptly. Holding it is what creates the problem; the receipt itself does not.
+
+●
+An Administrator may by rule PROHIBIT advisers from taking custody entirely. Where custody is permitted, the adviser must notify the Administrator in writing that it has custody, must use a qualified custodian, must arrange for the custodian to send account statements to clients at least quarterly, and is subject to an annual surprise examination by an independent accountant.
+
+●
+Minimum financial requirements: $35,000 net worth for an adviser with custody · $10,000 for an adviser with discretionary authority but no custody · an adviser that accepts prepayment of more than $500 in fees six or more months in advance must maintain positive net worth.
+
+●
+If net worth falls below the minimum: notify the Administrator by the close of the NEXT business day, and file a financial report by the close of the business day AFTER that. A shortfall may be cured by posting a surety bond equal to the deficiency, rounded up to the nearest $5,000.
+
+◆
+An adviser can avoid custody entirely by having a qualified custodian — a bank or broker-dealer — hold client cash and securities. That is the ordinary structure and it is why most advisory firms carry the $10,000 requirement rather than the $35,000 one.
+
+
+IAD-8
+Recordkeeping and privacy
+
+●
+Adviser records: kept for FIVE years from the end of the fiscal year in which the last entry was made, with the first TWO years in the adviser’s principal office. Partnership articles, corporate charters, minute books, and stock certificate books are kept three years after termination of the enterprise.
+
+▲
+Do not confuse this with the broker-dealer clocks. Broker-dealer customer account records run six years; adviser records run five. The “first two years easily accessible” language appears in both, which is exactly why the swap works as a distractor.
+
+●
+A state may not impose recordkeeping requirements on a federal covered adviser — preempted, like net capital and bonding.
+
+◆
+Privacy sits on two layers. The federal rule requires a firm to give each customer an initial privacy notice no later than when the relationship is established, an annual notice while it continues, a clear opportunity to opt out of sharing nonpublic personal information with non-affiliated third parties, and written policies safeguarding customer records against unauthorized access.
+
+●
+The parallel state model rule for advisers requires written policies and procedures reasonably designed to ensure the security and confidentiality of client records, to protect against anticipated threats, and to protect against unauthorized access that could cause substantial harm or inconvenience — plus DELIVERY of the privacy policy to clients and retention of records of that delivery.
+
+▲
+Failing to adopt or deliver the privacy policy is itself a violation, independent of whether any client data was ever exposed. The paperwork failure is the offense.
+
+
+
+●  IAD memorize sheet
+Every ● item from this chapter, in one place. These are the facts that understanding will not rescue. Cover the right column, read the cell code, and say the fact.
+CELL
+FACT
+IAD-1
+A — Advice about SECURITIES. B — in the BUSINESS of giving it. C — for COMPENSATION. All three must be present. Any one missing and the person is not an adviser.
+IAD-2
+Banks, savings institutions, and trust companies. The exclusion covers the institution itself — not a separately organized advisory subsidiary or affiliate.
+IAD-2
+Lawyers, accountants, teachers, and engineers whose performance of advisory services is SOLELY INCIDENTAL to the practice of their profession.
+IAD-2
+Broker-dealers and their agents whose advisory services are solely incidental to the conduct of their brokerage business AND who receive NO SPECIAL COMPENSATION for the advice.
+IAD-2
+Publishers of bona fide newspapers, news magazines, and business or financial publications of general and regular circulation.
+IAD-2
+Also excluded: persons whose only clients are insurance companies · federal covered advisers, which are excluded from STATE registration · and any other person the Administrator designates by rule or order.
+IAD-3
+The de minimis exemption has TWO prongs and both must be satisfied: no place of business in the state, AND no more than five non-institutional clients who are residents of the state during the preceding twelve months.
+IAD-3
+Any place of business in the state destroys the exemption regardless of client count. One in-state office and zero clients still means registration.
+IAD-4
+Federal covered status: must register with the SEC at $110 million or more in assets under management · may register between $100 and $110 million · must withdraw from SEC registration if assets fall below $90 million · an adviser to a registered investment company is federal covered at any size · an adviser required to register in fifteen or more states may register federally · pension consultants qualify at $200 million or more.
+IAD-4
+A notice filing by a federal covered adviser consists of a copy of the Form ADV filed with the SEC, a consent to service of process, and the state fee.
+IAD-5
+Part 1 — structured data about the adviser: ownership, control persons, clients, assets under management, advisory activities, affiliations, custody arrangements, disciplinary history. Filed with the regulator. Never delivered to clients.
+IAD-5
+Part 2A — the BROCHURE. A plain-English narrative describing services, fees, conflicts, methods of analysis, disciplinary information, brokerage practices, and custody. Delivered to clients.
+IAD-5
+Part 2B — the brochure SUPPLEMENT, covering the specific individual who will advise the client: education, business background, disciplinary events, other business activities. Delivered to clients.
+IAD-5
+Delivery by a STATE-REGISTERED adviser: either not less than 48 HOURS before entering the advisory contract, OR at the time of entering the contract provided the client may terminate without penalty within FIVE BUSINESS DAYS. It is an either/or, not a both.
+IAD-5
+Delivery by a FEDERAL COVERED adviser: at or before entering the contract. There is no free-look alternative at the federal level.
+IAD-5
+No brochure need be delivered to a registered investment company client, or where the contract is for impersonal advisory services costing the client less than $500 a year.
+IAD-5
+Annually, the adviser must deliver either an updated brochure or a summary of material changes, within 120 days of its fiscal year end. Form ADV is amended annually within 90 days of fiscal year end, and promptly whenever information becomes materially inaccurate.
+IAD-6
+Every advisory contract must be IN WRITING and must set out: the services to be provided · the term of the contract · the advisory fee and the formula for computing it · the amount of any prepaid fee to be returned on early termination · whether the contract grants discretionary authority · that the contract may not be assigned without the client’s consent · and, for an adviser organized as a partnership, that the adviser will notify clients of any change in partnership membership within a reasonable time.
+IAD-7
+Additional state triggers: inadvertently receiving client funds or securities and holding them more than THREE BUSINESS DAYS · accepting a third-party check and holding it more than three business days · serving as general partner of a limited partnership whose assets the adviser can reach.
+IAD-7
+An Administrator may by rule PROHIBIT advisers from taking custody entirely. Where custody is permitted, the adviser must notify the Administrator in writing that it has custody, must use a qualified custodian, must arrange for the custodian to send account statements to clients at least quarterly, and is subject to an annual surprise examination by an independent accountant.
+IAD-7
+Minimum financial requirements: $35,000 net worth for an adviser with custody · $10,000 for an adviser with discretionary authority but no custody · an adviser that accepts prepayment of more than $500 in fees six or more months in advance must maintain positive net worth.
+IAD-7
+If net worth falls below the minimum: notify the Administrator by the close of the NEXT business day, and file a financial report by the close of the business day AFTER that. A shortfall may be cured by posting a surety bond equal to the deficiency, rounded up to the nearest $5,000.
+IAD-8
+Adviser records: kept for FIVE years from the end of the fiscal year in which the last entry was made, with the first TWO years in the adviser’s principal office. Partnership articles, corporate charters, minute books, and stock certificate books are kept three years after termination of the enterprise.
+IAD-8
+A state may not impose recordkeeping requirements on a federal covered adviser — preempted, like net capital and bonding.
+IAD-8
+The parallel state model rule for advisers requires written policies and procedures reasonably designed to ensure the security and confidentiality of client records, to protect against anticipated threats, and to protect against unauthorized access that could cause substantial harm or inconvenience — plus DELIVERY of the privacy policy to clients and retention of records of that delivery.
+
+
+IAR
+Regulation of Investment Adviser Representatives
+5% · 3 questions
+
+THE SPINE
+The firm and the individual register separately and always independently. The firm’s registration follows its business; the individual’s follows their offices. Get that asymmetry and three questions become free points.
+
+
+IAR connector map — registration follows the individual’s offices, not the firm’s clients.
+IAR-1
+Definition — the five activities
+
+●
+An investment adviser representative is any partner, officer, director, or other individual associated with an investment adviser who does any ONE of the following: makes recommendations or renders advice about securities · manages accounts or portfolios of clients · determines which recommendation or advice should be given · solicits, offers, or negotiates for the sale of investment advisory services · supervises employees who do any of those.
+
+◆
+Any one is enough. The five verbs — recommend, manage, determine, solicit, supervise — map the full lifecycle of an advisory engagement, and the definition is satisfied at any point along it.
+
+▲
+The fifth verb catches people. A back-office supervisor who never speaks to a client but oversees IARs is an IAR. Client contact is not the test; the five activities are.
+
+◆
+The third verb catches a different group: the research analyst who never meets a client but decides what the firm will recommend. Determining the advice is IAR activity even when someone else delivers it.
+
+
+IAR-2
+The clerical exclusion
+
+◆
+An employee whose duties are purely clerical or ministerial is not an IAR. Same functional logic as the agent-side exclusion, and it fails in the same place.
+
+●
+Not IARs: receptionists, file clerks, administrative assistants who do not discuss investments with clients · information technology and accounting staff · marketing staff who produce materials without making specific recommendations · compliance personnel who review materials without advising clients.
+
+●
+The exclusion dies on: making a specific recommendation to a client, even from a script and even under supervision · soliciting a prospective client to engage the firm · negotiating advisory contracts or fees · holding oneself out to the public as an investment professional.
+
+▲
+“The recommendation was scripted and approved, so the employee was not really advising.” Wrong — scripts and supervision do not launder the activity.
+
+
+IAR-3
+Where the IAR registers
+
+◆
+This is the cell the exam actually tests. Which state an IAR registers in depends on where the IAR has a place of business — and, for the de minimis question, on the status of the firm.
+
+●
+If the firm is FEDERAL COVERED: the firm does not register with the state, but the IAR must register in each state where the IAR has a place of business. Preemption reaches the firm’s registration; it never reaches the individual’s.
+
+●
+If the firm is STATE-REGISTERED: the IAR registers in each state where the IAR has a place of business, and, where there is no place of business, may rely on the de minimis exemption — no more than five non-institutional clients in that state in twelve months.
+
+◆
+The consequence worth sitting with: an IAR at a nationally operating federal covered firm may hold only one or two state registrations while the firm serves clients in fifty states. Registration follows the individual’s physical offices, not the firm’s client footprint.
+
+●
+A place of business for an IAR includes: any office where the IAR regularly conducts advisory business · any location held out to the public as a place where the IAR does business · a home office used to meet clients or advertised as an office. A hotel room, an occasional vacation-property call, or an itinerant location where nothing is held out is not one.
+
+▲
+“The IAR has clients in fifty states, so she registers in fifty states.” Wrong — registration follows offices.
+
+
+IAR-4
+De minimis for IARs
+
+◆
+Same structure as the firm-level exemption and the same two prongs: no place of business in the state, and no more than five non-institutional clients resident there in the preceding twelve months.
+
+●
+Institutional clients are not counted. An IAR with a dozen institutional clients in a state and no office there registers nowhere on their account.
+
+◆
+Work an example the way the exam builds them. An IAR has offices in New York and Pennsylvania, eight retail clients in Connecticut, and three retail clients in Vermont. She registers in New York and Pennsylvania because she has offices there, and in Connecticut because eight exceeds five. She does not register in Vermont — no office, three retail clients, de minimis satisfied.
+
+▲
+Both prongs, always. An office in the state with a single client still means registration.
+
+
+IAR-5
+Registration mechanics
+
+●
+The IAR files Form U4 through the CRD/IARD system, with fingerprints, a consent to service of process, and the state fee. Registration becomes effective at noon on the thirtieth day and expires December 31, on the same clocks as every other person registration.
+
+●
+Form U4 must be amended within 30 days of any material change: address, name, disciplinary events, outside business activities, financial disclosures.
+
+◆
+An IAR’s registration is not effective during any period when the individual is not employed by or associated with a registered or federal covered investment adviser. As with agents, the license goes dormant between jobs.
+
+●
+When an IAR begins or terminates association with an adviser, notice must be given to the Administrator. For a state-registered adviser the FIRM gives the notice; for a federal covered adviser the obligation falls on the IAR.
+
+◆
+That last split is one of the few places the exam rewards knowing who does the paperwork. The logic is simple — the state has no registration relationship with a federal covered firm, so it cannot lean on the firm to report.
+
+
+IAR-6
+IAR, agent, or both
+
+◆
+Dual registration is common and entirely permissible: the same individual may be an agent of a broker-dealer and an IAR of an investment adviser. What changes is the standard of care, and it changes by the hour depending on which hat is being worn.
+
+●
+Effecting a securities transaction for the broker-dealer → the best-interest standard at the point of recommendation. Providing advisory services for the adviser → the fiduciary standard, continuously.
+
+◆
+Compensation must be disclosed in each capacity, and a client may not be charged an advisory fee and a brokerage commission on the same transaction without both being disclosed.
+
+▲
+“The individual holds a Series 7, so she qualifies as an IAR.” Wrong — a general securities registration is a broker-dealer qualification and does not cover state investment adviser law.
+
+→
+→ ETH-1, where the three standards of care are separated properly.
+
+
+IAR-7
+Supervision and the firm relationship
+
+◆
+Both registrations must exist for advisory business to be lawful: the individual must be registered as an IAR, AND must be associated with an appropriately registered or federal covered advisory firm. Neither substitutes for the other.
+
+●
+The two registrations live separate lives. A firm may lose its registration while its IARs keep theirs, subject to re-association with another registered adviser. An IAR may be barred while the firm continues operating.
+
+◆
+The firm bears supervisory responsibility: written procedures reasonably designed to prevent violations, review of advisory recommendations and communications, and an annual review of the adequacy of its compliance program.
+
+●
+The IAR’s side of that bargain: cooperate with compliance, report material events and complaints promptly, disclose outside business activities, and adhere to firm policy on personal trading, gifts, and confidentiality.
+
+
+IAR-8
+Termination, withdrawal, and discipline
+
+◆
+The same four endings as every other registration — denial, suspension, revocation, and the non-punitive pair of withdrawal and cancellation — and the same due process rails: prior written notice, opportunity for hearing, written findings.
+
+●
+Withdrawal is effective in thirty days, and the Administrator retains jurisdiction for one year afterward.
+
+●
+Cancellation applies where the IAR no longer exists, cannot be located, has ceased doing business, or has been declared mentally incompetent. No wrongdoing is alleged and no sanction is imposed.
+
+◆
+One structural point specific to advisers: because the state has no registration relationship with a federal covered firm, discipline of that firm’s IAR is the state’s principal lever over conduct in its jurisdiction. Preemption of the firm makes the individual’s registration more important, not less.
+
+
+
+●  IAR memorize sheet
+Every ● item from this chapter, in one place. These are the facts that understanding will not rescue. Cover the right column, read the cell code, and say the fact.
+CELL
+FACT
+IAR-1
+An investment adviser representative is any partner, officer, director, or other individual associated with an investment adviser who does any ONE of the following: makes recommendations or renders advice about securities · manages accounts or portfolios of clients · determines which recommendation or advice should be given · solicits, offers, or negotiates for the sale of investment advisory services · supervises employees who do any of those.
+IAR-2
+Not IARs: receptionists, file clerks, administrative assistants who do not discuss investments with clients · information technology and accounting staff · marketing staff who produce materials without making specific recommendations · compliance personnel who review materials without advising clients.
+IAR-2
+The exclusion dies on: making a specific recommendation to a client, even from a script and even under supervision · soliciting a prospective client to engage the firm · negotiating advisory contracts or fees · holding oneself out to the public as an investment professional.
+IAR-3
+If the firm is FEDERAL COVERED: the firm does not register with the state, but the IAR must register in each state where the IAR has a place of business. Preemption reaches the firm’s registration; it never reaches the individual’s.
+IAR-3
+If the firm is STATE-REGISTERED: the IAR registers in each state where the IAR has a place of business, and, where there is no place of business, may rely on the de minimis exemption — no more than five non-institutional clients in that state in twelve months.
+IAR-3
+A place of business for an IAR includes: any office where the IAR regularly conducts advisory business · any location held out to the public as a place where the IAR does business · a home office used to meet clients or advertised as an office. A hotel room, an occasional vacation-property call, or an itinerant location where nothing is held out is not one.
+IAR-4
+Institutional clients are not counted. An IAR with a dozen institutional clients in a state and no office there registers nowhere on their account.
+IAR-5
+The IAR files Form U4 through the CRD/IARD system, with fingerprints, a consent to service of process, and the state fee. Registration becomes effective at noon on the thirtieth day and expires December 31, on the same clocks as every other person registration.
+IAR-5
+Form U4 must be amended within 30 days of any material change: address, name, disciplinary events, outside business activities, financial disclosures.
+IAR-5
+When an IAR begins or terminates association with an adviser, notice must be given to the Administrator. For a state-registered adviser the FIRM gives the notice; for a federal covered adviser the obligation falls on the IAR.
+IAR-6
+Effecting a securities transaction for the broker-dealer → the best-interest standard at the point of recommendation. Providing advisory services for the adviser → the fiduciary standard, continuously.
+IAR-7
+The two registrations live separate lives. A firm may lose its registration while its IARs keep theirs, subject to re-association with another registered adviser. An IAR may be barred while the firm continues operating.
+IAR-7
+The IAR’s side of that bargain: cooperate with compliance, report material events and complaints promptly, disclose outside business activities, and adhere to firm policy on personal trading, gifts, and confidentiality.
+IAR-8
+Withdrawal is effective in thirty days, and the Administrator retains jurisdiction for one year afterward.
+IAR-8
+Cancellation applies where the IAR no longer exists, cannot be located, has ceased doing business, or has been declared mentally incompetent. No wrongdoing is alleged and no sanction is imposed.
+
+
+COM
+Communication with Customers and Prospects
+20% · 12 questions
+
+THE SPINE
+Twelve questions, and they come in two flavors. Half hand you a sentence and ask whether saying it is lawful. Half name an account type and ask which document, which agreement, which approval, in what order. The first half is about three forbidden claims; the second is a matching exercise. Neither requires much reasoning — but both punish imprecision hard.
+
+
+COM connector map — account type drives the paperwork.
+COM-1
+Required disclosures
+
+◆
+Disclosure obligations divide by what is being disclosed: facts about the product, facts about the relationship, and facts about changes in either.
+
+●
+Product disclosures: the material risks of a recommended security · fees and expenses, including sales charges, ongoing distribution fees, and management fees · conflicts of interest connected to the product · tax consequences where material.
+
+●
+Relationship disclosures: the client relationship summary at the start of a retail relationship · the adviser brochure and brochure supplement · the terms of the advisory or brokerage agreement · the firm’s and the individual’s disciplinary history.
+
+●
+Changed-circumstances disclosures: any change in the firm’s financial condition that could impair its ability to meet commitments to clients · new disciplinary events · material changes to the brochure.
+
+◆
+The unifying test for whether something must be disclosed is materiality: would a reasonable investor consider it important in making the decision? That single question resolves most disclosure fact patterns without any list at all.
+
+
+COM-2
+Registration is not approval
+
+◆
+This is the counterintuitive one, which is exactly why it is tested so often. Registration — of a person, a firm, or a security, with a state or with the SEC — confers no endorsement whatsoever. It does not mean the regulator reviewed the merits, vouched for the quality of the advice, or verified the accuracy of the disclosure. Representing otherwise is unlawful.
+
+●
+Always prohibited: claiming registration ensures quality · claiming a security or strategy has been approved by the SEC or the state · offering registration as assurance of integrity · any phrasing that turns a registration status into a credential.
+
+●
+Always permitted: stating the plain fact of registration — registered with the SEC as an investment adviser, registered in this state as a broker-dealer, a registered representative of this firm since a given year.
+
+◆
+The line runs between stating the status and selling it. And no disclaimer rescues an implied endorsement; the prohibition reaches indirect implications and fine print as squarely as direct claims.
+
+▲
+When a stem asks which of four statements about registration is permitted, look for the one that is purely factual and makes no claim about quality, safety, or approval.
+
+
+COM-3
+Performance guarantees
+
+◆
+No representation may guarantee future investment performance or protect against loss. The rule covers written and oral statements and it covers implication as well as assertion.
+
+●
+Prohibited: promising a rate of return · promising outperformance · saying the client cannot lose principal or that the money is safe · citing an unbroken record of positive years in a way that implies it will continue, even if the record is literally true · an agent personally promising to make the customer whole on a loss.
+
+●
+Permitted, because they are specific true statements about a specific product with a named guarantor: direct obligations of the U.S. Treasury are backed by the full faith and credit of the United States · deposits at an insured institution are federally insured up to the applicable limit · a named third party guarantees a particular bond.
+
+◆
+Recall the statutory meaning of “guaranteed” from SEC-3: guaranteed as to principal, interest, or dividends, by someone other than the issuer. Capital gains are never guaranteed. And a guarantee is only as good as the guarantor — a parent guaranteeing a subsidiary’s bonds does not eliminate credit risk.
+
+▲
+Reimbursing a client for a loss out of the agent’s own pocket is prohibited, and so is the promise to do it. Both are treated as guarantees against loss.
+
+◆
+You will find this rule sits uncomfortably close to how principal-protected structured notes are actually marketed. The state-law answer is cruder than your professional vocabulary: unless the guarantee is a specific, named, true third-party obligation, describing a product as protected against loss is a violation.
+
+
+COM-4
+New account requirements
+
+●
+Required for EVERY account: the customer’s name and residence address · whether the customer is of legal age · tax identification number · occupation and the name and address of the employer · the signature of the registered representative responsible for the account · the signature of a principal signifying acceptance.
+
+●
+Additionally required where the firm will make recommendations: annual income · net worth and liquid net worth · investment objectives · risk tolerance · time horizon and liquidity needs · other holdings, investment experience, and tax status.
+
+●
+Maintenance cadence: the recorded account information must be sent to the customer within 30 days of opening and at least every 36 months thereafter, with any material changes the customer reports incorporated. Account records are retained at least six years after the account is closed.
+
+◆
+A principal must approve every new account before the first order is entered. A principal is not required to approve each order ticket before entry — orders are reviewed after execution. That before/after split is testable.
+
+▲
+“The customer declined to provide net worth, so the account cannot be opened.” Not quite — the account can be opened; what the firm cannot do is make recommendations without a reasonable basis to judge suitability.
+
+
+COM-5
+Margin accounts
+
+◆
+A margin account lets the customer borrow part of the purchase price from the firm with the securities as collateral. Two regulators split the job: the Federal Reserve sets what must be deposited at the moment of purchase, and the self-regulatory rules govern every day afterward.
+
+●
+Initial margin is 50% of the purchase price for marginable equity securities, long or short. Minimum equity to open is $2,000, or 100% of the purchase price if the security costs less than $2,000.
+
+●
+Maintenance margin: 25% of market value for long positions, 30% for short positions in stock priced $5 or more. Firms may impose higher house requirements.
+
+●
+Three agreements: the CREDIT or margin agreement, which sets the lending terms and the firm’s right to liquidate — required. The HYPOTHECATION agreement, permitting the firm to pledge the customer’s securities as collateral for its own borrowing — required. The LOAN CONSENT agreement, permitting the firm to lend the customer’s securities to third parties — OPTIONAL.
+
+▲
+Only the loan consent is optional. A question offering “all three are required” or “the hypothecation agreement is optional” is testing exactly this.
+
+●
+Not everything is marginable. New issues are not marginable for 30 days, and options must be paid for in full.
+
+▲
+A maintenance call is satisfied by depositing cash or marginable securities — not by buying more stock, which increases the requirement rather than meeting it.
+
+
+COM-6
+Options accounts and options valuation
+
+●
+The paperwork sequence, in order: collect the customer’s profile including options-specific experience and objectives → deliver the options disclosure document at or before the time the account is approved → a registered options principal approves the account → the signed options agreement comes back within 15 DAYS of approval.
+
+●
+If the signed agreement does not arrive within 15 days, the account is not frozen — it is restricted to CLOSING transactions only. Existing positions may be unwound; nothing new may be opened.
+
+▲
+The disclosure document is DELIVERED, not signed. The options AGREEMENT is the document signed and returned within 15 days. Swapping those two is the standard distractor.
+
+◆
+Valuation is tested at vocabulary depth only. A premium has exactly two components: intrinsic value, which is the amount by which the option is in the money, and time value, which is everything else. Intrinsic value is never negative — it is either positive or zero.
+
+●
+A CALL is in the money when the market price is ABOVE the strike. A PUT is in the money when the market price is BELOW the strike. At the money means market equals strike. Out of the money means no intrinsic value, so the entire premium is time value.
+
+◆
+One subtraction is the whole skill: time value equals premium minus intrinsic value. A $50-strike call with the stock at $54 has $4 of intrinsic value; if the premium is $5.50, time value is $1.50. Drop the stock to $48 and intrinsic value is zero, so the entire remaining premium is time value.
+
+◆
+This is well below the depth you already carry from structured products work. Resist the urge to over-answer — the exam is not asking about greeks, volatility, or path dependency, and no answer choice will reward that knowledge.
+
+
+COM-7
+Advertising and communications
+
+◆
+Federal communication rules sort every message into one of three categories, and the sorting is done by AUDIENCE and VOLUME — never by medium. A tweet, an email, and a television advertisement can land in three different categories depending on who sees them.
+
+●
+RETAIL COMMUNICATION — distributed or made available to more than 25 retail investors within any 30 calendar-day period. Requires principal approval before first use, with limited exceptions.
+
+●
+CORRESPONDENCE — 25 or fewer retail investors within any 30 calendar-day period. No pre-use approval; the firm supervises by reviewing a representative sample under written procedures.
+
+●
+INSTITUTIONAL COMMUNICATION — distributed only to institutional investors. No pre-use approval; written procedures and sample review instead.
+
+●
+Filing: certain retail communications must be filed 10 business days BEFORE first use — including those about closed-end funds during the offering period and those containing certain performance rankings. Most other retail communications about registered investment companies and public direct participation programs are filed within 10 business days AFTER first use. Institutional communications and correspondence are not filed.
+
+●
+Content standards apply to all three categories: no false or misleading statements, no predictions or projections of performance, fair and balanced treatment of risks and benefits, and required disclosures where relevant.
+
+◆
+Social media follows the same sorting. Static content — a profile, a biography, a posted advertisement — is normally retail communication and needs pre-use approval. Interactive content — live replies, real-time comments — is normally correspondence and is supervised by review. All business-related electronic communication must be captured and retained, wherever it happens; if the firm cannot archive a channel, business may not be conducted there.
+
+●
+Layered on top, from state law: advertising and sales literature relating to registered securities must be FILED with the Administrator. Advertising means any written communication addressed to more than one person, and a firm’s website qualifies.
+
+▲
+“A static social media post is correspondence.” Wrong — static content is advertising-style and is normally a retail communication. Interactive replies are the correspondence side.
+
+
+COM-8
+Books, records, and privacy
+
+◆
+Two federal rules divide the work: one specifies what records a broker-dealer must MAKE, the other how long they must be PRESERVED.
+
+●
+Records to be made: blotters showing all purchases, sales, receipts and deliveries of securities, and receipts and disbursements of cash · general ledgers · securities records showing each position long or short and its location · order tickets for every order received · confirmations and account statements · customer account records.
+
+●
+Retention — LIFETIME of the firm plus two years: partnership articles, corporate charters, minute books, stock certificate books.
+
+●
+Retention — SIX years, first two easily accessible: customer account records, blotters, general ledgers, securities records.
+
+●
+Retention — THREE years, first two easily accessible: order tickets, trade confirmations, communications with the public, trial balances, and customer complaints. Forms BD, U4, and U5 are kept at least three years after termination.
+
+◆
+Electronic storage must be non-rewritable and non-erasable, or otherwise satisfy audit-trail requirements, and records must be producible to examiners on demand.
+
+●
+Privacy: an initial notice no later than establishment of the customer relationship · an annual notice while it continues, subject to an exception where the firm has not changed its disclosed practices and shares only within permitted exceptions · a clear opt-out from sharing nonpublic personal information with non-affiliated third parties · written safeguards — administrative, technical, and physical — protecting customer records.
+
+▲
+The annual-notice exception is about the FIRM’s practices, not about customer waiver. A client cannot consent their way out of receiving notices.
+
+
+
+●  COM memorize sheet
+Every ● item from this chapter, in one place. These are the facts that understanding will not rescue. Cover the right column, read the cell code, and say the fact.
+CELL
+FACT
+COM-1
+Product disclosures: the material risks of a recommended security · fees and expenses, including sales charges, ongoing distribution fees, and management fees · conflicts of interest connected to the product · tax consequences where material.
+COM-1
+Relationship disclosures: the client relationship summary at the start of a retail relationship · the adviser brochure and brochure supplement · the terms of the advisory or brokerage agreement · the firm’s and the individual’s disciplinary history.
+COM-1
+Changed-circumstances disclosures: any change in the firm’s financial condition that could impair its ability to meet commitments to clients · new disciplinary events · material changes to the brochure.
+COM-2
+Always prohibited: claiming registration ensures quality · claiming a security or strategy has been approved by the SEC or the state · offering registration as assurance of integrity · any phrasing that turns a registration status into a credential.
+COM-2
+Always permitted: stating the plain fact of registration — registered with the SEC as an investment adviser, registered in this state as a broker-dealer, a registered representative of this firm since a given year.
+COM-3
+Prohibited: promising a rate of return · promising outperformance · saying the client cannot lose principal or that the money is safe · citing an unbroken record of positive years in a way that implies it will continue, even if the record is literally true · an agent personally promising to make the customer whole on a loss.
+COM-3
+Permitted, because they are specific true statements about a specific product with a named guarantor: direct obligations of the U.S. Treasury are backed by the full faith and credit of the United States · deposits at an insured institution are federally insured up to the applicable limit · a named third party guarantees a particular bond.
+COM-4
+Required for EVERY account: the customer’s name and residence address · whether the customer is of legal age · tax identification number · occupation and the name and address of the employer · the signature of the registered representative responsible for the account · the signature of a principal signifying acceptance.
+COM-4
+Additionally required where the firm will make recommendations: annual income · net worth and liquid net worth · investment objectives · risk tolerance · time horizon and liquidity needs · other holdings, investment experience, and tax status.
+COM-4
+Maintenance cadence: the recorded account information must be sent to the customer within 30 days of opening and at least every 36 months thereafter, with any material changes the customer reports incorporated. Account records are retained at least six years after the account is closed.
+COM-5
+Initial margin is 50% of the purchase price for marginable equity securities, long or short. Minimum equity to open is $2,000, or 100% of the purchase price if the security costs less than $2,000.
+COM-5
+Maintenance margin: 25% of market value for long positions, 30% for short positions in stock priced $5 or more. Firms may impose higher house requirements.
+COM-5
+Three agreements: the CREDIT or margin agreement, which sets the lending terms and the firm’s right to liquidate — required. The HYPOTHECATION agreement, permitting the firm to pledge the customer’s securities as collateral for its own borrowing — required. The LOAN CONSENT agreement, permitting the firm to lend the customer’s securities to third parties — OPTIONAL.
+COM-5
+Not everything is marginable. New issues are not marginable for 30 days, and options must be paid for in full.
+COM-6
+The paperwork sequence, in order: collect the customer’s profile including options-specific experience and objectives → deliver the options disclosure document at or before the time the account is approved → a registered options principal approves the account → the signed options agreement comes back within 15 DAYS of approval.
+COM-6
+If the signed agreement does not arrive within 15 days, the account is not frozen — it is restricted to CLOSING transactions only. Existing positions may be unwound; nothing new may be opened.
+COM-6
+A CALL is in the money when the market price is ABOVE the strike. A PUT is in the money when the market price is BELOW the strike. At the money means market equals strike. Out of the money means no intrinsic value, so the entire premium is time value.
+COM-7
+RETAIL COMMUNICATION — distributed or made available to more than 25 retail investors within any 30 calendar-day period. Requires principal approval before first use, with limited exceptions.
+COM-7
+CORRESPONDENCE — 25 or fewer retail investors within any 30 calendar-day period. No pre-use approval; the firm supervises by reviewing a representative sample under written procedures.
+COM-7
+INSTITUTIONAL COMMUNICATION — distributed only to institutional investors. No pre-use approval; written procedures and sample review instead.
+COM-7
+Filing: certain retail communications must be filed 10 business days BEFORE first use — including those about closed-end funds during the offering period and those containing certain performance rankings. Most other retail communications about registered investment companies and public direct participation programs are filed within 10 business days AFTER first use. Institutional communications and correspondence are not filed.
+COM-7
+Content standards apply to all three categories: no false or misleading statements, no predictions or projections of performance, fair and balanced treatment of risks and benefits, and required disclosures where relevant.
+COM-7
+Layered on top, from state law: advertising and sales literature relating to registered securities must be FILED with the Administrator. Advertising means any written communication addressed to more than one person, and a firm’s website qualifies.
+COM-8
+Records to be made: blotters showing all purchases, sales, receipts and deliveries of securities, and receipts and disbursements of cash · general ledgers · securities records showing each position long or short and its location · order tickets for every order received · confirmations and account statements · customer account records.
+COM-8
+Retention — LIFETIME of the firm plus two years: partnership articles, corporate charters, minute books, stock certificate books.
+COM-8
+Retention — SIX years, first two easily accessible: customer account records, blotters, general ledgers, securities records.
+COM-8
+Retention — THREE years, first two easily accessible: order tickets, trade confirmations, communications with the public, trial balances, and customer complaints. Forms BD, U4, and U5 are kept at least three years after termination.
+COM-8
+Privacy: an initial notice no later than establishment of the customer relationship · an annual notice while it continues, subject to an exception where the firm has not changed its disclosed practices and shares only within permitted exceptions · a clear opt-out from sharing nonpublic personal information with non-affiliated third parties · written safeguards — administrative, technical, and physical — protecting customer records.
+
+
+ETH
+Ethical Practices and Obligations
+25% · 15 questions
+
+THE SPINE
+The largest single subject on the exam, and the most predictable. Regulators think in named violations, and so does the exam: it describes a behavior and asks you to name it, or names a behavior and asks who could have committed it. Learn the four drawers — manipulation, misrepresentation, account abuse, personal conduct — and learn the actor attached to each item. Then learn the protective rules bolted on top.
+
+
+ETH connector map — four drawers of prohibited practice, and who can open each.
+ETH-1
+The antifraud spine and the three standards of care
+
+●
+The state antifraud provision makes it unlawful, in connection with the offer, sale, OR PURCHASE of any security, to employ any device or scheme to defraud, to make an untrue statement of a material fact or omit a material fact necessary to make statements not misleading, or to engage in any act or practice that operates as a fraud or deceit.
+
+◆
+Three features of that sentence get tested. It covers PURCHASES as well as sales — defrauding someone into selling you their stock cheaply is squarely within it. It reaches offers, so a transaction need never close. And it applies to every security and every person, with no exemption available to anyone, ever.
+
+●
+A parallel provision covers investment advice: it is unlawful for a person advising others for compensation to employ any scheme to defraud a client, or to engage in any practice that operates as a fraud on a client.
+
+◆
+Layered on top are three standards of care, and the exam expects them kept surgically apart. Read the ACTOR first, then the MOMENT.
+
+●
+FIDUCIARY DUTY — owed by investment advisers and IARs. Continuous, not point-of-sale. Requires loyalty, care, full disclosure of material conflicts, and placing the client’s interest ahead of the firm’s. Survives the recommendation and runs for the life of the relationship.
+
+●
+BEST INTEREST — owed by broker-dealers and their agents when making a recommendation to a retail customer. It attaches AT the recommendation and runs on four obligations: care, disclosure, conflict of interest, and compliance.
+
+●
+SUITABILITY — the older standard, governing recommendations not covered by the best-interest rule. Three prongs: reasonable-basis (the product is suitable for someone), customer-specific (it suits THIS customer’s profile), and quantitative (the pattern of recommendations is not excessive).
+
+◆
+The tell in the stem is usually the noun and the timing. A question naming “the investment adviser” and describing an ongoing obligation — monitoring, review, throughout the relationship — is a fiduciary question. One naming “the registered representative” at the moment of a trade is a best-interest question.
+
+▲
+“Suitability applies whenever the firm has a customer.” Wrong — suitability and the best-interest obligation attach at a RECOMMENDATION. Where there is no recommendation, only the antifraud and fair-dealing duties apply.
+
+
+ETH-2
+Market manipulation and insider trading
+
+◆
+Manipulation is lying to the market with orders instead of words — creating a false impression of supply, demand, price, or volume. Each named practice has a tell, and the tell is the answer.
+
+●
+SPOOFING — entering bids or offers with the intent to cancel before execution. Tell: intent to cancel.
+
+●
+LAYERING — spoofing at multiple price levels with a series of non-bona-fide orders. Tell: multiple layers, none genuine.
+
+●
+FRONT-RUNNING — trading ahead of a known pending customer order to profit from the price move it will cause. Tell: trading ahead of customer flow.
+
+●
+WASH SALES and MATCHED ORDERS — transactions producing no real change in beneficial ownership, arranged to manufacture apparent activity. Tell: no change of ownership.
+
+●
+PUMP AND DUMP — spreading false favorable information to inflate a price, then selling into the demand created. Tell: promotion followed by the promoter selling.
+
+●
+The publication side: a firm may not publish or circulate, or cause to be circulated, any communication reporting a transaction as a purchase or sale unless it believes the trade was bona fide, or quoting a bid or offer unless it believes the quotation is bona fide. Tell: publicizing prices or volume the firm does not believe are real.
+
+◆
+Insider trading is fraud committed with information rather than with orders. Two words carry it — the information must be MATERIAL (a reasonable investor would consider it important) and NON-PUBLIC (not yet widely disseminated).
+
+●
+Liability reaches the whole chain: the person who trades on the information, the person who tips it even without trading, the person who receives the tip and trades, and the firm that failed to supervise. Firms manage this with information barriers between departments holding non-public information and their trading desks.
+
+▲
+“The tipper did not trade, so the tipper is not liable.” Wrong — tipping is itself a violation.
+
+
+ETH-3
+Misrepresentation, omission, and the bank-premises rules
+
+◆
+Fraud has two grammatical forms and they carry equal weight: saying something false, and omitting the fact that would have made the rest of it not misleading. Nothing in the Act ranks omission below assertion.
+
+●
+Named misrepresentations: guarantees of return or against loss · claims that registration confers approval · statements about a fund that contradict or exceed the prospectus, including hypothetical performance and projected returns · misleading use of titles or credentials, including designations implying expertise in advising seniors that were issued by an organization with no meaningful standards · misstating the status of a customer’s account or the price of a security.
+
+●
+A professional designation may be used only if it was issued by an accredited organization with real qualification standards, continuing education, and a public disciplinary process; was not awarded merely for paying a fee or attending a marketing session; and is not used in a way that misleads investors about the holder’s expertise.
+
+◆
+When securities are sold on the premises of a bank, savings institution, or credit union, customers must receive four disclosures — in writing at account opening and orally at the time of any recommendation.
+
+●
+The four bank-premises disclosures: the securities are NOT federally insured · they are NOT a deposit or other obligation of the institution · they are NOT guaranteed by the institution · they ARE subject to investment risk, including possible loss of principal.
+
+●
+Additionally: the securities sales area must be physically distinct from the deposit-taking area wherever practicable, signage must be displayed, and the institution must maintain written customer-complaint procedures.
+
+◆
+The rule exists to police one specific confusion — customers mistaking an investment product for an insured deposit because of where they bought it. Keep that purpose in mind and the four disclosures reconstruct themselves.
+
+
+ETH-4
+Account abuse
+
+●
+CHURNING — trading excessively in a customer’s account relative to the customer’s objectives and resources, to generate commissions. Examined through turnover ratio, cost-to-equity ratio, and whether the pattern makes sense for the stated objectives. It is the quantitative suitability prong made concrete.
+
+●
+UNAUTHORIZED TRANSACTIONS — trades placed without the customer’s prior consent, except in an account where written discretionary authority has been granted. Good faith is not a defense; a profitable unauthorized trade is still a violation.
+
+●
+UNSUITABLE RECOMMENDATIONS — recommending securities inconsistent with the customer’s objectives, financial situation, or needs, including recommending purchases beyond the customer’s financial capability.
+
+◆
+Discretion abuse deserves its own treatment because the rule differs by actor, and the exam exploits that. A BROKER-DEALER or agent must have WRITTEN discretionary authority in hand BEFORE exercising discretion — there is no grace period. An INVESTMENT ADVISER or IAR may act on ORAL authority for up to TEN BUSINESS DAYS from the first discretionary transaction, and must obtain written authority by the end of that period.
+
+●
+Discretion exists when the professional decides any one of three things without contacting the client: the ACTION (buy or sell), the ASSET (which security), or the AMOUNT. Any one is enough.
+
+●
+If the client specifies action, asset, and amount and leaves only PRICE and/or TIME to the professional, that is not discretion — it is a not-held order. No written authority is required, and the order is good only for the day it is entered.
+
+▲
+“An agent may act on oral discretion for ten business days.” Wrong — that window belongs to investment advisers only.
+
+▲
+“A not-held order stays open until executed.” Wrong — day only.
+
+◆
+Also prohibited: effecting transactions not recorded on the firm’s books unless authorized in writing · exercising discretion without authority · failing to follow a customer’s instruction about their own account.
+
+
+ETH-5
+Investment company share abuses
+
+◆
+Mutual fund sales get their own catalogue of named practices because the fee structures create specific opportunities for abuse. Each one is tested as a fact pattern where you name the violation.
+
+●
+BREAKPOINT SALES — recommending or accepting an investment just below the amount that would qualify for a reduced sales charge, without informing the customer that a slightly larger investment would cost proportionally less.
+
+●
+FAILURE TO OFFER A LETTER OF INTENT — not informing a customer that a letter of intent would let them reach a breakpoint by aggregating purchases over 13 months.
+
+●
+SHARE-CLASS ABUSE — recommending a higher-cost class when the customer qualifies for or would be better served by a lower-cost one.
+
+●
+SWITCHING — recommending the sale of one fund to buy another, principally to generate a new sales charge, where the funds have substantially similar objectives.
+
+●
+SELLING DIVIDENDS — telling or implying that buying fund shares shortly before the ex-dividend date is advantageous. It is not: the net asset value drops by the distribution amount, so the buyer receives part of their own purchase price back and owes tax on it immediately. A second prong of the same violation is implying that a long-term capital gains distribution is part of the fund’s income yield — it is a distribution of appreciation, not recurring income.
+
+●
+UNFAIR COMPARISONS — stating or implying that a money market mutual fund is equivalent to an insured bank savings account. Money market funds carry no deposit insurance and no principal guarantee.
+
+◆
+Every one of these turns on the sales pitch rather than the product. The fund itself may be perfectly suitable; misrepresenting why or how to buy it is what creates the violation.
+
+
+ETH-6
+Violations only a firm can commit
+
+◆
+Several named practices are operational failures that only a broker-dealer, not an individual, is in a position to commit. The exam tests this by asking what the FIRM did wrong, and plants agent-only items as distractors.
+
+●
+DELIVERY DELAYS — a pattern of unreasonable and unjustifiable delay in delivering securities a customer has purchased, or in paying out a free credit balance on request. A free credit balance is the customer’s uninvested cash and must be remitted when asked.
+
+●
+DISHONORING QUOTES, sometimes called backing away — quoting a price at which the firm is not actually prepared to trade. A firm quoting a two-sided market must stand ready to trade at those prices, at least for the minimum quantity, under the stated conditions.
+
+●
+UNREASONABLE SERVICE FEES — charging unreasonable or inequitable fees for miscellaneous services such as collecting dividends or interest, transferring or exchanging securities, appraisals, safekeeping, and custody. A firm offering more service may charge more, but the fee must be reasonable and disclosed.
+
+●
+WITHHOLDING SHARES OF A PUBLIC OFFERING — failing to make a bona fide public offering of all securities allotted to the firm in a distribution. Holding back shares of a hot issue for the firm, its officers, or its agents rather than allocating them fairly is the violation, whatever price the insiders pay.
+
+●
+COMMINGLING and IMPROPER HYPOTHECATION — mixing customer securities with the firm’s own, or pledging customer securities beyond what the customer’s indebtedness and agreements permit.
+
+◆
+Two related practices reach both firm and agent. HIGHER-THAN-NORMAL COMMISSIONS on a thinly traded security can be legitimate — the offense is charging them without disclosing in advance. Undisclosed premium pricing, not premium pricing, is the violation. FREE-LUNCH SEMINARS marketed as education with assurances that nothing will be sold, where the real purpose is opening accounts, make both the sponsoring firm and the presenting agent responsible.
+
+
+ETH-7
+Violations at the individual level
+
+●
+BORROWING FROM OR LENDING TO A CUSTOMER — prohibited unless the customer is a broker-dealer, an affiliate of the firm, or a financial institution in the business of lending. A long friendship, a family relationship, or the customer’s enthusiastic consent does not create an exception.
+
+●
+SHARING IN PROFITS AND LOSSES of a customer’s account — prohibited without prior written consent of BOTH the customer and the firm, and then only in proportion to the agent’s own capital contribution.
+
+●
+SPLITTING COMMISSIONS — an agent may divide compensation only with a person registered as an agent of the SAME broker-dealer, or of a broker-dealer under direct or indirect common control. Splitting with an agent of an unaffiliated firm, or with anyone unregistered, is prohibited. A permissible split ordinarily requires no disclosure to the client unless it increases the client’s cost.
+
+●
+FICTITIOUS ACCOUNT INFORMATION — establishing or maintaining an account containing false information in order to execute transactions that would otherwise be prohibited. The classic patterns are inflating a customer’s stated net worth to qualify the account for margin or options, and overstating investment experience to clear a suitability screen. The customer’s consent does not cure it; the false record is the violation.
+
+●
+SELLING AWAY — participating in a securities transaction outside the regular course of employment. Prior WRITTEN NOTICE to the firm is required in all cases regardless of compensation; where compensation is involved the firm must also approve and supervise. The transaction need not involve a firm customer to be a violation.
+
+◆
+Contrast the disclosure logic on two of these, because the exam swaps them. Sharing in a customer’s profits and losses requires prior written consent from both customer and firm. A permissible commission split among affiliated agents requires no client disclosure at all.
+
+▲
+The actor shortcut, which resolves a whole question type. FIRM ONLY: delivery delays, dishonoring quotes, unreasonable service fees, withholding shares of an offering, commingling. AGENT ONLY: splitting commissions outside the firm, fictitious account information, sharing in a customer’s account without consent. BOTH: churning, unauthorized trading, unsuitable recommendations, undisclosed premium charges, misleading statements, borrowing and lending outside permitted relationships. Check the actor before you check the conduct.
+
+
+ETH-8
+Protective rules: vulnerable adults, conflicts, custody, and prudence
+
+●
+VULNERABLE ADULT — an individual 65 or older, or an adult protected under the state’s adult protective services statute.
+
+●
+TRUSTED CONTACT — firms must make reasonable efforts to obtain the name of a trusted contact person when opening an account. The client may decline. The trusted contact has NO authority over the account; they are an information resource the firm may reach if it suspects exploitation, suspects diminished capacity, or cannot reach the client.
+
+●
+TEMPORARY HOLDS — a firm that reasonably believes financial exploitation is occurring, has occurred, or is being attempted may place a temporary hold on a DISBURSEMENT. The initial hold runs up to 15 BUSINESS DAYS and may be extended by 10 more, for 25 total, if the firm’s internal review supports it. Notice must go to the Administrator and to adult protective services within 2 business days, and the firm must conduct an internal review.
+
+▲
+Holds apply to disbursements, not to trading. Securities transactions inside the account continue. And any answer choice in which the trusted contact approves or directs something is wrong — they have no authority.
+
+●
+Red flags: sudden unexplained changes in financial patterns · a new friend or caregiver directing transactions · a client appearing confused or under duress · unusual wires to unfamiliar parties · unexplained changes to beneficiaries or powers of attorney.
+
+◆
+Conflicts of interest divide into what disclosure can cure and what it cannot. It CANNOT cure: borrowing from or lending to clients, sharing in accounts without consent, trading or tipping on material non-public information, misappropriating client assets. It CAN permit, with full written disclosure: soft dollar arrangements within the statutory safe harbor, principal trades with prior written client consent, agency cross transactions, and outside business activities and accounts disclosed to the firm.
+
+●
+SOFT DOLLARS — an adviser directing client brokerage commissions to a broker in exchange for research and services falls within a safe harbor if the services benefit the clients whose commissions are used. ELIGIBLE: research reports, financial databases and market data, analytical and portfolio-management software, seminars on research topics. NOT ELIGIBLE: office rent, furniture, computer hardware for general use, travel, entertainment, telephone bills, salaries. If it would exist without the investment process, it is overhead. Best execution is still required, and the arrangements must be disclosed.
+
+●
+AGENCY CROSS TRANSACTION — the adviser acts as agent for both buyer and seller. Permitted only with prior written client consent after written disclosure of the conflict and the compensation, a written confirmation at or before completion of each transaction, and an annual itemized report of all such transactions and total compensation. The condition no paperwork waives: the adviser may not have RECOMMENDED the transaction to both parties.
+
+●
+WRAP FEE PROGRAM — a program under which a client pays a single fee, not based directly on transactions, covering both advisory services and execution. The sponsor is an investment adviser and must register. A broker-dealer charging a wrap fee has received special compensation for advice and loses its exclusion from the adviser definition. Wrap clients receive a special wrap-program brochure rather than the standard one. The built-in conflict runs the opposite way from churning: because the fee does not vary with trading, the incentive is to trade too LITTLE.
+
+●
+UNIFORM PRUDENT INVESTOR ACT — five principles. Prudence is judged at the PORTFOLIO level as part of an overall strategy, not investment by investment, so no security is categorically imprudent. Risk and return are inseparable, and avoiding all risk is itself a breach. Diversification is a DUTY unless special circumstances make the trust’s purposes better served without it. Delegation IS permitted, with prudent selection of the agent, prudent scope-setting, and periodic review — and a trustee who delegates properly is not liable for the agent’s decisions. And the trustee owes loyalty to the beneficiaries and impartiality among them.
+
+▲
+“A trustee may not delegate investment decisions.” That was the OLD rule and it is the standard distractor. Under the modern act, prudent delegation is permitted and shifts liability.
+
+
+
+●  ETH memorize sheet
+Every ● item from this chapter, in one place. These are the facts that understanding will not rescue. Cover the right column, read the cell code, and say the fact.
+CELL
+FACT
+ETH-1
+The state antifraud provision makes it unlawful, in connection with the offer, sale, OR PURCHASE of any security, to employ any device or scheme to defraud, to make an untrue statement of a material fact or omit a material fact necessary to make statements not misleading, or to engage in any act or practice that operates as a fraud or deceit.
+ETH-1
+A parallel provision covers investment advice: it is unlawful for a person advising others for compensation to employ any scheme to defraud a client, or to engage in any practice that operates as a fraud on a client.
+ETH-1
+FIDUCIARY DUTY — owed by investment advisers and IARs. Continuous, not point-of-sale. Requires loyalty, care, full disclosure of material conflicts, and placing the client’s interest ahead of the firm’s. Survives the recommendation and runs for the life of the relationship.
+ETH-1
+BEST INTEREST — owed by broker-dealers and their agents when making a recommendation to a retail customer. It attaches AT the recommendation and runs on four obligations: care, disclosure, conflict of interest, and compliance.
+ETH-1
+SUITABILITY — the older standard, governing recommendations not covered by the best-interest rule. Three prongs: reasonable-basis (the product is suitable for someone), customer-specific (it suits THIS customer’s profile), and quantitative (the pattern of recommendations is not excessive).
+ETH-2
+SPOOFING — entering bids or offers with the intent to cancel before execution. Tell: intent to cancel.
+ETH-2
+LAYERING — spoofing at multiple price levels with a series of non-bona-fide orders. Tell: multiple layers, none genuine.
+ETH-2
+FRONT-RUNNING — trading ahead of a known pending customer order to profit from the price move it will cause. Tell: trading ahead of customer flow.
+ETH-2
+WASH SALES and MATCHED ORDERS — transactions producing no real change in beneficial ownership, arranged to manufacture apparent activity. Tell: no change of ownership.
+ETH-2
+PUMP AND DUMP — spreading false favorable information to inflate a price, then selling into the demand created. Tell: promotion followed by the promoter selling.
+ETH-2
+The publication side: a firm may not publish or circulate, or cause to be circulated, any communication reporting a transaction as a purchase or sale unless it believes the trade was bona fide, or quoting a bid or offer unless it believes the quotation is bona fide. Tell: publicizing prices or volume the firm does not believe are real.
+ETH-2
+Liability reaches the whole chain: the person who trades on the information, the person who tips it even without trading, the person who receives the tip and trades, and the firm that failed to supervise. Firms manage this with information barriers between departments holding non-public information and their trading desks.
+ETH-3
+Named misrepresentations: guarantees of return or against loss · claims that registration confers approval · statements about a fund that contradict or exceed the prospectus, including hypothetical performance and projected returns · misleading use of titles or credentials, including designations implying expertise in advising seniors that were issued by an organization with no meaningful standards · misstating the status of a customer’s account or the price of a security.
+ETH-3
+A professional designation may be used only if it was issued by an accredited organization with real qualification standards, continuing education, and a public disciplinary process; was not awarded merely for paying a fee or attending a marketing session; and is not used in a way that misleads investors about the holder’s expertise.
+ETH-3
+The four bank-premises disclosures: the securities are NOT federally insured · they are NOT a deposit or other obligation of the institution · they are NOT guaranteed by the institution · they ARE subject to investment risk, including possible loss of principal.
+ETH-3
+Additionally: the securities sales area must be physically distinct from the deposit-taking area wherever practicable, signage must be displayed, and the institution must maintain written customer-complaint procedures.
+ETH-4
+CHURNING — trading excessively in a customer’s account relative to the customer’s objectives and resources, to generate commissions. Examined through turnover ratio, cost-to-equity ratio, and whether the pattern makes sense for the stated objectives. It is the quantitative suitability prong made concrete.
+ETH-4
+UNAUTHORIZED TRANSACTIONS — trades placed without the customer’s prior consent, except in an account where written discretionary authority has been granted. Good faith is not a defense; a profitable unauthorized trade is still a violation.
+ETH-4
+UNSUITABLE RECOMMENDATIONS — recommending securities inconsistent with the customer’s objectives, financial situation, or needs, including recommending purchases beyond the customer’s financial capability.
+ETH-4
+Discretion exists when the professional decides any one of three things without contacting the client: the ACTION (buy or sell), the ASSET (which security), or the AMOUNT. Any one is enough.
+ETH-4
+If the client specifies action, asset, and amount and leaves only PRICE and/or TIME to the professional, that is not discretion — it is a not-held order. No written authority is required, and the order is good only for the day it is entered.
+ETH-5
+BREAKPOINT SALES — recommending or accepting an investment just below the amount that would qualify for a reduced sales charge, without informing the customer that a slightly larger investment would cost proportionally less.
+ETH-5
+FAILURE TO OFFER A LETTER OF INTENT — not informing a customer that a letter of intent would let them reach a breakpoint by aggregating purchases over 13 months.
+ETH-5
+SHARE-CLASS ABUSE — recommending a higher-cost class when the customer qualifies for or would be better served by a lower-cost one.
+ETH-5
+SWITCHING — recommending the sale of one fund to buy another, principally to generate a new sales charge, where the funds have substantially similar objectives.
+ETH-5
+SELLING DIVIDENDS — telling or implying that buying fund shares shortly before the ex-dividend date is advantageous. It is not: the net asset value drops by the distribution amount, so the buyer receives part of their own purchase price back and owes tax on it immediately. A second prong of the same violation is implying that a long-term capital gains distribution is part of the fund’s income yield — it is a distribution of appreciation, not recurring income.
+ETH-5
+UNFAIR COMPARISONS — stating or implying that a money market mutual fund is equivalent to an insured bank savings account. Money market funds carry no deposit insurance and no principal guarantee.
+ETH-6
+DELIVERY DELAYS — a pattern of unreasonable and unjustifiable delay in delivering securities a customer has purchased, or in paying out a free credit balance on request. A free credit balance is the customer’s uninvested cash and must be remitted when asked.
+ETH-6
+DISHONORING QUOTES, sometimes called backing away — quoting a price at which the firm is not actually prepared to trade. A firm quoting a two-sided market must stand ready to trade at those prices, at least for the minimum quantity, under the stated conditions.
+ETH-6
+UNREASONABLE SERVICE FEES — charging unreasonable or inequitable fees for miscellaneous services such as collecting dividends or interest, transferring or exchanging securities, appraisals, safekeeping, and custody. A firm offering more service may charge more, but the fee must be reasonable and disclosed.
+ETH-6
+WITHHOLDING SHARES OF A PUBLIC OFFERING — failing to make a bona fide public offering of all securities allotted to the firm in a distribution. Holding back shares of a hot issue for the firm, its officers, or its agents rather than allocating them fairly is the violation, whatever price the insiders pay.
+ETH-6
+COMMINGLING and IMPROPER HYPOTHECATION — mixing customer securities with the firm’s own, or pledging customer securities beyond what the customer’s indebtedness and agreements permit.
+ETH-7
+BORROWING FROM OR LENDING TO A CUSTOMER — prohibited unless the customer is a broker-dealer, an affiliate of the firm, or a financial institution in the business of lending. A long friendship, a family relationship, or the customer’s enthusiastic consent does not create an exception.
+ETH-7
+SHARING IN PROFITS AND LOSSES of a customer’s account — prohibited without prior written consent of BOTH the customer and the firm, and then only in proportion to the agent’s own capital contribution.
+ETH-7
+SPLITTING COMMISSIONS — an agent may divide compensation only with a person registered as an agent of the SAME broker-dealer, or of a broker-dealer under direct or indirect common control. Splitting with an agent of an unaffiliated firm, or with anyone unregistered, is prohibited. A permissible split ordinarily requires no disclosure to the client unless it increases the client’s cost.
+ETH-7
+FICTITIOUS ACCOUNT INFORMATION — establishing or maintaining an account containing false information in order to execute transactions that would otherwise be prohibited. The classic patterns are inflating a customer’s stated net worth to qualify the account for margin or options, and overstating investment experience to clear a suitability screen. The customer’s consent does not cure it; the false record is the violation.
+ETH-7
+SELLING AWAY — participating in a securities transaction outside the regular course of employment. Prior WRITTEN NOTICE to the firm is required in all cases regardless of compensation; where compensation is involved the firm must also approve and supervise. The transaction need not involve a firm customer to be a violation.
+ETH-8
+VULNERABLE ADULT — an individual 65 or older, or an adult protected under the state’s adult protective services statute.
+ETH-8
+TRUSTED CONTACT — firms must make reasonable efforts to obtain the name of a trusted contact person when opening an account. The client may decline. The trusted contact has NO authority over the account; they are an information resource the firm may reach if it suspects exploitation, suspects diminished capacity, or cannot reach the client.
+ETH-8
+TEMPORARY HOLDS — a firm that reasonably believes financial exploitation is occurring, has occurred, or is being attempted may place a temporary hold on a DISBURSEMENT. The initial hold runs up to 15 BUSINESS DAYS and may be extended by 10 more, for 25 total, if the firm’s internal review supports it. Notice must go to the Administrator and to adult protective services within 2 business days, and the firm must conduct an internal review.
+ETH-8
+Red flags: sudden unexplained changes in financial patterns · a new friend or caregiver directing transactions · a client appearing confused or under duress · unusual wires to unfamiliar parties · unexplained changes to beneficiaries or powers of attorney.
+ETH-8
+SOFT DOLLARS — an adviser directing client brokerage commissions to a broker in exchange for research and services falls within a safe harbor if the services benefit the clients whose commissions are used. ELIGIBLE: research reports, financial databases and market data, analytical and portfolio-management software, seminars on research topics. NOT ELIGIBLE: office rent, furniture, computer hardware for general use, travel, entertainment, telephone bills, salaries. If it would exist without the investment process, it is overhead. Best execution is still required, and the arrangements must be disclosed.
+ETH-8
+AGENCY CROSS TRANSACTION — the adviser acts as agent for both buyer and seller. Permitted only with prior written client consent after written disclosure of the conflict and the compensation, a written confirmation at or before completion of each transaction, and an annual itemized report of all such transactions and total compensation. The condition no paperwork waives: the adviser may not have RECOMMENDED the transaction to both parties.
+ETH-8
+WRAP FEE PROGRAM — a program under which a client pays a single fee, not based directly on transactions, covering both advisory services and execution. The sponsor is an investment adviser and must register. A broker-dealer charging a wrap fee has received special compensation for advice and loses its exclusion from the adviser definition. Wrap clients receive a special wrap-program brochure rather than the standard one. The built-in conflict runs the opposite way from churning: because the fee does not vary with trading, the incentive is to trade too LITTLE.
+ETH-8
+UNIFORM PRUDENT INVESTOR ACT — five principles. Prudence is judged at the PORTFOLIO level as part of an overall strategy, not investment by investment, so no security is categorically imprudent. Risk and return are inseparable, and avoiding all risk is itself a breach. Diversification is a DUTY unless special circumstances make the trust’s purposes better served without it. Delegation IS permitted, with prudent selection of the agent, prudent scope-setting, and periodic review — and a trustee who delegates properly is not liable for the agent’s decisions. And the trustee owes loyalty to the beneficiaries and impartiality among them.
+
+
+REM
+Remedies and Administrative Provisions
+11% · 7 questions
+
+THE SPINE
+One violation opens three separate doors: an administrative action by the Administrator, a private lawsuit by the buyer, and a criminal prosecution by a prosecutor. Different actors, different standards of proof, different clocks. Most of the questions here are really asking which door you are standing in — and the most reliable single question type is what the Administrator can and cannot do without a court.
+
+
+REM connector map — one violation, three tracks.
+REM-1
+The Administrator — powers and limits
+
+◆
+The Administrator is the state’s senior securities official. Titles vary — Securities Commissioner, Director of the Division of Securities, Secretary of State — and the office is usually a staff rather than a person. The powers and constraints are the same regardless of the label.
+
+●
+The Administrator CAN: make, amend, and rescind rules and forms · issue interpretive and exemptive orders · register and deny, suspend, revoke, cancel, or condition registrations · conduct investigations inside or outside the state · subpoena witnesses and documents · administer oaths and take depositions · examine registrants’ books and records · issue cease-and-desist orders · issue stop orders against securities registrations · impose administrative fines and require restitution · refer matters for criminal prosecution · apply to a court for an injunction or the appointment of a receiver · cooperate with other administrators and with federal regulators.
+
+●
+The Administrator CANNOT: make arrests · prosecute crimes · impose criminal fines or imprisonment · issue an injunction · hold a person in contempt · grant immunity to a witness. Every item on that list is a judicial function requiring a court.
+
+◆
+The distinction is worth internalizing as a single sentence: the Administrator is a regulator with subpoena power, not a judge and not a prosecutor. Where the Act needs judicial force, the Administrator goes to court and asks for it.
+
+●
+Rulemaking limits: a rule or order may be adopted only if it is in the public interest and consistent with the purposes of the Act, and no rule may be inconsistent with federal law where federal law preempts. No provision imposing liability applies to an act done in good faith reliance on a rule or order, even if that rule is later amended or held invalid.
+
+▲
+“The Administrator issued an injunction against the firm.” Wrong every time — the Administrator issues cease-and-desist orders and asks a court for injunctions.
+
+
+REM-2
+Jurisdiction
+
+◆
+A state’s securities law reaches a transaction if any one of three contacts occurs in that state. Any single one is sufficient, which means a transaction routinely falls under two states’ laws at once.
+
+●
+The three triggers: an offer to SELL or to BUY is made in the state · an offer is ACCEPTED in the state · an acceptance is COMMUNICATED from the state.
+
+●
+An offer is made in a state both where it ORIGINATES and where it is DIRECTED and received. A representative in New York calling a client in California subjects the transaction to both New York and California jurisdiction.
+
+●
+The publication exclusions — an offer is NOT made in a state when it appears in a bona fide newspaper or periodical published OUT of the state; or in one published in the state but with more than TWO-THIRDS of its circulation outside the state in the past twelve months; or in a radio or television program ORIGINATING outside the state.
+
+◆
+Internet offers follow the same logic through modern guidance: an offer accessible to residents of a state is generally made there, unless the offer carries an effective legend limiting it and no follow-up is directed into that state.
+
+▲
+“Jurisdiction requires the buyer and seller to be in the same state.” Wrong — one contact is enough, and overlapping jurisdiction is normal.
+
+▲
+The two-thirds circulation test is a favorite. A magazine published in the state with 70% of its circulation elsewhere falls outside that state’s jurisdiction for the offers it carries.
+
+
+REM-3
+Investigations
+
+●
+The Administrator may investigate whenever it appears necessary to determine whether a person has violated or is about to violate the Act — and may do so inside or outside the state, and may investigate conduct that would violate ANOTHER state’s law, at that state’s request.
+
+●
+Investigative tools: subpoena witnesses to testify · subpoena books, papers, contracts, agreements, and other records · administer oaths and take testimony under oath · take depositions · examine registrants’ records · require written statements under oath.
+
+●
+Procedural protections: a witness may be represented by counsel · a witness may invoke the privilege against self-incrimination · the Administrator cannot grant immunity, so only a court can compel testimony over a valid Fifth Amendment claim · subpoenas are enforced by applying to a court, which may treat non-compliance as contempt.
+
+◆
+Investigations may be public or private, and the Administrator may publish information about violations. Nothing requires an investigation to be announced.
+
+▲
+“The Administrator granted the witness immunity in exchange for testimony.” Wrong — immunity is judicial.
+
+
+REM-4
+Orders: cease-and-desist, stop, and summary
+
+◆
+A CEASE-AND-DESIST order directs a person to stop conduct that violates the Act. It may issue against ANY person — registered or unregistered, in-state or out-of-state — whose conduct violates the Act and affects the state. Violating a cease-and-desist order is itself a separate violation and may be referred for prosecution.
+
+●
+A STOP ORDER applies to a securities registration, denying, suspending, or revoking its effectiveness. Grounds and procedure are in SEC-8.
+
+◆
+A SUMMARY order is one issued without prior notice or hearing, where the Administrator finds immediate action necessary to protect investors or the public interest. It is the exception to the normal due-process sequence, and it carries its own follow-up obligation.
+
+●
+After a summary order the Administrator must promptly notify the affected persons that the order has been entered, state the reasons, and advise that a hearing will be held on written request. On such a request the hearing must be held within FIFTEEN DAYS.
+
+▲
+“A summary order may be issued and left in place with no further process.” Wrong — failure to provide the promised hearing can invalidate the order.
+
+
+REM-5
+Administrative action and due process
+
+◆
+Before any punitive final action against a registration — denial, suspension, revocation, or the imposition of conditions — three things must happen, and the exam tests the sequence.
+
+●
+The three steps: PRIOR WRITTEN NOTICE stating the grounds and the proposed action · an OPPORTUNITY FOR A HEARING, held within fifteen days of a written request · WRITTEN FINDINGS of fact and conclusions of law.
+
+◆
+Two independent requirements must both be satisfied for a punitive action: there must be statutory cause — a ground listed in the Act — AND the action must be in the public interest. Cause alone is not enough, which is why an ancient minor infraction generally does not support revocation.
+
+◆
+Non-punitive terminations bypass the machinery because nothing is being alleged. CANCELLATION applies where a registrant no longer exists, has ceased doing business, cannot be located after reasonable search, or is mentally incompetent. WITHDRAWAL is the registrant’s own voluntary exit.
+
+▲
+A stem describing mail returned undeliverable, a dissolved entity, or an incapacitated registrant is asking about CANCELLATION, not revocation. A stem describing misconduct is asking about denial, suspension, or revocation.
+
+●
+The Administrator may also impose lesser sanctions — censure, a bar or suspension from association, administrative fines, and restitution — without revoking a registration.
+
+
+REM-6
+Civil liability
+
+◆
+The Act gives a defrauded or improperly sold BUYER a private right of action against the seller. It is the most powerful remedy in private hands because the buyer need not wait for any regulator to act.
+
+●
+Conduct creating civil liability: selling an unregistered, non-exempt security · selling through an unregistered broker-dealer or agent · selling by means of an untrue statement of material fact or a material omission · selling in violation of a rule or order.
+
+●
+SCIENTER IS NOT REQUIRED. An innocent or merely negligent violation of the registration or sales-conduct rules creates liability. The buyer proves the violation and the purchase; intent is not an element.
+
+●
+RESCISSION formula — the buyer recovers: the price paid, PLUS interest from the date of purchase, PLUS court costs and reasonable attorney fees, MINUS any income received from the security. The buyer must TENDER the security back.
+
+●
+DAMAGES formula — where the buyer has already sold and cannot tender: the same calculation, MINUS the proceeds of that sale. No tender is required.
+
+●
+RESCISSION OFFER — a seller who discovers a violation may make a written offer to unwind the transaction on the same terms a court would order. The BUYER has THIRTY DAYS from receipt to accept. Accepting unwinds the trade and extinguishes liability to that buyer; failing to accept within thirty days waives the buyer’s right of action for that violation.
+
+▲
+The thirty days is the buyer’s window to accept. It is not a deadline on the seller to make the offer.
+
+●
+JOINT AND SEVERAL LIABILITY extends beyond the seller to: every person who directly or indirectly controls the seller · every partner, officer, and director of the seller or of a controlling person · every employee who materially aided the sale · every broker-dealer or agent who materially aided it.
+
+●
+The REASONABLE CARE defense: a control person, partner, officer, director, or employee is not liable if they prove they did not know, and in the exercise of reasonable care could not have known, of the facts giving rise to liability. The burden is on the defendant.
+
+●
+STATUTE OF LIMITATIONS — the EARLIER of three years after the violation or two years after discovery. Earlier, not later. A buyer can lose the right to sue three years after the sale even if they discovered the problem yesterday.
+
+◆
+A cause of action survives the death of either party. The buyer’s estate may pursue it; a deceased seller’s estate may be pursued. Liability attaches to the transaction, not to the lifespan of the people involved — which is also why a surety bond must remain available for the full limitations period.
+
+
+REM-7
+Criminal penalties and judicial review
+
+◆
+Criminal liability requires a WILLFUL violation, and the charge is brought by a prosecutor — the state attorney general or a local prosecutor — not by the Administrator, who may only refer the matter.
+
+●
+Penalties: a fine of up to $5,000, imprisonment for up to 3 years, or both. Multiple violations may be charged separately.
+
+●
+Statute of limitations for criminal prosecution: 5 years after the alleged violation.
+
+◆
+What “willful” means here is narrower than intuition suggests. It means the act was DELIBERATE — the person meant to do the thing they did. It does NOT require that they knew the act violated the law. Ignorance of the statute is not a defense.
+
+●
+One narrow defense exists: a person prosecuted for violating a RULE or ORDER may not be imprisoned if they prove they had no actual knowledge of it. The defense covers rules and orders only, never the statutory provisions of the Act itself.
+
+◆
+JUDICIAL REVIEW — any final order of the Administrator may be reviewed by a state court. The court reviews on the administrative record; new evidence is generally not admitted.
+
+●
+The petition must be filed within SIXTY DAYS after entry of the final order. Filing does NOT automatically stay the order; a stay must be specifically requested from the court.
+
+●
+Standards of review: findings of FACT are upheld if supported by substantial evidence. Conclusions of LAW are reviewed de novo. Discretionary determinations are reviewed for abuse of discretion.
+
+▲
+“Willful means the defendant knew the conduct was illegal.” Wrong — it means the conduct was intentional.
+
+
+REM-8
+SIPC coverage
+
+◆
+The investor protection corporation is an industry-funded nonprofit that steps in when a broker-dealer itself fails. It is insolvency protection for customer claims — never a guarantee of investment results.
+
+●
+Coverage: up to $500,000 per customer, of which no more than $250,000 may be cash.
+
+◆
+The dollar limits are the setup; the aggregation rules are the question. Coverage is provided per separate customer, meaning per separate ownership capacity or registration.
+
+●
+A cash account and a margin account owned by the same individual at the same firm are ONE customer — combined, one $500,000 limit. An individual account and a joint account with a spouse are TWO customers. An IRA is a separate capacity from an individual taxable account.
+
+●
+In a margin account only the customer’s EQUITY is covered — amounts owed to the firm are subtracted before coverage applies.
+
+●
+A claim exceeding the limits is not extinguished. The customer becomes a general creditor of the broker-dealer for the excess.
+
+●
+Coverage extends to both retail and institutional customers. NOT covered: decline in market value · commodity futures contracts · currency and fixed annuities · unregistered investment contracts.
+
+▲
+Representing this coverage as deposit insurance, or as protection against market loss, is itself a misrepresentation and a violation. Link back to COM-3.
+
+
+
+●  REM memorize sheet
+Every ● item from this chapter, in one place. These are the facts that understanding will not rescue. Cover the right column, read the cell code, and say the fact.
+CELL
+FACT
+REM-1
+The Administrator CAN: make, amend, and rescind rules and forms · issue interpretive and exemptive orders · register and deny, suspend, revoke, cancel, or condition registrations · conduct investigations inside or outside the state · subpoena witnesses and documents · administer oaths and take depositions · examine registrants’ books and records · issue cease-and-desist orders · issue stop orders against securities registrations · impose administrative fines and require restitution · refer matters for criminal prosecution · apply to a court for an injunction or the appointment of a receiver · cooperate with other administrators and with federal regulators.
+REM-1
+The Administrator CANNOT: make arrests · prosecute crimes · impose criminal fines or imprisonment · issue an injunction · hold a person in contempt · grant immunity to a witness. Every item on that list is a judicial function requiring a court.
+REM-1
+Rulemaking limits: a rule or order may be adopted only if it is in the public interest and consistent with the purposes of the Act, and no rule may be inconsistent with federal law where federal law preempts. No provision imposing liability applies to an act done in good faith reliance on a rule or order, even if that rule is later amended or held invalid.
+REM-2
+The three triggers: an offer to SELL or to BUY is made in the state · an offer is ACCEPTED in the state · an acceptance is COMMUNICATED from the state.
+REM-2
+An offer is made in a state both where it ORIGINATES and where it is DIRECTED and received. A representative in New York calling a client in California subjects the transaction to both New York and California jurisdiction.
+REM-2
+The publication exclusions — an offer is NOT made in a state when it appears in a bona fide newspaper or periodical published OUT of the state; or in one published in the state but with more than TWO-THIRDS of its circulation outside the state in the past twelve months; or in a radio or television program ORIGINATING outside the state.
+REM-3
+The Administrator may investigate whenever it appears necessary to determine whether a person has violated or is about to violate the Act — and may do so inside or outside the state, and may investigate conduct that would violate ANOTHER state’s law, at that state’s request.
+REM-3
+Investigative tools: subpoena witnesses to testify · subpoena books, papers, contracts, agreements, and other records · administer oaths and take testimony under oath · take depositions · examine registrants’ records · require written statements under oath.
+REM-3
+Procedural protections: a witness may be represented by counsel · a witness may invoke the privilege against self-incrimination · the Administrator cannot grant immunity, so only a court can compel testimony over a valid Fifth Amendment claim · subpoenas are enforced by applying to a court, which may treat non-compliance as contempt.
+REM-4
+A STOP ORDER applies to a securities registration, denying, suspending, or revoking its effectiveness. Grounds and procedure are in SEC-8.
+REM-4
+After a summary order the Administrator must promptly notify the affected persons that the order has been entered, state the reasons, and advise that a hearing will be held on written request. On such a request the hearing must be held within FIFTEEN DAYS.
+REM-5
+The three steps: PRIOR WRITTEN NOTICE stating the grounds and the proposed action · an OPPORTUNITY FOR A HEARING, held within fifteen days of a written request · WRITTEN FINDINGS of fact and conclusions of law.
+REM-5
+The Administrator may also impose lesser sanctions — censure, a bar or suspension from association, administrative fines, and restitution — without revoking a registration.
+REM-6
+Conduct creating civil liability: selling an unregistered, non-exempt security · selling through an unregistered broker-dealer or agent · selling by means of an untrue statement of material fact or a material omission · selling in violation of a rule or order.
+REM-6
+SCIENTER IS NOT REQUIRED. An innocent or merely negligent violation of the registration or sales-conduct rules creates liability. The buyer proves the violation and the purchase; intent is not an element.
+REM-6
+RESCISSION formula — the buyer recovers: the price paid, PLUS interest from the date of purchase, PLUS court costs and reasonable attorney fees, MINUS any income received from the security. The buyer must TENDER the security back.
+REM-6
+DAMAGES formula — where the buyer has already sold and cannot tender: the same calculation, MINUS the proceeds of that sale. No tender is required.
+REM-6
+RESCISSION OFFER — a seller who discovers a violation may make a written offer to unwind the transaction on the same terms a court would order. The BUYER has THIRTY DAYS from receipt to accept. Accepting unwinds the trade and extinguishes liability to that buyer; failing to accept within thirty days waives the buyer’s right of action for that violation.
+REM-6
+JOINT AND SEVERAL LIABILITY extends beyond the seller to: every person who directly or indirectly controls the seller · every partner, officer, and director of the seller or of a controlling person · every employee who materially aided the sale · every broker-dealer or agent who materially aided it.
+REM-6
+The REASONABLE CARE defense: a control person, partner, officer, director, or employee is not liable if they prove they did not know, and in the exercise of reasonable care could not have known, of the facts giving rise to liability. The burden is on the defendant.
+REM-6
+STATUTE OF LIMITATIONS — the EARLIER of three years after the violation or two years after discovery. Earlier, not later. A buyer can lose the right to sue three years after the sale even if they discovered the problem yesterday.
+REM-7
+Penalties: a fine of up to $5,000, imprisonment for up to 3 years, or both. Multiple violations may be charged separately.
+REM-7
+Statute of limitations for criminal prosecution: 5 years after the alleged violation.
+REM-7
+One narrow defense exists: a person prosecuted for violating a RULE or ORDER may not be imprisoned if they prove they had no actual knowledge of it. The defense covers rules and orders only, never the statutory provisions of the Act itself.
+REM-7
+The petition must be filed within SIXTY DAYS after entry of the final order. Filing does NOT automatically stay the order; a stay must be specifically requested from the court.
+REM-7
+Standards of review: findings of FACT are upheld if supported by substantial evidence. Conclusions of LAW are reviewed de novo. Discretionary determinations are reviewed for abuse of discretion.
+REM-8
+Coverage: up to $500,000 per customer, of which no more than $250,000 may be cash.
+REM-8
+A cash account and a margin account owned by the same individual at the same firm are ONE customer — combined, one $500,000 limit. An individual account and a joint account with a spouse are TWO customers. An IRA is a separate capacity from an individual taxable account.
+REM-8
+In a margin account only the customer’s EQUITY is covered — amounts owed to the firm are subtracted before coverage applies.
+REM-8
+A claim exceeding the limits is not extinguished. The customer becomes a general creditor of the broker-dealer for the excess.
+REM-8
+Coverage extends to both retail and institutional customers. NOT covered: decline in market value · commodity futures contracts · currency and fixed annuities · unregistered investment contracts.
+
+
+The self-scoring grid
+Photocopy this page or draw it beside your Harada chart. After each chapter, mark every cell. The right-hand columns are the point of the exercise: a cell can be weak in two entirely different ways, and the fix is different for each.
+CELL
+◆
+●
+
+CELL
+◆
+●
+SEC-1
+
+
+
+IAR-1
+
+
+SEC-2
+
+
+
+IAR-2
+
+
+SEC-3
+
+
+
+IAR-3
+
+
+SEC-4
+
+
+
+IAR-4
+
+
+SEC-5
+
+
+
+IAR-5
+
+
+SEC-6
+
+
+
+IAR-6
+
+
+SEC-7
+
+
+
+IAR-7
+
+
+SEC-8
+
+
+
+IAR-8
+
+
+BDR-1
+
+
+
+COM-1
+
+
+BDR-2
+
+
+
+COM-2
+
+
+BDR-3
+
+
+
+COM-3
+
+
+BDR-4
+
+
+
+COM-4
+
+
+BDR-5
+
+
+
+COM-5
+
+
+BDR-6
+
+
+
+COM-6
+
+
+BDR-7
+
+
+
+COM-7
+
+
+BDR-8
+
+
+
+COM-8
+
+
+AGT-1
+
+
+
+ETH-1
+
+
+AGT-2
+
+
+
+ETH-2
+
+
+AGT-3
+
+
+
+ETH-3
+
+
+AGT-4
+
+
+
+ETH-4
+
+
+AGT-5
+
+
+
+ETH-5
+
+
+AGT-6
+
+
+
+ETH-6
+
+
+AGT-7
+
+
+
+ETH-7
+
+
+AGT-8
+
+
+
+ETH-8
+
+
+IAD-1
+
+
+
+REM-1
+
+
+IAD-2
+
+
+
+REM-2
+
+
+IAD-3
+
+
+
+REM-3
+
+
+IAD-4
+
+
+
+REM-4
+
+
+IAD-5
+
+
+
+REM-5
+
+
+IAD-6
+
+
+
+REM-6
+
+
+IAD-7
+
+
+
+REM-7
+
+
+IAD-8
+
+
+
+REM-8
+
+
+
+Mark each box: ✓ solid · ~ shaky · blank if untouched. The ◆ column is the concepts in that cell; the ● column is the facts.
+How to read your own grid once it is filled in. A column of shaky ◆ marks inside a single chapter means the chapter’s organizing logic never landed — go back to that chapter’s connector map and re-derive it, out loud, before touching another question. Scattered shaky ● marks across many chapters mean nothing is conceptually wrong; you simply have not drilled the facts enough, and the memorize sheets will fix it in two sittings. Shaky marks in BOTH columns of the same cell mean start over on that cell — read it, close the book, explain it, then drill it.
+
+The eight-day plan
+August 2 through August 9. All studying ends at 9 PM on the 9th — that is a standing rule and the last exam demonstrated exactly why.
+Day
+Work
+Cells
+Aug 2
+Read SEC and BDR. Mark the grid. These two chapters supply the vocabulary every later chapter reuses.
+SEC-1–8, BDR-1–8
+Aug 3
+Read AGT and IAD. Teach-back on the issuer-representative exclusions and the ABC test — close the book and say them out loud.
+AGT-1–8, IAD-1–8
+Aug 4
+Read IAR and COM. COM is 12 questions; do not rush the account-paperwork matching.
+IAR-1–8, COM-1–8
+Aug 5
+Read ETH. Fifteen questions come from here — give it the whole session. Focus on the actor shortcut in ETH-7.
+ETH-1–8
+Aug 6
+Read REM. Then first full timed practice exam. Log every miss as concept or fact.
+REM-1–8
+Aug 7
+Drill the error log. Re-read every ▲ trap item in the book — there are roughly 90 and it is the highest-yield hour available.
+All
+Aug 8
+Second full timed practice exam. Then work only the cells your grid still shows as shaky.
+Weak cells
+Aug 9
+Memorize sheets and connector maps only. No new material. Stop at 9 PM.
+● items
+
+On calibration
+Practice scores are a measurement, and measurements have bias. If a form feels easy, treat its score as five to eight points higher than your true ability; if a form feels punishing, treat it as roughly honest. Going into August 10, the number that should make you comfortable is 85% on a form you have not seen before — not 75%. That gap is the whole lesson from July, and it is cheaper to over-correct for it now than to discover it again in a testing center.
+
+The one thing to carry in
+This exam is a vocabulary test wearing a law-exam costume. Almost every question is decided by whether you know precisely what a single word means — person, sale, offer, guaranteed, custody, discretion, assignment, place of business, non-issuer, willful. When a question feels hard, the move is not to reason harder about the scenario. It is to find the defined term in the stem and ask what the Act says it means.
+
+
+The concordance
+All sixty-four cells aligned against Achievable, your $2 Textbook OneNote export, and the STC study manual, 43rd edition. Cells marked ⚠ are covered in the table that follows this one — those are the places where the three sources disagree or one of them is missing the material.
+CELL
+TOPIC
+ACHIEVABLE
+$2 TEXTBOOK (OneNote pp.)
+STC STUDY MANUAL, 43e
+SEC   —   Regulation of Securities and Issuers
+SEC-1
+Definition of a security, and the Howey test
+Ch. 1 Definitions — Issuers & securities (Howey test)
+Mod 1, Lesson 1 · pp. 1–3
+Ch. 1 Key Terms — Security, p. 6; Ch. 2 Securities, p. 16
+SEC-2
+What is not a security
+Ch. 1 Definitions — Securities (what is excluded)
+Mod 1, Lesson 1 · pp. 2–3
+Ch. 2 Securities, pp. 16–20
+SEC-3
+Offer, sale, and the events that are neither  ⚠
+Ch. 1 Definitions — Transactions
+Mod 4, Lesson 3 · p. 74
+Ch. 7 Offers and Sales, p. 135; Gifts of Securities, p. 139
+SEC-4
+Exempt securities — exempt because of what they are
+2.5 Securities
+Mod 1, Lesson 2 · pp. 4–6
+Ch. 2 Exempt Securities, p. 27
+SEC-5
+Exempt transactions — exempt because of how the sale happens
+2.5 Securities
+Mod 1, Lesson 2 · pp. 4–6
+Ch. 2 Exempt Transactions, p. 31
+SEC-6
+Federal covered securities, notice filing, and the antifraud floor  ⚠
+2.5 Securities; Ch. 1 Definitions — Exempt & excluded
+Mod 1, Lesson 2 · pp. 5–6
+Ch. 2 Federal Exemptions, p. 35; Anti-Fraud Provisions, p. 37
+SEC-7
+The three registration methods
+2.5 Securities
+Mod 1, Lesson 3 · pp. 7–9
+Ch. 2 Types of State Securities Registration, p. 23
+SEC-8
+Life of a securities registration, and stop orders
+2.5 Securities; Ch. 3 Enforcement
+Mod 1, Lesson 3 · pp. 9–10
+Ch. 2 Registering Securities, pp. 21–22; Denial, Suspension, Revocation, p. 26
+BDR   —   Regulation of Broker-Dealers
+BDR-1
+Definition of a broker-dealer
+Ch. 1 Definitions — Broker-dealers; 2.1 Broker-dealers
+Mod 2, Lesson 1 · pp. 12–13
+Ch. 1 Person, p. 7; Ch. 3 State Registration of Broker-Dealers, p. 43
+BDR-2
+Exclusions from the definition  ⚠
+2.1 Broker-dealers — institution rule, vacation rule
+Mod 2, Lesson 1 · pp. 12–13
+Ch. 3 Exclusions from the BD Definition, p. 45
+BDR-3
+Place of business and jurisdictional triggers
+2.1 Broker-dealers
+Mod 2, Lesson 1 · p. 13
+Ch. 3 Exclusions from the BD Definition, pp. 45–46
+BDR-4
+The registration application  ⚠
+2.1 Broker-dealers
+Mod 2, Lesson 2 · pp. 14–15
+Ch. 3 The Application Process, p. 40
+BDR-5
+Effectiveness, expiration, renewal, and withdrawal
+2.1 Broker-dealers
+Mod 2, Lesson 2 · pp. 15–16
+Ch. 3 Effective Date and Expiration, p. 42; Ch. 7 Cancellations and Withdrawals, p. 145
+BDR-6
+Net capital and surety bonds  ⚠
+2.1 Broker-dealers — net capital & NSMIA ceiling
+Mod 2, Lesson 2 · pp. 15–16
+Ch. 3 Net Capital, p. 43; The Application Process (surety bond), pp. 41–42
+BDR-7
+Post-registration conduct: records, advertising, supervision
+2.1 Broker-dealers; 4.2 Communications
+Mod 2, Lesson 3 · pp. 18–19
+Ch. 3 Advertising and Sales Literature, p. 43; Maintenance Requirements, p. 44; Special Examination, p. 45
+BDR-8
+Canadian broker-dealers and other special cases
+2.1 Broker-dealers — limited registration of Canadian broker-dealers
+not covered
+Ch. 3 Rules for Canadian Broker-Dealers and Agents, p. 54
+AGT   —   Regulation of Broker-Dealer Agents
+AGT-1
+Definition of an agent
+Ch. 1 Definitions — Agents; 2.2 Agents
+Mod 2, Lesson 5 · pp. 21–22
+Ch. 3 State Registration of Agents, p. 47
+AGT-2
+Who is not an agent
+2.2 Agents
+Mod 2, Lesson 5 · p. 21
+Ch. 3 Agents of Broker-Dealers, p. 49; Managers as Agents, p. 52
+AGT-3
+Agents of issuers — the exclusions
+2.2 Agents
+Mod 2, Lesson 5 · p. 22; Lesson 7 · p. 29
+Ch. 3 Agents of Issuers, p. 48
+AGT-4
+Where an agent must register
+2.2 Agents — snowbird rule
+Mod 2, Lesson 5 · pp. 22–23
+Ch. 3 Agent Exemptions from State Registration, p. 51
+AGT-5
+Registration mechanics  ⚠
+2.2 Agents
+Mod 2, Lesson 6 · pp. 24–25
+Ch. 3 General Registration of Financial Professionals, p. 40; Managers as Agents, p. 52
+AGT-6
+Maintaining registration
+2.2 Agents
+Mod 2, Lesson 6 · pp. 25–26
+Ch. 3 Post-Registration Requirements for Agents, p. 53
+AGT-7
+How a registration ends
+2.2 Agents; Ch. 3 Enforcement
+Mod 2, Lesson 6 · pp. 26–27
+Ch. 7 Administrative Actions Associated with Registration, p. 141; Cancellations and Withdrawals, p. 145
+AGT-8
+Outside activity, outside accounts, and payments
+4.4 Unethical & criminal actions
+Mod 2, Lesson 7 · pp. 28–29
+Ch. 6 Outside Securities Accounts, p. 107; Selling Away, p. 110
+IAD   —   Regulation of Investment Advisers
+IAD-1
+The ABC test
+Ch. 1 Definitions — Investment advisers; 2.3 Investment advisers
+Mod 2, Lesson 9 · pp. 31–32
+Ch. 4 General Registration of Investment Advisers, p. 63
+IAD-2
+Exclusions from the definition
+2.3 Investment advisers
+Mod 2, Lesson 9 · p. 32
+Ch. 4 Exclusions from the Definition of a State Investment Adviser, p. 73
+IAD-3
+Exemptions from state registration — de minimis
+2.3 Investment advisers
+Mod 2, Lesson 10 · pp. 33–34
+Ch. 4 Exemptions from State Registration, p. 75
+IAD-4
+The federal-state dividing line
+2.3 Investment advisers — AUM thresholds
+Mod 2, Lesson 10 · p. 33
+Ch. 4 Investment Advisers Act of 1940, p. 76; Federal Covered Advisers, p. 77
+IAD-5
+Form ADV and the brochure rule  ⚠
+2.3 Investment advisers — brochure delivery
+Mod 2, Lesson 11 · pp. 35–36
+Ch. 4 Form ADV Part 1, p. 63; Part 2A — The Brochure Rule, p. 64; Part 2B, p. 66; Updates and Amendments, p. 67
+IAD-6
+Advisory contracts  ⚠
+2.3 Investment advisers; 4.3 Customer funds & securities
+Mod 3, Lesson 2 · p. 52
+Ch. 4 Investment Advisory Contracts, p. 82
+IAD-7
+Custody and financial requirements  ⚠
+4.3 Customer funds & securities
+Mod 3, Lesson 7 · pp. 64–65
+Ch. 4 Custody, p. 70; Minimum Financial Requirements, p. 70; Custody of Client Funds and Securities, p. 84
+IAD-8
+Recordkeeping and privacy
+2.3 Investment advisers; 4.2 Communications
+Mod 3, Lesson 3 · pp. 54–55
+Ch. 4 State Recordkeeping Requirements, p. 72; Ch. 6 Confidentiality of Client Information, p. 120; Cyber Security and Data Protection, p. 125
+IAR   —   Regulation of Investment Adviser Representatives
+IAR-1
+Definition — the five activities
+Ch. 1 Definitions — Investment adviser representatives; 2.4
+Mod 2, Lesson 13 · pp. 39–40
+Ch. 4 Registration of Investment Adviser Representatives, p. 78
+IAR-2
+The clerical exclusion
+2.4 Investment adviser representatives
+Mod 2, Lesson 13 · p. 39
+Ch. 4 Registration of Investment Adviser Representatives, p. 78
+IAR-3
+Where the IAR registers
+2.4 Investment adviser representatives
+Mod 2, Lesson 13 · p. 40; Lesson 14 · p. 41
+Ch. 4 Representatives of State-Registered Investment Advisers, p. 78; IARs of Federal Covered Advisers, p. 80
+IAR-4
+De minimis for IARs  ⚠
+2.4 Investment adviser representatives
+Mod 2, Lesson 10 · p. 34
+Ch. 4 Representatives of State-Registered Investment Advisers, pp. 78–80
+IAR-5
+Registration mechanics
+2.4 Investment adviser representatives
+Mod 2, Lesson 14 · pp. 41–42
+Ch. 4 Registration of IARs, p. 78; Statutory Disqualifications from Registration, p. 81
+IAR-6
+IAR, agent, or both
+2.4 Investment adviser representatives; 4.1 Standards of care
+Mod 2, Lesson 7 · p. 29; Lesson 15 · p. 44
+Ch. 3 Regulation Best Interest, p. 56; Ch. 5 Fiduciary Duty, p. 89
+IAR-7
+Supervision and the firm relationship
+2.4 Investment adviser representatives
+Mod 2, Lesson 15 · p. 44
+Ch. 3 Supervision of Broker-Dealer Agents, p. 53; Ch. 4 Registration of IARs, pp. 78–81
+IAR-8
+Termination, withdrawal, and discipline
+2.4 Investment adviser representatives; Ch. 3 Enforcement
+Mod 2, Lesson 15 · p. 45
+Ch. 7 Administrative Actions, p. 141; Cancellations and Withdrawals, p. 145
+COM   —   Communication with Customers and Prospects
+COM-1
+Required disclosures
+4.2 Communications
+Mod 3, Lesson 1 · p. 49
+Ch. 4 Form ADV Part 2, p. 64; Ch. 6 Communications with Clients, p. 120
+COM-2
+Registration is not approval
+4.2 Communications
+Mod 3, Lesson 1 · p. 48
+Ch. 6 False and Misleading Statements, p. 99
+COM-3
+Performance guarantees
+4.2 Communications; 4.4 Unethical & criminal actions
+Mod 3, Lesson 1 · pp. 47–48
+Ch. 6 Guaranteeing Clients a Profit, p. 107
+COM-4
+New account requirements
+4.2 Communications
+Mod 3, Lesson 2 · p. 50
+Ch. 3 Client Accounts and Orders, p. 56; New Customer Accounts, p. 56; Individual / Joint / TOD Accounts, pp. 57–58
+COM-5
+Margin accounts
+4.2 Communications
+Mod 3, Lesson 2 · p. 51
+Ch. 3 Margin Accounts, p. 58
+COM-6
+Options accounts and options valuation  ⚠
+4.2 Communications
+Mod 3, Lesson 2 · pp. 51–52
+Ch. 3 Option Accounts, p. 59; Ch. 6 Options, p. 130
+COM-7
+Advertising and communications
+4.2 Communications
+Mod 3, Lesson 3 · pp. 53–54
+Ch. 3 Advertising and Sales Literature, p. 43; Ch. 6 Communications with the Public, p. 118; Social Media, pp. 121–124
+COM-8
+Books, records, and privacy
+4.2 Communications; 4.3 Customer funds & securities
+Mod 3, Lesson 3 · pp. 54–55
+Ch. 3 Maintenance Requirements, p. 44; Customer Order Tickets and Confirmations, p. 60; Ch. 6 Confidentiality, p. 120; Cyber Security, p. 125
+ETH   —   Ethical Practices and Obligations
+ETH-1
+The antifraud spine and the three standards of care
+4.1 Standards of care; Ch. 3 Enforcement
+Mod 3, Lesson 5 · p. 57
+Ch. 2 Anti-Fraud Provisions, p. 37; Ch. 3 Regulation Best Interest, p. 56; Ch. 5 Fiduciary Duty, p. 89; Suitability Obligations, p. 93
+ETH-2
+Market manipulation and insider trading
+4.4 Unethical & criminal actions
+Mod 3, Lesson 6 · pp. 60–61, 62–63
+Ch. 6 Use of Insider Information, p. 101; Market Manipulation, p. 108
+ETH-3
+Misrepresentation, omission, and the bank-premises rules
+4.4 Unethical & criminal actions
+Mod 3, Lesson 6 · p. 61
+Ch. 6 False and Misleading Statements, p. 99; Securities Transactions on Bank Premises, p. 117
+ETH-4
+Account abuse  ⚠
+4.4 Unethical & criminal actions
+Mod 3, Lesson 6 · pp. 61–62
+Ch. 4 Discretionary Authority, p. 69; Ch. 6 Making Unsuitable Recommendations, p. 103; Exercising Discretion without Written Authority, p. 113
+ETH-5
+Investment company share abuses
+4.4 Unethical & criminal actions
+Mod 3, Lesson 6 · pp. 61–62
+Ch. 6 NASAA Statement of Policy … Investment Company Shares, pp. 115–116
+ETH-6
+Violations only a firm can commit
+4.4 Unethical & criminal actions
+Mod 3, Lesson 6 · p. 62
+Ch. 6 Commingling, p. 104; Withholding Sales of IPO Shares, p. 111; Unnecessarily Delaying Payments or Deliveries, p. 112; Executing Orders at Unfair Prices, p. 113; Charging Excessive Fees, p. 113
+ETH-7
+Violations at the individual level
+4.4 Unethical & criminal actions
+Mod 3, Lesson 6 · pp. 62–63
+Ch. 6 Borrowing and Lending, p. 105; Sharing in the Profits or Losses in a Client’s Account, p. 106; Selling Away, p. 110
+ETH-8
+Protective rules: vulnerable adults, conflicts, custody, and prudence  ⚠
+4.3 Customer funds & securities; 4.4 Unethical & criminal actions
+Mod 3, Lesson 5 · p. 58; Lesson 7 · pp. 64–66
+Ch. 5 The Uniform Prudent Investor Act, p. 90; Soft-Dollar Arrangements, p. 91; Ch. 6 Principal and Cross Trades, p. 119; Vulnerable Adults, p. 126
+REM   —   Remedies and Administrative Provisions
+REM-1
+The Administrator — powers and limits
+Ch. 3 Enforcement
+Mod 4, Lesson 1 · pp. 68–69
+Ch. 7 Powers of the State Administrator, p. 143; Injunctions, p. 144
+REM-2
+Jurisdiction  ⚠
+Ch. 3 Enforcement
+Mod 4, Lesson 3 · p. 73
+Ch. 7 Jurisdiction Over Offers, p. 135
+REM-3
+Investigations
+Ch. 3 Enforcement
+Mod 4, Lesson 1 · p. 68
+Ch. 7 Investigations and Subpoenas, p. 143
+REM-4
+Orders: cease-and-desist, stop, and summary
+Ch. 3 Enforcement
+Mod 4, Lesson 1 · pp. 68–69
+Ch. 2 Denial, Suspension, and Revocation, p. 26; Ch. 7 Cease-and-Desist Orders, p. 144
+REM-5
+Administrative action and due process
+Ch. 3 Enforcement
+Mod 4, Lesson 1 · pp. 68–69
+Ch. 7 Administrative Actions Associated with Registration, p. 141; Cancellations and Withdrawals, p. 145
+REM-6
+Civil liability  ⚠
+Ch. 3 Enforcement
+Mod 4, Lesson 2 · pp. 70–72
+Ch. 7 Civil Liability for Securities Sold in Violation of the Act, p. 146; Civil Liability for Fraudulent Investment Advice, p. 148
+REM-7
+Criminal penalties and judicial review
+Ch. 3 Enforcement
+Mod 4, Lesson 3 · pp. 73–74
+Ch. 7 Criminal Penalties, p. 149
+REM-8
+SIPC coverage  ⚠
+2.1 Broker-dealers — SIPC insurance
+Mod 2, Lesson 2 · p. 16
+Ch. 3 The Securities Investor Protection Corporation, p. 61
+
+Where the sources disagree
+Sixteen cells. Each is a place where following the wrong source will teach you something the exam will mark wrong, or leave a hole you will not know you have. Read this once before you open any of the three books.
+CELL
+TOPIC
+WHAT DIFFERS, AND WHICH SOURCE TO TRUST
+SEC-3
+Offer, sale, and the events that are neither
+2DT parks these in Module 4 and never defines “guaranteed” at all.
+SEC-6
+Federal covered securities, notice filing, and the antifraud floor
+2DT implies all four federal covered categories notice-file. STC p. 35 is the corrective.
+BDR-2
+Exclusions from the definition
+2DT omits issuers from the permitted counterparty list. Achievable 2.1 has it.
+BDR-4
+The registration application
+Consent to service of process: STC p. 41 is the only substantive treatment of the three.
+BDR-6
+Net capital and surety bonds
+2DT gives the federal 15c3-1 dollar ladder instead of the state rule. Read STC p. 43 in its place.
+AGT-5
+Registration mechanics
+Automatic registration of partners, officers and directors: STC p. 52 only. Absent from 2DT.
+IAD-5
+Form ADV and the brochure rule
+The 48-hour / five-business-day rule is in Achievable 2.3 and STC p. 64. 2DT gives only the federal timing.
+IAD-6
+Advisory contracts
+2DT&apos;s contract list omits the prepaid-fee refund and the partnership-membership notice.
+IAD-7
+Custody and financial requirements
+The three-business-day trigger is in STC p. 84 and Achievable 4.3. Absent from 2DT.
+IAR-4
+De minimis for IARs
+STC pp. 79–80 works a multi-state example worth copying out by hand.
+COM-6
+Options accounts and options valuation
+STC Ch. 6 p. 130 is the fuller treatment of valuation; Ch. 3 p. 59 covers the paperwork.
+ETH-4
+Account abuse
+The ten-business-day oral discretion rule and not-held orders are STC pp. 69 and 113. Absent from 2DT.
+ETH-8
+Protective rules: vulnerable adults, conflicts, custody, and prudence
+Wrap fee programs appear in none of the three. This cell is the only treatment you have.
+REM-2
+Jurisdiction
+The two-thirds circulation test is STC p. 136. 2DT states the exclusion without the fraction.
+REM-6
+Civil liability
+STC p. 147 states the limitations period as three years from the violation or two from discovery, whichever is first — the same as this cell.
+REM-8
+SIPC coverage
+Both Achievable 2.1 and STC p. 61 work the aggregation rules; 2DT gives only the dollar limits.
+
+A pattern worth naming rather than leaving implicit. Eleven of the sixteen are gaps in the $2 Textbook, and almost all of those cluster in state registration mechanics — consent to service of process, surety bonds, automatic agent registration, the state net capital rule, the three-business-day custody trigger, the 48-hour brochure rule. That is not a criticism of the source; it is a description of its editorial angle. It teaches the architecture well and the plumbing thinly. STC is the opposite and is where you should go for anything procedural. Achievable sits between them and is usually the best first read when a concept has not landed at all.

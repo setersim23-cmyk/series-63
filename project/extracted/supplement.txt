@@ -1,0 +1,605 @@
+
+Series 63 — Master Supplement
+Corrections, gap-fills, and full coverage of the NASAA testable list
+Companion to the $2 Textbook OneNote notes · Built August 2, 2026 · Exam date August 10, 2026
+How to use this document
+Your $2 Textbook notes are good. The explanatory voice works, the diagrams earn their place, and the chapter recaps and trap lists are the right structure. Do not rewrite them. This supplement does three jobs and nothing else:
+Part 1 — Corrections. Sixteen items in the notes that are wrong, internally inconsistent, or stated in a way that will cost you a point. Fix these in place in OneNote. Each one names the page it sits on.
+Part 2 — Missing chapters. Nine bodies of material that NASAA names as testable and that your notes either skip entirely or reduce to a passing mention. Written in the same voice, with their own exam traps.
+Part 3 — Corrected master numbers sheet. Replaces the numbers page at the end of your notes.
+Part 4 — NASAA coverage map. Every item on NASAA’s official testable list, mapped to where it now lives. Use this as the final pre-exam checklist.
+
+The headline finding
+The notes are roughly 85% of what you need. The 15% that is missing is not scattered evenly — it clusters hard in state registration mechanics (consent to service of process, surety bonds, automatic agent registration, filing fees, expiration dates) and in the NASAA investment adviser model rules. Those are precisely the areas where NASAA writes its most literal, definition-checking questions. Two of the nine missing chapters below cover material that is on NASAA’s named testable list and appears nowhere in your notes at all: wrap fee programs, and FINRA Regulatory Notice 10-22.
+
+One structural note before the corrections. You may have wondered whether the notes over-reach by covering FINRA Rules 2210, 2360, 4210, 4512, Regulation T, options valuation, SIPC, tombstone ads, and SEC Rules 17a-3/17a-4 on a state law exam. They do not. NASAA names every one of those in its consolidated list of testable subjects. Keep them. What the notes do over-weight is the SEC net capital ladder ($250K/$100K/$50K/$5K), Rule 15c3-3 mechanics, FOCUS reports, Form X-17A-5, principal license numbers, OSJ inspection cadence, and AML/SAR/CTR thresholds — none of which appear on NASAA’s list. Achievable says so directly: because this is a state exam, the specific federal net capital dollar amounts are not the point. Read those sections once for context, then stop drilling them.
+
+Part 1 — Corrections
+Ordered by severity. The first six will actually change an answer.
+C1. Notice filing does not apply to all four categories of federal covered security
+Notes say (Module 1, Registration methods): a federal covered security’s state path is “the notice filing under USA §307 — never coordination or qualification,” implying every federal covered security notice-files.
+Correct: only two of the four categories are actually required to notice file — investment company securities (mutual funds, closed-end funds, UITs) and securities sold under Regulation D Rule 506. Issuers of exchange-listed securities and securities sold to qualified purchasers are not required to notice file at all. The state gets nothing from them but antifraud jurisdiction.
+Why it matters
+This is a clean four-choice question: “Which of the following federal covered securities requires a notice filing in a state?” The notes as written would have you pick the exchange-listed distractor.
+
+C2. The rescission-offer 30 days is the buyer’s clock, not the seller’s
+Notes contain both versions. The prose under “The rescission offer procedure — USA §410(g)” is right: the buyer has 30 days from receipt to accept. The statute-of-limitations table two pages later says “Seller can offer rescission within 30 days of learning of the violation,” which is wrong and contradicts the prose.
+Correct: there is no 30-day deadline on the seller to make the offer. The 30 days runs from the buyer’s receipt of a valid written rescission offer; if the buyer does not accept within that window, the buyer loses the §410 right of action. Delete the table row and replace it.
+C3. The BD “institution rule” exclusion omits issuers
+Notes list the permitted counterparties for a broker-dealer with no place of business in the state as: other broker-dealers, institutional investors, and existing customers temporarily in the state.
+Correct: the list under the USA also includes the issuers of the securities involved in the transactions. Both Achievable and STC list issuers first. The full permitted set for a BD with no place of business in a state is:
+Issuers of the securities involved in the transactions
+Other broker-dealers
+Banks, savings institutions, and trust companies
+Insurance companies
+Investment companies
+Pension or profit-sharing trusts
+Other financial institutions or institutional buyers
+Existing customers temporarily present in the state (the separate snowbird / vacation rule)
+
+Also note the notes’ “employee benefit plans with $1M+ in assets” qualifier. Neither reference text applies a dollar threshold to pension or profit-sharing trusts under the 1956 Act. Drop the $1M figure — it is imported from a different statute and it invites you to over-think a question that is really just testing the category list.
+C4. Brochure delivery for a state-registered adviser is 48 hours or a five-business-day free look
+Notes give only the federal timing: “delivered to a prospective client at or before entering an advisory contract.” That is the SEC rule for federal covered advisers. The NASAA rule for state-registered advisers is different and is heavily tested.
+Correct — a state-registered investment adviser must deliver the brochure either:
+Not less than 48 hours prior to entering into the advisory contract; OR
+At the time of entering into the contract, provided the client has the right to terminate without penalty within five business days.
+
+It is an either/or, not an and. During the free-look period the adviser may charge for services actually rendered but may not impose a cancellation penalty. Two carve-outs also exist and are testable: no brochure is required for a registered investment company client, and none is required where the contract is for impersonal advisory services costing the client less than $500 per year.
+C5. LATE professionals are excluded on “solely incidental” alone — the special-compensation prong belongs to broker-dealers
+Notes state that lawyers, accountants, teachers, and engineers are excluded from the investment adviser definition only if their advice is solely incidental AND they receive no special compensation, calling both conditions mandatory.
+Correct as a matter of statute: the LATE exclusion turns on “solely incidental to the practice of his profession” and contains no special-compensation clause. The “receives no special compensation therefor” language attaches to the broker-dealer exclusion. In practice a separately billed advisory fee usually defeats “solely incidental” anyway, which is why prep courses collapse the two — but if a question isolates the prongs, know which statute carries which. Keep the practical rule (a separate charge kills the exclusion) as your working heuristic; know the statutory split as the tiebreaker.
+C6. Bank holding companies — the notes contradict themselves
+Module 1 correctly says bank holding company stock is NOT an exempt security (only the bank itself qualifies). Module 2 then says “Banks and bank holding companies” are excluded from the investment adviser definition.
+Correct: those are two different statutes and both statements are defensible federally, but on a state exam the safe framing is — under the USA, the exclusions and exemptions run to banks, savings institutions, and trust companies. Bank holding companies get neither the securities exemption nor a clean state adviser exclusion. If a stem says “holding company,” the answer is almost always that the exemption or exclusion does not apply.
+C7. Coordination — the 10-day clock runs with the Administrator, not the SEC
+Notes say state effectiveness is automatic “if the SEC registration has been on file for at least the minimum required period (typically 10 business days).”
+Correct: the registration statement must have been on file with the state Administrator for the required period, and a statement of the maximum and minimum proposed offering prices and maximum underwriting discounts must have been on file with the Administrator for two full business days. The SEC’s filing date is not the state trigger.
+C8. Private placement exemption — count non-institutional persons, and name the two conditions
+Notes describe the cap as “no more than 10 non-institutional offerees in the state during any 12-month period, with no general solicitation, no commissions to non-institutional buyers, and a reasonable basis to believe non-institutional buyers are purchasing for investment.” That is close but blurs two things.
+Sharpen it: the offer must be directed to no more than ten non-institutional persons in the state in any twelve consecutive months. Institutional investors are counted separately and without limit under their own exemption. Two conditions attach:
+The seller reasonably believes all non-institutional buyers are purchasing for investment (not resale), and
+No commission or other remuneration is paid for soliciting a non-institutional buyer.
+
+Useful contrast STC draws and the notes miss: the USA’s state private placement exemption is 10 or fewer non-institutional persons; Regulation D Rule 506 is 35 or fewer non-accredited investors. Because Rule 506 securities are federal covered, the state exemption has lost most of its real-world use — but it is still tested.
+C9. “Three market makers” is not a USA exemption
+Notes list an exempt transaction: “Non-issuer transactions in publicly-quoted securities — secondary-market sales of securities that have published market quotations and at least three independent market makers.” Neither reference text states a three-market-maker test. What the USA actually provides is the manual exemption — a non-issuer transaction in a security for which the issuer’s current information appears in a recognized securities manual. Keep the manual exemption; drop the three-market-maker construction.
+C10. Registration-by-filing/notification versus notice filing — section numbers
+The notes assign §302 to registration by filing/notification and §307 to notice filing. Section numbering differs between the 1956 Act and the 2002 Act, and NASAA tests only the 1956 Act as amended. Do not memorize section numbers for the registration methods. Memorize the three method names, who uses each, and how effectiveness is determined. If a stem cites a section number it will cite one you recognize from the heavily tested set: §101 antifraud, §201 registration requirement, §202 registration procedure, §204 denial/suspension/revocation, §401 definitions, §402 exemptions, §407 investigations, §408 orders, §409 criminal, §410 civil, §411 judicial review, §414 jurisdiction.
+C11. Rule 505 no longer exists
+Notes say federal covered status attaches to Rule 506 “but NOT Rule 504 or Rule 505.” Rule 505 was repealed in 2016. Say “Rule 506 only — not Rule 504.”
+C12. Series 66 exam format
+Notes say “100 multiple-choice questions, 150-minute time limit.” The Series 66 is 100 scored plus 10 pretest questions, 110 total, 150 minutes, 73 of 100 to pass. Minor, and off-outline anyway.
+C13. Recordkeeping line in the master numbers sheet
+Notes’ final numbers page says “Form U4, BD, ADV: life of firm + 3 years.” That is not a rule. Forms BD and U4/U5 are retained until at least three years after the registrant or associated person’s termination. Organizational documents — partnership articles, corporate charters, minute books, stock certificate books — are the ones kept for the life of the firm plus two years.
+C14. The “10-day U4 amendment for statutory disqualification” framing
+Notes present a 10-day internal amendment practice as a testable distinction and then list it as one of the “five numbers” that win timing questions. It is not a regulatory deadline and NASAA does not test it. The number you need is 30 days. Demote the 10-day item so it does not crowd out a real number under time pressure.
+C15. Two spots where the notes assert coverage they do not deliver
+The Uniform Prudent Investor Act gets one sentence: “prudence is evaluated at the portfolio level.” NASAA names the UPIA as a testable subject. See Chapter H below.
+The NASAA Investment Adviser Information and Security Privacy Rule is named once and never explained. NASAA names it as testable. See Chapter D below.
+
+C16. Off-outline material to stop drilling
+These appear in your notes and are not on NASAA’s consolidated testable list. Read once, do not drill: SEC Rule 15c3-1 net capital dollar tiers; SEC Rule 15c3-3 reserve formula mechanics; FOCUS reports and Form X-17A-5; Series 24/26/53/27/28 principal license numbers; OSJ versus non-OSJ inspection cadence; FINRA Rule 3130 CEO certification; AML — SAR $5,000, CTR $10,000, CIP; SEC Marketing Rule testimonial and 1/5/10-year performance rules; SEC Rule 204A-1 Code of Ethics reporting clocks; pay-to-play under SEC Rule 206(4)-5 and MSRB G-37; NASAA IAR continuing education 12 = 6 + 6; the five exam-waiver designations; FINRA Rule 3220 gift limits.
+Read this carefully
+“Not on the list” does not mean “impossible.” NASAA writes questions from the concepts, and several of these ideas overlap with material that is listed — conflicts of interest, compensation disclosure, and personal trading all live inside Ethical Practices. The instruction is about allocation of the eight days you have left, not about permanent exclusion. If you have finished Parts 2 and 3 of this supplement and have time left over, come back to these.
+
+
+Part 2 — The missing chapters
+Chapter A — Offer, sale, person, issuer, guaranteed: the definitions Module 1 skips
+About this chapter
+Your notes open with “is it a security?” and move straight to exemptions. But the Act does not regulate securities in the abstract — it regulates offers and sales of securities by persons. Three questions in every exam sit in the Securities and Issuers section, and the definitional questions are the ones candidates lose because they never learned the vocabulary as vocabulary. Your notes do cover the “what is not an offer or sale” exclusions, but they park them in the Remedies module three hundred pages later. This chapter puts the definitions where they belong and adds the ones that are missing.
+
+Sale and sell
+A sale includes every contract of sale, contract to sell, or disposition of a security or interest in a security for value. The operative words are “for value.” No value changing hands, no sale.
+Things that ARE a sale even though they do not look like one:
+A gift of assessable stock. Assessable stock lets the issuer demand additional funds from holders, so the recipient is taking on an obligation — that is value. The giver must make full material disclosure. (Virtually no modern stock is assessable; the exam keeps testing it anyway.)
+Any security given or delivered with, or as a bonus for, the purchase of anything else. A warrant thrown in with a bond is a sale of both the warrant and the bond. Part of the purchase price is attributed to the “free” security.
+A security given as a bonus with the purchase of a non-security — a car, a house, a membership. Same logic.
+
+Things that are NOT a sale:
+A bona fide gift of non-assessable stock — nothing of value given by the recipient.
+A bona fide pledge or loan — stock posted as collateral; the owner expects it back.
+Stock dividends and stock splits, where the shareholder gives nothing for the additional shares.
+A merger, consolidation, reclassification, or sale of corporate assets approved by a vote of the security holders.
+A judicially approved reorganization in which securities are issued in exchange.
+
+Offer and offer to sell
+An offer includes every attempt to dispose of, or solicitation of an offer to buy, a security or interest in a security for value. Note the reach: an attempt counts. The failed pitch is an offer.
+The rule the exam likes: the sale of a warrant, right, or convertible security is also an offer of the underlying security it can be converted into or used to purchase. Sell a convertible bond and you have offered the common stock.
+Guaranteed
+This one is absent from your notes entirely and it is a one-line definition that shows up as a whole question. Under the USA, “guaranteed” means guaranteed as to payment of principal, interest, or dividends — by someone other than the issuer.
+The trap
+Capital gains are never guaranteed. Principal, interest, dividends — yes. Capital gains — no, ever. A question that offers “guaranteed as to principal, interest, dividends, and capital gains” is testing exactly this. Also remember a guarantee is only as good as the guarantor: a parent company guaranteeing a subsidiary’s bonds does not make them risk-free.
+
+Person, issuer, non-issuer
+Person — an individual, corporation, partnership, association, joint-stock company, trust where the interests are evidenced by a security, unincorporated organization, government, or political subdivision. What is NOT a person: a deceased individual, a minor, and someone judged mentally incompetent. That three-item list is testable on its own.
+Issuer — any person who issues or proposes to issue a security. Note the “proposes to” — an entity that has announced but not yet sold is already an issuer.
+Non-issuer transaction — a transaction not directly or indirectly for the benefit of the issuer. Ordinary secondary-market trading between investors is non-issuer. An IPO, where the issuing entity receives the proceeds, is an issuer transaction.
+
+Chapter A exam traps
+“A gift of stock is never a sale.” Wrong — a gift of assessable stock is both an offer and a sale.
+“A warrant given free with a bond purchase is not a sale because nothing was paid for it.” Wrong — a bonus security delivered with a purchase is a sale of both.
+“Guaranteed means the investor cannot lose money.” Wrong — it means principal, interest, or dividends are guaranteed by a third party. Capital gains are never covered, and the guarantee is only as strong as the guarantor.
+“A minor is a person under the USA.” Wrong — a minor, a deceased individual, and a person judged mentally incompetent are all excluded from the definition of person.
+“A stock split is a sale because the shareholder ends up with more shares.” Wrong — nothing of value was given, so no sale.
+
+
+Chapter B — State registration mechanics: the machinery your notes replaced with FINRA
+About this chapter
+This is the single largest gap, and it maps directly onto the twenty questions in Regulation of Broker-Dealers plus Regulation of Broker-Dealer Agents — 25% of the exam. Your notes describe how a broker-dealer registers with the SEC and FINRA. NASAA wants to know how one registers with a state Administrator. Different paperwork, different clocks, different consequences. Everything below is USA §§201–204 territory and every item is testable.
+
+What every registration application contains
+A broker-dealer, agent, investment adviser, or IAR applying for state registration files an application containing whatever the Administrator requires — and four items ride along on every one of them:
+The application itself (Form BD for firms, Form U4 for individuals), filed through CRD or IARD.
+A consent to service of process.
+The filing fee.
+Any required surety bond.
+
+Consent to service of process — the item your notes mention once and never explain
+A consent to service of process irrevocably appoints the state Administrator as the registrant’s attorney to receive service of legal papers. If an investor wants to sue an out-of-state broker-dealer, they can serve the Administrator instead of chasing the firm across state lines. Three tested attributes:
+It is irrevocable.
+It is filed once, with the initial application, and becomes a permanent part of the file.
+Unlike the rest of the registration, it is NOT renewed annually.
+
+It is required of everyone: broker-dealers, agents, investment advisers, IARs, and issuers registering securities — including issuers of federal covered securities making a notice filing.
+Filing fees
+Paid at initial registration and again annually at renewal.
+If the application is denied or withdrawn, the Administrator may keep all or part of the fee. You do not get it back.
+When two registered firms combine, the successor firm must file an updated application but pays no new filing fee. This is a favorite question.
+
+Automatic registration of a BD’s partners, officers, and directors
+This is completely absent from your notes and STC builds a full worked example around it. When a broker-dealer’s registration in a state first becomes effective, its partners, officers, and directors who effect securities transactions are automatically registered as agents in that state. They still file a Form U4, but they do not have to take a qualification exam.
+The two edges NASAA tests
+First: automatic registration applies only to those actually involved in effecting securities transactions. A founding CFO who handles only the firm’s finances is NOT automatically registered. Second — and this is the one that gets people — it applies only when the firm is INITIALLY registered. Someone who becomes an officer two years later must complete the full agent registration process: Form U4, exam, fee, the works.
+
+Surety bonds
+The Administrator may require a broker-dealer or investment adviser to post a surety bond. The trigger is custody or discretionary authority over client assets.
+Because broker-dealers almost always have custody of customer assets, they almost always need a bond. An investment adviser that neither takes custody nor exercises discretion may need none.
+No bond is required if the firm’s net capital (BD) or minimum net worth (IA) already meets the required minimum. Meeting the financial requirement substitutes for the bond.
+The Administrator may allow a deposit of cash or securities in lieu of a bond — but never personal property. If securities are deposited, the Administrator decides which securities are acceptable.
+A required bond must be maintained for as long as the registrant is in business and for three years afterward.
+A state cannot impose bonding requirements on a broker-dealer that exceed the SEC’s.
+
+Net capital — the state version
+Forget the $250K/$100K/$50K/$5K ladder for this exam. The state-law rules are:
+The Administrator may require a broker-dealer to maintain a minimum net capital, acting in the public interest.
+The Administrator may NOT set a level exceeding the SEC’s requirement. NSMIA preempts. Same principle applies to bonding and to books-and-records requirements.
+If a broker-dealer’s net capital falls below the minimum, it must notify the Administrator of the state where its home office is located — within one business day.
+
+For investment advisers the parallel figures ARE tested, and your notes have them right ($35,000 net worth with custody, $10,000 with discretion but no custody). What the notes omit is the failure procedure:
+Notify the Administrator by the close of the next business day.
+File a financial report by the close of the business day after that. (Below the minimum on Monday → notify Tuesday → report Wednesday.)
+The adviser may cure a shortfall by posting a surety bond equal to the deficiency, rounded up to the nearest $5,000. A $35,000 requirement against $27,000 of net worth is an $8,000 shortfall → a $10,000 bond.
+
+Effectiveness, expiration, and renewal
+A person’s registration becomes effective at noon on the thirtieth day after the application or last amendment is filed. The Administrator may grant it sooner — that is common — and will not grant it at all if a denial order is in effect or a denial, revocation, suspension, cancellation, or withdrawal proceeding is pending.
+Registrations of broker-dealers, agents, investment advisers, and IARs expire annually on December 31, regardless of when they became effective. Renewal is an updated application plus a new fee.
+A SECURITIES registration is the exception: it stays effective for one year from its effective date, not to December 31. STC flags this as the trickiest date on the exam because it is the only registration that does not run to year-end.
+
+The agent’s registration lives with the firm
+An agent’s registration is not effective during any period when the agent is not associated with a registered broker-dealer or a registered issuer. The license does not travel with the person between jobs — it goes dormant.
+When an agent begins or terminates a connection with a broker-dealer or issuer, both the agent and the firm must notify the Administrator.
+The Administrator retains jurisdiction over a withdrawn registrant for one year after withdrawal becomes effective, and may institute a revocation or suspension proceeding during that year for conduct that occurred while registered. Your notes have the 30-day withdrawal clock but not the one-year jurisdictional tail.
+
+Advertising and sales literature — filed with the Administrator
+Your notes cover FINRA Rule 2210 in depth (correctly — NASAA lists it). What they miss is the state-law overlay:
+Advertising, sales literature, prospectuses, pamphlets, circulars, and form letters relating to registered securities and distributed to current or prospective clients must be filed with the Administrator.
+Advertising is defined broadly: any notice, circular, letter, or other written communication addressed to more than one person.
+A broker-dealer’s website is advertising, because any investor can view it.
+Even material not required to be filed must still be fair, balanced, and not misleading.
+
+Segregation and other operational rules
+Customer securities must be segregated from the broker-dealer’s own securities. Customer CASH may be commingled. The asymmetry is the tested part.
+State recordkeeping cannot exceed federal requirements — another NSMIA consequence.
+
+Limited registration of Canadian broker-dealers and agents
+Absent from your notes; covered by both reference texts because Canadian regulators helped write the USA. A Canadian broker-dealer with no office in the state may obtain a limited US registration by filing:
+An application
+A consent to service of process
+A copy of its registration filed with the Canadian provincial regulator
+Evidence that it is a member in good standing of a self-regulatory organization or stock exchange in Canada
+
+The purpose is narrow: it lets a Canadian firm continue serving an existing client who is temporarily in the United States, or serve a Canadian retirement account held by a US resident. Agents of such firms may obtain a parallel limited registration.
+Chapter B exam traps
+“The consent to service of process must be renewed each year with the registration.” Wrong — it is filed once, is irrevocable, and never renews.
+“If the Administrator denies the application, the filing fee is refunded.” Wrong — the Administrator may retain all or part of it.
+“Every officer of a broker-dealer is automatically registered as an agent.” Wrong on two counts — only those who effect securities transactions, and only at the firm’s initial registration.
+“A broker-dealer must post a surety bond regardless of its net capital.” Wrong — meeting the minimum financial requirement removes the bond requirement.
+“A registrant may deposit personal property in lieu of a bond.” Wrong — cash or securities only.
+“All registrations expire one year after they become effective.” Wrong — persons expire December 31; only a SECURITIES registration runs one year from its effective date.
+“An agent whose firm terminates them keeps an active registration while job-hunting.” Wrong — the registration is not effective during any period the agent is not associated with a registered firm.
+“Once a registrant withdraws, the Administrator loses all authority.” Wrong — jurisdiction survives for one year.
+“A state may require higher net capital than the SEC if it acts in the public interest.” Wrong — NSMIA caps the state at the federal level.
+“Customer cash must be segregated from firm cash.” Wrong — securities must be segregated; cash may be commingled.
+
+
+Chapter C — Trading authorization, discretion, and not-held orders
+About this chapter
+Your notes build a three-rung ladder — trading authorization, discretion, custody — and the ladder is correct and useful. What is missing is the paperwork attached to the middle rung, and it is one of the highest-frequency question types on this exam because the answer differs depending on whether you are looking at a broker-dealer or an investment adviser. Two rules, one exception, and you own the whole territory.
+
+The two rules
+A BROKER-DEALER or agent must have written discretionary authority in hand BEFORE exercising discretion in a customer’s account. No exceptions, no grace period. A single discretionary trade placed on an oral authorization is an unauthorized transaction.
+An INVESTMENT ADVISER or IAR may act on ORAL discretionary authority for up to 10 business days from the date discretion is first exercised. Written authorization must be obtained by the end of that period.
+
+The classic fact pattern
+A client calls from the airport before a long trip and tells their IAR to manage the account while away. Answer: the IAR may exercise discretion for 10 business days on that oral instruction. If the client will be gone longer, written authority — a power of attorney — must be obtained. Change “IAR” to “registered representative” and the answer flips: written authorization is required first.
+
+What actually counts as discretion
+Discretion means the professional decides at least one of the three A’s without contacting the client first: Action (buy or sell), Asset (which security), or Amount (how many). Any one of those three, and you have discretion.
+Which produces the exception. If the client determines the action, the asset, and the amount, and leaves only the price and/or the time of execution to the professional, that is NOT discretion. That is a not-held order.
+A not-held order may be accepted and executed with no written discretionary authority.
+It is good only for the day it is entered. It does not carry forward.
+“Buy 500 XYZ when you think the price is right” — not discretion. “Buy $50,000 of whatever you think is best” — discretion.
+
+Discretion versus custody, restated
+Your notes have this right and it is worth reinforcing because NASAA loves the pairing. Discretion is the authority to decide. Custody is the authority to possess or withdraw. They are independent — an adviser may have either, both, or neither. The one-question diagnostic: can the professional get money out of the account? Yes → custody. No, but they choose what to trade → discretion. No, and they only execute what the client specifies → trading authorization.
+Chapter C exam traps
+“An agent may act on oral discretion for 10 business days.” Wrong — the 10-business-day oral window belongs to investment advisers only. Broker-dealers need written authority first.
+“A not-held order requires written discretionary authority.” Wrong — price and time alone is not discretion.
+“A not-held order stays open until executed.” Wrong — it is valid only for the day it is entered.
+“An adviser with discretion automatically has custody.” Wrong — they are separate authorities.
+“The 10 business days run from the date the client gave the instruction.” Careful — the requirement is written authorization within 10 business days after the first discretionary transaction is placed.
+
+
+Chapter D — The four NASAA investment adviser model rules
+About this chapter
+NASAA names five documents by number in the Regulation of Investment Advisers section of its testable list. Your notes cover one of them well (Unethical Business Practices, 102(a)(4)-1), gesture at two, and never mention the fourth or fifth. Only three questions on the exam come from this section, but they are three of the most literal questions NASAA writes — the rules are short and they get quoted almost verbatim.
+
+Contents of Investment Advisory Contract — Model Rule 502(c)
+Every advisory contract must be in writing and must disclose:
+The services to be provided
+The term of the contract
+The advisory fee, and the formula for computing it
+The amount of any prepaid fee to be returned if the contract is terminated early — your notes omit this and it is tested
+Whether the contract grants discretionary power to the adviser
+That the contract may not be assigned without the client’s consent
+For an adviser organized as a partnership: that the adviser will notify clients of any change in the membership of the partnership within a reasonable time — also omitted from your notes
+
+On assignment, your notes are correct and the point is worth keeping: a change in control of the advisory firm is an assignment. Clients do not transfer with a sale; each must consent.
+Custody Requirements for Investment Advisers — Model Rule 102(e)(1)-1
+Your notes list the federal triggers under SEC Rule 206(4)-2. The state rule adds two triggers that appear in both reference texts and nowhere in your notes:
+Inadvertently receiving client funds or securities and holding them for more than three business days. Return them within three business days and you never had custody.
+Accepting a third-party check and holding it for more than three business days.
+
+The classic question: an agent receives a client’s check made payable to a mutual fund. The answer is always “forward it promptly” — holding it is what creates the problem.
+Two more state-side points:
+An Administrator may by rule PROHIBIT investment advisers from taking custody entirely. Where custody is not prohibited, the adviser must notify the Administrator in writing (on Form ADV) that it has custody.
+An adviser may avoid custody altogether by using a qualified custodian — a bank or broker-dealer — to hold client cash and securities.
+
+Recordkeeping Requirements for Investment Advisers — Model Rule 203(a)-2
+Five years from the end of the fiscal year in which the last entry was made.
+The first two years in the adviser’s principal office.
+Partnership articles, corporate charters, minute books, and stock certificate books: three years after termination of the enterprise.
+A state may not impose recordkeeping requirements on a federal covered adviser — NSMIA again.
+
+Investment Adviser Information and Security Privacy Rule (2019)
+Named on NASAA’s testable list; mentioned once in your notes without content. The rule requires a state-registered investment adviser to:
+Adopt written policies and procedures reasonably designed to ensure the security and confidentiality of client records and information, protect against anticipated threats, and protect against unauthorized access that could result in substantial harm or inconvenience to a client
+Deliver an initial privacy notice at the start of the client relationship and an annual privacy notice thereafter
+Provide the client an opportunity to opt out of disclosure of nonpublic personal information to nonaffiliated third parties
+Maintain records of the policies and of any client privacy notices delivered
+Deliver a copy of the privacy policy to clients — the delivery obligation, not just the adoption obligation, is the tested part
+
+Failure to adopt and deliver is itself an unethical practice, independent of whether any data was ever exposed. Same logic your notes correctly apply to codes of ethics: the paperwork failure is the offense.
+Registration Requirements for Investment Adviser Representatives — Model Rule 202(a)-2
+Your notes have the substance (register where you have a place of business; federal covered firm does not shelter the IAR) but not the rule’s own framing. The rule provides that an IAR of a FEDERAL COVERED adviser must register in a state only if the IAR has a place of business in that state. An IAR of a STATE-REGISTERED adviser registers where they have a place of business, subject to the de minimis exemption — no place of business in the state and no more than five non-institutional clients there in twelve consecutive months.
+Chapter D exam traps
+“An advisory contract may be oral if the client agrees.” Wrong — it must be in writing.
+“The contract must state the fee but not how it is computed.” Wrong — the formula is required, as is the refund of prepaid fees on early termination.
+“A change of control at the advisory firm is not an assignment because the entity survives.” Wrong — it is an assignment and requires client consent.
+“An adviser that inadvertently receives a client check has custody immediately.” Wrong — three business days to return or forward it.
+“The Administrator cannot prohibit an adviser from taking custody.” Wrong — the Administrator may prohibit custody by rule.
+“IA records are kept six years like broker-dealer customer records.” Wrong — five years, first two in the principal office.
+“The privacy rule only requires a firm to adopt written policies.” Wrong — delivery of the privacy notice to clients is a separate, tested obligation.
+
+
+Chapter E — Wrap fee programs
+About this chapter
+This appears on NASAA’s consolidated list of testable subjects under “Other Subjects” — “Regulation of Wrap Fee Programs” — and it appears nowhere in your notes. It is short. Learn it in ten minutes and close the hole.
+
+A wrap fee program is an advisory program under which a client pays a single specified fee, not based directly on transactions, that covers investment advisory services and the execution of transactions together. One fee, everything bundled.
+The regulatory consequences, in order of testability:
+A sponsor of a wrap fee program is an investment adviser and must register accordingly. Bundling advice into a single fee does not convert advice into brokerage.
+The single fee is not transaction-based, which is exactly why a broker-dealer offering one loses its “solely incidental / no special compensation” exclusion from the IA definition. A BD that charges a wrap fee IS an investment adviser. Your notes make this point in the abstract; the wrap fee is the concrete case NASAA uses.
+Wrap programs require a special disclosure brochure — Appendix 1 to Form ADV Part 2A — in place of the standard Part 2A brochure, delivered to wrap clients.
+The core conflict: because the fee does not vary with trading, the adviser has an incentive to trade LESS than optimal (reverse churning), since every trade eats into the wrap revenue. That inversion is the point of the question — candidates expect the churning conflict and get the opposite.
+Suitability turns on trading volume. A wrap fee is appropriate for an actively traded account where bundled costs are lower than per-trade costs; it is a poor fit for a buy-and-hold client who will pay for execution services they never use.
+
+Chapter E exam traps
+“A broker-dealer offering a wrap fee account is still excluded from the IA definition because it is a BD.” Wrong — the wrap fee is special compensation for advice; the exclusion is gone.
+“Wrap clients receive the standard Form ADV Part 2A brochure.” Wrong — they receive the wrap fee program brochure, Appendix 1 to Part 2A.
+“The conflict in a wrap program is excessive trading.” Wrong — it is under-trading, sometimes called reverse churning.
+“A wrap account is always cheaper for the client.” Wrong — it depends entirely on trading frequency.
+
+Chapter F — FINRA Regulatory Notice 10-22: due diligence in Regulation D offerings
+About this chapter
+The second item NASAA names that your notes do not contain at all. Notice 10-22 is short and its message is single: a broker-dealer selling a Regulation D private placement cannot outsource its judgment to the issuer.
+
+The core proposition: a broker-dealer that recommends a Regulation D offering has an independent obligation to conduct a reasonable investigation of the issuer and the securities. This duty is owed to the customer and arises under the antifraud provisions — it exists regardless of whether the offering is exempt from registration.
+What reasonable investigation looks like:
+Investigate the issuer and its management — background, disciplinary history, capability to execute the business plan
+Investigate the business prospects and the issuer’s financial condition, including reviewing financial statements
+Investigate the assets held by or acquired for the issuer, and the claims being made about them
+Investigate the intended use of proceeds
+Where red flags surface, follow up on them — the duty escalates when something looks wrong
+
+Three principles that carry the exam questions:
+Reliance on the issuer’s representations is not a defense. A firm cannot rely on the issuer, on issuer’s counsel, or on a private placement memorandum in place of its own investigation.
+Exemption from registration is not exemption from antifraud. A Reg D offering is exempt from registration only. The firm’s duty to deal fairly and to have a reasonable basis is undiminished.
+The firm must have supervisory procedures under FINRA Rule 3110 specifically designed to ensure the investigation happens and is documented. “We did the work but kept no record” fails.
+
+How this connects to what you already know
+This is the reasonable-basis suitability prong from FINRA Rule 2111 applied to a specific product. Your notes teach the three suitability prongs — reasonable-basis, customer-specific, quantitative. Notice 10-22 is what reasonable-basis means when the product is a private placement that no regulator has reviewed.
+
+Chapter F exam traps
+“Because a Rule 506 offering is a federal covered security, the selling BD has no diligence obligation.” Wrong — preemption of registration says nothing about antifraud or suitability.
+“A firm satisfies its obligation by delivering the private placement memorandum.” Wrong — the PPM is the issuer’s document, not the firm’s investigation.
+“The duty applies only if the firm is the placement agent.” Wrong — it attaches to any BD recommending the offering.
+“Red flags are the issuer’s problem to resolve.” Wrong — red flags trigger a heightened duty on the firm to follow up.
+
+
+Chapter G — Securities Act §5 and the offering timeline
+About this chapter
+NASAA lists Securities Act §5 — prohibitions relating to interstate commerce and the mails — as testable. Your notes cover the tombstone advertisement, which is the exception, without ever laying out the rule the exception sits inside. Five minutes of structure makes the tombstone material make sense.
+
+Section 5 divides an offering into three periods, and what may be done differs in each:
+Pre-filing period (before the registration statement is filed)
+No offers of any kind. No sales.
+No sales literature, no solicitation of indications of interest.
+The issuer may continue normal business communications, but anything that conditions the market is a prohibited “gun-jumping” offer.
+
+Cooling-off period (after filing, before effectiveness) — typically 20 days
+Offers are permitted; SALES are still prohibited. No money may be accepted, no orders confirmed.
+A preliminary prospectus (the “red herring”) may be distributed. It contains everything except the final offering price and the effective date.
+Indications of interest may be taken, and they are not binding on either party.
+Tombstone advertisements are permitted. This is where your notes’ tombstone chapter belongs.
+Due diligence meetings are held.
+
+Post-effective period
+Sales are permitted.
+The final prospectus must be delivered to every purchaser no later than with the confirmation of the trade.
+Free-writing — sales literature beyond the prospectus — becomes permissible if accompanied or preceded by the final prospectus.
+
+The tombstone rules your notes already have are correct and stay as written: an issuer name, the title and amount of securities, the price, the underwriters, where to get a prospectus, and a disclaimer that the ad is not an offer. No recommendations, no projections, nothing off the enumerated list. The addition here is simply knowing that the tombstone is what §5 permits during the cooling-off period when almost nothing else is allowed.
+Chapter G exam traps
+“A red herring may be used to accept orders.” Wrong — offers yes, sales no, during the cooling-off period.
+“Indications of interest are binding once given.” Wrong — binding on neither party.
+“The preliminary prospectus omits the financial statements.” Wrong — it omits the final price and effective date.
+“A tombstone ad is the only communication permitted after effectiveness.” Wrong — after effectiveness, sales literature is permitted with the final prospectus.
+
+Chapter H — The Uniform Prudent Investor Act
+About this chapter
+NASAA names the UPIA as a testable subject. Your notes give it a single sentence. It deserves a page, and it is conceptually easy — the whole Act is a reaction against evaluating investments one at a time.
+
+The UPIA, prepared by the Uniform Law Commission and adopted in most states, sets the standard of care for trustees and, by extension, informs the fiduciary standard applied to investment advisers managing client assets. Five principles carry it:
+Portfolio-level evaluation. A trustee’s decisions are judged in the context of the portfolio as a whole and as part of an overall strategy — not investment by investment. A single risky holding is not imprudent if it fits the portfolio’s risk and return objectives. This reverses the old “legal list” approach under which certain securities were categorically imprudent.
+Risk and return are inseparable. The trustee’s central consideration is the risk/return objectives reasonably suited to the trust. Avoiding all risk is itself a breach, because it sacrifices return the beneficiaries are entitled to.
+Diversification is a duty. A trustee must diversify unless the trustee reasonably determines that, because of special circumstances, the purposes of the trust are better served without diversifying.
+Delegation is permitted — and this reverses the old rule. A trustee may delegate investment and management functions, provided the trustee exercises reasonable care in selecting the agent, in establishing the scope and terms of the delegation, and in periodically reviewing the agent’s performance. A trustee who properly delegates is not liable for the agent’s decisions.
+Loyalty and impartiality. The trustee invests solely in the interest of the beneficiaries, and where there are multiple beneficiaries, acts impartially among them — balancing the income beneficiary’s need for current income against the remainderman’s interest in growth.
+
+Factors a trustee must consider: general economic conditions, the possible effect of inflation or deflation, tax consequences, the role each investment plays within the overall portfolio, expected total return (income and appreciation), other resources of the beneficiaries, needs for liquidity and regularity of income, and any special relationship of an asset to the purposes of the trust.
+Costs matter: a trustee may incur only costs that are appropriate and reasonable in relation to the assets, the purposes of the trust, and the trustee’s skills.
+Chapter H exam traps
+“Under the UPIA a trustee may not invest in speculative securities.” Wrong — no security is categorically imprudent; the test is portfolio fit.
+“A trustee may not delegate investment decisions.” Wrong — the UPIA expressly permits delegation with prudent selection, scope-setting, and monitoring.
+“A trustee who avoids all risk has satisfied the duty of care.” Wrong — failing to take appropriate risk is itself a breach.
+“Diversification is recommended but not required.” Wrong — it is a duty, subject only to a reasoned special-circumstances exception.
+“Proper delegation still leaves the trustee liable for the agent’s investment decisions.” Wrong — prudent delegation shifts that liability.
+
+
+Chapter I — SIPC coverage, the way NASAA tests it
+About this chapter
+NASAA lists “Scope of SIPC Insurance Coverage of Customer Accounts” as a testable subject, and it sits inside Remedies and Administrative Provisions — 11% of the exam. Your notes have the dollar limits right but stop short of the mechanics, which is where the actual questions live. The limits are the setup; the aggregation rules are the question.
+
+The basics your notes have: SIPC is an industry-funded nonprofit created by the Securities Investor Protection Act of 1970. It covers customers of a failed or insolvent broker-dealer up to $500,000 total, of which no more than $250,000 may be cash. It does not cover market losses.
+The aggregation rules — this is what gets tested
+Coverage is provided per separate customer, which means per separate ownership capacity or registration:
+A cash account and a margin account held by the same individual at the same firm are ONE customer. They are combined and receive a single $500,000 of coverage.
+An individual account and a joint account with a spouse are TWO separate customers — two separate coverages.
+An IRA is a separate capacity from an individual taxable account — separate coverage.
+In a margin account, only the customer’s EQUITY is covered. Amounts owed to the broker-dealer are deducted before coverage is applied.
+A claim exceeding the SIPC limits does not disappear — the customer becomes a general creditor of the broker-dealer for the excess.
+Coverage extends to both retail and institutional customers.
+
+What SIPC does not cover
+Decline in market value — SIPC is insolvency protection, never a return guarantee
+Commodity futures contracts
+Fixed annuities and currency
+Unregistered investment contracts and certain other unregistered securities
+
+And keep the communications link your notes already draw: representing SIPC as deposit insurance or as protection against loss in value is a misrepresentation and a violation in its own right.
+Chapter I exam traps
+“A customer’s cash and margin accounts at one firm get $1,000,000 of combined coverage.” Wrong — same registration, one coverage.
+“A joint account with a spouse is covered under the individual’s $500,000.” Wrong — different capacity, separate coverage.
+“In a margin account, the full market value of the securities is covered.” Wrong — only the customer’s equity.
+“A claim above $500,000 is simply lost.” Wrong — the customer is a general creditor for the excess.
+“SIPC protects only retail customers.” Wrong — institutional customers are covered too.
+
+
+Part 3 — Corrected master numbers sheet
+This replaces the numbers page at the end of your notes. Changes from that version are marked ▸.
+The exam
+65 questions — 60 scored, 5 unscored pretest
+75 minutes
+43 of 60 to pass (72%)
+Retake waiting periods: 30 days after the first failure, 30 after the second, 180 after the third and each one after that
+Weights: Ethical Practices 25% (15) · Communication with Customers 20% (12) · Regulation of BD Agents 13% (8) · Regulation of Broker-Dealers 12% (7) · Remedies and Administrative Provisions 11% (7) · Securities and Issuers 9% (5) · Investment Advisers 5% (3) · IARs 5% (3)
+
+Registration — timing
+Effective at noon on the 30th day after the application or last amendment is filed
+Persons (BD, agent, IA, IAR): registration expires December 31 annually ▸
+Securities: registration effective for one year from the effective date — the only registration that does not run to December 31 ▸
+Withdrawal: effective 30 days after filing; Administrator retains jurisdiction for one year afterward ▸
+Form U4 amendments for material changes: 30 days
+Form U5 filed by the firm: 30 days after termination; 2-year window for post-termination amendments
+Coordination: max/min offering price and underwriting discount statement on file with the Administrator for 2 full business days ▸
+
+Financial requirements
+IA with custody: $35,000 minimum net worth
+IA with discretion, no custody: $10,000 minimum net worth
+Below the minimum → notify the Administrator by close of the next business day; file a financial report by close of the business day after that ▸
+Surety bond in lieu of a shortfall: amount of the deficiency, rounded up to the nearest $5,000 ▸
+Bond must be maintained for the life of the business plus 3 years ▸
+BD net capital below minimum → notify the Administrator of the home-office state within 1 business day ▸
+A state may not require net capital, bonding, or recordkeeping in excess of the SEC’s
+
+Investment advisers
+Brochure delivery (state-registered): 48 hours before the contract, OR at the contract with a 5-business-day free look ▸
+Brochure delivery (federal covered): at or before entering the contract
+No brochure required: registered investment company clients; impersonal advice under $500/year ▸
+Annual brochure update or summary of material changes: within 120 days of fiscal year end
+Form ADV annual amendment: within 90 days of fiscal year end
+Oral discretion: 10 business days for IAs only — written required before the first trade for BDs ▸
+Inadvertent receipt of client funds or third-party checks: return or forward within 3 business days or you have custody ▸
+IA records: 5 years, first 2 in the principal office; organizational documents 3 years after termination of the enterprise ▸
+De minimis: no place of business in the state AND 5 or fewer non-institutional clients in 12 months. No de minimis exists for broker-dealers ▸
+Federal/state AUM line: under $100M → state; $100M–$110M → may register with SEC; $110M+ → must; de-register from SEC below $90M; 15-or-more-states trigger; pension consultants $200M+
+
+Securities exemptions
+Commercial paper: 9 months or less, $50,000+ denominations, top 3 NRSRO ratings
+Private placement: 10 or fewer non-institutional persons in the state in 12 consecutive months, investment intent, no commissions for soliciting non-institutional buyers ▸
+Preorganization certificate: 10 or fewer subscribers, no payment received, no commission paid
+Contrast: Reg D Rule 506 is 35 or fewer non-accredited investors ▸
+Federal covered securities: exchange-listed, registered investment companies, qualified purchaser sales, Rule 506. Only investment company securities and Rule 506 issuers must notice file ▸
+
+Communications and records (broker-dealer)
+FINRA 2210: retail communication = more than 25 retail investors in 30 days; correspondence = 25 or fewer
+Filing with FINRA: 10 business days before or after first use depending on the product
+Customer account records: 6 years, first 2 easily accessible
+Order tickets, confirmations, 2210 communications: 3 years, first 2 easily accessible
+Organizational documents: life of the firm plus 2 years ▸
+Forms BD, U4, U5: at least 3 years after termination ▸
+Customer account information sent to the customer within 30 days of opening and at least every 36 months
+
+Accounts
+Reg T initial margin: 50%. Minimum equity to open: $2,000
+FINRA 4210 maintenance: 25% long, 30% short
+Options: OAD delivered at or before approval; signed options agreement back within 15 days or the account goes closing-transactions-only; ROP approves
+SIPC: $500,000 per customer per capacity, $250,000 cash sublimit. Cash + margin accounts of one owner are combined; individual vs. joint vs. IRA are separate ▸
+
+Remedies
+Civil statute of limitations: the earlier of 3 years after the violation or 2 years after discovery
+Rescission: purchase price + interest − income received, plus court costs and reasonable attorney fees; buyer tenders the security
+Damages (buyer no longer owns it): same formula minus sale proceeds
+Rescission offer: the BUYER has 30 days from receipt to accept; failure to accept waives the §410 right of action ▸
+Criminal: $5,000 maximum fine, 3 years maximum imprisonment, 5-year statute of limitations
+Judicial review: petition within 60 days of the final order; no automatic stay
+Hearing on request after a summary order: within 15 days
+Jurisdiction (§414): offer made in the state, offer accepted in the state, or acceptance made in the state — any one is enough
+
+Vulnerable adults (NASAA Model Act)
+Vulnerable adult: 65 or older, or an adult protected under the state’s adult protective services statute
+Temporary hold on a disbursement: up to 15 business days, extendable by 10 more (25 total)
+Holds apply to disbursements, not to trading inside the account
+Notify the Administrator and Adult Protective Services within 2 business days ▸
+Trusted contact has no authority over the account — information resource only
+Civil immunity for good-faith reporting
+
+
+Part 4 — NASAA testable-subject coverage map
+Every item on NASAA’s consolidated list of testable subjects, and where it now lives. Use this as your final checklist — if you can explain each row without looking, you are done.
+NASAA testable subject
+Where it lives now
+Uniform Securities Act of 1956 as amended — entire text
+Notes Modules 1, 2, 4 + Supplement Ch A, B, C
+SoP: Dishonest/Unethical Practices of BDs and Agents
+Notes Module 3, ch. 6 — well covered
+SoP: Same, in Connection with Investment Company Shares
+Notes Module 3, ch. 6 — well covered
+NASAA Model Act to Protect Vulnerable Adults (2016)
+Notes Module 3, ch. 7 + Part 3 (2-business-day notice added)
+Rules for Sales of Securities at Financial Institutions (1998)
+Notes Module 3, ch. 6 — the four bank disclosures
+Unethical Practices of IAs/IARs Model Rule 102(a)(4)-1
+Notes Module 3, ch. 6
+Registration Requirements for IARs, Model Rule 202(a)-2
+Supplement Ch D
+Recordkeeping for IAs, Model Rule 203(a)-2
+Supplement Ch D
+Contents of Investment Advisory Contract, Model Rule 502(c)
+Supplement Ch D — was incomplete in notes
+Custody Requirements for IAs, Model Rule 102(e)(1)-1
+Supplement Ch D — 3-business-day rule was missing
+Investment Adviser Information and Security Privacy Rule (2019)
+Supplement Ch D — was name-only in notes
+SEA §15 — Registration of Brokers and Dealers
+Notes Module 2, ch. 2
+SEA §28 — soft dollars
+Notes Module 3, ch. 7
+SEC Rules 17a-3 / 17a-4
+Notes Module 3, ch. 3
+SEC Rule 15l-1 — Regulation Best Interest
+Notes Module 3, ch. 5
+SEC Regulation S-P
+Notes Module 3, ch. 3 and ch. 7
+Form BD and instructions
+Notes Module 2, ch. 2 + Supplement Ch B
+Form U4 and instructions
+Notes Module 2, ch. 6 + Supplement Ch B
+Securities Act §5
+Supplement Ch G — was missing
+IAA §203 — Registration of Investment Advisers
+Notes Module 2, ch. 11
+IAA §203A — State and Federal Responsibilities
+Notes Module 2, ch. 10
+SEC Rule 203A-1 — Eligibility / switching
+Part 3 numbers sheet — $90M/$100M/$110M
+FINRA Rule 2040 — Payments to Unregistered Persons
+Notes Module 2, ch. 7
+FINRA Rule 2111 — Suitability
+Notes Module 3, ch. 5
+FINRA Rule 2121 — Fair Prices and Commissions
+Notes Module 3, ch. 5
+FINRA Rule 2210 — Communications with the Public
+Notes Module 3, ch. 3
+FINRA Rule 2360 — Options
+Notes Module 3, ch. 2
+FINRA Rule 3110 — Supervision
+Notes Module 2, ch. 3 and ch. 7
+FINRA Rule 3210 — Accounts at Other BDs
+Notes Module 2, ch. 7
+FINRA Rule 4210 — Margin
+Notes Module 3, ch. 2
+FINRA Rule 4512 — Customer Account Information
+Notes Module 3, ch. 2
+FINRA Regulatory Notice 10-22 — Reg D Offerings
+Supplement Ch F — was missing entirely
+Howey test
+Notes Module 1, ch. 1 — well covered
+Regulation T and margin trading
+Notes Module 3, ch. 2
+Uniform Prudent Investor Act
+Supplement Ch H — was one sentence in notes
+Use of tombstone ads
+Notes Module 3, ch. 1 + Supplement Ch G for context
+Options valuation
+Notes Module 3, ch. 2
+Elements of insider trading
+Notes Module 3, ch. 6
+Scope of SIPC insurance coverage
+Supplement Ch I — aggregation rules were missing
+Regulation of wrap fee programs
+Supplement Ch E — was missing entirely
+
+
+Eight-day plan
+You have August 2 through August 9. Studying stops at 9 PM on August 9 — that rule is not negotiable and it is the one variable you already know cost you points once.
+Day
+Focus
+Aug 2–3
+Part 1 corrections — make every edit in OneNote yourself. Typing them is the encoding. Then Supplement Ch A and Ch B. These are the biggest gaps and they map to 25% of the exam.
+Aug 4
+Supplement Ch C and Ch D. Teach-back: close the doc and explain the 10-business-day oral discretion rule and the four advisory contract requirements out loud.
+Aug 5
+Supplement Ch E, F, G, H, I — all five are short. Then re-read the notes’ Module 3 ethics chapters, which are your strongest material.
+Aug 6
+Full timed practice exam. Log every miss as knowledge gap vs. care error.
+Aug 7
+Drill the error log. Re-read every trap list in the notes plus every trap list in this supplement — that is roughly 130 traps and it is the highest-yield hour you will spend.
+Aug 8
+Second full timed practice exam. Target 85%+ — remember the calibration lesson from July: practice scores from easy forms overstate true ability. Treat 85% as your real 75%.
+Aug 9
+Part 3 numbers sheet and Part 4 coverage map only. No new material. Stop at 9 PM.
+
+One thing to carry in
+The Series 63 is a vocabulary exam wearing a law-exam costume. Almost every question is decided by whether you know precisely what one word means — person, sale, offer, guaranteed, custody, discretion, assignment, place of business, non-issuer. When a question feels hard, the move is not to reason harder about the scenario. It is to find the defined term in the stem and ask what the Act says it means.

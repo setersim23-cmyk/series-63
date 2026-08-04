@@ -1,0 +1,346 @@
+
+The Map of Authorities
+Every law, rule, and case behind the Series 63 — what each one is, and where it sits
+Appendix to the Coded Textbook · August 2, 2026
+Start with a correction to my own advice
+In the Master Supplement I told you not to invest effort in the section numbers, on the reasoning that the numbering in your notes looked unreliable. I checked that against NASAA’s own published outline of the Act, and I was wrong. Your citations are almost entirely correct — and the reason they looked odd to me is itself the single most useful thing in this appendix.
+Why §401(c1) and §401(c2) exist, and why they confused me
+There are two versions of the Uniform Securities Act of 1956 in circulation. The original 1956 text has one set of subsection letters. NASAA later amended that text — adding investment adviser representatives, federal covered advisers, and federal covered securities — and rather than renumbering the whole definitions section, it inserted the new definitions as §401(c1) and §401(c2), immediately after §401(c), broker-dealer. That is why the lettering looks like it has a bolt-on: it does. The NASAA-amended version is the one the exam is written from, and it is the version your notes are citing. Trust them.
+
+One consequence worth internalizing. If you look up a section number in your own state’s blue-sky statute, or in a law review article, or in the 2002 revision of the Act, the numbers will not match. Michigan’s version puts “agent” at §401(c). The 2002 Act renumbers everything into the 100s and 500s. None of that is what NASAA tests. Stay inside the NASAA-amended 1956 numbering and ignore everything else.
+That said, the practical advice underneath the wrong reasoning still holds: NASAA writes almost no questions that turn on a section number. Learn the map so the architecture makes sense, not so you can recite citations.
+The six layers
+Every authority on this exam sits in one of six layers, and knowing which layer something belongs to answers a surprising number of questions on its own — because the layers have different reach, different enforcers, and different relationships to each other.
+
+The whole web, arranged by source of law. Read top to bottom: Congress makes statutes, the SEC makes rules under them, NSMIA draws the preemption line, the states enact their own statute below it, NASAA supplies model rules the states adopt, and the SROs and courts fill in from the side.
+FEDERAL STATUTE — acts of Congress. Four matter here, plus the Investor Protection Act. They create the SEC, define the federal perimeter, and set the outer limit of what a state may do.
+SEC RULE — rules the Commission adopts under those statutes. Cited by number, not by section: 10b-5, 15c3-1, 206(4)-2. A rule can never exceed the statute it was written under, which is why every SEC rule traces back to a parent act.
+THE NSMIA LINE — not a layer so much as a horizontal cut through the whole structure. It is the single most consequential thing in this diagram and it is the reason state law looks the way it does.
+STATE STATUTE — the Uniform Securities Act as each state enacted it. Four parts: conduct, persons, securities, general provisions. This is the body of law the exam is actually about.
+NASAA — model rules, statements of policy, and model acts. NASAA is a voluntary association of state regulators, not a government body. It has no power of its own; its products bind only where a state adopts them. The exam treats them as though they are law everywhere.
+SRO AND CASE LAW — FINRA and MSRB rules, which bind their members by contract rather than by statute, and the handful of court decisions that supply tests the statutes assume.
+
+The layer question that answers questions
+When a stem asks who can do something — impose a fine, bar a person, issue an injunction, require registration — identify the layer first. A state Administrator operates under the state statute and can do everything Part IV grants and nothing else. FINRA operates under a membership contract and can expel or suspend a member but cannot reach a non-member. Only a court can enjoin, imprison, or grant immunity. Half the Remedies questions on this exam are layer questions in disguise.
+
+
+The state statute, section by section
+This is the Uniform Securities Act of 1956 as amended by NASAA — the version the exam is written from. Sections marked ● are ones your current map does not cover.
+§
+What it is
+What it governs
+Cell
+PART I — FRAUDULENT AND OTHER PROHIBITED PRACTICES
+101 ●
+Sales and purchases
+The antifraud provision. Unlawful, in connection with the offer, sale, or purchase of any security, to defraud, to misstate or omit a material fact, or to engage in any practice operating as a fraud. Applies to everyone and everything, always.
+ETH-1
+102 ●
+Advisory activities
+The adviser-conduct spine, and it has five subsections your map is missing entirely: (a) dishonest or unethical conduct · (b) solicitation of clients · (c) investment advisory contracts · (d) compensation · (e) custody of client funds and securities.
+ETH-1, IAD-6, IAD-7
+PART II — REGISTRATION OF BROKER-DEALERS, AGENTS, INVESTMENT ADVISERS AND IARs
+201 ●
+Registration requirement
+Who must register: (a) broker-dealers and agents · (c) investment advisers · (d) IARs. The de minimis exemption lives across §§201(c), 201(d), 401(f) and 401(g) — which is why it reads as both a registration rule and a definitional one.
+BDR-1, AGT-1, IAD-3
+202
+Registration procedure
+(a) application and effective date — noon on the 30th day · (b) ● federal covered adviser notice filing · (c) ● registration fee · (d) ● successor firm · (e) ● minimum capital · (f) ● surety bonds and minimum financial requirements.
+BDR-4, BDR-5, BDR-6
+203 ●
+Post-registration provisions
+Absent from your map and it is the whole operational chapter: (a) books and accounts · (b) information to be furnished · (c) financial reports · (d) corrections and amendments · (e) inspection power.
+BDR-7
+204
+Denial, suspension, revocation, cancellation, withdrawal
+The discipline section. Grounds, the public-interest requirement, due process, the non-punitive endings. Sub-letters vary between printings — do not rely on them.
+AGT-7, REM-5
+PART III — REGISTRATION OF SECURITIES
+301 ●
+Registration requirement
+It is unlawful to offer or sell any security in the state unless it is registered, federal covered, or exempt. The hinge the whole of Part III swings on.
+SEC-4, SEC-5
+302
+Registration by notification (filing)
+The streamlined path for seasoned issuers with an earnings history. Rarely used.
+SEC-7
+303
+Registration by coordination
+For securities registering concurrently with the SEC. State effectiveness rides on federal effectiveness.
+SEC-7
+304
+Registration by qualification
+Everything else. Full state review; the Administrator declares effectiveness.
+SEC-7
+305 ●
+Provisions applicable to registration generally
+Who may file, the one-year effective period, escrow and impound conditions, required prospectus delivery, and the Administrator’s power to require quarterly reports on the progress of the offering.
+SEC-8
+306
+Denial, suspension, revocation of a securities registration
+Stop orders. Grounds, notice, hearing, written findings, and the thirty-day limit on acting off facts known at effectiveness.
+SEC-8
+PART IV — GENERAL PROVISIONS
+401
+Definitions
+(b) agent · (c) broker-dealer · (c1) federal covered adviser · (c2) federal covered security · (d) fraud · (e) guaranteed · (f) investment adviser · (g) investment adviser representative · (k) sale and offer · (m) security.
+All
+402
+Exemptions
+(a) exempt securities · (b) exempt transactions. Note the structure: exemption is a Part IV concept, deliberately separated from the Part III registration machinery it excuses.
+SEC-4, SEC-5
+403 ●
+Filing of sales and advertising literature
+The state advertising-filing requirement. Prospectuses, pamphlets, circulars, form letters and advertising relating to registered securities must be filed with the Administrator.
+BDR-7, COM-7
+404 ●
+Misleading filings
+Unlawful to make an untrue statement of material fact in any document filed with the Administrator, or in any proceeding.
+REM-3
+405 ●
+Unlawful representations concerning registration or exemption
+The statutory home of “registration is not approval.” Neither registration nor an exemption means the Administrator has passed on the merits, and representing otherwise is unlawful.
+COM-2
+406
+Administration of the act
+Creates and empowers the office of the Administrator.
+REM-1
+407
+Investigations and subpoenas
+Investigative authority, subpoenas for witnesses and documents, subpoena enforcement through a court, and compulsory testimony.
+REM-3
+408
+Prohibitory orders and injunctions
+Both remedies sit in one section, which is exactly why the distinction is tested: the Administrator issues the prohibitory (cease-and-desist) order itself, but must go to court for the injunction.
+REM-4
+409
+Criminal penalties
+$5,000, three years, or both, per willful violation. The prosecuting authority is a prosecutor; the Administrator refers.
+REM-7
+410
+Civil liabilities
+Ten subsections, and the order matters: violation of the registration or fraud provisions · additional adviser and IAR liabilities · (c) persons liable · tender · survivability · statute of limitations · (g) offers to rescind · unenforceability of illegal contracts · waivers void · saving of existing remedies.
+REM-6
+411
+Judicial review of orders
+Petition within sixty days; filing does not stay the order.
+REM-7
+412 ●
+Rules, forms, orders and hearings
+The Administrator’s rulemaking power and its limits — including the good-faith reliance defense, which protects a person who acted on a rule or order later amended or held invalid.
+REM-1
+413
+Administrative files and opinions
+Public register of filings and orders; interpretive opinions. Not the Administrator’s office — see §406.
+REM-1
+414
+Scope of the act and service of process
+Jurisdiction. Where an offer is made, where it is accepted, where acceptance is communicated — plus the publication and broadcast exclusions and the consent to service of process.
+REM-2, BDR-4
+415 ●
+Statutory policy
+Directs that the Act be construed to coordinate with the federal securities laws and to make state regulation uniform. The interpretive thumb on the scale behind every preemption answer.
+REM-1
+
+
+Federal statutes and SEC rules
+Sections marked ● are not in your current map.
+Authority
+What it is
+What it does here
+Cell
+STATUTES
+Securities Act of 1933
+Registration and disclosure for offerings
+§5 ● the three offering periods · §17(a) ● fraud in the offer or sale · §18(b) the definition of a covered security, which is where federal covered status actually comes from · §134 tombstone advertisements
+SEC-6, COM-7
+Securities Exchange Act of 1934
+Secondary markets; creates the SEC
+§10(b) ● the antifraud authority Rule 10b-5 was written under · §15 broker-dealer registration · §28(e) ● the soft dollar safe harbor · §3(a)(4) and (5) the split broker and dealer definitions the state act fuses · §3(a)(39) statutory disqualification
+BDR-1, ETH-8
+Investment Advisers Act of 1940
+Federal regulation of advisers
+§202(a)(11) ● the adviser definition and its exclusions · §203 registration · §203A the federal-state division · §205 ● advisory contracts and the performance fee prohibition · §206 ● antifraud, including §206(3) principal and agency cross trades
+IAD-1, IAD-4, IAD-6
+Investment Company Act of 1940 ●
+Regulation of pooled vehicles
+Supplies the term “registered investment company,” which is what makes fund shares federal covered and what makes an adviser to a fund federal covered at any size.
+SEC-6, IAD-4
+NSMIA 1996
+National Securities Markets Improvement Act
+Not a standalone statute you cite — an amending act. It rewrote Securities Act §18 and added Advisers Act §203A. Everything you know about preemption traces to those two amendments.
+SEC-6, IAD-4
+SIPA 1970 ●
+Securities Investor Protection Act
+Creates SIPC. Insolvency protection for customers of a failed broker-dealer.
+REM-8
+Dodd-Frank 2010 ●
+Wall Street Reform Act
+Raised the adviser registration threshold and created the mid-sized adviser category, which is why the $100M / $110M / $90M structure exists at all.
+IAD-4
+SLUSA 1998 ●
+Securities Litigation Uniform Standards Act
+Constrains state-law class actions in covered securities. Named in §410 as a limit on the civil remedy.
+REM-6
+SEC RULES
+Rule 10b-5
+Under SEA §10(b)
+The federal antifraud rule. Insider trading and manipulation liability run through it.
+ETH-2
+Rule 15l-1
+Regulation Best Interest
+The four obligations owed by a broker-dealer at a recommendation to a retail customer: care, disclosure, conflict of interest, compliance.
+ETH-1
+Rules 15c3-1, 15c3-3
+Net capital; customer protection
+Federal financial requirements. Relevant to the 63 chiefly as the CEILING a state may not exceed — not for their dollar amounts.
+BDR-6
+Rules 17a-3, 17a-4
+Books and records
+What a broker-dealer must make, and how long it must keep it.
+COM-8
+Regulation S-P
+Privacy of consumer financial information
+Initial and annual notices, opt-out, and the safeguards requirement.
+COM-8, IAD-8
+Rule 204A-1
+Code of ethics
+Personal trading reports and pre-clearance for advisers.
+ETH-1
+Rule 205-3 ●
+Qualified client
+The exception permitting performance fees, and the inflation-adjusted thresholds — $1.4M under management or $2.7M net worth from June 29, 2026.
+IAD-6
+Rule 206(3)-2 ●
+Agency cross transactions
+The actual authority behind the agency-cross conditions. Your map cites a NASAA rule number here; this is the reliable citation.
+ETH-8
+Rule 206(4)-2
+Custody
+Qualified custodian, quarterly statements, surprise examination.
+IAD-7
+Rule 206(4)-5
+Pay-to-play
+The two-year time-out and the $350 / $150 de minimis.
+ETH-8
+Rule 203A-1 ●
+Eligibility for SEC registration
+The $90M / $100M / $110M buffer.
+IAD-4
+Regulation D ●
+Rules 504 and 506
+Rule 506 offerings are federal covered; Rule 504 offerings are not. Rule 505 was repealed in 2016 and should be treated as a distractor.
+SEC-6
+
+
+NASAA, the SROs, and the courts
+Authority
+What it is
+What it does here
+Cell
+NASAA MODEL RULES — all ● absent from your map
+Model Rule 102(a)(4)-1
+Unethical business practices of investment advisers and IARs
+The enumerated list of adviser misconduct. Named by NASAA as testable.
+ETH-1, ETH-7
+Model Rule 102(e)(1)-1
+Custody requirements for investment advisers
+Including the three-business-day trigger for inadvertent receipt and third-party checks, and the Administrator’s power to prohibit custody outright.
+IAD-7
+Model Rule 202(d)-1
+Minimum financial requirements
+$35,000 net worth with custody, $10,000 with discretion, the notification and reporting sequence, and the bond-in-lieu rounding.
+IAD-7
+Model Rule 203(a)-2
+Recordkeeping for investment advisers
+Five years, first two in the principal office.
+IAD-8
+Model Rule 502(c)
+Contents of an investment advisory contract
+In writing; services, term, fee and formula, prepaid-fee refund, discretion, no assignment without consent, partnership membership notice.
+IAD-6
+Model Rule 202(a)-2
+Registration requirements for IARs
+Place of business as the trigger; the de minimis exemption.
+IAR-3, IAR-4
+NASAA STATEMENTS OF POLICY AND MODEL ACTS
+SoP on Dishonest or Unethical Business Practices
+Broker-dealers and agents
+The enumerated catalogue of firm-level and agent-level misconduct. The backbone of the largest chapter on the exam.
+ETH-4 to ETH-7
+SoP on the same, for investment company shares
+Mutual fund sales practices
+Breakpoint sales, letters of intent, share-class abuse, switching, selling dividends.
+ETH-5
+Rules for Sales of Securities at Financial Institutions (1998)
+Bank-premises sales
+The four disclosures, physical separation, signage, complaint procedures.
+ETH-3
+Model Act to Protect Vulnerable Adults (2016)
+Financial exploitation
+Fifteen business days extendable by ten, notice to the Administrator and adult protective services, trusted contacts, civil immunity.
+ETH-8
+IA Information Security and Privacy Rule (2019) ●
+Cybersecurity and privacy
+Written policies, delivery of the privacy policy, records of delivery.
+IAD-8
+SELF-REGULATORY ORGANIZATIONS
+FINRA rules
+Bind members by contract
+2040 payments to unregistered persons · 2111 suitability · 2121 ● fair prices and commissions · 2165 senior holds · 2210 communications · 2360 options · 3110 supervision · 3210 outside accounts · 4210 margin · 4512 customer account information
+COM, ETH
+FINRA Regulatory Notice 10-22 ●
+Guidance, not a rule
+The independent due diligence obligation of a broker-dealer selling a Regulation D private placement. Named by NASAA as testable and absent from every source you have.
+ETH-1
+MSRB Rule G-37
+Municipal securities dealers
+Pay-to-play; the parallel two-year ban with a $250 de minimis.
+ETH-8
+OTHER SOURCES
+SEC v. W. J. Howey Co. (1946)
+Supreme Court
+The four-prong investment contract test. The only case NASAA names.
+SEC-1
+Uniform Prudent Investor Act ●
+Uniform Law Commission
+Portfolio-level prudence, diversification as a duty, permitted delegation, loyalty and impartiality. A Uniform Law Commission product, not a NASAA one — but NASAA names it as testable.
+ETH-8
+
+
+Citation audit of your map
+Confirmed correct — verified against NASAA’s published outline
+These are the ones I would have bet against and lost. Every citation below checks out in the NASAA-amended text.
+§401(m) security · §401(g) investment adviser representative · §401(c2) federal covered security · §401(c) broker-dealer. The (c1) and (c2) insertions sit immediately after (c), exactly where NASAA bolted them on.
+§202(a) application and effective date — the noon-on-the-thirtieth-day rule.
+§302, §303, §304 for notification, coordination and qualification, and §306 for stop orders.
+§407 investigations and subpoenas · §409 criminal · §410 civil · §411 judicial review · §414 jurisdiction and service of process.
+§410(c) persons liable and §410(g) offers to rescind. Both land on the right subsection when you count §410 in order.
+§406 administration of the act · §408 for prohibitory orders, which is also where injunctions live.
+
+Wrong or unverifiable — fix these six
+In your map
+The correction
+“Administrator’s office — USA §406, §413”
+§406 is right. §413 is administrative files and opinions — the public register and interpretive opinions, not the office. The rulemaking power you probably wanted is §412, which also carries the good-faith reliance defense.
+“Notice filing — USA §307”
+I could not verify a §307 in the NASAA-amended text; Part III appears to run 301 through 306. More importantly, this conflates two different notice filings. The FEDERAL COVERED ADVISER notice filing is §202(b) — that one is certain. The federal covered SECURITY notice filing sits in Part III. Cite §202(b) for advisers and leave the securities one uncited.
+“NASAA 102(f)-1 — agency cross”
+NASAA’s §102 runs (a) through (e); there is no (f) in the outline. The reliable authority for agency cross conditions is Advisers Act §206(3) and SEC Rule 206(3)-2. The state hook is the unethical practices rule, 102(a)(4)-1.
+“Written findings — §204(f)”
+§204 is right; the sub-letter is not confirmable and varies between printings. Cite §204 and stop there.
+“Rule 506 … but NOT Rule 504 or Rule 505”
+Rule 505 was repealed in October 2016. Say “Rule 506 only — not Rule 504.”
+“Publicly-quoted secondary market with 3+ market makers”
+Not a §402(b) exemption. What the Act actually provides is the manual exemption — a non-issuer transaction in a security whose issuer information appears in a recognized securities manual.
+
+Missing — nineteen authorities your map does not reach
+Grouped by how much they matter. The first group is genuinely load-bearing; the third is completeness.
+LOAD-BEARING. §101 — the antifraud provision itself, which your map refers to as “the golden rule” without ever citing. §102(a) through (e) — the entire adviser-conduct spine: unethical conduct, solicitation, contracts, compensation, custody. §203(a) through (e) — the entire post-registration chapter: books, information furnished, financial reports, corrections, inspection power. §405 — the statutory home of “registration is not approval,” which is a whole exam cell with no citation behind it in your notes.
+STRUCTURAL. §201(a), (c), (d) — the registration requirement broken out by person type, with the de minimis exemption spanning §§201(c), 201(d), 401(f) and 401(g). §202(b) through (f) — adviser notice filing, fees, successor firms, minimum capital, surety bonds. §301 — the securities registration requirement. §305 — the one-year effective period, escrow and impound. §403 — the state advertising-filing rule. §404 — misleading filings. §412 — rulemaking and the good-faith reliance defense. §415 — the statutory policy of coordinating with federal law.
+FEDERAL. Securities Act §5 and §17(a). Exchange Act §10(b) as the parent of Rule 10b-5, and §28(e) as the soft dollar safe harbor. Advisers Act §202(a)(11), §205 and §206. The Investment Company Act of 1940. SIPA 1970. Dodd-Frank 2010. SEC Rules 205-3, 206(3)-2 and 203A-1.
+NASAA AND OTHER. All six NASAA model rules by number. The Information Security and Privacy Rule. FINRA Rule 2121 and Regulatory Notice 10-22. The Uniform Prudent Investor Act.
+
+What the gaps have in common
+Look at the load-bearing group again: §101, §102, §203, §405. Those are the conduct and post-registration provisions — the parts of the Act that govern what a registered person must DO, as opposed to how they GET registered. Your map is a very good map of entry requirements and enforcement, and a thin one of the obligations in between. That is the same shape as the content gap I found in the $2 Textbook, which makes sense: the map was built from it. The coded textbook fills the substance; this appendix supplies the citations underneath.
