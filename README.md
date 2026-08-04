@@ -14,7 +14,14 @@ npm install
 npm run dev      # dev server
 npm run build    # typecheck + production build into dist/
 npm run preview  # serve the production build locally
+
+npm run build:single   # everything inlined into one portable .html
 ```
+
+`build:single` writes `dist-single/series-63.html` — the whole app in a single
+file with the fonts embedded, for saving to a phone's Files app or hosting
+somewhere that only accepts one page. It has no service worker (there is no
+second file to register), but it needs no network either.
 
 `dist/` is a static site — any static host will do. It must be served over HTTPS (or
 localhost) for the service worker, and therefore offline mode, to work.
