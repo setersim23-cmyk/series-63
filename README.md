@@ -1,25 +1,83 @@
-# CODING AGENTS: READ THIS FIRST
+# Series 63 Coach
 
-This is a **handoff bundle** from Claude Design (claude.ai/design).
+A study app for the NASAA Series 63, built as an installable web app: readiness scoring
+over a 64-cell Harada chart, the full coded textbook to read or listen to, a memory
+palace over all 64 cells, drills and a timed mock, five interactive tools embedded in
+lessons, and the map of authorities.
 
-A user mocked up designs in HTML/CSS/JS using an AI design tool, then exported this bundle so a coding agent can implement the designs for real.
+Works fully offline once installed.
 
-## What you should do — IMPORTANT
+## Running it
 
-**Read the chat transcripts first.** There are 1 chat transcript(s) in `chats/`. The transcripts show the full back-and-forth between the user and the design assistant — they tell you **what the user actually wants** and **where they landed** after iterating. Don't skip them. The final HTML files are the output, but the chat is where the intent lives.
+```sh
+npm install
+npm run dev      # dev server
+npm run build    # typecheck + production build into dist/
+npm run preview  # serve the production build locally
+```
 
-**Read `project/Series 63 Coach.dc.html` in full.** The user had this file open when they triggered the handoff, so it's almost certainly the primary design they want built. Read it top to bottom — don't skim. Then **follow its imports**: open every file it pulls in (shared components, CSS, scripts) so you understand how the pieces fit together before you start implementing.
+`dist/` is a static site — any static host will do. It must be served over HTTPS (or
+localhost) for the service worker, and therefore offline mode, to work.
 
-**If anything is ambiguous, ask the user to confirm before you start implementing.** It's much cheaper to clarify scope up front than to build the wrong thing.
+## Installing on the iPhone
 
-## About the design files
+Open the deployed URL in Safari → Share → **Add to Home Screen**. It opens full screen,
+and after the first load it runs with no network at all — the service worker precaches
+the app, the content, the fonts and the icons.
 
-The design medium is **HTML/CSS/JS** — these are prototypes, not production code. Your job is to **recreate them pixel-perfectly** in whatever technology makes sense for the target codebase (React, Vue, native, whatever fits). Match the visual output; don't copy the prototype's internal structure unless it happens to fit.
+Two things worth knowing:
 
-**Don't render these files in a browser or take screenshots unless the user asks you to.** Everything you need — dimensions, colors, layout rules — is spelled out in the source. Read the HTML and CSS directly; a screenshot won't tell you anything they don't.
+- Progress is stored per browser, in `localStorage` under `s63_coach`. Home screen →
+  ⇅ **Backup / transfer my progress** copies your whole state as a code you can paste
+  into another copy, or into Notes as a backup.
+- iOS only exposes its speech voices after speech has run inside a user gesture. The app
+  primes this on your first tap, so the voice picker is populated by the time you open it.
 
-## Bundle contents
+## Layout
 
-- `README.md` — this file
-- `chats/` — conversation transcripts (read these!)
-- `project/` — the `Series 63 Learning App` project files (HTML prototypes, assets, components)
+```
+src/
+  App.tsx            routing, session state, and the wiring between progress, quizzes and speech
+  context.ts         the API every view consumes
+  types.ts           content and saved-progress types
+  ui.tsx             palette and shared primitives
+  views/             one file per screen
+  components/        bottom nav, sheets, the speech player
+  components/tools/  the tools embedded in lessons
+  lib/
+    config.ts        exam date, pass target, mock rules, storage key
+    store.ts         localStorage-backed progress + the transfer codec
+    scoring.ts       cell/chapter/overall readiness, including forgetting-curve decay
+    content.ts       textbook lookups, citation linking, loci
+    quiz.ts          session building for each drill mode, spaced repetition
+    tts.ts           speech synthesis and its platform workarounds
+  content/           generated: textbook, question bank, map of authorities
+  data/              generated: chapter meta, laws, frameworks, loci, tools, simulator
+scripts/             the generators, and the icon builder
+project/             the original Claude Design bundle this was built from
+chats/               the design conversation
+```
+
+## Content
+
+All content comes from the Claude Design bundle in `project/` and is regenerated rather
+than hand-edited. If that bundle is refreshed:
+
+```sh
+node scripts/convert-content.mjs      # project/content/*.js  → src/content/*.ts
+node scripts/extract-design-data.mjs  # the prototype's data tables → src/data/*.ts
+node scripts/make-icons.mjs           # app icons → public/
+```
+
+`convert-content.mjs` fails the run if the content drifts out of shape — 8 chapters of
+8 cells, every cell covered by at least one question, and no question or memorize fact
+citing a cell that does not exist.
+
+Current content: **8 chapters · 64 cells · 234 memorize facts · 134 questions · 61 traps
+· 6 layers of authority · 64 loci**.
+
+## Tuning
+
+`src/lib/config.ts` holds the exam date and time, the pass target the readiness ring is
+graded against (the white tick), the mock exam length and pass mark, and the storage key.
+The eight-day run-up plan is in `src/data/plan.ts`, keyed by `month-date`.

@@ -1,0 +1,45 @@
+@import './fonts.css';
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: #08080b;
+  color: #e9e9ef;
+  font-family: 'Instrument Sans', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: #8ab4ff;
+  text-decoration: none;
+}
+a:hover {
+  color: #b3ceff;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.45;
+  }
+}
+
+::selection {
+  background: #2b3a5e;
+}
+
+/* Form controls don't inherit the page font on their own. Sizes stay as the
+   design specified them. */
+input,
+textarea {
+  font-family: inherit;
+}
