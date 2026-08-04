@@ -3,13 +3,19 @@ import { join, relative } from 'node:path'
 import { defineConfig, type Plugin } from 'vite'
 import react from '@vitejs/plugin-react'
 
-/** Every file under public/, as a root-relative URL. */
-function publicUrls(dir = 'public', base = 'public'): string[] {
+/**
+ * Where the app will be served from. GitHub Pages puts a project site under
+ * /<repo>/, so the deploy workflow sets this; a root deploy needs nothing.
+ */
+const BASE = process.env.BASE_PATH || '/'
+
+/** Every file under public/, as a path relative to the public dir. */
+function publicFiles(dir = 'public', root = 'public'): string[] {
   return readdirSync(dir).flatMap((entry) => {
     const full = join(dir, entry)
     return statSync(full).isDirectory()
-      ? publicUrls(full, base)
-      : ['/' + relative(base, full).split(/[\\/]/).join('/')]
+      ? publicFiles(full, root)
+      : [relative(root, full).split(/[\\/]/).join('/')]
   })
 }
 
@@ -24,10 +30,15 @@ function serviceWorker(): Plugin {
     name: 's63-service-worker',
     apply: 'build',
     generateBundle(_options, bundle) {
-      const assets = Object.keys(bundle).map((f) => '/' + f)
-      // '/' is the entry the navigate handler falls back to; index.html is emitted
+      const url = (path: string) => BASE + path
+      // BASE is the entry the navigate handler falls back to; index.html is emitted
       // after this hook runs, so name it explicitly.
-      const precache = ['/', '/index.html', ...assets, ...publicUrls().filter((u) => u !== '/sw.js')]
+      const precache = [
+        BASE,
+        url('index.html'),
+        ...Object.keys(bundle).map(url),
+        ...publicFiles().map(url),
+      ]
       const version = `s63-${Date.now().toString(36)}`
       this.emitFile({
         type: 'asset',
@@ -63,8 +74,8 @@ self.addEventListener('fetch', (e) => {
   if (req.mode === 'navigate') {
     e.respondWith(
       caches
-        .match('/', MATCH)
-        .then((hit) => hit || fetch(req).catch(() => caches.match('/index.html', MATCH)))
+        .match('${BASE}', MATCH)
+        .then((hit) => hit || fetch(req).catch(() => caches.match('${BASE}index.html', MATCH)))
     )
     return
   }
@@ -89,6 +100,7 @@ self.addEventListener('fetch', (e) => {
 }
 
 export default defineConfig({
+  base: BASE,
   plugins: [react(), serviceWorker()],
   build: {
     target: 'es2020',

@@ -19,6 +19,16 @@ npm run preview  # serve the production build locally
 `dist/` is a static site — any static host will do. It must be served over HTTPS (or
 localhost) for the service worker, and therefore offline mode, to work.
 
+### Deploying
+
+Pushing to `main` builds and publishes to GitHub Pages via `.github/workflows/deploy.yml`
+— enable Pages in the repo settings with **Source: GitHub Actions** once, and every push
+deploys from then on.
+
+Pages serves a project site from `/<repo>/` rather than the root, so the workflow builds
+with `BASE_PATH` set to the repo name. To host somewhere else, set it to wherever the app
+will live (`BASE_PATH=/ npm run build` for a domain root, which is the default).
+
 ## Installing on the iPhone
 
 Open the deployed URL in Safari → Share → **Add to Home Screen**. It opens full screen,
