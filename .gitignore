@@ -3,3 +3,6 @@ dist/
 *.local
 .DS_Store
 dist-single/
+
+# Source PDFs and personal documents — keep these off a public repo.
+project/uploads/
