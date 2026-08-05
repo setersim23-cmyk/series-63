@@ -36,6 +36,43 @@ Pages serves a project site from `/<repo>/` rather than the root, so the workflo
 with `BASE_PATH` set to the repo name. To host somewhere else, set it to wherever the app
 will live (`BASE_PATH=/ npm run build` for a domain root, which is the default).
 
+### Narration audio
+
+Chapters are narrated by pre-rendered MP3s rather than the browser's speech
+synthesis. That is not a quality decision — iOS suspends the Web Speech API the
+moment the screen locks, so recorded audio is the only way to listen with the
+phone in a pocket, and it brings lockscreen controls with it.
+
+```sh
+python3 scripts/build_audio.py   # ~40 min, writes public/audio/ + src/content/audio.ts
+```
+
+Piper and the voice model download on first run into `.audio-build/` (gitignored,
+~150 MB). The spoken text is derived the same way `src/lib/tts.ts` derives it, so
+recordings and the fallback never disagree.
+
+Any cell without a clip falls back to speech synthesis automatically, so adding
+content without re-rendering degrades rather than breaks. The audio is
+deliberately excluded from the service worker's precache — it is tens of
+megabytes — and is cached per clip as you listen.
+
+## Two devices
+
+The app is one build; a laptop gets a wider layout at 900px and up — a side rail
+instead of the phone's bottom bar, and the chart and chapter list side by side.
+Below that breakpoint nothing about the phone layout changes.
+
+Progress moves between devices by QR. GitHub Pages serves static files and has
+nowhere to store anything, so there is no server to sync through — instead the
+sheet renders a link as a QR the other device's camera can read. A heavy week of
+study is ~17 KB of JSON but gzips to about 1.1 KB, which fits inside a single
+code with room to spare.
+
+Arriving on a transfer link **merges** rather than replaces: for each cell the
+more recently touched version wins, mock history is unioned, and narration speed
+and voice stay with the device you are holding. Nothing is applied until it is
+accepted, and the prompt says how many cells would change.
+
 ## Installing on the iPhone
 
 Open the deployed URL in Safari → Share → **Add to Home Screen**. It opens full screen,

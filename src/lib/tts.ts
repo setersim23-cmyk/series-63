@@ -1,4 +1,5 @@
 import { cellItems, findCell, speakables } from './content'
+import { keepScreenAwake, releaseScreen } from './wakelock'
 import type { CellId } from '../types'
 
 export interface TtsState {
@@ -93,6 +94,7 @@ export class Tts {
       /* Safari throws if nothing is queued */
     }
     this.clearTimers()
+    keepScreenAwake()
     // The beat after cancel() is what stops Chrome reverting to the default voice.
     this.restart = setTimeout(() => {
       this.set({ playing: true, item: fromItem, word: -1, contPlay: continuous })
@@ -107,6 +109,7 @@ export class Tts {
       /* ignore */
     }
     this.clearTimers()
+    releaseScreen()
     this.set({ ...IDLE })
   }
 

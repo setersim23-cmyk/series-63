@@ -19,7 +19,7 @@ export default function Drill() {
   const best = store.mocks.length ? Math.max(...store.mocks.map((m) => m.score)) : null
 
   return (
-    <div style={{ padding: '20px 18px 120px' }}>
+    <div style={{ padding: '20px 18px calc(120px + var(--safe-bottom))' }}>
       <Title>Drill</Title>
       <div style={{ fontSize: 12, color: C.dim, marginTop: 4 }}>
         Every answer updates your readiness score and Harada chart instantly.

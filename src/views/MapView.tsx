@@ -16,7 +16,7 @@ export default function MapView() {
   const [item, setItem] = useState<Authority | null>(null)
 
   return (
-    <div style={{ padding: '20px 18px 130px' }}>
+    <div style={{ padding: '20px 18px calc(130px + var(--safe-bottom))' }}>
       <Title>⚖ The Map of Authorities</Title>
       <div style={{ fontSize: 12, color: C.dim, marginTop: 6, lineHeight: 1.6 }}>{AUTH.intro}</div>
 

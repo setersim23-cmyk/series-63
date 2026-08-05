@@ -10,7 +10,7 @@ export default function Learn() {
   const { store, go } = useApp()
 
   return (
-    <div style={{ padding: '20px 18px 120px' }}>
+    <div style={{ padding: '20px 18px calc(120px + var(--safe-bottom))' }}>
       <Title>Learn</Title>
       <div style={{ fontSize: 12, color: C.dim, marginTop: 4, lineHeight: 1.5 }}>
         Eight chapters in teaching order. Each opens into eight cells you can read or listen to.

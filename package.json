@@ -11,6 +11,7 @@
     "build:single": "VITE_SINGLE_FILE=true vite build && node scripts/build-single.mjs"
   },
   "dependencies": {
+    "qrcode-generator": "^2.0.4",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },

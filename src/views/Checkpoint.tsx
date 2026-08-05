@@ -43,7 +43,7 @@ export default function Checkpoint({
     const lastQuestion = state.qi >= state.qs.length - 1
 
     return (
-      <div style={{ padding: '16px 18px 130px' }}>
+      <div style={{ padding: '16px 18px calc(130px + var(--safe-bottom))' }}>
         {header}
         <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '.08em', color: C.blue, marginTop: 14 }}>
           ◆ Concept check · {state.qi + 1} of {state.qs.length}
@@ -129,7 +129,7 @@ export default function Checkpoint({
     const lastFact = state.fi >= state.facts.length - 1
 
     return (
-      <div style={{ padding: '16px 18px 130px' }}>
+      <div style={{ padding: '16px 18px calc(130px + var(--safe-bottom))' }}>
         {header}
         <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '.08em', color: C.amber, marginTop: 14 }}>
           ● Fact recall · {state.fi + 1} of {state.facts.length}
@@ -214,7 +214,7 @@ export default function Checkpoint({
           : 'Solid on both. The chart is lit — keep it lit with the missed queue.'
 
   return (
-    <div style={{ padding: '16px 18px 130px' }}>
+    <div style={{ padding: '16px 18px calc(130px + var(--safe-bottom))' }}>
       {header}
       <div style={{ textAlign: 'center', marginTop: 26 }}>
         <div style={{ fontSize: 12, color: C.dim, letterSpacing: '.1em' }}>{state.cellId} — GRADED FOR YOU</div>

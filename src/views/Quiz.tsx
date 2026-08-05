@@ -33,7 +33,7 @@ export default function Quiz({
   const right = session.chosen === q.a
 
   return (
-    <div style={{ padding: '16px 18px 130px' }}>
+    <div style={{ padding: '16px 18px calc(130px + var(--safe-bottom))' }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <Tap onClick={onQuit} style={{ fontSize: 13, color: '#8a8a9a' }}>
           ✕ End

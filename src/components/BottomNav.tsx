@@ -24,7 +24,7 @@ export default function BottomNav({ active, onTap }: { active: string; onTap: (t
         backdropFilter: 'blur(14px)',
         borderTop: '1px solid #1c1c26',
         display: 'flex',
-        padding: '6px 0 calc(8px + env(safe-area-inset-bottom))',
+        padding: '6px 0 calc(8px + var(--safe-bottom))',
       }}
     >
       {TABS.map(([key, icon, label]) => {

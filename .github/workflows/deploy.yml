@@ -26,6 +26,23 @@ jobs:
           node-version: 20
           cache: npm
       - run: npm ci
+
+      # 40 MB of narration is rendered here rather than committed, so the repo
+      # stays small. The cache key is the narration's inputs, so it re-renders
+      # only when the content or the generator actually changes.
+      - name: Cache narration audio
+        id: audio
+        uses: actions/cache@v4
+        with:
+          path: public/audio
+          key: audio-v1-${{ hashFiles('src/content/textbook.ts', 'src/data/frames.ts', 'scripts/build_audio.py') }}
+
+      - name: Render narration
+        if: steps.audio.outputs.cache-hit != 'true'
+        run: |
+          pip install --quiet lameenc
+          python3 scripts/build_audio.py
+
       - run: npm run build
         env:
           # Pages serves a project site from /<repo>/, so the app is built for that path.

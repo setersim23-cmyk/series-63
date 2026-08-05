@@ -17,7 +17,7 @@ export default function ChapterView({ code }: { code: ChapterCode }) {
   const color = chapterColor(code)
 
   return (
-    <div style={{ padding: '16px 18px 120px' }}>
+    <div style={{ padding: '16px 18px calc(120px + var(--safe-bottom))' }}>
       <BackLink onClick={go.learn}>‹ Chapters</BackLink>
 
       <div

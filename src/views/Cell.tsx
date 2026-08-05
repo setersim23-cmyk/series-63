@@ -78,12 +78,12 @@ export default function CellView({
     })
 
   return (
-    <div style={{ padding: '0 0 190px' }}>
+    <div style={{ padding: '0 0 calc(190px + var(--safe-bottom))' }}>
       {/* sticky header keeps the actor visible while you read */}
       <div
         style={{
           position: 'sticky',
-          top: 0,
+          top: 'var(--safe-top)',
           zIndex: 5,
           background: 'rgba(8,8,11,.92)',
           backdropFilter: 'blur(12px)',

@@ -17,7 +17,7 @@ export default function Traps() {
   })
 
   return (
-    <div style={{ padding: '16px 18px 130px' }}>
+    <div style={{ padding: '16px 18px calc(130px + var(--safe-bottom))' }}>
       <BackLink onClick={go.learn}>‹ Learn</BackLink>
       <div style={{ fontFamily: MONO_DISPLAY, fontSize: 20, fontWeight: 700, marginTop: 8, color: C.pink }}>
         ▲ Every trap in the book

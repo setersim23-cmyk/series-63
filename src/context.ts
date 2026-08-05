@@ -1,5 +1,6 @@
 import { createContext, useContext } from 'react'
-import type { Tts, TtsState } from './lib/tts'
+import type { Narrator } from './lib/narrator'
+import type { TtsState } from './lib/tts'
 import type { Progress } from './lib/store'
 import type { QuizMode } from './lib/quiz'
 import type { Mark } from './types'
@@ -17,7 +18,7 @@ export interface AppApi {
   /** Ticks once a second — countdowns and the mock timer read it. */
   tick: number
 
-  tts: Tts
+  tts: Narrator
   ttsState: TtsState
   voices: SpeechSynthesisVoice[]
 

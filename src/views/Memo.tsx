@@ -20,7 +20,7 @@ export default function Memo({
   const color = chapterColor(code)
 
   return (
-    <div style={{ padding: '16px 18px 130px' }}>
+    <div style={{ padding: '16px 18px calc(130px + var(--safe-bottom))' }}>
       <BackLink onClick={() => go.chapter(code)}>‹ {META[code].name}</BackLink>
       <div style={{ fontFamily: MONO_DISPLAY, fontSize: 20, fontWeight: 700, marginTop: 8, color: C.amber }}>
         ● {code} memorize sheet

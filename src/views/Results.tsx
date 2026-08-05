@@ -19,7 +19,7 @@ export default function Results({ last, onDone }: { last: LastSession; onDone: (
   })
 
   return (
-    <div style={{ padding: '24px 18px 130px', textAlign: 'center' }}>
+    <div style={{ padding: '24px 18px calc(130px + var(--safe-bottom))', textAlign: 'center' }}>
       <div style={{ fontSize: 12, color: C.dim, letterSpacing: '.1em' }}>
         {mock ? `TIMED MOCK — ${MOCK_PASS} TO PASS` : 'DRILL COMPLETE'}
       </div>

@@ -33,11 +33,16 @@ function serviceWorker(): Plugin {
       const url = (path: string) => BASE + path
       // BASE is the entry the navigate handler falls back to; index.html is emitted
       // after this hook runs, so name it explicitly.
+      // Narration audio is deliberately not precached: it is tens of megabytes
+      // and would all download on install. The fetch handler caches each clip
+      // the first time it is played, so it goes offline as you listen.
       const precache = [
         BASE,
         url('index.html'),
         ...Object.keys(bundle).map(url),
-        ...publicFiles().map(url),
+        ...publicFiles()
+          .filter((f) => !f.startsWith('audio/'))
+          .map(url),
       ]
       const version = `s63-${Date.now().toString(36)}`
       this.emitFile({

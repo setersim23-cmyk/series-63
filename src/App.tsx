@@ -2,9 +2,12 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { AppContext, type AppApi, type SheetContent } from './context'
 import { QBANK } from './content/questions'
 import { findChapter } from './lib/content'
-import { IDLE, Tts, type TtsState } from './lib/tts'
+import { IDLE, Narrator, type TtsState } from './lib/narrator'
+import { watchVisibility } from './lib/wakelock'
 import { buildSession, recordAnswer, shuffle, type QuizMode, type Session } from './lib/quiz'
 import { storageWorks, useProgress } from './lib/store'
+import { useWide } from './lib/useWide'
+import { decodeSnapshot, type Snapshot } from './lib/transfer'
 import { nextCellId } from './lib/scoring'
 import { ORDER, type CellId, type ChapterCode, type Fact, type Mark } from './types'
 
@@ -23,9 +26,11 @@ import PalaceWalk from './views/PalaceWalk'
 import Simulator from './views/Simulator'
 
 import BottomNav from './components/BottomNav'
+import SideNav from './components/SideNav'
 import StorageWarning from './components/StorageWarning'
 import LawSheet from './components/LawSheet'
 import SyncSheet from './components/SyncSheet'
+import IncomingTransfer from './components/IncomingTransfer'
 import VoiceSheet from './components/VoiceSheet'
 
 export type View =
@@ -110,6 +115,7 @@ export const FRESH_TOOL: ToolState = {
 
 export default function App() {
   const progress = useProgress()
+  const wide = useWide()
   const { store, touch, update } = progress
 
   const [view, setView] = useState<View>('home')
@@ -128,6 +134,7 @@ export default function App() {
   const [syncOpen, setSyncOpen] = useState(false)
   const [voicesOpen, setVoicesOpen] = useState(false)
   const [memoOpen, setMemoOpen] = useState<Record<number, boolean>>({})
+  const [incoming, setIncoming] = useState<Snapshot | null>(null)
 
   const [ttsState, setTtsState] = useState<TtsState>(IDLE)
   const [voices, setVoices] = useState<SpeechSynthesisVoice[]>([])
@@ -135,9 +142,9 @@ export default function App() {
 
   // ---------- speech ----------
 
-  const ttsRef = useRef<Tts | null>(null)
+  const ttsRef = useRef<Narrator | null>(null)
   if (!ttsRef.current) {
-    ttsRef.current = new Tts({
+    ttsRef.current = new Narrator({
       onState: setTtsState,
       onCellRead: (id) => touch(id, (c) => (c.read = true)),
       onCellChange: (id) => setCellId(id),
@@ -147,7 +154,24 @@ export default function App() {
   }
   const tts = ttsRef.current
 
+  // Opened from a QR on the other device. Also handled on hashchange: arriving
+  // at the link while the app is already open changes only the fragment, which
+  // is a same-document navigation — nothing remounts, so a mount-only effect
+  // would quietly ignore it.
   useEffect(() => {
+    const consume = () => {
+      const match = /[#&]s=([^&]+)/.exec(location.hash)
+      if (!match) return
+      history.replaceState(null, '', location.pathname + location.search)
+      decodeSnapshot(match[1]).then(setIncoming, () => setIncoming(null))
+    }
+    consume()
+    window.addEventListener('hashchange', consume)
+    return () => window.removeEventListener('hashchange', consume)
+  }, [])
+
+  useEffect(() => {
+    watchVisibility()
     const load = () => setVoices(tts.voices())
     load()
     if (typeof speechSynthesis !== 'undefined') speechSynthesis.addEventListener('voiceschanged', load)
@@ -395,7 +419,22 @@ export default function App() {
 
   return (
     <AppContext.Provider value={api}>
-      <div style={{ maxWidth: 480, margin: '0 auto', minHeight: '100vh', background: '#08080b', position: 'relative' }}>
+      <div
+        style={
+          wide
+            ? { display: 'flex', gap: 32, maxWidth: 1180, margin: '0 auto', minHeight: '100vh', background: '#08080b' }
+            : {
+                maxWidth: 480,
+                margin: '0 auto',
+                minHeight: '100vh',
+                background: '#08080b',
+                position: 'relative',
+                paddingTop: 'var(--safe-top)',
+              }
+        }
+      >
+        {wide && <SideNav active={activeTab} onTap={(k) => (k === 'home' ? go.home() : k === 'learn' ? go.learn() : k === 'map' ? go.map() : go.drill())} />}
+        <div style={wide ? { flex: 1, minWidth: 0, maxWidth: 720, position: 'relative' } : undefined}>
         {!storageWorks && <StorageWarning />}
         {view === 'home' && <Home />}
         {view === 'learn' && <Learn />}
@@ -424,12 +463,16 @@ export default function App() {
 
         {sheet && <LawSheet sheet={sheet} onClose={() => setSheet(null)} />}
         {syncOpen && <SyncSheet onClose={() => setSyncOpen(false)} />}
+        {incoming && <IncomingTransfer snapshot={incoming} onDone={() => setIncoming(null)} />}
         {voicesOpen && <VoiceSheet onClose={() => setVoicesOpen(false)} />}
 
-        <BottomNav
-          active={activeTab}
-          onTap={(k) => (k === 'home' ? go.home() : k === 'learn' ? go.learn() : k === 'map' ? go.map() : go.drill())}
-        />
+        </div>
+        {!wide && (
+          <BottomNav
+            active={activeTab}
+            onTap={(k) => (k === 'home' ? go.home() : k === 'learn' ? go.learn() : k === 'map' ? go.map() : go.drill())}
+          />
+        )}
       </div>
     </AppContext.Provider>
   )

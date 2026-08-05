@@ -8,6 +8,10 @@ export default function VoiceSheet({ onClose }: { onClose: () => void }) {
   return (
     <Sheet onClose={onClose} maxHeight="60vh">
       <div style={{ fontFamily: MONO_DISPLAY, fontSize: 16, fontWeight: 700 }}>Narration voice</div>
+      <div style={{ fontSize: 12, color: C.dim, marginTop: 4, lineHeight: 1.55 }}>
+        Chapters are narrated by a recorded voice — that is what keeps playing with the screen locked. These
+        choices apply to anything not yet recorded, which your phone reads aloud instead.
+      </div>
       <div style={{ marginTop: 12, display: 'flex', flexDirection: 'column', gap: 6 }}>
         {voices.length === 0 && (
           <Tap

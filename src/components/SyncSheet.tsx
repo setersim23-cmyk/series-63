@@ -1,7 +1,9 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useState } from 'react'
 import Sheet from './Sheet'
+import QrCode from './QrCode'
 import { useApp } from '../context'
 import { decodeProgress, encodeProgress } from '../lib/store'
+import { transferUrl } from '../lib/transfer'
 import { C, MONO_DISPLAY, PrimaryButton, Tap } from '../ui'
 
 const boxStyle = {
@@ -17,24 +19,37 @@ const boxStyle = {
 }
 
 /**
- * Progress lives on the device, so moving between the installed app and a backup
- * copy means moving a code by hand. It doubles as a "paste this into Notes" backup.
+ * Moving progress between devices. The QR is the fast path — point the other
+ * device's camera at it and the app opens with the transfer offered. The code
+ * below it is the fallback, and doubles as a backup you can paste into Notes.
  */
 export default function SyncSheet({ onClose }: { onClose: () => void }) {
   const { store, progress } = useApp()
+  const [url, setUrl] = useState<string | null>(null)
+  const [showCode, setShowCode] = useState(false)
   const [input, setInput] = useState('')
   const [message, setMessage] = useState('')
 
-  const code = useMemo(() => encodeProgress(store), [store])
+  useEffect(() => {
+    let live = true
+    transferUrl(store).then(
+      (u) => live && setUrl(u),
+      () => live && setMessage('Could not build the QR — use the code below.')
+    )
+    return () => {
+      live = false
+    }
+  }, [store])
 
   const copy = () => {
+    const code = encodeProgress(store)
     if (navigator.clipboard?.writeText) {
       navigator.clipboard.writeText(code).then(
         () => setMessage('Copied — paste it into your other copy.'),
-        () => setMessage('Copy failed — long-press the code below and copy manually.')
+        () => setMessage('Copy failed — long-press the code and copy manually.')
       )
     } else {
-      setMessage('Long-press the code below and copy it manually.')
+      setMessage('Long-press the code and copy it manually.')
     }
   }
 
@@ -49,42 +64,62 @@ export default function SyncSheet({ onClose }: { onClose: () => void }) {
   }
 
   return (
-    <Sheet onClose={onClose} maxHeight="75vh">
-      <div style={{ fontFamily: MONO_DISPLAY, fontSize: 16, fontWeight: 700 }}>⇅ Progress transfer</div>
+    <Sheet onClose={onClose} maxHeight="88vh">
+      <div style={{ fontFamily: MONO_DISPLAY, fontSize: 16, fontWeight: 700 }}>⇅ Move my progress</div>
       <div style={{ fontSize: 12, color: C.dim, marginTop: 4, lineHeight: 1.55 }}>
-        Your progress lives on this device only. To move it between the home-screen app and a backup copy: copy the
-        code here, open the other copy, paste it there.
+        Point your other device’s camera at this code. It opens the app there and offers to bring your
+        progress across — nothing is overwritten, the two are merged and the most recent work wins.
       </div>
 
-      <PrimaryButton onClick={copy} style={{ marginTop: 12, padding: 12, fontSize: 13 }}>
-        Copy my progress code
-      </PrimaryButton>
-      <textarea readOnly value={code} style={{ ...boxStyle, marginTop: 8, color: C.faint }} />
-
-      <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '.08em', color: C.faint, marginTop: 14 }}>
-        RESTORE FROM A CODE
+      <div style={{ marginTop: 14 }}>
+        {url ? (
+          <QrCode text={url} size={230} />
+        ) : (
+          <div style={{ textAlign: 'center', fontSize: 12, color: C.faint, padding: 40 }}>building…</div>
+        )}
       </div>
-      <textarea
-        value={input}
-        onChange={(e) => setInput(e.target.value)}
-        placeholder="Paste a progress code here"
-        style={{ ...boxStyle, marginTop: 6, color: '#c9c9d4' }}
-      />
+
       <Tap
-        onClick={apply}
-        style={{
-          marginTop: 8,
-          textAlign: 'center',
-          background: C.raisedAlt,
-          border: `1px solid ${C.borderRaised}`,
-          borderRadius: 12,
-          padding: 11,
-          fontSize: 13,
-          fontWeight: 600,
-        }}
+        onClick={() => setShowCode((s) => !s)}
+        style={{ marginTop: 14, textAlign: 'center', fontSize: 12, color: C.link, padding: 4 }}
       >
-        Apply — replace this copy’s progress
+        {showCode ? 'Hide the text code' : 'No camera? Use a text code instead'}
       </Tap>
+
+      {showCode && (
+        <>
+          <PrimaryButton onClick={copy} style={{ marginTop: 8, padding: 12, fontSize: 13 }}>
+            Copy my progress code
+          </PrimaryButton>
+          <textarea readOnly value={encodeProgress(store)} style={{ ...boxStyle, marginTop: 8, color: C.faint }} />
+
+          <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '.08em', color: C.faint, marginTop: 14 }}>
+            RESTORE FROM A CODE
+          </div>
+          <textarea
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            placeholder="Paste a progress code here"
+            style={{ ...boxStyle, marginTop: 6, color: '#c9c9d4' }}
+          />
+          <Tap
+            onClick={apply}
+            style={{
+              marginTop: 8,
+              textAlign: 'center',
+              background: C.raisedAlt,
+              border: `1px solid ${C.borderRaised}`,
+              borderRadius: 12,
+              padding: 11,
+              fontSize: 13,
+              fontWeight: 600,
+            }}
+          >
+            Apply — replace this copy’s progress
+          </Tap>
+        </>
+      )}
+
       <div style={{ fontSize: 12, color: C.green, marginTop: 8, minHeight: 16 }}>{message}</div>
     </Sheet>
   )

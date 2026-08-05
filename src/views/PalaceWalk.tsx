@@ -28,7 +28,7 @@ export default function PalaceWalk({
     const had = state.grades.filter((g) => g === 2).length
     const shaky = state.grades.filter((g) => g === 1).length
     return (
-      <div style={{ padding: '16px 18px 130px' }}>
+      <div style={{ padding: '16px 18px calc(130px + var(--safe-bottom))' }}>
         <div style={{ textAlign: 'center', marginTop: 40 }}>
           <div style={{ fontSize: 40 }}>🏛</div>
           <div style={{ fontFamily: MONO_DISPLAY, fontSize: 20, fontWeight: 700, marginTop: 10 }}>
@@ -58,7 +58,7 @@ export default function PalaceWalk({
   const core = cell ? (cell.items.find((x) => x.t === 'concept') ?? cell.items[0]) : null
 
   return (
-    <div style={{ padding: '16px 18px 130px' }}>
+    <div style={{ padding: '16px 18px calc(130px + var(--safe-bottom))' }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <Tap onClick={exit} style={{ fontSize: 13, color: '#8a8a9a' }}>
           ✕ Leave the palace

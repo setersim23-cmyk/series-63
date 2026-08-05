@@ -15,7 +15,7 @@ export default function Simulator({
 
   if (state.ci == null) {
     return (
-      <div style={{ padding: '16px 18px 130px' }}>
+      <div style={{ padding: '16px 18px calc(130px + var(--safe-bottom))' }}>
         <BackLink onClick={go.drill}>‹ Back</BackLink>
         <div style={{ marginTop: 8 }}>
           <Title>⚖ {SIM.title}</Title>
@@ -55,7 +55,7 @@ export default function Simulator({
   const backToCases = () => setState({ ci: null, step: 0, pick: null, wrong: 0 })
 
   return (
-    <div style={{ padding: '16px 18px 130px' }}>
+    <div style={{ padding: '16px 18px calc(130px + var(--safe-bottom))' }}>
       <BackLink onClick={backToCases}>‹ Back</BackLink>
       <div style={{ fontFamily: MONO_DISPLAY, fontSize: 17, fontWeight: 700, marginTop: 8 }}>{theCase.name}</div>
       <div style={{ fontSize: 11, color: C.faint, marginTop: 2 }}>

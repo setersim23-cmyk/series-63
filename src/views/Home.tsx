@@ -1,4 +1,5 @@
 import { useApp } from '../context'
+import { useWide } from '../lib/useWide'
 import { META } from '../data/meta'
 import { FALLBACK_PLAN, PLAN, type PlanDay } from '../data/plan'
 import { EXAM_DATE, PASS_TARGET } from '../lib/config'
@@ -34,6 +35,7 @@ function todaysPlan(): PlanDay {
 
 export default function Home() {
   const { store, go, openSync } = useApp()
+  const wide = useWide()
 
   const score = overallScore(store)
   const ringColor = score >= PASS_TARGET ? GREEN : score >= 45 ? AMBER : RED
@@ -59,7 +61,7 @@ export default function Home() {
   const byWeight = [...ORDER].sort((a, b) => META[b].w - META[a].w)
 
   return (
-    <div style={{ padding: '20px 18px 120px' }}>
+    <div style={{ padding: '20px 18px calc(120px + var(--safe-bottom))' }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
         <div style={{ fontFamily: MONO_DISPLAY, fontSize: 20, fontWeight: 700, letterSpacing: '-0.02em' }}>
           Series 63
@@ -187,8 +189,22 @@ export default function Home() {
         ⇅ Backup / transfer my progress
       </Tap>
 
-      {/* harada chart */}
-      <div style={{ marginTop: 14, display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
+      {/* harada chart + chapters: two columns on a laptop, stacked on a phone */}
+      <div
+        style={
+          wide
+            ? {
+                marginTop: 18,
+                display: 'grid',
+                gridTemplateColumns: 'minmax(0, 400px) minmax(0, 1fr)',
+                gap: 28,
+                alignItems: 'start',
+              }
+            : undefined
+        }
+      >
+      <div>
+      <div style={{ marginTop: wide ? 0 : 14, display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
         <SectionLabel>HARADA · 64 CELLS</SectionLabel>
         <div style={{ fontSize: 11, color: C.ghost }}>tap any cell to open it</div>
       </div>
@@ -258,9 +274,11 @@ export default function Home() {
         <span>· dim = untouched</span>
         <span>· center block = chapter scores</span>
       </div>
+      </div>
 
       {/* chapters */}
-      <SectionLabel style={{ marginTop: 22 }}>CHAPTERS · BY EXAM WEIGHT</SectionLabel>
+      <div>
+      <SectionLabel style={{ marginTop: wide ? 0 : 22 }}>CHAPTERS · BY EXAM WEIGHT</SectionLabel>
       <div style={{ marginTop: 10, display: 'flex', flexDirection: 'column', gap: 8 }}>
         {byWeight.map((code) => {
           const s = chapterScore(store, code)
@@ -276,14 +294,24 @@ export default function Home() {
                 padding: '12px 14px',
               }}
             >
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+              {/* the desktop column is too narrow for one line, so the weight
+                  drops underneath rather than truncating the chapter name */}
+              <div
+                style={{
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  alignItems: wide ? 'flex-start' : 'center',
+                  flexDirection: wide ? 'column' : 'row',
+                  gap: wide ? 3 : 0,
+                }}
+              >
                 <div style={{ display: 'flex', alignItems: 'center', gap: 8, minWidth: 0 }}>
                   <span style={{ width: 8, height: 8, borderRadius: 3, background: color, flex: 'none' }} />
                   <span
                     style={{
                       fontSize: 13,
                       fontWeight: 600,
-                      whiteSpace: 'nowrap',
+                      whiteSpace: wide ? 'normal' : 'nowrap',
                       overflow: 'hidden',
                       textOverflow: 'ellipsis',
                     }}
@@ -291,7 +319,7 @@ export default function Home() {
                     {META[code].name}
                   </span>
                 </div>
-                <div style={{ fontSize: 11, color: C.faint, flex: 'none' }}>
+                <div style={{ fontSize: 11, color: C.faint, flex: 'none', paddingLeft: wide ? 16 : 0 }}>
                   {META[code].w}% · {META[code].q} questions · {s}/100
                 </div>
               </div>
@@ -309,6 +337,8 @@ export default function Home() {
             </Tap>
           )
         })}
+      </div>
+      </div>
       </div>
     </div>
   )

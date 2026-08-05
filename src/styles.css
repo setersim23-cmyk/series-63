@@ -1,5 +1,21 @@
 @import './fonts.css';
 
+/*
+ * Installed as a home-screen app the page is drawn edge to edge, underneath the
+ * status bar and the home indicator. These are the only safe numbers to lay out
+ * against — the insets are 0 in a normal browser tab, so the same values work
+ * everywhere.
+ *
+ * --nav-h is the bottom bar's measured height: 60px of chrome plus whatever the
+ * home indicator claims. The bar itself pads from --safe-bottom too, so the two
+ * cannot drift apart — a test asserts they still agree.
+ */
+:root {
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --nav-h: calc(60px + var(--safe-bottom));
+}
+
 html,
 body {
   margin: 0;

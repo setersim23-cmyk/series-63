@@ -1,5 +1,7 @@
 import { useApp } from '../context'
 import { cellItems, findCell } from '../lib/content'
+import { hasAudio } from '../lib/narrator'
+import { useWide } from '../lib/useWide'
 import type { CellId } from '../types'
 import { C, Tap } from '../ui'
 
@@ -9,16 +11,20 @@ const RATES = [0.75, 1, 1.25, 1.5, 2]
 export default function TtsBar({ cellId, color }: { cellId: CellId; color: string }) {
   const { store, ttsState, toggleCellSpeech, setRate, openVoices } = useApp()
   const total = cellItems(findCell(cellId)).length
+  // Rendered cells play one recorded voice; the picker only drives the fallback.
+  const recorded = hasAudio(cellId)
+  // No bottom bar to clear on a laptop.
+  const wide = useWide()
 
   return (
     <div
       style={{
         position: 'fixed',
-        bottom: 66,
+        bottom: wide ? 20 : 'calc(var(--nav-h) + 8px)',
         left: '50%',
         transform: 'translateX(-50%)',
         width: '100%',
-        maxWidth: 480,
+        maxWidth: wide ? 720 : 480,
         zIndex: 6,
         padding: '0 10px',
       }}
@@ -103,7 +109,7 @@ export default function TtsBar({ cellId, color }: { cellId: CellId; color: strin
                 textOverflow: 'ellipsis',
               }}
             >
-              {(store.settings.voice || 'Default').split(' ').slice(0, 2).join(' ')}
+              {recorded ? 'Ryan' : (store.settings.voice || 'Default').split(' ').slice(0, 2).join(' ')}
             </div>
             <div>voice ›</div>
           </Tap>
