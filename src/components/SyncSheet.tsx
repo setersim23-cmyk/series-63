@@ -4,7 +4,7 @@ import QrCode from './QrCode'
 import { useApp } from '../context'
 import { decodeProgress, encodeProgress } from '../lib/store'
 import { transferUrl } from '../lib/transfer'
-import { C, MONO_DISPLAY, PrimaryButton, Tap } from '../ui'
+import { C, fs, MONO_DISPLAY, PrimaryButton, Tap } from '../ui'
 
 const boxStyle = {
   width: '100%',
@@ -12,7 +12,7 @@ const boxStyle = {
   background: C.panelSoft,
   border: `1px solid ${C.border}`,
   borderRadius: 10,
-  fontSize: 10,
+  fontSize: fs(10),
   padding: 8,
   fontFamily: 'monospace',
   boxSizing: 'border-box' as const,
@@ -65,8 +65,8 @@ export default function SyncSheet({ onClose }: { onClose: () => void }) {
 
   return (
     <Sheet onClose={onClose} maxHeight="88vh">
-      <div style={{ fontFamily: MONO_DISPLAY, fontSize: 16, fontWeight: 700 }}>⇅ Move my progress</div>
-      <div style={{ fontSize: 12, color: C.dim, marginTop: 4, lineHeight: 1.55 }}>
+      <div style={{ fontFamily: MONO_DISPLAY, fontSize: fs(16), fontWeight: 700 }}>⇅ Move my progress</div>
+      <div style={{ fontSize: fs(12), color: C.dim, marginTop: 4, lineHeight: 1.55 }}>
         Point your other device’s camera at this code. It opens the app there and offers to bring your
         progress across — nothing is overwritten, the two are merged and the most recent work wins.
       </div>
@@ -75,32 +75,32 @@ export default function SyncSheet({ onClose }: { onClose: () => void }) {
         {url ? (
           <QrCode text={url} size={230} />
         ) : (
-          <div style={{ textAlign: 'center', fontSize: 12, color: C.faint, padding: 40 }}>building…</div>
+          <div style={{ textAlign: 'center', fontSize: fs(12), color: C.faint, padding: 40 }}>building…</div>
         )}
       </div>
 
       <Tap
         onClick={() => setShowCode((s) => !s)}
-        style={{ marginTop: 14, textAlign: 'center', fontSize: 12, color: C.link, padding: 4 }}
+        style={{ marginTop: 14, textAlign: 'center', fontSize: fs(12), color: C.link, padding: 4 }}
       >
         {showCode ? 'Hide the text code' : 'No camera? Use a text code instead'}
       </Tap>
 
       {showCode && (
         <>
-          <PrimaryButton onClick={copy} style={{ marginTop: 8, padding: 12, fontSize: 13 }}>
+          <PrimaryButton onClick={copy} style={{ marginTop: 8, padding: 12, fontSize: fs(13) }}>
             Copy my progress code
           </PrimaryButton>
           <textarea readOnly value={encodeProgress(store)} style={{ ...boxStyle, marginTop: 8, color: C.faint }} />
 
-          <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '.08em', color: C.faint, marginTop: 14 }}>
+          <div style={{ fontSize: fs(11), fontWeight: 700, letterSpacing: '.08em', color: C.faint, marginTop: 14 }}>
             RESTORE FROM A CODE
           </div>
           <textarea
             value={input}
             onChange={(e) => setInput(e.target.value)}
             placeholder="Paste a progress code here"
-            style={{ ...boxStyle, marginTop: 6, color: '#c9c9d4' }}
+            style={{ ...boxStyle, marginTop: 6, color: 'var(--kc9c9d4)' }}
           />
           <Tap
             onClick={apply}
@@ -111,7 +111,7 @@ export default function SyncSheet({ onClose }: { onClose: () => void }) {
               border: `1px solid ${C.borderRaised}`,
               borderRadius: 12,
               padding: 11,
-              fontSize: 13,
+              fontSize: fs(13),
               fontWeight: 600,
             }}
           >
@@ -120,7 +120,7 @@ export default function SyncSheet({ onClose }: { onClose: () => void }) {
         </>
       )}
 
-      <div style={{ fontSize: 12, color: C.green, marginTop: 8, minHeight: 16 }}>{message}</div>
+      <div style={{ fontSize: fs(12), color: C.green, marginTop: 8, minHeight: 16 }}>{message}</div>
     </Sheet>
   )
 }

@@ -123,6 +123,10 @@ export interface MockResult {
 export interface Settings {
   rate: number
   voice: string | null
+  /** Multiplier on the type scale, on top of the screen-size response. */
+  text?: number
+  /** 'dark' as designed, 'light' for reading on paper, 'auto' to follow the OS. */
+  theme?: 'dark' | 'light' | 'auto'
 }
 
 export interface Store {
@@ -130,4 +134,10 @@ export interface Store {
   missed: Record<string, MissedEntry>
   mocks: MockResult[]
   settings: Settings
+  /**
+   * Question index → when it was last put in front of you. Drives the rotation
+   * that keeps a second sitting from being the first one again. Device-local:
+   * it does not ride along in a transfer.
+   */
+  shown?: Record<string, number>
 }

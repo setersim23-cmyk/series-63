@@ -51,10 +51,34 @@ Piper and the voice model download on first run into `.audio-build/` (gitignored
 ~150 MB). The spoken text is derived the same way `src/lib/tts.ts` derives it, so
 recordings and the fallback never disagree.
 
-Any cell without a clip falls back to speech synthesis automatically, so adding
-content without re-rendering degrades rather than breaks. The audio is
+Clips are addressed by position — `SEC-1-3.mp3` is the fourth card — so a cell
+whose recording has a different number of clips than the app has cards falls back
+to speech synthesis rather than reading the wrong text under the right heading.
+Adding content without re-rendering degrades rather than breaks. The audio is
 deliberately excluded from the service worker's precache — it is tens of
 megabytes — and is cached per clip as you listen.
+
+## Reading it
+
+Two settings sit on the home screen, under the day's plan.
+
+**Text size** multiplies a scale that already responds to the width of the
+screen: about 16px on a phone, where the design was drawn, up to 18 on a laptop.
+Every size in the app is written as the pixel value the design specified —
+`fs(14)` — and resolves through `--fs-unit`, so the two effects compose instead
+of one replacing the other.
+
+**Theme** is dark, light, or whatever the phone is set to. The light palette is
+not hand-written: `scripts/make-theme.mjs` derives each of the 94 colours from
+its dark counterpart by keeping the hue, keeping the chroma where sRGB has room
+for it, and — the part that matters — keeping its WCAG contrast against the page.
+A hairline border stays a hairline; body text stays exactly as readable as it
+was. The chapter hues are `oklch()` built at render time, so they reflect through
+a pair of variables instead. Re-run the script after adding a colour:
+
+```sh
+node scripts/make-theme.mjs
+```
 
 ## Two devices
 
@@ -105,6 +129,9 @@ src/
     content.ts       textbook lookups, citation linking, loci
     quiz.ts          session building for each drill mode, spaced repetition
     tts.ts           speech synthesis and its platform workarounds
+    narrator.ts      the pre-rendered clips, and the fallback to speech
+    color.ts         chapter hues, reflected between the two themes
+  theme.css          generated: both palettes, one variable per colour
   content/           generated: textbook, question bank, map of authorities
   data/              generated: chapter meta, laws, frameworks, loci, tools, simulator
 scripts/             the generators, and the icon builder
@@ -121,14 +148,21 @@ than hand-edited. If that bundle is refreshed:
 node scripts/convert-content.mjs      # project/content/*.js  → src/content/*.ts
 node scripts/extract-design-data.mjs  # the prototype's data tables → src/data/*.ts
 node scripts/make-icons.mjs           # app icons → public/
+node scripts/make-theme.mjs           # the light palette → src/theme.css
 ```
 
 `convert-content.mjs` fails the run if the content drifts out of shape — 8 chapters of
 8 cells, every cell covered by at least one question, and no question or memorize fact
 citing a cell that does not exist.
 
-Current content: **8 chapters · 64 cells · 234 memorize facts · 134 questions · 61 traps
+Current content: **8 chapters · 64 cells · 234 memorize facts · 212 questions · 61 traps
 · 6 layers of authority · 64 loci**.
+
+The bank is sized so three full 60-question mocks can be drawn without a repeat —
+the weighting follows the real exam, so ethics alone needs fifteen fresh
+questions a sitting. Quizzes serve the least-recently-seen questions first
+(`store.shown`), so a second mock works through the rest of the bank rather than
+reshuffling the first one.
 
 ## Tuning
 

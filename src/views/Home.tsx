@@ -14,7 +14,7 @@ import {
   weakestChapter,
 } from '../lib/scoring'
 import { ORDER, type ChapterCode } from '../types'
-import { C, MONO_DISPLAY, SectionLabel, Tap } from '../ui'
+import { C, fs, MONO_DISPLAY, SectionLabel, Tap } from '../ui'
 
 const RING_R = 45
 const CIRC = 2 * Math.PI * RING_R
@@ -34,7 +34,7 @@ function todaysPlan(): PlanDay {
 }
 
 export default function Home() {
-  const { store, go, openSync } = useApp()
+  const { store, go, openSync, setTextScale, setTheme } = useApp()
   const wide = useWide()
 
   const score = overallScore(store)
@@ -45,7 +45,7 @@ export default function Home() {
   const readyHint =
     score >= PASS_TARGET
       ? `Hold it here. Weakest area: ${META[weak].name}.`
-      : `White tick = pass line (${PASS_TARGET}). Biggest lift right now: ${META[weak].name} (${META[weak].w}% of the exam).`
+      : `The tick on the ring = pass line (${PASS_TARGET}). Biggest lift right now: ${META[weak].name} (${META[weak].w}% of the exam).`
 
   const plan = todaysPlan()
   const openPlan = () => {
@@ -63,10 +63,10 @@ export default function Home() {
   return (
     <div style={{ padding: '20px 18px calc(120px + var(--safe-bottom))' }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
-        <div style={{ fontFamily: MONO_DISPLAY, fontSize: 20, fontWeight: 700, letterSpacing: '-0.02em' }}>
+        <div style={{ fontFamily: MONO_DISPLAY, fontSize: fs(20), fontWeight: 700, letterSpacing: '-0.02em' }}>
           Series 63
         </div>
-        <div style={{ fontSize: 12, color: C.dim }}>{countdown()}</div>
+        <div style={{ fontSize: fs(12), color: C.dim }}>{countdown()}</div>
       </div>
 
       {/* readiness */}
@@ -82,7 +82,7 @@ export default function Home() {
         <div style={{ display: 'flex', alignItems: 'center', gap: 18 }}>
           <div style={{ position: 'relative', width: 104, height: 104, flex: 'none' }}>
             <svg width="104" height="104" viewBox="0 0 104 104">
-              <circle cx="52" cy="52" r={RING_R} fill="none" stroke="#1d1d26" strokeWidth="9" />
+              <circle cx="52" cy="52" r={RING_R} fill="none" stroke="var(--k1d1d26)" strokeWidth="9" />
               <circle
                 cx="52"
                 cy="52"
@@ -101,7 +101,7 @@ export default function Home() {
                 cy="52"
                 r={RING_R}
                 fill="none"
-                stroke="#fff"
+                stroke="var(--kffffff)"
                 strokeWidth="2"
                 strokeDasharray="2 280.7"
                 strokeDashoffset={-((CIRC * PASS_TARGET) / 100)}
@@ -119,13 +119,13 @@ export default function Home() {
                 justifyContent: 'center',
               }}
             >
-              <div style={{ fontFamily: MONO_DISPLAY, fontSize: 30, fontWeight: 700, lineHeight: 1 }}>{score}</div>
-              <div style={{ fontSize: 10, color: C.dim, marginTop: 2 }}>READY</div>
+              <div style={{ fontFamily: MONO_DISPLAY, fontSize: fs(30), fontWeight: 700, lineHeight: 1 }}>{score}</div>
+              <div style={{ fontSize: fs(10), color: C.dim, marginTop: 2 }}>READY</div>
             </div>
           </div>
           <div style={{ flex: 1, minWidth: 0 }}>
-            <div style={{ fontSize: 14, fontWeight: 600 }}>{readyLabel}</div>
-            <div style={{ fontSize: 12, color: C.dim, marginTop: 4, lineHeight: 1.5 }}>{readyHint}</div>
+            <div style={{ fontSize: fs(14), fontWeight: 600 }}>{readyLabel}</div>
+            <div style={{ fontSize: fs(12), color: C.dim, marginTop: 4, lineHeight: 1.5 }}>{readyHint}</div>
             <div style={{ display: 'flex', gap: 14, marginTop: 10 }}>
               {[
                 [`${solidCount(store, PASS_TARGET)}/64`, 'CELLS SOLID'],
@@ -133,8 +133,8 @@ export default function Home() {
                 [`${dueCount(store)}`, 'DUE NOW'],
               ].map(([value, label]) => (
                 <div key={label}>
-                  <div style={{ fontFamily: MONO_DISPLAY, fontSize: 16, fontWeight: 700 }}>{value}</div>
-                  <div style={{ fontSize: 10, color: C.faint }}>{label}</div>
+                  <div style={{ fontFamily: MONO_DISPLAY, fontSize: fs(16), fontWeight: 700 }}>{value}</div>
+                  <div style={{ fontSize: fs(10), color: C.faint }}>{label}</div>
                 </div>
               ))}
             </div>
@@ -161,30 +161,34 @@ export default function Home() {
             width: 36,
             height: 36,
             borderRadius: 10,
-            background: '#1a1a24',
+            background: 'var(--k1a1a24)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
             fontFamily: MONO_DISPLAY,
             fontWeight: 700,
-            fontSize: 13,
+            fontSize: fs(13),
             color: C.text,
           }}
         >
           {new Date().getDate()}
         </div>
         <div style={{ flex: 1, minWidth: 0 }}>
-          <div style={{ fontSize: 11, color: C.faint, letterSpacing: '.08em' }}>TODAY’S PLAN</div>
-          <div style={{ fontSize: 13, fontWeight: 600, marginTop: 2, lineHeight: 1.4 }}>
+          <div style={{ fontSize: fs(11), color: C.faint, letterSpacing: '.08em' }}>TODAY’S PLAN</div>
+          <div style={{ fontSize: fs(13), fontWeight: 600, marginTop: 2, lineHeight: 1.4 }}>
             {plan.title} — {plan.detail}
           </div>
         </div>
-        <div style={{ color: C.ghost, fontSize: 18 }}>›</div>
+        <div style={{ color: C.ghost, fontSize: fs(18) }}>›</div>
       </Tap>
+
+      <TextSizePicker value={store.settings.text ?? 1} onPick={setTextScale} />
+
+      <ThemePicker value={store.settings.theme ?? 'dark'} onPick={setTheme} />
 
       <Tap
         onClick={openSync}
-        style={{ marginTop: 10, textAlign: 'center', fontSize: 11, color: '#66667a', padding: 4 }}
+        style={{ marginTop: 10, textAlign: 'center', fontSize: fs(11), color: 'var(--k66667a)', padding: 4 }}
       >
         ⇅ Backup / transfer my progress
       </Tap>
@@ -206,7 +210,7 @@ export default function Home() {
       <div>
       <div style={{ marginTop: wide ? 0 : 14, display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
         <SectionLabel>HARADA · 64 CELLS</SectionLabel>
-        <div style={{ fontSize: 11, color: C.ghost }}>tap any cell to open it</div>
+        <div style={{ fontSize: fs(11), color: C.ghost }}>tap any cell to open it</div>
       </div>
       <div style={{ marginTop: 10, display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 8 }}>
         {around.map((code, bi) => (
@@ -215,7 +219,7 @@ export default function Home() {
             style={{
               borderRadius: 12,
               padding: 5,
-              background: code === null ? '#12121a' : '#0c0c11',
+              background: code === null ? 'var(--k12121a)' : 'var(--k0c0c11)',
               border: `1px solid ${code === null ? C.borderRaised : C.borderSoft}`,
             }}
           >
@@ -223,7 +227,7 @@ export default function Home() {
               {code === null
                 ? around.map((inner, ii) =>
                     inner === null ? (
-                      <ChartCell key={ii} label="63" fontSize={13} bg="#1a1a24" color={C.text} border="#2a2a36" />
+                      <ChartCell key={ii} label="63" fontSize={13} bg="var(--k1a1a24)" color={C.text} border="var(--k2a2a36)" />
                     ) : (
                       <ChartCell
                         key={ii}
@@ -258,8 +262,8 @@ export default function Home() {
                         label={`${n}`}
                         fontSize={10}
                         weight={600}
-                        bg={touched ? hue(code, 40, 0.09, 0.15 + (0.7 * s) / 100) : '#0e0e14'}
-                        color={touched ? '#f0f0f5' : '#4a4a5c'}
+                        bg={touched ? hue(code, 40, 0.09, 0.15 + (0.7 * s) / 100) : 'var(--k0e0e14)'}
+                        color={touched ? 'var(--kf0f0f5)' : 'var(--k4a4a5c)'}
                         border={touched ? 'transparent' : C.borderSoft}
                         onTap={() => go.cell(id)}
                       />
@@ -269,7 +273,7 @@ export default function Home() {
           </div>
         ))}
       </div>
-      <div style={{ marginTop: 8, display: 'flex', gap: 12, flexWrap: 'wrap', fontSize: 10, color: C.faint }}>
+      <div style={{ marginTop: 8, display: 'flex', gap: 12, flexWrap: 'wrap', fontSize: fs(10), color: C.faint }}>
         <span>fill = readiness</span>
         <span>· dim = untouched</span>
         <span>· center block = chapter scores</span>
@@ -309,7 +313,7 @@ export default function Home() {
                   <span style={{ width: 8, height: 8, borderRadius: 3, background: color, flex: 'none' }} />
                   <span
                     style={{
-                      fontSize: 13,
+                      fontSize: fs(13),
                       fontWeight: 600,
                       whiteSpace: wide ? 'normal' : 'nowrap',
                       overflow: 'hidden',
@@ -319,11 +323,11 @@ export default function Home() {
                     {META[code].name}
                   </span>
                 </div>
-                <div style={{ fontSize: 11, color: C.faint, flex: 'none', paddingLeft: wide ? 16 : 0 }}>
+                <div style={{ fontSize: fs(11), color: C.faint, flex: 'none', paddingLeft: wide ? 16 : 0 }}>
                   {META[code].w}% · {META[code].q} questions · {s}/100
                 </div>
               </div>
-              <div style={{ marginTop: 8, height: 5, borderRadius: 3, background: '#1c1c26', overflow: 'hidden' }}>
+              <div style={{ marginTop: 8, height: 5, borderRadius: 3, background: 'var(--k1c1c26)', overflow: 'hidden' }}>
                 <div
                   style={{
                     height: '100%',
@@ -344,6 +348,123 @@ export default function Home() {
   )
 }
 
+/**
+ * Text size.
+ *
+ * The steps multiply the scale rather than set it, so the app keeps responding
+ * to the width of the screen at whichever size you pick — "larger" on a laptop
+ * is still larger than "larger" on a phone. Each label is drawn at the size it
+ * selects, so the row itself is the preview.
+ */
+const TEXT_STEPS: [string, number][] = [
+  ['A', 0.88],
+  ['A', 1],
+  ['A', 1.15],
+  ['A', 1.32],
+]
+
+function TextSizePicker({ value, onPick }: { value: number; onPick: (scale: number) => void }) {
+  return (
+    <div
+      style={{
+        marginTop: 10,
+        display: 'flex',
+        alignItems: 'center',
+        gap: 8,
+        background: C.panel,
+        border: `1px solid ${C.border}`,
+        borderRadius: 12,
+        padding: '9px 12px',
+      }}
+    >
+      <div style={{ fontSize: fs(11), color: C.faint, letterSpacing: '.08em', flex: 1 }}>TEXT SIZE</div>
+      {TEXT_STEPS.map(([label, scale]) => {
+        const on = Math.abs(value - scale) < 0.01
+        return (
+          <Tap
+            key={scale}
+            onClick={() => onPick(scale)}
+            label={`Text size ${Math.round(scale * 100)}%`}
+            style={{
+              width: 38,
+              height: 32,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              borderRadius: 8,
+              // Deliberately not through the scale: this row has to stay legible
+              // and the same shape at every setting, or it fights the choice.
+              fontSize: 11 + scale * 5,
+              fontWeight: 700,
+              background: on ? C.text : C.raisedAlt,
+              color: on ? C.bg : C.dim,
+              border: `1px solid ${on ? 'transparent' : C.borderRaised}`,
+            }}
+          >
+            {label}
+          </Tap>
+        )
+      })}
+    </div>
+  )
+}
+
+/**
+ * Dark, light, or whatever the phone is doing. Auto is worth having on iOS,
+ * where the system switches at sunset and an app that does not follow is the
+ * only bright thing on the screen.
+ */
+const THEMES: ['dark' | 'light' | 'auto', string][] = [
+  ['dark', '◐ Dark'],
+  ['light', '◑ Light'],
+  ['auto', 'Auto'],
+]
+
+function ThemePicker({
+  value,
+  onPick,
+}: {
+  value: 'dark' | 'light' | 'auto'
+  onPick: (theme: 'dark' | 'light' | 'auto') => void
+}) {
+  return (
+    <div
+      style={{
+        marginTop: 8,
+        display: 'flex',
+        alignItems: 'center',
+        gap: 8,
+        background: C.panel,
+        border: `1px solid ${C.border}`,
+        borderRadius: 12,
+        padding: '9px 12px',
+      }}
+    >
+      <div style={{ fontSize: fs(11), color: C.faint, letterSpacing: '.08em', flex: 1 }}>THEME</div>
+      {THEMES.map(([key, label]) => {
+        const on = value === key
+        return (
+          <Tap
+            key={key}
+            onClick={() => onPick(key)}
+            style={{
+              padding: '7px 10px',
+              borderRadius: 8,
+              fontSize: fs(12),
+              fontWeight: 600,
+              background: on ? C.text : C.raisedAlt,
+              color: on ? C.bg : C.dim,
+              border: `1px solid ${on ? 'transparent' : C.borderRaised}`,
+            }}
+          >
+            {label}
+          </Tap>
+        )
+      })}
+    </div>
+  )
+}
+
 function ChartCell({
   label,
   fontSize,
@@ -354,6 +475,7 @@ function ChartCell({
   onTap,
 }: {
   label: string
+  /** Design pixel size — scaled through the type scale below. */
   fontSize: number
   weight?: number
   bg: string
@@ -367,7 +489,7 @@ function ChartCell({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    fontSize,
+    fontSize: fs(fontSize),
     fontWeight: weight,
     fontFamily: MONO_DISPLAY,
     background: bg,

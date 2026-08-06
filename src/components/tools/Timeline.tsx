@@ -1,6 +1,6 @@
 import type { ToolState } from '../../App'
 import { TIMELINE } from '../../data/tools'
-import { C, MONO_DISPLAY, Tap } from '../../ui'
+import { C, fs, MONO_DISPLAY, Tap } from '../../ui'
 import ToolPanel from './ToolPanel'
 
 /** Tap the events into the order the Act requires them. Graded once all are placed. */
@@ -39,8 +39,8 @@ export default function Timeline({
                 alignItems: 'center',
                 padding: '9px 12px',
                 borderRadius: 10,
-                background: !placed ? C.panel : done ? (right ? '#0e1f16' : '#210f14') : '#1a1a24',
-                border: `1px solid ${!placed ? C.border : done ? (right ? '#2a5c40' : '#5c2a38') : '#3a3a52'}`,
+                background: !placed ? C.panel : done ? (right ? 'var(--k0e1f16)' : 'var(--k210f14)') : 'var(--k1a1a24)',
+                border: `1px solid ${!placed ? C.border : done ? (right ? 'var(--k2a5c40)' : 'var(--k5c2a38)') : 'var(--k3a3a52)'}`,
               }}
             >
               <div
@@ -48,20 +48,20 @@ export default function Timeline({
                   width: 22,
                   height: 22,
                   borderRadius: '50%',
-                  background: '#1a1a24',
+                  background: 'var(--k1a1a24)',
                   flex: 'none',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                   fontFamily: MONO_DISPLAY,
-                  fontSize: 11,
+                  fontSize: fs(11),
                   fontWeight: 700,
                   color: !placed ? C.ghost : done ? (right ? C.green : C.pink) : C.text,
                 }}
               >
                 {placed ? pos + 1 : '·'}
               </div>
-              <div style={{ fontSize: 12, lineHeight: 1.5, color: '#d9d9e2' }}>{event}</div>
+              <div style={{ fontSize: fs(12), lineHeight: 1.5, color: 'var(--kd9d9e2)' }}>{event}</div>
             </Tap>
           )
         })}

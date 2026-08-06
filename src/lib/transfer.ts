@@ -53,7 +53,10 @@ const fromBase64Url = (s: string) => {
 
 /** Encodes progress as a compact, URL-safe string. `g` = gzipped, `r` = raw. */
 export async function encodeSnapshot(store: Store): Promise<string> {
-  const json = JSON.stringify({ t: Date.now(), s: store } satisfies Snapshot)
+  // `shown` is question-rotation bookkeeping for this device, and it is bulky
+  // relative to everything else worth carrying. Leave it behind.
+  const { shown: _rotation, ...carried } = store
+  const json = JSON.stringify({ t: Date.now(), s: carried } satisfies Snapshot)
   const bytes = enc.encode(json)
   if (!canCompress) return `r.${toBase64Url(bytes)}`
   const stream = new Blob([bytes]).stream().pipeThrough(new CompressionStream('gzip'))
@@ -113,6 +116,7 @@ export function mergeProgress(local: Store, incoming: Store): Store {
     missed,
     mocks: [...byTs.values()].sort((a, b) => a.ts - b.ts),
     settings: local.settings,
+    shown: local.shown,
   }
 }
 

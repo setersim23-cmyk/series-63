@@ -14,15 +14,47 @@ export function findCell(id: CellId | null): Cell | undefined {
   return findChapter(codeOf(id))?.cells.find((c) => c.id === id)
 }
 
-/** A cell's cards, plus its answer framework appended as a synthetic card. */
-export type DisplayItem = Item | { t: 'frame'; x: string; fr: Frame }
+export interface Locus {
+  room: string
+  spot: string
+  img: string
+}
+
+/**
+ * A cell's cards in reading order: the locus image, the content cards, the
+ * answer framework, then the cross-references into the other books.
+ *
+ * The locus and the refs are drawn as their own kind of card rather than an
+ * ItemCard, but they belong in this list all the same — it is what the narrator
+ * reads, what the player counts, and what the highlight indexes into, so
+ * anything left out of it is silently never spoken.
+ */
+export type DisplayItem =
+  | Item
+  | { t: 'frame'; x: string; fr: Frame }
+  | { t: 'locus'; x: string; locus: Locus }
+  | { t: 'refs'; x: string; refs: string[] }
 
 export function cellItems(cell: Cell | undefined): DisplayItem[] {
   if (!cell) return []
+  const out: DisplayItem[] = []
+
+  const locus = locusOf(cell.id)
+  if (locus) out.push({ t: 'locus', x: `${locus.room}. ${locus.spot}. ${locus.img}`, locus })
+
+  out.push(...cell.items)
+
   const fr = FRAMES[cell.id]
-  if (!fr) return cell.items
-  const x = `${fr.head}. ${fr.intro} ${fr.bullets.map(([b, r]) => `${b} ${r}`).join(' ')} ${fr.tail}`
-  return [...cell.items, { t: 'frame', x, fr }]
+  if (fr)
+    out.push({
+      t: 'frame',
+      x: `${fr.head}. ${fr.intro} ${fr.bullets.map(([b, r]) => `${b} ${r}`).join(' ')} ${fr.tail}`,
+      fr,
+    })
+
+  if (cell.refs.length) out.push({ t: 'refs', x: cell.refs.join('. '), refs: cell.refs })
+
+  return out
 }
 
 const SPOKEN_PREFIX: Record<string, string> = {
@@ -32,6 +64,8 @@ const SPOKEN_PREFIX: Record<string, string> = {
   link: 'Connection.',
   warn: 'Source note.',
   frame: 'The answer framework.',
+  locus: 'Your locus.',
+  refs: 'Second angles — the same material in your other books.',
 }
 
 /** What the narrator actually says — section signs and middots don't read well aloud. */
@@ -42,7 +76,7 @@ export function speakables(cell: Cell | undefined): { label: string; text: strin
   }))
 }
 
-export function locusOf(id: CellId): { room: string; spot: string; img: string } | null {
+export function locusOf(id: CellId): Locus | null {
   const [code, n] = id.split('-')
   const room = LOCI[code as ChapterCode]
   if (!room) return null

@@ -1,7 +1,7 @@
 import Sheet from './Sheet'
 import { useApp } from '../context'
 import { describeSnapshot, type Snapshot } from '../lib/transfer'
-import { C, MONO_DISPLAY, PrimaryButton, Tap } from '../ui'
+import { C, fs, MONO_DISPLAY, PrimaryButton, Tap } from '../ui'
 
 /**
  * Shown when the app is opened from a transfer link. Nothing is applied until
@@ -21,8 +21,8 @@ export default function IncomingTransfer({
 
   return (
     <Sheet onClose={onDone} maxHeight="70vh">
-      <div style={{ fontFamily: MONO_DISPLAY, fontSize: 16, fontWeight: 700 }}>⇅ Progress from your other device</div>
-      <div style={{ fontSize: 12, color: C.dim, marginTop: 4, lineHeight: 1.55 }}>
+      <div style={{ fontFamily: MONO_DISPLAY, fontSize: fs(16), fontWeight: 700 }}>⇅ Progress from your other device</div>
+      <div style={{ fontSize: fs(12), color: C.dim, marginTop: 4, lineHeight: 1.55 }}>
         Taken {age}.{' '}
         {nothingNew
           ? 'Everything in it is already here or older than what this device has, so there is nothing to bring across.'
@@ -42,12 +42,12 @@ export default function IncomingTransfer({
           }}
         >
           <div>
-            <div style={{ fontFamily: MONO_DISPLAY, fontSize: 20, fontWeight: 700 }}>{newCells}</div>
-            <div style={{ fontSize: 10, color: C.faint }}>CELLS UPDATED</div>
+            <div style={{ fontFamily: MONO_DISPLAY, fontSize: fs(20), fontWeight: 700 }}>{newCells}</div>
+            <div style={{ fontSize: fs(10), color: C.faint }}>CELLS UPDATED</div>
           </div>
           <div>
-            <div style={{ fontFamily: MONO_DISPLAY, fontSize: 20, fontWeight: 700 }}>{newMocks}</div>
-            <div style={{ fontSize: 10, color: C.faint }}>MOCKS ADDED</div>
+            <div style={{ fontFamily: MONO_DISPLAY, fontSize: fs(20), fontWeight: 700 }}>{newMocks}</div>
+            <div style={{ fontSize: fs(10), color: C.faint }}>MOCKS ADDED</div>
           </div>
         </div>
       )}
@@ -69,7 +69,7 @@ export default function IncomingTransfer({
           </PrimaryButton>
           <Tap
             onClick={onDone}
-            style={{ marginTop: 8, textAlign: 'center', fontSize: 12, color: C.faint, padding: 6 }}
+            style={{ marginTop: 8, textAlign: 'center', fontSize: fs(12), color: C.faint, padding: 6 }}
           >
             Not now
           </Tap>

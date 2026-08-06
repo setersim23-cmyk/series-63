@@ -3,7 +3,7 @@ import { cellItems, findCell } from '../lib/content'
 import { hasAudio } from '../lib/narrator'
 import { useWide } from '../lib/useWide'
 import type { CellId } from '../types'
-import { C, Tap } from '../ui'
+import { C, fs, Tap } from '../ui'
 
 const RATES = [0.75, 1, 1.25, 1.5, 2]
 
@@ -35,7 +35,7 @@ export default function TtsBar({ cellId, color }: { cellId: CellId; color: strin
           border: `1px solid ${C.borderRaised}`,
           borderRadius: 16,
           padding: '10px 14px',
-          boxShadow: '0 8px 30px rgba(0,0,0,.5)',
+          boxShadow: '0 8px 30px var(--shadow)',
         }}
       >
         <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
@@ -50,7 +50,7 @@ export default function TtsBar({ cellId, color }: { cellId: CellId; color: strin
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              fontSize: 16,
+              fontSize: fs(16),
               flex: 'none',
             }}
           >
@@ -60,7 +60,7 @@ export default function TtsBar({ cellId, color }: { cellId: CellId; color: strin
           <div style={{ flex: 1, minWidth: 0 }}>
             <div
               style={{
-                fontSize: 12,
+                fontSize: fs(12),
                 fontWeight: 600,
                 whiteSpace: 'nowrap',
                 overflow: 'hidden',
@@ -81,7 +81,7 @@ export default function TtsBar({ cellId, color }: { cellId: CellId; color: strin
                     key={r}
                     onClick={() => setRate(r)}
                     style={{
-                      fontSize: 11,
+                      fontSize: fs(11),
                       fontWeight: 600,
                       padding: '2px 8px',
                       borderRadius: 6,
@@ -98,12 +98,12 @@ export default function TtsBar({ cellId, color }: { cellId: CellId; color: strin
 
           <Tap
             onClick={openVoices}
-            style={{ fontSize: 11, color: C.dim, textAlign: 'right', flex: 'none', maxWidth: 80 }}
+            style={{ fontSize: fs(11), color: C.dim, textAlign: 'right', flex: 'none', maxWidth: 80 }}
           >
             <div
               style={{
                 fontWeight: 600,
-                color: '#c9c9d4',
+                color: 'var(--kc9c9d4)',
                 whiteSpace: 'nowrap',
                 overflow: 'hidden',
                 textOverflow: 'ellipsis',

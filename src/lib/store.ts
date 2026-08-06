@@ -3,7 +3,7 @@ import { STORAGE_KEY } from './config'
 import type { CellId, CellProgress, Store } from '../types'
 
 function empty(): Store {
-  return { cells: {}, missed: {}, mocks: [], settings: { rate: 1, voice: null } }
+  return { cells: {}, missed: {}, mocks: [], settings: { rate: 1, voice: null, text: 1, theme: 'dark' } }
 }
 
 /**

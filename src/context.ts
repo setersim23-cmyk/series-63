@@ -42,6 +42,8 @@ export interface AppApi {
   toggleCellSpeech(id: CellId): void
   setRate(rate: number): void
   setVoice(name: string): void
+  setTextScale(scale: number): void
+  setTheme(theme: 'dark' | 'light' | 'auto'): void
 
   openSheet(sheet: SheetContent): void
   openSync(): void

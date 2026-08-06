@@ -2,26 +2,35 @@ import type { CSSProperties, ReactNode } from 'react'
 
 /** The palette the design is built from. */
 export const C = {
-  bg: '#08080b',
-  panel: '#101016',
-  panelSoft: '#0d0d13',
-  raised: '#14141c',
-  raisedAlt: '#171720',
-  border: '#22222c',
-  borderSoft: '#1c1c26',
-  borderRaised: '#2a2a36',
-  text: '#e9e9ef',
-  textSerif: '#e2e2ea',
-  dim: '#9a9aa6',
-  faint: '#77778a',
-  ghost: '#55556a',
-  link: '#8ab4ff',
-  green: '#7ee0a8',
-  amber: '#e8c37a',
-  pink: '#ff9ab0',
-  violet: '#b8a3f0',
-  blue: '#7eb8f0',
+  bg: 'var(--k08080b)',
+  panel: 'var(--k101016)',
+  panelSoft: 'var(--k0d0d13)',
+  raised: 'var(--k14141c)',
+  raisedAlt: 'var(--k171720)',
+  border: 'var(--k22222c)',
+  borderSoft: 'var(--k1c1c26)',
+  borderRaised: 'var(--k2a2a36)',
+  text: 'var(--ke9e9ef)',
+  textSerif: 'var(--ke2e2ea)',
+  dim: 'var(--k9a9aa6)',
+  faint: 'var(--k77778a)',
+  ghost: 'var(--k55556a)',
+  link: 'var(--k8ab4ff)',
+  green: 'var(--k7ee0a8)',
+  amber: 'var(--ke8c37a)',
+  pink: 'var(--kff9ab0)',
+  violet: 'var(--kb8a3f0)',
+  blue: 'var(--k7eb8f0)',
 } as const
+
+/**
+ * A design pixel size, in the app's type scale.
+ *
+ * Sizes are written the way they were drawn — fs(14) is the 14px the design
+ * asked for — but resolve through --fs-unit, so the screen's width and the
+ * reader's preference both apply without every call site knowing about either.
+ */
+export const fs = (px: number) => `calc(${px} * var(--fs-unit))`
 
 export const SERIF = "'Source Serif 4',serif"
 export const MONO_DISPLAY = "'Space Grotesk'"
@@ -35,17 +44,21 @@ export function Tap({
   onClick,
   style,
   id,
+  label,
   children,
 }: {
   onClick: () => void
   style?: CSSProperties
   id?: string
+  /** Spoken name, for the buttons whose visible text does not say what they do. */
+  label?: string
   children: ReactNode
 }) {
   return (
     <div
       id={id}
       role="button"
+      aria-label={label}
       tabIndex={0}
       onClick={onClick}
       onKeyDown={(e) => {
@@ -63,13 +76,13 @@ export function Tap({
 
 export function BackLink({ onClick, children }: { onClick: () => void; children: ReactNode }) {
   return (
-    <Tap onClick={onClick} style={{ fontSize: 13, color: '#8a8a9a', padding: '4px 0' }}>
+    <Tap onClick={onClick} style={{ fontSize: fs(13), color: 'var(--k8a8a9a)', padding: '4px 0' }}>
       {children}
     </Tap>
   )
 }
 
-/** The white call-to-action used to advance every flow. */
+/** The high-contrast call-to-action used to advance every flow. */
 export function PrimaryButton({
   onClick,
   children,
@@ -88,7 +101,7 @@ export function PrimaryButton({
         color: C.bg,
         borderRadius: 12,
         padding: 13,
-        fontSize: 14,
+        fontSize: fs(14),
         fontWeight: 700,
         ...style,
       }}
@@ -100,14 +113,14 @@ export function PrimaryButton({
 
 export function SectionLabel({ children, style }: { children: ReactNode; style?: CSSProperties }) {
   return (
-    <div style={{ fontSize: 12, color: C.dim, letterSpacing: '.1em', fontWeight: 600, ...style }}>
+    <div style={{ fontSize: fs(12), color: C.dim, letterSpacing: '.1em', fontWeight: 600, ...style }}>
       {children}
     </div>
   )
 }
 
 export function Title({ children }: { children: ReactNode }) {
-  return <div style={{ fontFamily: MONO_DISPLAY, fontSize: 20, fontWeight: 700 }}>{children}</div>
+  return <div style={{ fontFamily: MONO_DISPLAY, fontSize: fs(20), fontWeight: 700 }}>{children}</div>
 }
 
 /** Result/answer colour sets, reused by the quiz, checkpoint and sim. */
@@ -117,6 +130,6 @@ export interface AnswerLook {
   fg: string
 }
 
-export const CORRECT: AnswerLook = { bg: '#0e1f16', bd: '#2a5c40', fg: '#b9edcd' }
-export const WRONG: AnswerLook = { bg: '#210f14', bd: '#5c2a38', fg: '#ffc4d0' }
+export const CORRECT: AnswerLook = { bg: 'var(--k0e1f16)', bd: 'var(--k2a5c40)', fg: 'var(--kb9edcd)' }
+export const WRONG: AnswerLook = { bg: 'var(--k210f14)', bd: 'var(--k5c2a38)', fg: 'var(--kffc4d0)' }
 export const NEUTRAL: AnswerLook = { bg: C.panel, bd: C.border, fg: C.textSerif }

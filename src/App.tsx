@@ -4,7 +4,7 @@ import { QBANK } from './content/questions'
 import { findChapter } from './lib/content'
 import { IDLE, Narrator, type TtsState } from './lib/narrator'
 import { watchVisibility } from './lib/wakelock'
-import { buildSession, recordAnswer, shuffle, type QuizMode, type Session } from './lib/quiz'
+import { buildSession, markShown, recordAnswer, shuffle, type QuizMode, type Session } from './lib/quiz'
 import { storageWorks, useProgress } from './lib/store'
 import { useWide } from './lib/useWide'
 import { decodeSnapshot, type Snapshot } from './lib/transfer'
@@ -124,6 +124,14 @@ export default function App() {
   const [memoCh, setMemoCh] = useState<ChapterCode | null>(null)
 
   const [session, setSession] = useState<Session | null>(null)
+  // Ending a quiz has to see the answer that ended it, and has to happen exactly
+  // once. Reading state through a ref gives the first; a latch on the session's
+  // start time gives the second — the finish is reached from three directions
+  // (the last answer, the ✕, and the mock clock) and StrictMode runs the
+  // updaters that reach it twice.
+  const sessionRef = useRef<Session | null>(null)
+  sessionRef.current = session
+  const endedRef = useRef<number | null>(null)
   const [lastSession, setLastSession] = useState<LastSession | null>(null)
   const [check, setCheck] = useState<CheckState | null>(null)
   const [walk, setWalk] = useState<WalkState | null>(null)
@@ -169,6 +177,30 @@ export default function App() {
     window.addEventListener('hashchange', consume)
     return () => window.removeEventListener('hashchange', consume)
   }, [])
+
+  // The reader's half of the type scale. Set on the document rather than passed
+  // down, because the sizes it feeds are in a stylesheet variable, not in props.
+  useEffect(() => {
+    document.documentElement.style.setProperty('--fs-user', String(store.settings.text ?? 1))
+  }, [store.settings.text])
+
+  // Theme, likewise: one attribute on <html> swaps the whole palette. The
+  // browser's own chrome — the status bar behind a home-screen app, the bar
+  // around a tab — follows theme-color, so that moves with it or the page ends
+  // up in a black frame.
+  const theme = store.settings.theme ?? 'dark'
+  useEffect(() => {
+    const media = window.matchMedia?.('(prefers-color-scheme: light)')
+    const apply = () => {
+      const light = theme === 'light' || (theme === 'auto' && !!media?.matches)
+      document.documentElement.dataset.theme = light ? 'light' : 'dark'
+      const chrome = getComputedStyle(document.documentElement).getPropertyValue('--k08080b').trim()
+      document.querySelector('meta[name="theme-color"]')?.setAttribute('content', chrome)
+    }
+    apply()
+    media?.addEventListener('change', apply)
+    return () => media?.removeEventListener('change', apply)
+  }, [theme])
 
   useEffect(() => {
     watchVisibility()
@@ -236,28 +268,29 @@ export default function App() {
     (mode: QuizMode, filter?: ChapterCode | CellId) => {
       const built = buildSession(store, mode, filter)
       if (!built) return
+      update((s) => markShown(s, built.qs))
       nav('quiz', () => setSession(built))
     },
-    [nav, store]
+    [nav, store, update]
   )
 
   const finishQuiz = useCallback(() => {
-    setSession((s) => {
-      if (!s) return null
-      const right = s.answers.filter(Boolean).length
-      if (s.mode === 'mock') {
-        s.qs.forEach((qi, k) => {
-          if (s.answers[k] != null) recordAnswer(progress, qi, !!s.answers[k])
-        })
-        update((store) => {
-          store.mocks.push({ ts: Date.now(), score: right, total: s.qs.length })
-        })
-      }
-      setLastSession({ mode: s.mode, right, total: s.qs.length, qs: s.qs, answers: s.answers })
-      setView('results')
-      window.scrollTo({ top: 0 })
-      return null
-    })
+    const s = sessionRef.current
+    if (!s || endedRef.current === s.start) return
+    endedRef.current = s.start
+    const right = s.answers.filter(Boolean).length
+    if (s.mode === 'mock') {
+      s.qs.forEach((qi, k) => {
+        if (s.answers[k] != null) recordAnswer(progress, qi, !!s.answers[k])
+      })
+      update((store) => {
+        store.mocks.push({ ts: Date.now(), score: right, total: s.qs.length })
+      })
+    }
+    setLastSession({ mode: s.mode, right, total: s.qs.length, qs: s.qs, answers: s.answers })
+    setSession(null)
+    setView('results')
+    window.scrollTo({ top: 0 })
   }, [progress, update])
 
   const answerQuiz = useCallback(
@@ -306,6 +339,7 @@ export default function App() {
       ).slice(0, 3)
       const chapter = findChapter(id.split('-')[0] as ChapterCode)
       const facts = shuffle((chapter?.memorize ?? []).filter((m) => m.cell === id)).slice(0, 3)
+      update((st) => markShown(st, qs))
       nav('check', () =>
         setCheck({
           cellId: id,
@@ -321,7 +355,7 @@ export default function App() {
         })
       )
     },
-    [nav]
+    [nav, update]
   )
 
   /** Grades the cell from checkpoint performance — all right is solid, some is shaky. */
@@ -402,6 +436,16 @@ export default function App() {
         setVoicesOpen(false)
         tts.refresh()
       },
+      setTextScale: (scale: number) => {
+        update((st) => {
+          st.settings.text = scale
+        })
+      },
+      setTheme: (theme) => {
+        update((st) => {
+          st.settings.theme = theme
+        })
+      },
       openSheet: setSheet,
       openSync: () => setSyncOpen(true),
       openVoices: () => setVoicesOpen(true),
@@ -422,12 +466,12 @@ export default function App() {
       <div
         style={
           wide
-            ? { display: 'flex', gap: 32, maxWidth: 1180, margin: '0 auto', minHeight: '100vh', background: '#08080b' }
+            ? { display: 'flex', gap: 32, maxWidth: 1180, margin: '0 auto', minHeight: '100vh', background: 'var(--k08080b)' }
             : {
                 maxWidth: 480,
                 margin: '0 auto',
                 minHeight: '100vh',
-                background: '#08080b',
+                background: 'var(--k08080b)',
                 position: 'relative',
                 paddingTop: 'var(--safe-top)',
               }

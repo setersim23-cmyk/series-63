@@ -3,7 +3,7 @@ import { QBANK } from '../content/questions'
 import { MOCK_PASS, PASS_TARGET } from '../lib/config'
 import { GREEN, chapterColor, codeOf } from '../lib/color'
 import type { ChapterCode } from '../types'
-import { C, MONO_DISPLAY, PrimaryButton } from '../ui'
+import { C, fs, MONO_DISPLAY, PrimaryButton } from '../ui'
 
 export default function Results({ last, onDone }: { last: LastSession; onDone: () => void }) {
   const pct = Math.round((100 * last.right) / last.total)
@@ -20,13 +20,13 @@ export default function Results({ last, onDone }: { last: LastSession; onDone: (
 
   return (
     <div style={{ padding: '24px 18px calc(130px + var(--safe-bottom))', textAlign: 'center' }}>
-      <div style={{ fontSize: 12, color: C.dim, letterSpacing: '.1em' }}>
+      <div style={{ fontSize: fs(12), color: C.dim, letterSpacing: '.1em' }}>
         {mock ? `TIMED MOCK — ${MOCK_PASS} TO PASS` : 'DRILL COMPLETE'}
       </div>
       <div
         style={{
           fontFamily: MONO_DISPLAY,
-          fontSize: 52,
+          fontSize: fs(52),
           fontWeight: 700,
           marginTop: 10,
           color: pass ? GREEN : C.pink,
@@ -34,7 +34,7 @@ export default function Results({ last, onDone }: { last: LastSession; onDone: (
       >
         {mock ? `${last.right}/60` : `${pct}%`}
       </div>
-      <div style={{ fontSize: 14, fontWeight: 600, marginTop: 4 }}>
+      <div style={{ fontSize: fs(14), fontWeight: 600, marginTop: 4 }}>
         {pass
           ? mock
             ? 'That’s a pass. Do it again tomorrow.'
@@ -43,7 +43,7 @@ export default function Results({ last, onDone }: { last: LastSession; onDone: (
             ? 'Below the line — the chart shows where.'
             : 'The chart just got more honest.'}
       </div>
-      <div style={{ fontSize: 12, color: C.dim, marginTop: 6, lineHeight: 1.5 }}>
+      <div style={{ fontSize: fs(12), color: C.dim, marginTop: 6, lineHeight: 1.5 }}>
         {last.right} of {last.total} correct. Every answer has been written to your Harada chart and readiness score.
       </div>
 
@@ -64,7 +64,7 @@ export default function Results({ last, onDone }: { last: LastSession; onDone: (
                 padding: '9px 13px',
               }}
             >
-              <span style={{ fontFamily: MONO_DISPLAY, fontSize: 11, fontWeight: 700, color, width: 36 }}>
+              <span style={{ fontFamily: MONO_DISPLAY, fontSize: fs(11), fontWeight: 700, color, width: 36 }}>
                 {code}
               </span>
               <div style={{ flex: 1, height: 4, borderRadius: 2, background: C.borderSoft }}>
@@ -72,7 +72,7 @@ export default function Results({ last, onDone }: { last: LastSession; onDone: (
                   style={{ height: '100%', borderRadius: 2, background: color, width: `${Math.round((100 * r) / t)}%` }}
                 />
               </div>
-              <span style={{ fontSize: 12, color: C.dim }}>
+              <span style={{ fontSize: fs(12), color: C.dim }}>
                 {r}/{t}
               </span>
             </div>

@@ -20,8 +20,19 @@ interface Hooks {
 const clipUrl = (cellId: CellId, index: number) =>
   `${import.meta.env.BASE_URL}audio/${cellId}-${index}.mp3`
 
-/** Whether this cell was rendered to audio at build time. */
-export const hasAudio = (cellId: CellId) => (AUDIO[cellId]?.length ?? 0) > 0
+/**
+ * Whether this cell's recording still matches what the app would read.
+ *
+ * A clip is addressed by its position in the cell — `SEC-1-3.mp3` is the fourth
+ * card — so a recording made before a card was added or moved would play the
+ * right voice over the wrong text, which is worse than not playing at all. One
+ * clip per card is the cheap check that catches it, and a mismatch degrades the
+ * whole cell to speech synthesis rather than lying.
+ */
+export const hasAudio = (cellId: CellId) => {
+  const clips = AUDIO[cellId]?.length ?? 0
+  return clips > 0 && clips === cellItems(findCell(cellId)).length
+}
 
 /**
  * Plays the pre-rendered narration.

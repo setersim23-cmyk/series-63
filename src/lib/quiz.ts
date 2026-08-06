@@ -33,6 +33,29 @@ const indicesWhere = (fn: (q: (typeof QBANK)[number]) => boolean) =>
     .filter((x) => fn(x.q))
     .map((x) => x.i)
 
+/**
+ * Takes `n` from a pool, least-recently-seen first.
+ *
+ * A pure shuffle means the second mock repeats about a third of the first one,
+ * which reads as a smaller bank than it is. Shuffling *before* the sort keeps
+ * the order random among questions with the same timestamp — and everything you
+ * have never been asked shares timestamp zero — so an untouched bank is still
+ * fully random, while a second sitting works through the rest of it first.
+ */
+function rotate(store: Store, pool: number[], n: number): number[] {
+  const shown = store.shown ?? {}
+  return shuffle(pool)
+    .sort((a, b) => (shown[a] ?? 0) - (shown[b] ?? 0))
+    .slice(0, n)
+}
+
+/** Stamps the questions a session served, so the next one reaches past them. */
+export function markShown(store: Store, qs: number[]) {
+  const shown = (store.shown ??= {})
+  const now = Date.now()
+  for (const qi of qs) shown[qi] = now
+}
+
 /** Picks the questions for a session, or null when there is nothing to ask. */
 export function buildSession(
   store: Store,
@@ -49,19 +72,15 @@ export function buildSession(
       .slice(0, 15)
   } else if (mode === 'mock') {
     for (const code of ORDER) {
-      const pool = indicesWhere((q) => q.c.startsWith(`${code}-`))
-      shuffle(pool)
-      qs.push(...pool.slice(0, META[code].q))
+      qs.push(...rotate(store, indicesWhere((q) => q.c.startsWith(`${code}-`)), META[code].q))
     }
     shuffle(qs)
   } else if (mode === 'chapter' || mode === 'cell') {
     if (!filter) return null
-    qs = indicesWhere((q) => (filter.length <= 3 ? q.c.startsWith(`${filter}-`) : q.c === filter))
-    shuffle(qs)
-    qs = qs.slice(0, 16)
+    const pool = indicesWhere((q) => (filter.length <= 3 ? q.c.startsWith(`${filter}-`) : q.c === filter))
+    qs = shuffle(rotate(store, pool, 16))
   } else if (mode === 'hard') {
-    qs = indicesWhere((q) => !!q.h)
-    shuffle(qs)
+    qs = shuffle(indicesWhere((q) => !!q.h))
   } else {
     // Adaptive Quick 10 — weakest cells first, with enough jitter to stay varied.
     const scored = QBANK.map((q, i) => ({ i, s: cellScore(store, q.c) + Math.random() * 25 }))

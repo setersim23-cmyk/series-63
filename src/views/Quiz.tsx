@@ -2,7 +2,7 @@ import { useApp } from '../context'
 import { QBANK } from '../content/questions'
 import { chapterColor, codeOf } from '../lib/color'
 import type { Session } from '../lib/quiz'
-import { C, CORRECT, MONO_DISPLAY, NEUTRAL, PrimaryButton, SERIF, Tap, WRONG } from '../ui'
+import { C, CORRECT, fs, MONO_DISPLAY, NEUTRAL, PrimaryButton, SERIF, Tap, WRONG } from '../ui'
 
 export default function Quiz({
   session,
@@ -35,13 +35,13 @@ export default function Quiz({
   return (
     <div style={{ padding: '16px 18px calc(130px + var(--safe-bottom))' }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-        <Tap onClick={onQuit} style={{ fontSize: 13, color: '#8a8a9a' }}>
+        <Tap onClick={onQuit} style={{ fontSize: fs(13), color: 'var(--k8a8a9a)' }}>
           ✕ End
         </Tap>
-        <div style={{ fontSize: 12, color: C.dim }}>
+        <div style={{ fontSize: fs(12), color: C.dim }}>
           {session.i + 1} / {session.qs.length}
         </div>
-        <div style={{ fontSize: 13, fontWeight: 700, fontFamily: MONO_DISPLAY, color: timerColor }}>{timer}</div>
+        <div style={{ fontSize: fs(13), fontWeight: 700, fontFamily: MONO_DISPLAY, color: timerColor }}>{timer}</div>
       </div>
 
       <div style={{ marginTop: 6, height: 4, borderRadius: 2, background: C.borderSoft }}>
@@ -60,12 +60,12 @@ export default function Quiz({
         style={{
           marginTop: 16,
           display: 'inline-block',
-          fontSize: 11,
+          fontSize: fs(11),
           fontWeight: 700,
           fontFamily: MONO_DISPLAY,
           color,
           background: C.raised,
-          border: '1px solid #26262e',
+          border: '1px solid var(--k26262e)',
           borderRadius: 6,
           padding: '3px 8px',
         }}
@@ -73,7 +73,7 @@ export default function Quiz({
         {q.c}
       </div>
 
-      <div style={{ fontFamily: SERIF, fontSize: 17, lineHeight: 1.6, marginTop: 12, color: '#eeeef4' }}>{q.q}</div>
+      <div style={{ fontFamily: SERIF, fontSize: fs(17), lineHeight: 1.6, marginTop: 12, color: 'var(--keeeef4)' }}>{q.q}</div>
 
       <div style={{ marginTop: 16, display: 'flex', flexDirection: 'column', gap: 8 }}>
         {q.o.map((option, oi) => {
@@ -90,7 +90,7 @@ export default function Quiz({
               fg = C.faint
             }
           } else if (mock && session.chosen === oi) {
-            look = { bg: '#1a1a28', bd: '#3a3a52', fg: NEUTRAL.fg }
+            look = { bg: 'var(--k1a1a28)', bd: 'var(--k3a3a52)', fg: NEUTRAL.fg }
             fg = NEUTRAL.fg
           }
           return (
@@ -100,7 +100,7 @@ export default function Quiz({
               style={{
                 borderRadius: 12,
                 padding: '13px 14px',
-                fontSize: 14,
+                fontSize: fs(14),
                 lineHeight: 1.5,
                 background: look.bg,
                 border: `1px solid ${look.bd}`,
@@ -120,13 +120,13 @@ export default function Quiz({
               marginTop: 14,
               borderRadius: 12,
               padding: '13px 15px',
-              background: right ? '#0c1510' : '#160d11',
-              border: `1px solid ${right ? '#1e3a2c' : '#33202a'}`,
+              background: right ? 'var(--k0c1510)' : 'var(--k160d11)',
+              border: `1px solid ${right ? 'var(--k1e3a2c)' : 'var(--k33202a)'}`,
             }}
           >
             <div
               style={{
-                fontSize: 11,
+                fontSize: fs(11),
                 fontWeight: 700,
                 letterSpacing: '.08em',
                 color: right ? C.green : C.pink,
@@ -134,10 +134,10 @@ export default function Quiz({
             >
               {right ? 'CORRECT' : 'NOT QUITE'}
             </div>
-            <div style={{ fontFamily: SERIF, fontSize: 14, lineHeight: 1.65, marginTop: 5, color: C.textSerif }}>
+            <div style={{ fontFamily: SERIF, fontSize: fs(14), lineHeight: 1.65, marginTop: 5, color: C.textSerif }}>
               {q.w}
             </div>
-            <Tap onClick={() => go.cell(q.c)} style={{ fontSize: 12, color: C.link, marginTop: 8 }}>
+            <Tap onClick={() => go.cell(q.c)} style={{ fontSize: fs(12), color: C.link, marginTop: 8 }}>
               Read {q.c} →
             </Tap>
           </div>

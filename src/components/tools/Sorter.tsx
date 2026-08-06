@@ -1,7 +1,7 @@
 import type { ToolState } from '../../App'
 import { SORTERS } from '../../data/tools'
 import { useApp } from '../../context'
-import { C, Tap } from '../../ui'
+import { C, fs, Tap } from '../../ui'
 import ToolPanel from './ToolPanel'
 
 /** Tap an item, then tap the bucket it belongs in. Feedback opens as a sheet. */
@@ -47,9 +47,9 @@ export default function Sorter({
               textAlign: 'center',
               padding: '10px 4px',
               borderRadius: 10,
-              border: `1px dashed ${tool.sel != null ? '#3a4a76' : '#26262e'}`,
-              background: tool.sel != null ? '#1e2436' : C.raised,
-              fontSize: 11,
+              border: `1px dashed ${tool.sel != null ? 'var(--k3a4a76)' : 'var(--k26262e)'}`,
+              background: tool.sel != null ? 'var(--k1e2436)' : C.raised,
+              fontSize: fs(11),
               fontWeight: 700,
               letterSpacing: '.05em',
             }}
@@ -74,12 +74,12 @@ export default function Sorter({
               style={{
                 padding: '7px 11px',
                 borderRadius: 9,
-                fontSize: 12,
+                fontSize: fs(12),
                 fontWeight: 500,
-                background: placed == null ? (selected ? C.text : C.raisedAlt) : correct ? '#0e1f16' : '#210f14',
+                background: placed == null ? (selected ? C.text : C.raisedAlt) : correct ? 'var(--k0e1f16)' : 'var(--k210f14)',
                 color: placed == null ? (selected ? C.bg : C.textSerif) : correct ? C.green : C.pink,
                 border: `1px solid ${
-                  placed == null ? (selected ? C.text : C.borderRaised) : correct ? '#2a5c40' : '#5c2a38'
+                  placed == null ? (selected ? C.text : C.borderRaised) : correct ? 'var(--k2a5c40)' : 'var(--k5c2a38)'
                 }`,
               }}
             >

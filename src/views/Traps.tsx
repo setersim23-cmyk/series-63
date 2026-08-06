@@ -2,7 +2,7 @@ import { useApp } from '../context'
 import { TEXTBOOK } from '../content/textbook'
 import { chapterColor } from '../lib/color'
 import { ORDER } from '../types'
-import { BackLink, C, MONO_DISPLAY, SERIF, Tap } from '../ui'
+import { C, BackLink, fs, MONO_DISPLAY, SERIF, Tap } from '../ui'
 
 /** Every ▲ trap in the book, in teaching order. The night-before read. */
 export default function Traps() {
@@ -19,10 +19,10 @@ export default function Traps() {
   return (
     <div style={{ padding: '16px 18px calc(130px + var(--safe-bottom))' }}>
       <BackLink onClick={go.learn}>‹ Learn</BackLink>
-      <div style={{ fontFamily: MONO_DISPLAY, fontSize: 20, fontWeight: 700, marginTop: 8, color: C.pink }}>
+      <div style={{ fontFamily: MONO_DISPLAY, fontSize: fs(20), fontWeight: 700, marginTop: 8, color: C.pink }}>
         ▲ Every trap in the book
       </div>
-      <div style={{ fontSize: 12, color: C.dim, marginTop: 4, lineHeight: 1.5 }}>
+      <div style={{ fontSize: fs(12), color: C.dim, marginTop: 4, lineHeight: 1.5 }}>
         The wrong answers that feel right. Read these last, the night before.
       </div>
 
@@ -32,16 +32,16 @@ export default function Traps() {
             key={i}
             onClick={() => go.cell(trap.cell)}
             style={{
-              background: '#120e13',
-              border: '1px solid #2e1f2a',
+              background: 'var(--k120e13)',
+              border: '1px solid var(--k2e1f2a)',
               borderRadius: 12,
               padding: '12px 14px',
             }}
           >
-            <div style={{ fontFamily: MONO_DISPLAY, fontSize: 11, fontWeight: 700, color: chapterColor(trap.code) }}>
+            <div style={{ fontFamily: MONO_DISPLAY, fontSize: fs(11), fontWeight: 700, color: chapterColor(trap.code) }}>
               {trap.cell}
             </div>
-            <div style={{ fontFamily: SERIF, fontSize: 14, lineHeight: 1.65, color: C.textSerif, marginTop: 5 }}>
+            <div style={{ fontFamily: SERIF, fontSize: fs(14), lineHeight: 1.65, color: C.textSerif, marginTop: 5 }}>
               {trap.text}
             </div>
           </Tap>

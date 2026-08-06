@@ -15,7 +15,7 @@ export default function Sheet({
     <>
       <div
         onClick={onClose}
-        style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,.55)', zIndex: 20 }}
+        style={{ position: 'fixed', inset: 0, background: 'var(--scrim)', zIndex: 20 }}
       />
       <div
         style={{
@@ -34,7 +34,7 @@ export default function Sheet({
         }}
       >
         <div
-          style={{ width: 36, height: 4, borderRadius: 2, background: '#33333f', margin: '0 auto 14px' }}
+          style={{ width: 36, height: 4, borderRadius: 2, background: 'var(--k33333f)', margin: '0 auto 14px' }}
         />
         {children}
       </div>

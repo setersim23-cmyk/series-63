@@ -1,5 +1,5 @@
 import type { CalcState, ToolState } from '../../App'
-import { C, MONO_DISPLAY, Tap } from '../../ui'
+import { C, fs, MONO_DISPLAY, Tap } from '../../ui'
 import ToolPanel from './ToolPanel'
 
 const money = (n: number) => '$' + Math.round(n).toLocaleString()
@@ -10,7 +10,7 @@ const inputStyle = {
   border: `1px solid ${C.borderRaised}`,
   borderRadius: 8,
   color: C.text,
-  fontSize: 14,
+  fontSize: fs(14),
   padding: '8px 10px',
   fontFamily: MONO_DISPLAY,
 }
@@ -31,7 +31,7 @@ export default function RescissionCalc({
 
   const field = (key: 'price' | 'rate' | 'months' | 'income' | 'proceeds', label: string) => (
     <div key={key}>
-      <div style={{ fontSize: 10, color: C.faint, marginBottom: 3 }}>{label}</div>
+      <div style={{ fontSize: fs(10), color: C.faint, marginBottom: 3 }}>{label}</div>
       <input
         type="number"
         value={calc[key]}
@@ -65,9 +65,9 @@ export default function RescissionCalc({
           borderRadius: 9,
           background: C.raised,
           border: `1px solid ${C.borderRaised}`,
-          fontSize: 12,
+          fontSize: fs(12),
           fontWeight: 600,
-          color: '#c9c9d4',
+          color: 'var(--kc9c9d4)',
         }}
       >
         ⇄ {calc.sold ? 'Client already SOLD (damages — no tender)' : 'Client still HOLDS (rescission — must tender)'}
@@ -87,7 +87,7 @@ export default function RescissionCalc({
         {lines.map(([label, value]) => (
           <div
             key={label}
-            style={{ display: 'flex', justifyContent: 'space-between', fontSize: 13, color: '#c9c9d4', padding: '2px 0' }}
+            style={{ display: 'flex', justifyContent: 'space-between', fontSize: fs(13), color: 'var(--kc9c9d4)', padding: '2px 0' }}
           >
             <span>{label}</span>
             <span style={{ fontFamily: MONO_DISPLAY }}>{value}</span>
@@ -97,7 +97,7 @@ export default function RescissionCalc({
           style={{
             display: 'flex',
             justifyContent: 'space-between',
-            fontSize: 15,
+            fontSize: fs(15),
             fontWeight: 700,
             borderTop: `1px solid ${C.borderRaised}`,
             marginTop: 6,
@@ -107,14 +107,14 @@ export default function RescissionCalc({
           <span>Buyer recovers</span>
           <span style={{ fontFamily: MONO_DISPLAY, color: C.green }}>{money(total)}</span>
         </div>
-        <div style={{ fontSize: 11, color: C.faint, marginTop: 6, lineHeight: 1.5 }}>
+        <div style={{ fontSize: fs(11), color: C.faint, marginTop: 6, lineHeight: 1.5 }}>
           {calc.sold
             ? 'No tender — the security is gone; this is the damages formula.'
             : '…against tender of the security back to the seller. Plus court costs and reasonable attorney fees.'}
         </div>
       </div>
 
-      <div style={{ fontSize: 11, color: '#8a9a8f', marginTop: 8, lineHeight: 1.5 }}>
+      <div style={{ fontSize: fs(11), color: 'var(--k8a9a8f)', marginTop: 8, lineHeight: 1.5 }}>
         Worked example (Case 4): $40,000 bought 14 months ago at 6% state rate, $1,600 in distributions received →
         $40,000 + $2,800 − $1,600 = $41,200, against tender.
       </div>

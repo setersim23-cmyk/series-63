@@ -1,10 +1,10 @@
 import { useState } from 'react'
 import { useApp } from '../context'
 import { AUTH } from '../content/authorities'
-import { chapterColor, codeOf } from '../lib/color'
+import { L, chapterColor, codeOf } from '../lib/color'
 import type { Authority } from '../types'
 import Sheet from '../components/Sheet'
-import { C, MONO_DISPLAY, SERIF, Tap, Title } from '../ui'
+import { C, fs, MONO_DISPLAY, SERIF, Tap, Title } from '../ui'
 
 /**
  * Six layers of authority as a stack, with the NSMIA line drawn as the literal
@@ -18,7 +18,7 @@ export default function MapView() {
   return (
     <div style={{ padding: '20px 18px calc(130px + var(--safe-bottom))' }}>
       <Title>⚖ The Map of Authorities</Title>
-      <div style={{ fontSize: 12, color: C.dim, marginTop: 6, lineHeight: 1.6 }}>{AUTH.intro}</div>
+      <div style={{ fontSize: fs(12), color: C.dim, marginTop: 6, lineHeight: 1.6 }}>{AUTH.intro}</div>
 
       <div
         style={{
@@ -29,10 +29,10 @@ export default function MapView() {
           border: `1px solid ${C.border}`,
         }}
       >
-        <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: '.1em', color: C.green }}>
+        <div style={{ fontSize: fs(10), fontWeight: 700, letterSpacing: '.1em', color: C.green }}>
           THE LAYER QUESTION THAT ANSWERS QUESTIONS
         </div>
-        <div style={{ fontFamily: SERIF, fontSize: 13, lineHeight: 1.65, color: '#c9c9d4', marginTop: 5 }}>
+        <div style={{ fontFamily: SERIF, fontSize: fs(13), lineHeight: 1.65, color: 'var(--kc9c9d4)', marginTop: 5 }}>
           {AUTH.layerRule}
         </div>
       </div>
@@ -47,8 +47,8 @@ export default function MapView() {
                   margin: '6px 0',
                   padding: '10px 14px',
                   borderRadius: 10,
-                  background: '#1c0d12',
-                  border: '1px dashed #6e2a3d',
+                  background: 'var(--k1c0d12)',
+                  border: '1px dashed var(--k6e2a3d)',
                   position: 'relative',
                 }}
               >
@@ -59,22 +59,22 @@ export default function MapView() {
                     right: 0,
                     top: '50%',
                     height: 1,
-                    background: 'linear-gradient(90deg,transparent,#c14a68,transparent)',
+                    background: 'linear-gradient(90deg,transparent,var(--kc14a68),transparent)',
                     opacity: 0.35,
                   }}
                 />
                 <div
                   style={{
-                    fontSize: 11,
+                    fontSize: fs(11),
                     fontWeight: 700,
                     letterSpacing: '.14em',
-                    color: '#ff8aa8',
+                    color: 'var(--kff8aa8)',
                     textAlign: 'center',
                   }}
                 >
                   — {layer.name} —
                 </div>
-                <div style={{ fontSize: 11, color: '#b0798c', lineHeight: 1.6, marginTop: 6 }}>{layer.desc}</div>
+                <div style={{ fontSize: fs(11), color: 'var(--kb0798c)', lineHeight: 1.6, marginTop: 6 }}>{layer.desc}</div>
               </div>
             )
           }
@@ -88,8 +88,8 @@ export default function MapView() {
               key={li}
               style={{
                 borderRadius: 14,
-                background: `oklch(30% 0.04 ${layer.hue} / 0.25)`,
-                border: `1px solid oklch(45% 0.07 ${layer.hue} / 0.5)`,
+                background: `oklch(${L(30)} 0.04 ${layer.hue} / 0.25)`,
+                border: `1px solid oklch(${L(45)} 0.07 ${layer.hue} / 0.5)`,
                 overflow: 'hidden',
               }}
             >
@@ -103,10 +103,10 @@ export default function MapView() {
                 }}
               >
                 <div>
-                  <div style={{ fontSize: 14, fontWeight: 700, color: `oklch(75% 0.13 ${layer.hue})` }}>
+                  <div style={{ fontSize: fs(14), fontWeight: 700, color: `oklch(${L(75)} 0.13 ${layer.hue})` }}>
                     {open ? '▾' : '▸'} {layer.name}
                   </div>
-                  <div style={{ fontSize: 11, color: C.dim, marginTop: 2 }}>
+                  <div style={{ fontSize: fs(11), color: C.dim, marginTop: 2 }}>
                     {layer.sub} · {count} authorities
                   </div>
                 </div>
@@ -114,7 +114,7 @@ export default function MapView() {
 
               {open && (
                 <div style={{ padding: '0 15px 13px' }}>
-                  <div style={{ fontSize: 12, color: '#a9a9b6', lineHeight: 1.6, marginBottom: 10 }}>
+                  <div style={{ fontSize: fs(12), color: 'var(--ka9a9b6)', lineHeight: 1.6, marginBottom: 10 }}>
                     {layer.desc}
                   </div>
                   {groups.map((group, gi) => (
@@ -122,7 +122,7 @@ export default function MapView() {
                       {group.p && (
                         <div
                           style={{
-                            fontSize: 10,
+                            fontSize: fs(10),
                             fontWeight: 700,
                             letterSpacing: '.1em',
                             color: C.faint,
@@ -139,7 +139,7 @@ export default function MapView() {
                             onClick={() => setItem(authority)}
                             style={{
                               background: C.panelSoft,
-                              border: '1px solid #1e1e28',
+                              border: '1px solid var(--k1e1e28)',
                               borderRadius: 10,
                               padding: '10px 12px',
                               display: 'flex',
@@ -149,10 +149,10 @@ export default function MapView() {
                             }}
                           >
                             <div style={{ minWidth: 0 }}>
-                              <div style={{ fontSize: 13, fontWeight: 600, color: C.textSerif }}>{authority.n}</div>
-                              <div style={{ fontSize: 11, color: C.faint, marginTop: 1 }}>{authority.s}</div>
+                              <div style={{ fontSize: fs(13), fontWeight: 600, color: C.textSerif }}>{authority.n}</div>
+                              <div style={{ fontSize: fs(11), color: C.faint, marginTop: 1 }}>{authority.s}</div>
                             </div>
-                            <div style={{ color: '#44445a', fontSize: 15, flex: 'none' }}>›</div>
+                            <div style={{ color: 'var(--k44445a)', fontSize: fs(15), flex: 'none' }}>›</div>
                           </Tap>
                         ))}
                       </div>
@@ -165,23 +165,23 @@ export default function MapView() {
         })}
       </div>
 
-      <div style={{ fontSize: 11, color: C.ghost, marginTop: 14, lineHeight: 1.6 }}>
+      <div style={{ fontSize: fs(11), color: C.ghost, marginTop: 14, lineHeight: 1.6 }}>
         NASAA writes almost no questions that turn on a section number. Learn the map so the architecture makes sense
         — not to recite citations.
       </div>
 
       {item && (
         <Sheet onClose={() => setItem(null)} maxHeight="70vh">
-          <div style={{ fontFamily: MONO_DISPLAY, fontSize: 17, fontWeight: 700, color: C.link }}>{item.n}</div>
-          <div style={{ fontSize: 12, color: C.dim, marginTop: 3 }}>{item.s}</div>
-          <div style={{ fontFamily: SERIF, fontSize: 14, lineHeight: 1.7, color: C.textSerif, marginTop: 12 }}>
+          <div style={{ fontFamily: MONO_DISPLAY, fontSize: fs(17), fontWeight: 700, color: C.link }}>{item.n}</div>
+          <div style={{ fontSize: fs(12), color: C.dim, marginTop: 3 }}>{item.s}</div>
+          <div style={{ fontFamily: SERIF, fontSize: fs(14), lineHeight: 1.7, color: C.textSerif, marginTop: 12 }}>
             {item.w}
           </div>
           {!!item.cells?.length && (
             <>
               <div
                 style={{
-                  fontSize: 10,
+                  fontSize: fs(10),
                   fontWeight: 700,
                   letterSpacing: '.1em',
                   color: C.faint,
@@ -201,10 +201,10 @@ export default function MapView() {
                     style={{
                       padding: '6px 12px',
                       borderRadius: 8,
-                      background: '#1a1a24',
+                      background: 'var(--k1a1a24)',
                       border: `1px solid ${C.borderRaised}`,
                       fontFamily: MONO_DISPLAY,
-                      fontSize: 12,
+                      fontSize: fs(12),
                       fontWeight: 700,
                       color: chapterColor(codeOf(id)),
                     }}

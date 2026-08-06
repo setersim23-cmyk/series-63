@@ -1,4 +1,4 @@
-import { Tap } from '../ui'
+import { fs, Tap } from '../ui'
 import type { Tab } from './BottomNav'
 
 const TABS: [Tab, string, string][] = [
@@ -24,7 +24,7 @@ export default function SideNav({ active, onTap }: { active: string; onTap: (tab
         width: 188,
         flex: 'none',
         padding: '28px 14px',
-        borderRight: '1px solid #1c1c26',
+        borderRight: '1px solid var(--k1c1c26)',
         display: 'flex',
         flexDirection: 'column',
         gap: 4,
@@ -33,7 +33,7 @@ export default function SideNav({ active, onTap }: { active: string; onTap: (tab
       <div
         style={{
           fontFamily: "'Space Grotesk'",
-          fontSize: 17,
+          fontSize: fs(17),
           fontWeight: 700,
           letterSpacing: '-0.02em',
           padding: '0 12px 18px',
@@ -53,13 +53,13 @@ export default function SideNav({ active, onTap }: { active: string; onTap: (tab
               gap: 12,
               padding: '10px 12px',
               borderRadius: 10,
-              background: on ? '#14141c' : 'transparent',
-              color: on ? '#e9e9ef' : '#77778a',
-              fontSize: 14,
+              background: on ? 'var(--k14141c)' : 'transparent',
+              color: on ? 'var(--ke9e9ef)' : 'var(--k77778a)',
+              fontSize: fs(14),
               fontWeight: 600,
             }}
           >
-            <span style={{ fontSize: 16, lineHeight: 1 }} aria-hidden="true">
+            <span style={{ fontSize: fs(16), lineHeight: 1 }} aria-hidden="true">
               {icon}
             </span>
             <span>{label}</span>

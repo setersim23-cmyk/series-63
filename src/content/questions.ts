@@ -1614,5 +1614,941 @@ export const QBANK: Question[] = [
   ],
   "a": 1,
   "w": "Authority to withdraw client funds — including direct fee deduction — IS custody, with the net-worth/audit safeguards that follow. A third-party check forwarded promptly (72 hours) does not itself create custody."
+ },
+ {
+  "c": "ETH-1",
+  "q": "An agent recommends a mutual fund to a retail customer. Which standard attaches to that recommendation?",
+  "o": [
+   "Fiduciary duty, because a recommendation was made",
+   "Best interest, running on care, disclosure, conflict and compliance obligations",
+   "Suitability only, because mutual funds are exempt from the best-interest rule",
+   "No standard until the customer actually purchases"
+  ],
+  "a": 1,
+  "w": "Best interest is owed by broker-dealers and their agents at the moment of a recommendation to a retail customer, and it runs on four obligations: care, disclosure, conflict of interest, and compliance."
+ },
+ {
+  "c": "ETH-1",
+  "q": "A client opens a self-directed account and enters unsolicited trades. The agent makes no recommendations. Which obligation still applies?",
+  "o": [
+   "Fiduciary duty",
+   "Best interest",
+   "Suitability",
+   "The antifraud provisions"
+  ],
+  "a": 3,
+  "w": "Suitability and best interest attach at a RECOMMENDATION. Where there is none, the antifraud provisions still apply — they reach every person, every security, every transaction."
+ },
+ {
+  "c": "ETH-1",
+  "q": "How does an investment adviser's fiduciary duty differ in timing from an agent's best-interest obligation?",
+  "o": [
+   "The fiduciary duty is continuous; best interest attaches at the recommendation",
+   "Both attach only at the point of sale",
+   "The fiduciary duty attaches only when discretion is granted",
+   "Best interest is continuous; the fiduciary duty is point-of-sale"
+  ],
+  "a": 0,
+  "w": "Fiduciary duty is ongoing for the life of the relationship. Best interest attaches at the recommendation itself."
+ },
+ {
+  "c": "ETH-1",
+  "q": "The antifraud provision reaches conduct in connection with:",
+  "o": [
+   "The offer and sale of a security only",
+   "The offer, sale, or purchase of any security",
+   "Only transactions in non-exempt securities",
+   "Only recommendations made to retail customers"
+  ],
+  "a": 1,
+  "w": "Offer, sale, OR purchase. Fraud committed while buying from a customer is covered just as fraud while selling to one."
+ },
+ {
+  "c": "ETH-1",
+  "q": "Reasonable-basis suitability requires that:",
+  "o": [
+   "The product is suitable for this particular customer",
+   "The rep understands the product well enough to believe it suits someone",
+   "The customer has signed a suitability acknowledgment",
+   "The firm's principal has approved the transaction"
+  ],
+  "a": 1,
+  "w": "Reasonable-basis is about the SECURITY: does the rep understand its risks and costs well enough to believe it could suit anyone. Customer-specific suitability is the separate second prong."
+ },
+ {
+  "c": "ETH-2",
+  "q": "An agent enters a series of bids at several price levels intending to cancel them all before execution. This is:",
+  "o": [
+   "Layering",
+   "A not-held order",
+   "Legitimate market making",
+   "A matched order"
+  ],
+  "a": 0,
+  "w": "Layering is spoofing at multiple price levels using a series of non-bona-fide orders. The tell is multiple layers, none of them genuine."
+ },
+ {
+  "c": "ETH-2",
+  "q": "Two parties arrange offsetting trades that produce no change in beneficial ownership, creating the appearance of activity. This is:",
+  "o": [
+   "Front-running",
+   "A wash sale or matched order",
+   "A bona fide arbitrage",
+   "Selling away"
+  ],
+  "a": 1,
+  "w": "Wash sales and matched orders manufacture apparent volume without any real change of ownership. That absence of ownership change is the tell."
+ },
+ {
+  "c": "ETH-2",
+  "q": "An agent learns of a large pending customer buy order and purchases the same security for a personal account first. This is:",
+  "o": [
+   "Permitted if the agent discloses it afterwards",
+   "Front-running",
+   "Permitted because the customer's price was unaffected",
+   "A breakpoint violation"
+  ],
+  "a": 1,
+  "w": "Front-running is trading ahead of known pending customer flow to profit from the price move it will cause. Later disclosure does not cure it."
+ },
+ {
+  "c": "ETH-2",
+  "q": "An analyst tips material non-public information to a friend but never trades. The analyst is:",
+  "o": [
+   "Not liable, because there was no personal trade",
+   "Liable — tipping is itself a violation",
+   "Liable only if the friend actually profits",
+   "Liable only if the analyst was paid for the tip"
+  ],
+  "a": 1,
+  "w": "Liability reaches the whole chain: the trader, the tipper even without trading, the tippee who trades, and the firm that failed to supervise."
+ },
+ {
+  "c": "ETH-2",
+  "q": "A promoter spreads false favourable news about a thinly traded stock, then sells into the demand created. This is:",
+  "o": [
+   "A pump and dump",
+   "Spoofing",
+   "A wash sale",
+   "Backing away"
+  ],
+  "a": 0,
+  "w": "Promotion followed by the promoter selling into the resulting demand is the pump-and-dump pattern."
+ },
+ {
+  "c": "ETH-2",
+  "q": "A firm may not publish a communication reporting a transaction as a purchase or sale unless:",
+  "o": [
+   "The transaction exceeded $50,000",
+   "It believes the transaction was bona fide",
+   "The customer consented in writing",
+   "A principal approved the communication"
+  ],
+  "a": 1,
+  "w": "The publication side of the manipulation rules: no reporting a trade unless the firm believes it was genuine."
+ },
+ {
+  "c": "ETH-3",
+  "q": "Securities sold on the premises of a bank require disclosure that the securities are:",
+  "o": [
+   "Insured up to $250,000 by the FDIC",
+   "Not federally insured, not a deposit or obligation of the institution, not guaranteed by it, and subject to investment risk including possible loss of principal",
+   "Guaranteed by the institution but subject to market risk",
+   "Covered by SIPC in place of FDIC insurance"
+  ],
+  "a": 1,
+  "w": "Four disclosures: not federally insured, not a deposit or obligation, not guaranteed, and subject to investment risk including loss of principal."
+ },
+ {
+  "c": "ETH-3",
+  "q": "An agent may use a professional designation only if it:",
+  "o": [
+   "Appears on the firm's approved list, whatever its source",
+   "Was issued by an accredited organization with real qualification standards, continuing education, and a public disciplinary process",
+   "Was earned within the last five years",
+   "Has been disclosed on the Form U4"
+  ],
+  "a": 1,
+  "w": "A designation must come from an accredited body with genuine standards, continuing education and a public disciplinary process — and must not be self-conferred or primarily marketing."
+ },
+ {
+  "c": "ETH-3",
+  "q": "An agent tells a prospect that a fund's registration means the state has passed on its merits. This is:",
+  "o": [
+   "Acceptable if the fund is in fact registered",
+   "An unlawful representation — registration never means approval",
+   "Acceptable if the agent also discloses the risks",
+   "A supervisory failure only"
+  ],
+  "a": 1,
+  "w": "Claiming that registration confers approval is itself a violation. Registration never means the Administrator approved, verified or vouched for anything."
+ },
+ {
+  "c": "ETH-3",
+  "q": "Statements about a mutual fund that exceed or contradict the prospectus are:",
+  "o": [
+   "Permitted if the agent believes them accurate",
+   "Permitted for institutional customers",
+   "A named misrepresentation",
+   "Permitted if the prospectus is delivered afterwards"
+  ],
+  "a": 2,
+  "w": "Named misrepresentations include guarantees, approval claims, and statements about a fund that contradict or exceed the prospectus — including hypothetical performance not in it."
+ },
+ {
+  "c": "ETH-4",
+  "q": "Which measures are used to examine a churning allegation?",
+  "o": [
+   "Turnover ratio, cost-to-equity ratio, and the pattern of in-and-out trading",
+   "The account's absolute loss over the period",
+   "The number of unsolicited trades",
+   "The ratio of equities to fixed income"
+  ],
+  "a": 0,
+  "w": "Churning is excessive trading relative to the customer's objectives and resources, examined through turnover ratio, cost-to-equity ratio, and in-and-out trading."
+ },
+ {
+  "c": "ETH-4",
+  "q": "Discretion exists when the professional decides, without contacting the client:",
+  "o": [
+   "Only the price at which an order is executed",
+   "Only the time an order is entered",
+   "The action, the asset, or the amount — any one is enough",
+   "All three of action, asset and amount together"
+  ],
+  "a": 2,
+  "w": "Action, asset, or amount — any single one is discretion. Only price and time can be left to the professional without written authority."
+ },
+ {
+  "c": "ETH-4",
+  "q": "A client says \"buy 500 shares of ABC today, you pick the moment.\" This is:",
+  "o": [
+   "Discretion requiring prior written authority",
+   "A not-held order, good for the day",
+   "Unauthorized trading",
+   "Permitted only in an advisory account"
+  ],
+  "a": 1,
+  "w": "Action, asset and amount are all specified; only time is left to the agent. That is a not-held order — no written authority needed, and it is a day order."
+ },
+ {
+  "c": "ETH-4",
+  "q": "An agent exercises discretion on a client's oral instruction, relying on a ten-business-day window. This is:",
+  "o": [
+   "Permitted — the window applies to agents too",
+   "Permitted if the firm approves within ten days",
+   "Not permitted — that window belongs to investment advisers only",
+   "Permitted only for sales, not purchases"
+  ],
+  "a": 2,
+  "w": "The oral-discretion window is an investment adviser rule. An agent of a broker-dealer needs prior WRITTEN authority."
+ },
+ {
+  "c": "ETH-4",
+  "q": "An agent places a profitable trade the customer never authorised. The customer is pleased. The trade is:",
+  "o": [
+   "Cured by the customer's later approval",
+   "Not a violation because the customer profited",
+   "An unauthorized transaction — good faith and profit are not defences",
+   "A violation only if the account loses money"
+  ],
+  "a": 2,
+  "w": "Unauthorized transactions are trades placed without prior consent. Profit does not cure it and good faith is not a defence."
+ },
+ {
+  "c": "ETH-5",
+  "q": "An agent accepts an investment just below the level qualifying for a reduced sales charge without mentioning it. This is:",
+  "o": [
+   "A breakpoint sale",
+   "A switching violation",
+   "Selling dividends",
+   "Permitted if the customer chose the amount"
+  ],
+  "a": 0,
+  "w": "A breakpoint sale is recommending or accepting an amount just under a breakpoint without telling the customer a slightly larger investment costs less."
+ },
+ {
+  "c": "ETH-5",
+  "q": "A letter of intent lets a customer reach a breakpoint by aggregating purchases over:",
+  "o": [
+   "6 months",
+   "13 months",
+   "18 months",
+   "24 months"
+  ],
+  "a": 1,
+  "w": "Thirteen months. Failing to tell a customer a letter of intent is available is itself a violation."
+ },
+ {
+  "c": "ETH-5",
+  "q": "An agent urges a client to buy fund shares just before the ex-dividend date to \"capture the distribution.\" This is:",
+  "o": [
+   "Sound advice on timing",
+   "Selling dividends — a violation",
+   "Permitted if the client is in a low tax bracket",
+   "Permitted for money market funds only"
+  ],
+  "a": 1,
+  "w": "Selling dividends is a violation: NAV drops by the distribution amount, so the buyer gains nothing and takes an immediate tax liability."
+ },
+ {
+  "c": "ETH-5",
+  "q": "Recommending the sale of one fund to buy another with substantially similar objectives, principally to generate a new sales charge, is:",
+  "o": [
+   "Switching",
+   "A breakpoint sale",
+   "Share-class abuse",
+   "Permitted with written client consent"
+  ],
+  "a": 0,
+  "w": "Switching between funds with substantially similar objectives, driven by the new sales charge, is a prohibited practice."
+ },
+ {
+  "c": "ETH-5",
+  "q": "Telling a customer that a money market mutual fund is equivalent to an insured bank savings account is:",
+  "o": [
+   "Accurate for government money market funds",
+   "An unfair comparison and a violation",
+   "Permitted if the fund has never broken the buck",
+   "Permitted with a prospectus delivery"
+  ],
+  "a": 1,
+  "w": "Money market funds carry no deposit insurance and no principal guarantee. Equating them with an insured savings account is an unfair comparison."
+ },
+ {
+  "c": "ETH-6",
+  "q": "A firm quotes a two-sided market and then refuses to trade at its own quote. This is:",
+  "o": [
+   "Backing away — dishonouring a quote",
+   "Permitted if the market moved",
+   "A not-held order",
+   "Commingling"
+  ],
+  "a": 0,
+  "w": "A firm publishing a two-sided market must stand ready to trade at those prices. Refusing is dishonouring a quote, sometimes called backing away."
+ },
+ {
+  "c": "ETH-6",
+  "q": "A firm holds back part of its allotment of a hot issue for its own account rather than making a bona fide public offering. This is:",
+  "o": [
+   "Permitted if the firm discloses it afterwards",
+   "Withholding shares of a public offering — a violation",
+   "Permitted for the firm's own inventory needs",
+   "Permitted if the offering was oversubscribed"
+  ],
+  "a": 1,
+  "w": "A firm must make a bona fide public offering of all securities allotted to it. Holding back hot-issue shares for itself or insiders is prohibited."
+ },
+ {
+  "c": "ETH-6",
+  "q": "A customer requests payment of a free credit balance and the firm delays repeatedly without justification. This is:",
+  "o": [
+   "Permitted while the firm verifies the balance",
+   "A prohibited pattern of unreasonable delay",
+   "Permitted if the account remains open",
+   "A supervisory matter only, not a violation"
+  ],
+  "a": 1,
+  "w": "A pattern of unreasonable, unjustifiable delay in delivering purchased securities or paying out a free credit balance on request is a firm-level violation."
+ },
+ {
+  "c": "ETH-7",
+  "q": "An agent borrows $10,000 from a customer who is a long-standing personal friend. This is:",
+  "o": [
+   "Permitted because of the personal relationship",
+   "Permitted with the firm's written consent",
+   "Prohibited — the exceptions cover lending institutions, broker-dealers and affiliates, not friends",
+   "Permitted if repaid with interest"
+  ],
+  "a": 2,
+  "w": "Borrowing from a customer is prohibited unless the customer is a broker-dealer, an affiliate of the firm, or a financial institution in the business of lending. Friendship is not an exception."
+ },
+ {
+  "c": "ETH-7",
+  "q": "An agent may share in the profits and losses of a customer's account only if:",
+  "o": [
+   "The customer consents orally",
+   "Both the customer and the firm consent in writing, and sharing is proportionate to the agent's own contribution",
+   "The agent's contribution exceeds 50% of the account",
+   "The firm's principal approves each trade"
+  ],
+  "a": 1,
+  "w": "Prior WRITTEN consent of both the customer and the firm, and then only in proportion to the agent's own capital contribution."
+ },
+ {
+  "c": "ETH-7",
+  "q": "An agent may split commissions with:",
+  "o": [
+   "Any registered agent in the state",
+   "An agent of the same broker-dealer or one under common control",
+   "Any person who referred the client",
+   "An unregistered solicitor, if disclosed"
+  ],
+  "a": 1,
+  "w": "Commission splitting is limited to agents of the same broker-dealer, or of a broker-dealer under direct or indirect common control. Paying an unregistered person is prohibited."
+ },
+ {
+  "c": "ETH-7",
+  "q": "An agent participates in a private securities transaction outside the firm and receives no compensation. What is required?",
+  "o": [
+   "Nothing, since there was no compensation",
+   "Prior written notice to the firm in all cases",
+   "Only an entry in the agent's outside business disclosure",
+   "The customer's written consent"
+  ],
+  "a": 1,
+  "w": "Prior WRITTEN notice to the firm is required in all cases regardless of compensation. Where compensation is involved, the firm must also approve and supervise the transaction."
+ },
+ {
+  "c": "ETH-7",
+  "q": "Which of these is a violation only a FIRM can commit?",
+  "o": [
+   "Borrowing from a customer",
+   "Sharing in a customer's profits",
+   "Dishonouring a published quote",
+   "Selling away"
+  ],
+  "a": 2,
+  "w": "The actor shortcut: firm-only violations include delivery delays, dishonouring quotes, unreasonable service fees, withholding an offering, and commingling. Borrowing, sharing and selling away are agent-level."
+ },
+ {
+  "c": "ETH-8",
+  "q": "Under the vulnerable-adult rules, a vulnerable adult is:",
+  "o": [
+   "Any customer over 70",
+   "An individual 65 or older, or an adult protected under the state's adult protective services statute",
+   "Any customer with a documented cognitive impairment",
+   "Any customer holding a trusteed account"
+  ],
+  "a": 1,
+  "w": "65 or older, or an adult otherwise protected under the state's adult protective services statute."
+ },
+ {
+  "c": "ETH-8",
+  "q": "What authority does a trusted contact person have over the account?",
+  "o": [
+   "Authority to approve disbursements",
+   "Authority to direct trades in an emergency",
+   "No authority over the account at all",
+   "Authority to place a temporary hold"
+  ],
+  "a": 2,
+  "w": "None. The trusted contact is someone the firm may contact — any answer in which the trusted contact approves or directs something is wrong."
+ },
+ {
+  "c": "ETH-8",
+  "q": "A firm reasonably believes a client is being financially exploited. A temporary hold may be placed on:",
+  "o": [
+   "All trading in the account",
+   "A disbursement from the account",
+   "The client's ability to contact the firm",
+   "The client's registration status"
+  ],
+  "a": 1,
+  "w": "Holds apply to DISBURSEMENTS, not to trading. Securities transactions inside the account continue."
+ },
+ {
+  "c": "ETH-8",
+  "q": "An adviser acts as agent for both the buyer and the seller in the same transaction. This is permitted:",
+  "o": [
+   "Never",
+   "Only with prior written client consent after written disclosure of the conflict and compensation",
+   "Only if the adviser earns no commission",
+   "Only for institutional clients"
+  ],
+  "a": 1,
+  "w": "An agency cross transaction requires prior written client consent following written disclosure of the conflict and the compensation."
+ },
+ {
+  "c": "ETH-8",
+  "q": "Under the Uniform Prudent Investor Act, prudence is judged:",
+  "o": [
+   "Investment by investment",
+   "At the portfolio level, as part of an overall strategy",
+   "Against a fixed list of legal investments",
+   "By the return achieved over the period"
+  ],
+  "a": 1,
+  "w": "Prudence is assessed at the PORTFOLIO level as part of an overall strategy, so no single security is categorically imprudent."
+ },
+ {
+  "c": "ETH-8",
+  "q": "May a trustee delegate investment decisions under the modern prudent investor standard?",
+  "o": [
+   "No — delegation is prohibited",
+   "Yes — prudent delegation is permitted and shifts liability",
+   "Only with court approval",
+   "Only to an affiliated adviser"
+  ],
+  "a": 1,
+  "w": "\"A trustee may not delegate\" is the OLD rule and the standard distractor. Prudent delegation is permitted and shifts liability."
+ },
+ {
+  "c": "COM-1",
+  "q": "Which must be disclosed to a retail client at the START of the relationship?",
+  "o": [
+   "The firm's net capital computation",
+   "The client relationship summary, and for advisers the brochure and brochure supplement",
+   "The identity of the firm's clearing agent's auditor",
+   "A list of every security the firm holds in inventory"
+  ],
+  "a": 1,
+  "w": "Relationship disclosures at the outset: the client relationship summary, and for advisers the brochure and brochure supplement."
+ },
+ {
+  "c": "COM-1",
+  "q": "A firm's financial condition deteriorates such that it may not be able to meet commitments to clients. This must be:",
+  "o": [
+   "Disclosed only at the next annual review",
+   "Disclosed to clients as a changed circumstance",
+   "Reported only to the Administrator",
+   "Kept confidential to avoid a run on the firm"
+  ],
+  "a": 1,
+  "w": "Changed-circumstances disclosures include any change in financial condition that could impair the firm's ability to meet commitments to clients."
+ },
+ {
+  "c": "COM-1",
+  "q": "When recommending a security, which must be disclosed?",
+  "o": [
+   "Its material risks, and the fees and expenses including sales charges and ongoing distribution fees",
+   "Only the sales charge",
+   "Only risks the client asks about",
+   "Only fees exceeding 1% annually"
+  ],
+  "a": 0,
+  "w": "Product disclosures cover the material risks of the recommended security plus fees and expenses — sales charges, ongoing distribution fees and management fees."
+ },
+ {
+  "c": "COM-2",
+  "q": "Which statement about registration is PERMITTED?",
+  "o": [
+   "\"We are registered, so the state has reviewed our strategy.\"",
+   "\"Registration means our recommendations meet a quality standard.\"",
+   "\"Our firm is registered in this state as a broker-dealer.\"",
+   "\"The SEC approved this offering.\""
+  ],
+  "a": 2,
+  "w": "The plain fact of registration is permitted. Anything claiming quality, approval or merit is not — when a stem offers four statements, pick the purely factual one."
+ },
+ {
+  "c": "COM-2",
+  "q": "An agent offers to send a prospect the firm's registration certificate as evidence the state endorses the firm. This is:",
+  "o": [
+   "Permitted, since the certificate is genuine",
+   "Prohibited — it implies approval",
+   "Permitted with a written disclaimer",
+   "Permitted only for institutional prospects"
+  ],
+  "a": 1,
+  "w": "Offering registration documents as evidence of endorsement implies approval, which registration never confers."
+ },
+ {
+  "c": "COM-3",
+  "q": "Which statement is PERMITTED?",
+  "o": [
+   "\"You cannot lose your principal in this fund.\"",
+   "\"Direct obligations of the U.S. Treasury are backed by the full faith and credit of the U.S. government.\"",
+   "\"This strategy has never had a down year and never will.\"",
+   "\"If the account loses money this quarter, I will make up the difference.\""
+  ],
+  "a": 1,
+  "w": "A specific true statement about a specific product with a named guarantor is permitted. Promises of return, safety of principal, or personal reimbursement are guarantees and prohibited."
+ },
+ {
+  "c": "COM-3",
+  "q": "An agent offers to reimburse a client from the agent's own funds for a loss. This is:",
+  "o": [
+   "Permitted if the agent actually pays",
+   "Permitted with the firm's written consent",
+   "Prohibited — both the payment and the promise are treated as guarantees against loss",
+   "Permitted only in a discretionary account"
+  ],
+  "a": 2,
+  "w": "Reimbursing a client for a loss out of the agent's own pocket is prohibited, and so is promising to do it. Both are guarantees against loss."
+ },
+ {
+  "c": "COM-4",
+  "q": "A customer refuses to disclose net worth. The firm may:",
+  "o": [
+   "Not open the account at all",
+   "Open the account but not make recommendations it cannot support",
+   "Open the account and recommend only mutual funds",
+   "Open the account after a principal waives the requirement"
+  ],
+  "a": 1,
+  "w": "The account can be opened — what the firm cannot do is make recommendations it has no basis to support. Refusal blocks recommendations, not the account."
+ },
+ {
+  "c": "COM-4",
+  "q": "Recorded account information must be sent to the customer:",
+  "o": [
+   "Within 30 days of opening and at least every 36 months thereafter",
+   "Annually only",
+   "Within 15 days of opening and every 12 months",
+   "Only when the customer requests it"
+  ],
+  "a": 0,
+  "w": "Within 30 days of opening, then at least every 36 months, with the customer invited to correct it."
+ },
+ {
+  "c": "COM-4",
+  "q": "Which is required for EVERY account, whether or not the firm makes recommendations?",
+  "o": [
+   "Annual income and liquid net worth",
+   "Risk tolerance",
+   "Name, residence address, whether of legal age, tax identification number and occupation",
+   "Investment objectives"
+  ],
+  "a": 2,
+  "w": "Name, residence address, legal age, tax ID and occupation are required for every account. Income, net worth, objectives and risk tolerance are additionally required where the firm will recommend."
+ },
+ {
+  "c": "COM-5",
+  "q": "Which of the three margin agreements is OPTIONAL?",
+  "o": [
+   "The credit agreement",
+   "The hypothecation agreement",
+   "The loan consent",
+   "All three are required"
+  ],
+  "a": 2,
+  "w": "Only the loan consent is optional. The credit and hypothecation agreements are required — a choice offering \"all three are required\" or \"hypothecation is optional\" is testing exactly this."
+ },
+ {
+  "c": "COM-5",
+  "q": "Maintenance margin for a long stock position is:",
+  "o": [
+   "25% of market value",
+   "30% of market value",
+   "50% of market value",
+   "$2,000"
+  ],
+  "a": 0,
+  "w": "25% for long positions; 30% for short positions in stock priced $5 or more. Firms may impose higher house requirements."
+ },
+ {
+  "c": "COM-5",
+  "q": "A customer receives a maintenance call. Which satisfies it?",
+  "o": [
+   "Buying additional marginable stock in the account",
+   "Depositing cash or marginable securities",
+   "Selling nothing and waiting for a rebound",
+   "Signing a new credit agreement"
+  ],
+  "a": 1,
+  "w": "Cash or marginable securities satisfy the call. Buying more stock increases the requirement rather than meeting it."
+ },
+ {
+  "c": "COM-5",
+  "q": "New issues are:",
+  "o": [
+   "Marginable immediately",
+   "Not marginable for 30 days",
+   "Never marginable",
+   "Marginable at 25%"
+  ],
+  "a": 1,
+  "w": "New issues are not marginable for 30 days, and options must be paid for in full."
+ },
+ {
+  "c": "COM-6",
+  "q": "Which options document is SIGNED and returned by the customer?",
+  "o": [
+   "The options disclosure document",
+   "The options agreement",
+   "The prospectus",
+   "The risk acknowledgment on the trade confirmation"
+  ],
+  "a": 1,
+  "w": "The disclosure document is DELIVERED, not signed. The options AGREEMENT is signed and returned within 15 days. Swapping the two is the classic trap."
+ },
+ {
+  "c": "COM-6",
+  "q": "The signed options agreement does not arrive within 15 days. The account is:",
+  "o": [
+   "Frozen entirely",
+   "Restricted to closing transactions only",
+   "Closed and positions liquidated",
+   "Unaffected until 30 days pass"
+  ],
+  "a": 1,
+  "w": "Not frozen — restricted to CLOSING transactions only. Existing positions may be closed but no new ones opened."
+ },
+ {
+  "c": "COM-6",
+  "q": "A call option is in the money when:",
+  "o": [
+   "The market price is above the strike price",
+   "The market price is below the strike price",
+   "The market price equals the strike price",
+   "The premium exceeds intrinsic value"
+  ],
+  "a": 0,
+  "w": "A CALL is in the money when market is ABOVE strike; a PUT when market is BELOW strike."
+ },
+ {
+  "c": "COM-7",
+  "q": "A piece distributed to 40 retail investors within a 30-day period is:",
+  "o": [
+   "Correspondence",
+   "A retail communication requiring principal approval before use",
+   "An institutional communication",
+   "Exempt from the content standards"
+  ],
+  "a": 1,
+  "w": "More than 25 retail investors in any 30 calendar-day period makes it a retail communication, requiring principal approval before first use."
+ },
+ {
+  "c": "COM-7",
+  "q": "Certain retail communications, such as those about closed-end funds during the offering period, must be filed:",
+  "o": [
+   "Within 10 business days after first use",
+   "10 business days before first use",
+   "Only on the Administrator's request",
+   "At the end of the calendar quarter"
+  ],
+  "a": 1,
+  "w": "Those categories must be filed 10 business days BEFORE first use."
+ },
+ {
+  "c": "COM-7",
+  "q": "A firm posts static promotional content on a social media page. This is normally:",
+  "o": [
+   "Correspondence, because it is online",
+   "A retail communication",
+   "An institutional communication",
+   "Outside the communication rules entirely"
+  ],
+  "a": 1,
+  "w": "Static content is advertising-style and normally a retail communication. Interactive replies are treated differently — calling a static post correspondence is the trap."
+ },
+ {
+  "c": "COM-8",
+  "q": "Order tickets, trade confirmations and communications with the public must be retained for:",
+  "o": [
+   "3 years, the first two easily accessible",
+   "6 years, the first two easily accessible",
+   "The lifetime of the firm plus two years",
+   "1 year"
+  ],
+  "a": 0,
+  "w": "Three years, first two easily accessible. Six years covers customer account records, blotters, general ledgers and securities records."
+ },
+ {
+  "c": "COM-8",
+  "q": "Partnership articles, corporate charters and minute books must be kept for:",
+  "o": [
+   "3 years",
+   "6 years",
+   "The lifetime of the firm plus two years",
+   "Indefinitely with no end date"
+  ],
+  "a": 2,
+  "w": "Lifetime of the firm plus two years — the longest retention category."
+ },
+ {
+  "c": "COM-8",
+  "q": "A client asks to waive the annual privacy notice. The firm may:",
+  "o": [
+   "Accept the waiver in writing",
+   "Not accept it — the exception depends on the firm's practices, not customer consent",
+   "Accept it for institutional clients only",
+   "Accept it if the client receives the notice electronically"
+  ],
+  "a": 1,
+  "w": "The annual-notice exception is about the FIRM's practices. A client cannot consent their way out of receiving notices."
+ },
+ {
+  "c": "AGT-1",
+  "q": "An individual solicits prospects for a broker-dealer but never completes a single sale. She is:",
+  "o": [
+   "Not an agent, since no transaction occurred",
+   "An agent — attempting to effect transactions counts",
+   "An agent only if she was paid",
+   "An agent only after the first completed sale"
+  ],
+  "a": 1,
+  "w": "The definition reaches effecting OR ATTEMPTING to effect transactions. \"She never closed a sale\" is the trap."
+ },
+ {
+  "c": "AGT-1",
+  "q": "Which activity requires agent registration?",
+  "o": [
+   "Filing completed order tickets",
+   "Answering the switchboard and transferring calls",
+   "Taking or receiving a customer order, even if someone else enters it",
+   "Preparing the firm's net capital computation"
+  ],
+  "a": 2,
+  "w": "Taking or receiving customer orders requires registration, even if another person enters the trade. Purely clerical work does not."
+ },
+ {
+  "c": "AGT-2",
+  "q": "A clerical employee, covering for a sick colleague, accepts a customer's sell order. Her status:",
+  "o": [
+   "Is unchanged — her job title is clerical",
+   "Changed at that order; she was acting as an agent",
+   "Depends on whether the order was profitable",
+   "Changed only if she received commission"
+  ],
+  "a": 1,
+  "w": "The exclusion ends at the first customer order. Title is irrelevant in both directions."
+ },
+ {
+  "c": "AGT-3",
+  "q": "An individual sells his employer's own stock to fellow employees and receives a bonus for each subscription. He is:",
+  "o": [
+   "Excluded, because the buyers are employees",
+   "An agent — the no-commission condition fails",
+   "Excluded, because the issuer is his employer",
+   "Excluded, because the stock is exempt"
+  ],
+  "a": 1,
+  "w": "The employee-sales exclusion applies ONLY where no commission or remuneration is paid for the solicitation. A per-subscription bonus defeats it."
+ },
+ {
+  "c": "AGT-4",
+  "q": "An agent registered in New York services a client who has permanently relocated to Florida and become a Florida resident. The agent:",
+  "o": [
+   "May continue under the snowbird rule indefinitely",
+   "Must register in Florida — the snowbird rule requires the client remain a non-resident temporarily present",
+   "May continue if the client initiates all contact",
+   "May continue for up to 12 months"
+  ],
+  "a": 1,
+  "w": "The snowbird rule covers an existing customer TEMPORARILY present who remains a non-resident. Permanent relocation ends it."
+ },
+ {
+  "c": "AGT-5",
+  "q": "Who files the Form U4, and when does registration become effective?",
+  "o": [
+   "The individual; immediately on filing",
+   "The firm; at noon on the 30th day after filing",
+   "The individual; at noon on the 30th day",
+   "The firm; upon the Administrator's written approval"
+  ],
+  "a": 1,
+  "w": "The FIRM files the U4 through the CRD, and registration becomes effective at noon on the thirtieth day after filing."
+ },
+ {
+  "c": "AGT-6",
+  "q": "Form U4 must be amended within:",
+  "o": [
+   "10 days of a reportable event",
+   "30 days of a reportable event",
+   "60 days of a reportable event",
+   "The next renewal cycle"
+  ],
+  "a": 1,
+  "w": "Within 30 days of any event requiring disclosure — address and name changes, criminal charges and convictions, regulatory actions."
+ },
+ {
+  "c": "AGT-7",
+  "q": "A registrant has died and the firm cannot locate a successor. The Administrator's appropriate action is:",
+  "o": [
+   "Revocation",
+   "Suspension",
+   "Cancellation",
+   "Denial"
+  ],
+  "a": 2,
+  "w": "Death, disappearance, dissolution or incapacity is CANCELLATION — housekeeping, not discipline. Misconduct is what triggers denial, suspension or revocation."
+ },
+ {
+  "c": "AGT-8",
+  "q": "Before opening a securities account at another firm, an associated person must:",
+  "o": [
+   "Obtain the Administrator's approval",
+   "Notify the employing firm in writing",
+   "Do nothing, provided no securities of the employer are traded",
+   "Notify the employing firm only if the account is discretionary"
+  ],
+  "a": 1,
+  "w": "Prior written notice to the employing firm is required before opening an outside securities or commodity account."
+ },
+ {
+  "c": "BDR-2",
+  "q": "A firm has no place of business in the state and deals only with banks — except for one retail customer who lives there. The firm:",
+  "o": [
+   "Is excluded, because one customer is de minimis",
+   "Must register — there is no de minimis exemption for broker-dealers",
+   "Is excluded if that customer initiated contact",
+   "Must register only if it has more than five such customers"
+  ],
+  "a": 1,
+  "w": "There is NO de minimis exemption for broker-dealers. A single in-state retail resident requires registration."
+ },
+ {
+  "c": "BDR-3",
+  "q": "A firm has no employees in a state but advertises a local address for client correspondence. It:",
+  "o": [
+   "Has no place of business there",
+   "Has a place of business — an address held out publicly is enough",
+   "Has a place of business only if mail is received there",
+   "Is exempt because no one works there"
+  ],
+  "a": 1,
+  "w": "A place of business includes any address the firm publicly holds out as one. \"No employees in the state\" is the trap."
+ },
+ {
+  "c": "BDR-5",
+  "q": "A broker-dealer under investigation files to withdraw its registration. The withdrawal:",
+  "o": [
+   "Takes effect in 30 days regardless",
+   "Is suspended while the proceeding is pending, and jurisdiction continues for a year afterwards",
+   "Takes effect immediately on filing",
+   "Requires the Administrator's written consent in all cases"
+  ],
+  "a": 1,
+  "w": "Withdrawal is suspended while a proceeding is pending, and the Administrator retains jurisdiction for one year after any withdrawal."
+ },
+ {
+  "c": "BDR-7",
+  "q": "Customer cash and customer securities held by a broker-dealer:",
+  "o": [
+   "Must both be segregated from the firm's own",
+   "May both be commingled with the firm's own",
+   "Securities must be segregated; cash may be commingled",
+   "Cash must be segregated; securities may be commingled"
+  ],
+  "a": 2,
+  "w": "Customer SECURITIES must be segregated; customer CASH may be commingled. The asymmetry is the tested part."
+ },
+ {
+  "c": "REM-2",
+  "q": "A magazine is published in State A, but 70% of its circulation is outside State A. An offer appearing in it is:",
+  "o": [
+   "Made in State A",
+   "Outside State A's jurisdiction under the two-thirds circulation test",
+   "Made in every state where it circulates",
+   "Made only where the publisher is incorporated"
+  ],
+  "a": 1,
+  "w": "The publication exclusion: a periodical published in the state but with two-thirds or more of its circulation elsewhere falls outside that state's jurisdiction."
+ },
+ {
+  "c": "REM-6",
+  "q": "A buyer discovers a violation four years after the sale but only six months ago. The claim is:",
+  "o": [
+   "Timely — two years from discovery has not run",
+   "Time-barred — the limit is the EARLIER of three years from the violation or two years from discovery",
+   "Timely — the limit is five years",
+   "Timely if the seller acted willfully"
+  ],
+  "a": 1,
+  "w": "The EARLIER of the two, not the later. A buyer can lose the right to sue before ever discovering the violation."
+ },
+ {
+  "c": "REM-7",
+  "q": "\"Willful\" in the context of a criminal securities prosecution means:",
+  "o": [
+   "The defendant knew the conduct was illegal",
+   "The conduct was intentional",
+   "The defendant intended to cause loss",
+   "The defendant acted with scienter and malice"
+  ],
+  "a": 1,
+  "w": "Willful means the conduct was intentional — not that the defendant knew it was illegal. That confusion is the standard distractor."
  }
 ]

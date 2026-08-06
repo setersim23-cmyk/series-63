@@ -4,7 +4,7 @@ import { QBANK } from '../content/questions'
 import { chapterColor, codeOf } from '../lib/color'
 import { recordAnswer } from '../lib/quiz'
 import type { CellId, Mark } from '../types'
-import { C, CORRECT, MONO_DISPLAY, NEUTRAL, PrimaryButton, SERIF, Tap, WRONG } from '../ui'
+import { C, CORRECT, fs, MONO_DISPLAY, NEUTRAL, PrimaryButton, SERIF, Tap, WRONG } from '../ui'
 
 const markName = (m: Mark) => (m === 2 ? 'solid' : m === 1 ? 'shaky' : 'blank')
 const markColor = (m: Mark) => (m === 2 ? C.green : m === 1 ? C.amber : C.pink)
@@ -29,10 +29,10 @@ export default function Checkpoint({
 
   const header = (
     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-      <Tap onClick={() => go.cell(state.cellId)} style={{ fontSize: 13, color: '#8a8a9a' }}>
+      <Tap onClick={() => go.cell(state.cellId)} style={{ fontSize: fs(13), color: 'var(--k8a8a9a)' }}>
         ‹ Back to {state.cellId}
       </Tap>
-      <div style={{ fontSize: 11, fontWeight: 700, fontFamily: MONO_DISPLAY, color }}>CHECKPOINT</div>
+      <div style={{ fontSize: fs(11), fontWeight: 700, fontFamily: MONO_DISPLAY, color }}>CHECKPOINT</div>
     </div>
   )
 
@@ -45,10 +45,10 @@ export default function Checkpoint({
     return (
       <div style={{ padding: '16px 18px calc(130px + var(--safe-bottom))' }}>
         {header}
-        <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '.08em', color: C.blue, marginTop: 14 }}>
+        <div style={{ fontSize: fs(11), fontWeight: 700, letterSpacing: '.08em', color: C.blue, marginTop: 14 }}>
           ◆ Concept check · {state.qi + 1} of {state.qs.length}
         </div>
-        <div style={{ fontFamily: SERIF, fontSize: 16, lineHeight: 1.6, marginTop: 10, color: '#eeeef4' }}>{q.q}</div>
+        <div style={{ fontFamily: SERIF, fontSize: fs(16), lineHeight: 1.6, marginTop: 10, color: 'var(--keeeef4)' }}>{q.q}</div>
 
         <div style={{ marginTop: 14, display: 'flex', flexDirection: 'column', gap: 8 }}>
           {q.o.map((option, oi) => {
@@ -77,7 +77,7 @@ export default function Checkpoint({
                 style={{
                   borderRadius: 12,
                   padding: '12px 14px',
-                  fontSize: 14,
+                  fontSize: fs(14),
                   lineHeight: 1.5,
                   background: look.bg,
                   border: `1px solid ${look.bd}`,
@@ -101,10 +101,10 @@ export default function Checkpoint({
                 border: `1px solid ${C.borderRaised}`,
               }}
             >
-              <div style={{ fontSize: 11, fontWeight: 700, color: right ? C.green : C.pink }}>
+              <div style={{ fontSize: fs(11), fontWeight: 700, color: right ? C.green : C.pink }}>
                 {right ? 'CORRECT' : 'NOT QUITE'}
               </div>
-              <div style={{ fontFamily: SERIF, fontSize: 13, lineHeight: 1.6, color: '#d9d9e2', marginTop: 4 }}>
+              <div style={{ fontFamily: SERIF, fontSize: fs(13), lineHeight: 1.6, color: 'var(--kd9d9e2)', marginTop: 4 }}>
                 {q.w}
               </div>
             </div>
@@ -114,7 +114,7 @@ export default function Checkpoint({
                 else if (state.facts.length) setState({ ...state, phase: 'f' })
                 else onFinish(state)
               }}
-              style={{ marginTop: 10, padding: 12, fontSize: 13 }}
+              style={{ marginTop: 10, padding: 12, fontSize: fs(13) }}
             >
               {!lastQuestion ? 'Next' : state.facts.length ? 'Now the facts →' : 'See your marks'}
             </PrimaryButton>
@@ -131,7 +131,7 @@ export default function Checkpoint({
     return (
       <div style={{ padding: '16px 18px calc(130px + var(--safe-bottom))' }}>
         {header}
-        <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '.08em', color: C.amber, marginTop: 14 }}>
+        <div style={{ fontSize: fs(11), fontWeight: 700, letterSpacing: '.08em', color: C.amber, marginTop: 14 }}>
           ● Fact recall · {state.fi + 1} of {state.facts.length}
         </div>
 
@@ -140,14 +140,14 @@ export default function Checkpoint({
             marginTop: 10,
             borderRadius: 12,
             padding: '14px 16px',
-            background: '#131007',
-            border: '1px solid #2e2612',
+            background: 'var(--k131007)',
+            border: '1px solid var(--k2e2612)',
           }}
         >
-          <div style={{ fontFamily: SERIF, fontSize: 16, lineHeight: 1.6, color: '#eeeef4' }}>
+          <div style={{ fontFamily: SERIF, fontSize: fs(16), lineHeight: 1.6, color: 'var(--keeeef4)' }}>
             {fact.x.split(' ').slice(0, 5).join(' ')} …
           </div>
-          <div style={{ fontSize: 12, color: '#9a8a5f', marginTop: 8 }}>
+          <div style={{ fontSize: fs(12), color: 'var(--k9a8a5f)', marginTop: 8 }}>
             Say the rest OUT LOUD — the whole fact — then reveal.
           </div>
         </div>
@@ -163,7 +163,7 @@ export default function Checkpoint({
                 border: `1px solid ${C.borderRaised}`,
               }}
             >
-              <div style={{ fontFamily: SERIF, fontSize: 14, lineHeight: 1.7, color: C.textSerif }}>{fact.x}</div>
+              <div style={{ fontFamily: SERIF, fontSize: fs(14), lineHeight: 1.7, color: C.textSerif }}>{fact.x}</div>
             </div>
             <div style={{ display: 'flex', gap: 8, marginTop: 10 }}>
               {([['Had it', true], ['Missed it', false]] as const).map(([label, ok]) => (
@@ -179,7 +179,7 @@ export default function Checkpoint({
                     textAlign: 'center',
                     padding: 12,
                     borderRadius: 12,
-                    fontSize: 13,
+                    fontSize: fs(13),
                     fontWeight: 700,
                     background: ok ? CORRECT.bg : WRONG.bg,
                     border: `1px solid ${ok ? CORRECT.bd : WRONG.bd}`,
@@ -217,7 +217,7 @@ export default function Checkpoint({
     <div style={{ padding: '16px 18px calc(130px + var(--safe-bottom))' }}>
       {header}
       <div style={{ textAlign: 'center', marginTop: 26 }}>
-        <div style={{ fontSize: 12, color: C.dim, letterSpacing: '.1em' }}>{state.cellId} — GRADED FOR YOU</div>
+        <div style={{ fontSize: fs(12), color: C.dim, letterSpacing: '.1em' }}>{state.cellId} — GRADED FOR YOU</div>
         <div style={{ display: 'flex', gap: 10, marginTop: 16 }}>
           {(
             [
@@ -235,11 +235,11 @@ export default function Checkpoint({
                 padding: 16,
               }}
             >
-              <div style={{ fontSize: 11, color: labelColor, fontWeight: 700 }}>{label}</div>
+              <div style={{ fontSize: fs(11), color: labelColor, fontWeight: 700 }}>{label}</div>
               <div
                 style={{
                   fontFamily: MONO_DISPLAY,
-                  fontSize: 24,
+                  fontSize: fs(24),
                   fontWeight: 700,
                   marginTop: 6,
                   color: markColor(mark),
@@ -254,9 +254,9 @@ export default function Checkpoint({
         <div
           style={{
             fontFamily: SERIF,
-            fontSize: 14,
+            fontSize: fs(14),
             lineHeight: 1.65,
-            color: '#c9c9d4',
+            color: 'var(--kc9c9d4)',
             marginTop: 16,
             textAlign: 'left',
             background: C.panel,
@@ -278,7 +278,7 @@ export default function Checkpoint({
               border: `1px solid ${C.borderRaised}`,
               borderRadius: 12,
               padding: 12,
-              fontSize: 13,
+              fontSize: fs(13),
               fontWeight: 600,
             }}
           >
@@ -290,7 +290,7 @@ export default function Checkpoint({
               if (next) go.cell(next)
               else go.home()
             }}
-            style={{ flex: 1, padding: 12, fontSize: 13 }}
+            style={{ flex: 1, padding: 12, fontSize: fs(13) }}
           >
             Next cell →
           </PrimaryButton>

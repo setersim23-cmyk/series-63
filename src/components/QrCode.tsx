@@ -28,11 +28,11 @@ export default function QrCode({ text, size = 240 }: { text: string; size?: numb
       width={size}
       height={size}
       viewBox={`-2 -2 ${path.count + 4} ${path.count + 4}`}
-      style={{ display: 'block', margin: '0 auto', background: '#fff', borderRadius: 10 }}
+      style={{ display: 'block', margin: '0 auto', background: 'var(--kffffff)', borderRadius: 10 }}
       role="img"
       aria-label="Scan to transfer your progress"
     >
-      <path d={path.d} fill="#08080b" />
+      <path d={path.d} fill="var(--k08080b)" />
     </svg>
   )
 }

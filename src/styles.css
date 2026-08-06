@@ -1,4 +1,5 @@
 @import './fonts.css';
+@import './theme.css';
 
 /*
  * Installed as a home-screen app the page is drawn edge to edge, underneath the
@@ -14,24 +15,42 @@
   --safe-top: env(safe-area-inset-top, 0px);
   --safe-bottom: env(safe-area-inset-bottom, 0px);
   --nav-h: calc(60px + var(--safe-bottom));
+
+  /*
+   * Type scale. Every size in the app is written as its design pixel value
+   * times --fs-unit, so the whole thing moves together.
+   *
+   * --fs-fit is the screen's share: about 16px on a phone — which is where the
+   * design's numbers were drawn, so a phone looks exactly as it did — shrinking
+   * a little on a 320px handset and growing to 18 on a laptop, where the extra
+   * width would otherwise just make the lines longer.
+   *
+   * --fs-user is yours, set by the picker on the home screen and multiplied on
+   * top, so choosing "larger" keeps the screen-size response rather than
+   * replacing it. The division by 16 turns the pair into a unit length: 14 *
+   * var(--fs-unit) is 14px at the anchor and scales from there.
+   */
+  --fs-fit: clamp(15px, calc(14.2px + 0.45vw), 18px);
+  --fs-user: 1;
+  --fs-unit: calc(var(--fs-fit) * var(--fs-user) / 16);
 }
 
 html,
 body {
   margin: 0;
   padding: 0;
-  background: #08080b;
-  color: #e9e9ef;
+  background: var(--k08080b);
+  color: var(--ke9e9ef);
   font-family: 'Instrument Sans', system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
 a {
-  color: #8ab4ff;
+  color: var(--k8ab4ff);
   text-decoration: none;
 }
 a:hover {
-  color: #b3ceff;
+  color: var(--kb3ceff);
 }
 
 * {
@@ -50,7 +69,7 @@ a:hover {
 }
 
 ::selection {
-  background: #2b3a5e;
+  background: var(--k2b3a5e);
 }
 
 /* Form controls don't inherit the page font on their own. Sizes stay as the

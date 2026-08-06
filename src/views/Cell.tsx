@@ -4,10 +4,10 @@ import { LAWS } from '../data/laws'
 import { META } from '../data/meta'
 import { TOOLMAP } from '../data/tools'
 import { chapterColor, codeOf, hue } from '../lib/color'
-import { cellItems, findCell, locusOf, segments, type DisplayItem } from '../lib/content'
+import { cellItems, findCell, segments, type DisplayItem, type Locus } from '../lib/content'
 import { nextCellId } from '../lib/scoring'
 import type { CellId, Mark } from '../types'
-import { C, MONO_DISPLAY, SERIF, Tap } from '../ui'
+import { C, fs, MONO_DISPLAY, SERIF, Tap } from '../ui'
 import TtsBar from '../components/TtsBar'
 import FiveFilterWalk from '../components/tools/FiveFilterWalk'
 import RescissionCalc from '../components/tools/RescissionCalc'
@@ -15,12 +15,12 @@ import Sorter from '../components/tools/Sorter'
 import Timeline from '../components/tools/Timeline'
 
 const TAG_STYLES: Record<string, { l: string; c: string; bg: string; bd: string }> = {
-  concept: { l: '◆ CONCEPT — RE-DERIVE IF MISSED', c: '#7eb8f0', bg: '#0d1119', bd: '#1c2536' },
-  memorize: { l: '● MEMORIZE — DRILL IF MISSED', c: '#e8c37a', bg: '#131007', bd: '#2e2612' },
-  trap: { l: '▲ EXAM TRAP', c: '#ff9ab0', bg: '#170d12', bd: '#33202a' },
-  link: { l: '→ CONNECTS TO', c: '#9a9aa6', bg: '#0d0d13', bd: '#22222c' },
-  warn: { l: '⚠ SOURCE NOTE', c: '#e89a5a', bg: '#140f0a', bd: '#2e2214' },
-  frame: { l: '● THE ANSWER FRAMEWORK', c: '#7ee0a8', bg: '#0a1510', bd: '#1e3a2c' },
+  concept: { l: '◆ CONCEPT — RE-DERIVE IF MISSED', c: 'var(--k7eb8f0)', bg: 'var(--k0d1119)', bd: 'var(--k1c2536)' },
+  memorize: { l: '● MEMORIZE — DRILL IF MISSED', c: 'var(--ke8c37a)', bg: 'var(--k131007)', bd: 'var(--k2e2612)' },
+  trap: { l: '▲ EXAM TRAP', c: 'var(--kff9ab0)', bg: 'var(--k170d12)', bd: 'var(--k33202a)' },
+  link: { l: '→ CONNECTS TO', c: 'var(--k9a9aa6)', bg: 'var(--k0d0d13)', bd: 'var(--k22222c)' },
+  warn: { l: '⚠ SOURCE NOTE', c: 'var(--ke89a5a)', bg: 'var(--k140f0a)', bd: 'var(--k2e2214)' },
+  frame: { l: '● THE ANSWER FRAMEWORK', c: 'var(--k7ee0a8)', bg: 'var(--k0a1510)', bd: 'var(--k1e3a2c)' },
 }
 
 const MARKS: [string, Mark][] = [
@@ -46,7 +46,6 @@ export default function CellView({
   const cell = findCell(cellId)
   const color = chapterColor(code)
   const saved = store.cells[cellId] ?? {}
-  const locus = locusOf(cellId)
   const items = cellItems(cell)
   const next = nextCellId(cellId)
   const toolKey = TOOLMAP[cellId]
@@ -65,7 +64,7 @@ export default function CellView({
             textAlign: 'center',
             padding: '7px 0',
             borderRadius: 8,
-            fontSize: 12,
+            fontSize: fs(12),
             fontWeight: 600,
             background: on ? color : C.raisedAlt,
             color: on ? C.bg : C.dim,
@@ -85,19 +84,19 @@ export default function CellView({
           position: 'sticky',
           top: 'var(--safe-top)',
           zIndex: 5,
-          background: 'rgba(8,8,11,.92)',
+          background: 'var(--chrome-soft)',
           backdropFilter: 'blur(12px)',
           borderBottom: `1px solid ${C.borderSoft}`,
           padding: '12px 18px',
         }}
       >
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          <Tap onClick={() => go.chapter(code)} style={{ fontSize: 13, color: '#8a8a9a' }}>
+          <Tap onClick={() => go.chapter(code)} style={{ fontSize: fs(13), color: 'var(--k8a8a9a)' }}>
             ‹ {META[code].name}
           </Tap>
           <div
             style={{
-              fontSize: 11,
+              fontSize: fs(11),
               fontWeight: 700,
               letterSpacing: '.05em',
               color: C.bg,
@@ -110,80 +109,38 @@ export default function CellView({
           </div>
         </div>
         <div style={{ display: 'flex', alignItems: 'baseline', gap: 8, marginTop: 8 }}>
-          <div style={{ fontFamily: MONO_DISPLAY, fontSize: 15, fontWeight: 700, color }}>{cellId}</div>
-          <div style={{ fontSize: 15, fontWeight: 600, lineHeight: 1.3 }}>{cell?.title ?? 'Loading…'}</div>
+          {/* the id is the anchor for everything else on the screen; never wrap it */}
+          <div style={{ fontFamily: MONO_DISPLAY, fontSize: fs(15), fontWeight: 700, color, flex: 'none' }}>
+            {cellId}
+          </div>
+          <div style={{ fontSize: fs(15), fontWeight: 600, lineHeight: 1.3 }}>{cell?.title ?? 'Loading…'}</div>
         </div>
       </div>
 
       <div style={{ padding: '14px 18px' }}>
-        {locus && (
-          <div
-            style={{
-              marginBottom: 12,
-              borderRadius: 12,
-              padding: '12px 14px',
-              background: '#12101a',
-              border: '1px solid #2b2440',
-            }}
-          >
-            <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: '.1em', color: C.violet }}>
-              🏛 YOUR LOCUS — {locus.room} · {locus.spot}
-            </div>
-            <div
-              style={{
-                fontFamily: SERIF,
-                fontStyle: 'italic',
-                fontSize: 14,
-                lineHeight: 1.65,
-                color: '#d5cbee',
-                marginTop: 5,
-              }}
-            >
-              {locus.img}
-            </div>
-            <div style={{ fontSize: 10, color: '#77708f', marginTop: 5 }}>
-              Fix this image at this spot while you read. The palace walk will bring you back here.
-            </div>
-          </div>
-        )}
-
         <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
-          {items.map((item, i) => (
-            <ItemCard
-              key={i}
-              item={item}
-              index={i}
-              speaking={ttsState.playing && ttsState.item === i}
-              word={ttsState.word}
-              color={color}
-              tintBg={hue(code, 28, 0.05, 0.3)}
-              onTerm={(term) =>
-                openSheet({ term: LAWS[term][0], body: LAWS[term][1], kind: 'tap outside to close' })
-              }
-            />
-          ))}
+          {items.map((item, i) => {
+            const speaking = ttsState.playing && ttsState.item === i
+            if (item.t === 'locus')
+              return <LocusCard key={i} index={i} locus={item.locus} speaking={speaking} color={color} />
+            if (item.t === 'refs')
+              return <RefsCard key={i} index={i} refs={item.refs} speaking={speaking} color={color} />
+            return (
+              <ItemCard
+                key={i}
+                item={item}
+                index={i}
+                speaking={speaking}
+                word={ttsState.word}
+                color={color}
+                tintBg={hue(code, 28, 0.05, 0.3)}
+                onTerm={(term) =>
+                  openSheet({ term: LAWS[term][0], body: LAWS[term][1], kind: 'tap outside to close' })
+                }
+              />
+            )
+          })}
         </div>
-
-        {!!cell?.refs.length && (
-          <div
-            style={{
-              marginTop: 14,
-              background: C.panelSoft,
-              border: `1px solid ${C.borderSoft}`,
-              borderRadius: 12,
-              padding: '12px 14px',
-            }}
-          >
-            <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: '.1em', color: C.faint }}>
-              SECOND ANGLES — SAME MATERIAL IN YOUR OTHER BOOKS
-            </div>
-            {cell.refs.map((r) => (
-              <div key={r} style={{ fontSize: 12, color: C.dim, marginTop: 6, lineHeight: 1.5 }}>
-                {r}
-              </div>
-            ))}
-          </div>
-        )}
 
         {(toolKey === 'sorter-sec' || toolKey === 'sorter-eth') && (
           <Sorter toolKey={toolKey} tool={tool} setTool={patchTool} />
@@ -206,12 +163,12 @@ export default function CellView({
           }}
         >
           <div>
-            <div style={{ fontSize: 14, fontWeight: 700 }}>Prove it — checkpoint</div>
-            <div style={{ fontSize: 11, marginTop: 2, opacity: 0.75 }}>
+            <div style={{ fontSize: fs(14), fontWeight: 700 }}>Prove it — checkpoint</div>
+            <div style={{ fontSize: fs(11), marginTop: 2, opacity: 0.75 }}>
               Concept questions + fact recall grade this cell for you
             </div>
           </div>
-          <div style={{ fontSize: 20, fontWeight: 700 }}>→</div>
+          <div style={{ fontSize: fs(20), fontWeight: 700 }}>→</div>
         </Tap>
 
         <div
@@ -223,18 +180,18 @@ export default function CellView({
             padding: '14px 16px',
           }}
         >
-          <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '.08em', color: C.dim }}>
+          <div style={{ fontSize: fs(11), fontWeight: 700, letterSpacing: '.08em', color: C.dim }}>
             OR MARK IT MANUALLY
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginTop: 10 }}>
-            <div style={{ fontSize: 12, color: C.blue, width: 80, flex: 'none' }}>◆ Concepts</div>
+            <div style={{ fontSize: fs(12), color: C.blue, width: 80, flex: 'none' }}>◆ Concepts</div>
             {markRow('c')}
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginTop: 8 }}>
-            <div style={{ fontSize: 12, color: C.amber, width: 80, flex: 'none' }}>● Facts</div>
+            <div style={{ fontSize: fs(12), color: C.amber, width: 80, flex: 'none' }}>● Facts</div>
             {markRow('f')}
           </div>
-          <div style={{ fontSize: 11, color: '#66667a', marginTop: 10, lineHeight: 1.5 }}>
+          <div style={{ fontSize: fs(11), color: 'var(--k66667a)', marginTop: 10, lineHeight: 1.5 }}>
             Shaky on ◆ concepts → re-derive out loud. Shaky on ● facts → drill the memorize sheet. Different diseases,
             different treatments.
           </div>
@@ -250,7 +207,7 @@ export default function CellView({
               border: `1px solid ${C.borderRaised}`,
               borderRadius: 12,
               padding: 11,
-              fontSize: 13,
+              fontSize: fs(13),
               fontWeight: 600,
             }}
           >
@@ -271,7 +228,7 @@ export default function CellView({
               color: C.bg,
               borderRadius: 12,
               padding: 11,
-              fontSize: 13,
+              fontSize: fs(13),
               fontWeight: 700,
             }}
           >
@@ -281,6 +238,89 @@ export default function CellView({
       </div>
 
       <TtsBar cellId={cellId} color={color} />
+    </div>
+  )
+}
+
+/**
+ * The locus and the cross-references keep their own look, but they are items in
+ * the reading order like any other card — so they light up as the narrator
+ * reaches them, and `rit-<index>` still scrolls to the right place.
+ */
+function LocusCard({
+  index,
+  locus,
+  speaking,
+  color,
+}: {
+  index: number
+  locus: Locus
+  speaking: boolean
+  color: string
+}) {
+  return (
+    <div
+      id={`rit-${index}`}
+      style={{
+        borderRadius: 12,
+        padding: '12px 14px',
+        background: 'var(--k12101a)',
+        border: `1px solid ${speaking ? color : 'var(--k2b2440)'}`,
+        transition: 'border-color .3s',
+      }}
+    >
+      <div style={{ fontSize: fs(10), fontWeight: 700, letterSpacing: '.1em', color: C.violet }}>
+        🏛 YOUR LOCUS — {locus.room} · {locus.spot}
+      </div>
+      <div
+        style={{
+          fontFamily: SERIF,
+          fontStyle: 'italic',
+          fontSize: fs(14),
+          lineHeight: 1.65,
+          color: 'var(--kd5cbee)',
+          marginTop: 5,
+        }}
+      >
+        {locus.img}
+      </div>
+      <div style={{ fontSize: fs(10), color: 'var(--k77708f)', marginTop: 5 }}>
+        Fix this image at this spot while you read. The palace walk will bring you back here.
+      </div>
+    </div>
+  )
+}
+
+function RefsCard({
+  index,
+  refs,
+  speaking,
+  color,
+}: {
+  index: number
+  refs: string[]
+  speaking: boolean
+  color: string
+}) {
+  return (
+    <div
+      id={`rit-${index}`}
+      style={{
+        background: C.panelSoft,
+        border: `1px solid ${speaking ? color : C.borderSoft}`,
+        borderRadius: 12,
+        padding: '12px 14px',
+        transition: 'border-color .3s',
+      }}
+    >
+      <div style={{ fontSize: fs(10), fontWeight: 700, letterSpacing: '.1em', color: C.faint }}>
+        SECOND ANGLES — SAME MATERIAL IN YOUR OTHER BOOKS
+      </div>
+      {refs.map((r) => (
+        <div key={r} style={{ fontSize: fs(12), color: C.dim, marginTop: 6, lineHeight: 1.5 }}>
+          {r}
+        </div>
+      ))}
     </div>
   )
 }
@@ -316,12 +356,12 @@ function ItemCard({
         transition: 'background .3s,border-color .3s',
       }}
     >
-      <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: '.1em', color: tag.c, marginBottom: 6 }}>
+      <div style={{ fontSize: fs(10), fontWeight: 700, letterSpacing: '.1em', color: tag.c, marginBottom: 6 }}>
         {isFrame && item.t === 'frame' ? item.fr.head.toUpperCase() : tag.l}
       </div>
 
       {speaking ? (
-        <div style={{ fontFamily: SERIF, fontSize: 15, lineHeight: 1.75, color: C.textSerif }}>
+        <div style={{ fontFamily: SERIF, fontSize: fs(15), lineHeight: 1.75, color: C.textSerif }}>
           {item.x.split(/\s+/).map((w, wi) => (
             <span
               key={wi}
@@ -329,7 +369,7 @@ function ItemCard({
                 borderRadius: 3,
                 padding: '0 1px',
                 background: wi === word ? color : '',
-                color: wi === word ? C.bg : wi < word ? '#fafafd' : '#8f8f9e',
+                color: wi === word ? C.bg : wi < word ? 'var(--kfafafd)' : 'var(--k8f8f9e)',
               }}
             >
               {w}{' '}
@@ -338,13 +378,13 @@ function ItemCard({
         </div>
       ) : isFrame && item.t === 'frame' ? (
         <>
-          <div style={{ fontFamily: SERIF, fontSize: 14, lineHeight: 1.7, color: '#c9d8ce' }}>{item.fr.intro}</div>
+          <div style={{ fontFamily: SERIF, fontSize: fs(14), lineHeight: 1.7, color: 'var(--kc9d8ce)' }}>{item.fr.intro}</div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 9, marginTop: 10 }}>
             {item.fr.bullets.map(([b, r]) => (
               <div key={b} style={{ display: 'flex', gap: 9 }}>
                 <span style={{ color: C.green, flex: 'none', lineHeight: 1.7 }}>▸</span>
-                <div style={{ fontFamily: SERIF, fontSize: 14, lineHeight: 1.7, color: '#dce8e0' }}>
-                  <strong style={{ color: '#f0faf4' }}>{b}</strong> {r}
+                <div style={{ fontFamily: SERIF, fontSize: fs(14), lineHeight: 1.7, color: 'var(--kdce8e0)' }}>
+                  <strong style={{ color: 'var(--kf0faf4)' }}>{b}</strong> {r}
                 </div>
               </div>
             ))}
@@ -352,11 +392,11 @@ function ItemCard({
           <div
             style={{
               fontFamily: SERIF,
-              fontSize: 14,
+              fontSize: fs(14),
               lineHeight: 1.7,
-              color: '#c9d8ce',
+              color: 'var(--kc9d8ce)',
               marginTop: 10,
-              borderTop: '1px solid #1e3a2c',
+              borderTop: '1px solid var(--k1e3a2c)',
               paddingTop: 10,
             }}
           >
@@ -364,13 +404,13 @@ function ItemCard({
           </div>
         </>
       ) : (
-        <div style={{ fontFamily: SERIF, fontSize: 15, lineHeight: 1.75, color: C.textSerif }}>
+        <div style={{ fontFamily: SERIF, fontSize: fs(15), lineHeight: 1.75, color: C.textSerif }}>
           {segments(item.x).map((seg, si) =>
             seg.term ? (
               <span
                 key={si}
                 onClick={() => onTerm(seg.term!)}
-                style={{ color: C.link, borderBottom: '1px dotted #4a6a9e', cursor: 'pointer' }}
+                style={{ color: C.link, borderBottom: '1px dotted var(--k4a6a9e)', cursor: 'pointer' }}
               >
                 {seg.t}
               </span>
